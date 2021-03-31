@@ -4,7 +4,9 @@
     <p>
       A virtual gathering for the maintainers that make open source possible.
     </p>
-    <CustomLink href="#">I'm a link</CustomLink>
-    <CustomLink href="#" button>I'm a button</CustomLink>
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <CustomLink href="#">Terms</CustomLink>
+      <CustomLink href="#" button>Nominate an Open Source Project</CustomLink>
+    </div>
   </div>
 </template>
