@@ -10,11 +10,11 @@
   --fw-bold: 800;
 
   // Fonts Sizes
-  --fs-colossal: (88 / var(--default-size)) + rem;
-  --fs-giant: (64 / var(--default-size)) + rem;
-  --fs-large: (48 / var(--default-size)) + rem;
-  --fs-medium: (40 / var(--default-size)) + rem;
-  --fs-regular: (24 / var(--default-size)) + rem;
-  --fs-default: (18 / var(--default-size)) + rem;
-  --fs-small: (14 / var(--default-size)) + rem;
+  --fs-colossal: 5.5rem; // 88px
+  --fs-giant: 4rem; // 64px
+  --fs-large: 3rem; // 48px
+  --fs-medium: 2.5rem; // 40px
+  --fs-regular: 1.5rem; // 24px
+  --fs-default: 1.125rem; // 18px
+  --fs-small: 0.875rem; // 14px
 }
