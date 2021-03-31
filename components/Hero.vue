@@ -28,8 +28,8 @@ export default {
 <style lang="scss" scoped>
 .bg-glow {
   position: absolute;
-  top: -10rem;
-  left: -10rem;
+  top: -15rem;
+  left: -20rem;
   z-index: var(--z-index-bg-glow);
   width: 582px;
   height: 458px;
@@ -37,6 +37,11 @@ export default {
   border-radius: 100%;
   opacity: 0.7;
   filter: blur(50px);
+
+  @media screen and (min-width: $screen-ipad) {
+    top: -10rem;
+    left: -10rem;
+  }
 }
 
 .hero {
