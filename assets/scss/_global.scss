@@ -6,9 +6,9 @@
 
 body {
   display: block;
-  color: #fff;
-  background: #24292e;
-  background-color: #24292e;
+  color: var(--fc-default);
+  font-family: 'AllianceNo2', serif;
+  background-color: var(--bg-body);
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
