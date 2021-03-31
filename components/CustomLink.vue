@@ -9,7 +9,7 @@
     role="link"
     tabindex="0"
   >
-    <span class="link__text">
+    <span :class="!button && 'link__content'">
       <slot />
     </span>
   </Component>
@@ -47,7 +47,28 @@ export default {
 
 <style lang="scss" scoped>
 .link {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-default);
   cursor: pointer;
+
+  &__content {
+    display: inline-block;
+    &::after {
+      position: relative;
+      top: 0;
+      display: block;
+      width: 100%;
+      height: 0.25rem;
+      margin: 0 auto;
+      background: white;
+      transition: margin 0.3s ease-in;
+      content: '';
+    }
+    &:hover::after,
+    &:focus::after {
+      margin-top: 4px;
+    }
+  }
 }
 
 .button {
