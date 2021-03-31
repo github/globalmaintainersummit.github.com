@@ -5,7 +5,7 @@
     :to="to ? to : null"
     :target="href ? '_blank' : null"
     :class="button && 'button'"
-    :role="button ? 'button' : 'link'"
+    role="link"
   >
     <slot />
   </Component>
@@ -45,6 +45,7 @@ export default {
 .button {
   padding: 16px 40px 20px;
   color: var(--fc-dark);
+  font-weight: $fw-semi-bold;
   background-image: linear-gradient(
     119.72deg,
     var(--bg-gradient-start) 0%,
