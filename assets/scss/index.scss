@@ -1,3 +1,8 @@
+@import 'variables/main';
+
+@import 'normalize';
+@import 'global';
+
 body {
   box-sizing: border-box;
   min-width: 200px;
