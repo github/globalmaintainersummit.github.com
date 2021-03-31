@@ -1,10 +1,16 @@
-@mixin mobileToDesktopFontSize($fs, $fs-l) {
-  font-size: $fs;
+/*
+ * Scale font for responsiveness
+ */
+@mixin mobileToDesktopFontSize($mobileSize, $desktopSize) {
+  font-size: $mobileSize;
   @media screen and (min-width: var(--screen-ipad)) {
-    font-size: $fs-l;
+    font-size: $desktopSize;
   }
 }
 
+/*
+ * Add a gradient to the text using the two colors in the parameters
+ */
 @mixin gradientTitle($startingColor, $endingColor) {
   background-color: $startingColor;
   background-image: radial-gradient(
