@@ -3,7 +3,7 @@
  */
 @mixin mobileToDesktopFontSize($mobileSize, $desktopSize) {
   font-size: $mobileSize;
-  @media screen and (min-width: var(--screen-ipad)) {
+  @media screen and (min-width: 758px) {
     font-size: $desktopSize;
   }
 }
@@ -24,4 +24,17 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
+}
+
+/*
+ * Handle section margin for desktop and mobile
+ */
+@mixin section {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  @media screen and (min-width: 758px) {
+    padding: 0 160px;
+  }
 }
