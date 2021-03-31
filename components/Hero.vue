@@ -2,7 +2,7 @@
   <div>
     <div class="bg-glow" aria-hidden="true"></div>
     <div class="hero">
-      <GitHub />
+      <GitHub aria-hidden="true" role="presentation" />
       <h1 class="hero__title">{{ content.title }}</h1>
       <p class="hero__subtitle">{{ content.subtitle }}</p>
     </div>
