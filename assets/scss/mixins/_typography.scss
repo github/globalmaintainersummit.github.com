@@ -1,6 +1,6 @@
-@mixin mobileToDesktopFontSize($fs: $fs-large, $fs-l: $fs-colossal) {
+@mixin mobileToDesktopFontSize($fs, $fs-l) {
   font-size: $fs;
-  @media screen and (min-width: $screen-l) {
+  @media screen and (min-width: var(--screen-xl)) {
     font-size: $fs-l;
   }
 }

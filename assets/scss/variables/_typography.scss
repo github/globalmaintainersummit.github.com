@@ -1,24 +1,20 @@
-// Font Family
-$ff-default: 'AllianceNo2', georgia, serif;
-$ff-title: 'AllianceNo1', arial, sans-serif;
+:root {
+  // Font Family
+  --ff-default: 'AllianceNo2', georgia, serif;
+  --ff-title: 'AllianceNo1', arial, sans-serif;
 
-// Font Weight
-$fw-default: 400;
-$fw-medium: 500;
-$fw-semi-bold: 600;
-$fw-bold: 800;
+  // Font Weight
+  --fw-default: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 800;
 
-// Fonts Sizes
-$fs-colossal: (88 / $default-size) + rem;
-$fs-giant: (64 / $default-size) + rem;
-$fs-large: (48 / $default-size) + rem;
-$fs-medium: (40 / $default-size) + rem;
-$fs-regular: (24 / $default-size) + rem;
-$fs-default: (18 / $default-size) + rem;
-$fs-small: (14 / $default-size) + rem;
-
-// Line height sizes
-$line-height-large: 1.75;
-$line-height-default: 1.56;
-$line-height-medium: 1.25;
-$line-height-small: 1.1;
+  // Fonts Sizes
+  --fs-colossal: (88 / var(--default-size)) + rem;
+  --fs-giant: (64 / var(--default-size)) + rem;
+  --fs-large: (48 / var(--default-size)) + rem;
+  --fs-medium: (40 / var(--default-size)) + rem;
+  --fs-regular: (24 / var(--default-size)) + rem;
+  --fs-default: (18 / var(--default-size)) + rem;
+  --fs-small: (14 / var(--default-size)) + rem;
+}

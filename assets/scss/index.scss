@@ -1,10 +1,10 @@
-// Unitless default size
-$default-size: 16;
-
 @import 'variables/main';
-@import 'variables/typography';
-@import 'variables/media-queries';
 
 @import 'normalize';
 @import 'font-face';
 @import 'global';
+
+// Unitless default size
+:root {
+  --default-size: 16;
+}
