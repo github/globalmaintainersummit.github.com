@@ -33,9 +33,9 @@ export default {
   },
   computed: {
     type() {
-      if (this.to) {
+      if (this.to !== undefined) {
         return 'nuxt-link'
-      } else if (this.href) {
+      } else if (this.href !== undefined) {
         return 'a'
       } else {
         return 'span'
