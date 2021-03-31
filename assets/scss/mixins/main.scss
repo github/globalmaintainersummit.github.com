@@ -13,8 +13,8 @@
  */
 @mixin gradientTitle($startingColor, $endingColor) {
   background-color: $startingColor;
-  background-image: radial-gradient(
-    50% 100%,
+  background-image: linear-gradient(
+    90deg,
     $startingColor 0%,
     $endingColor 100%
   );

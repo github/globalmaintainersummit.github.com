@@ -6,3 +6,9 @@
     </p>
   </div>
 </template>
+
+<style lang="scss" scoped>
+h1 {
+  @include gradientTitle(var(--bg-gradient-start), var(--bg-gradient-end));
+}
+</style>
