@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
+    "@nuxtjs/style-resources": "^1.0.0",
     "core-js": "^3.9.1",
     "nuxt": "^2.15.3"
   },
