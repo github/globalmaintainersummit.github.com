@@ -8,4 +8,11 @@
   --bali-hai: hsla(218, 24%, 60%, 1); // #8193B2
   --bittersweet: hsla(0, 100%, 72%, 1); // #FF7170
   --kournikova: hsla(48, 100%, 75%, 1); // #FFE57F
+  --black-pearl: hsla(221, 78%, 7%, 1); // #040d21
+
+  // Background Colors
+  --bg-body: var(--black-pearl);
+
+  // Font Colors]
+  --fc-default: var(--white);
 }
