@@ -1,0 +1,93 @@
+<template>
+  <Component
+    :is="type"
+    :href="href ? link : null"
+    :to="to ? to : null"
+    :target="href ? '_blank' : null"
+    class="link"
+    :class="button && 'button'"
+    role="link"
+    tabindex="0"
+  >
+    <span :class="!button && 'link__content'">
+      <slot />
+    </span>
+  </Component>
+</template>
+
+<script>
+export default {
+  props: {
+    to: {
+      type: String,
+      required: true,
+    },
+    href: {
+      type: String,
+      required: true,
+    },
+    button: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  computed: {
+    type() {
+      if (this.to !== undefined) {
+        return 'nuxt-link'
+      } else if (this.href !== undefined) {
+        return 'a'
+      } else {
+        return 'span'
+      }
+    },
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+.link {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-default);
+  cursor: pointer;
+
+  &__content {
+    display: inline-block;
+    &::after {
+      position: relative;
+      top: 0;
+      display: block;
+      width: 100%;
+      height: 0.25rem;
+      margin: 0 auto;
+      background: white;
+      transition: margin 0.3s ease-in;
+      content: '';
+    }
+    &:hover::after,
+    &:focus::after {
+      margin-top: 4px;
+    }
+  }
+}
+
+.button {
+  padding: 16px 40px 20px;
+  color: var(--fc-dark);
+  font-weight: var(--fw-semi-bold);
+  background: linear-gradient(
+    119.72deg,
+    var(--bg-gradient-start) 0%,
+    var(--bg-gradient-end) 100%
+  );
+  background-size: 100%;
+  border-radius: 8px;
+  outline-offset: 4px;
+
+  &:hover,
+  &:focus {
+    background-size: 250%;
+    transition: background 0.75s linear;
+  }
+}
+</style>
