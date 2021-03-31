@@ -1,5 +1,6 @@
 @import 'typography';
 @import 'media-queries';
+@import 'layout';
 
 :root {
   // Private variables
@@ -18,6 +19,7 @@
   --blue-zodiac: hsla(221, 64%, 11%, 1); // #0A152E
   --blue-zodiac-50: hsla(221, 64%, 11%, 0.6);
   --blue-zodiac-90: hsla(221, 64%, 11%, 0.9);
+  --venice-blue: hsla(201.9, 94.4%, 27.8%, 1); // #04598a
 
   // Background Colors
   --bg-body: var(--black-pearl);
@@ -25,6 +27,7 @@
   --bg-gradient-end: var(--kournikova);
   --bg-floating-card: var(--blue-zodiac-50);
   --bg-floating-card--fallback: var(--blue-zodiac-90);
+  --bg-glow: var(--venice-blue);
 
   // Font Colors
   --fc-default: var(--white);

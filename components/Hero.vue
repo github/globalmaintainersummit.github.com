@@ -1,8 +1,11 @@
 <template>
-  <div class="hero">
-    <GitHub />
-    <h1 class="hero__title">{{ content.title }}</h1>
-    <p class="hero__subtitle">{{ content.subtitle }}</p>
+  <div>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <div class="hero">
+      <GitHub />
+      <h1 class="hero__title">{{ content.title }}</h1>
+      <p class="hero__subtitle">{{ content.subtitle }}</p>
+    </div>
   </div>
 </template>
 
@@ -23,7 +26,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.bg-glow {
+  position: absolute;
+  top: -10rem;
+  left: -10rem;
+  z-index: var(--z-index-bg-glow);
+  width: 582px;
+  height: 458px;
+  background-color: var(--bg-glow);
+  border-radius: 100%;
+  opacity: 0.7;
+  filter: blur(50px);
+}
+
 .hero {
+  position: relative;
+  z-index: var(--z-index-bg-content);
   margin-top: 40px;
   @media screen and (min-width: $screen-ipad) {
     margin-top: 80px;
