@@ -3,9 +3,9 @@
     class="main"
     style="display: grid; place-items: center; margin-top: 100px"
   >
-    <h1>Open Source Maintainer Summit - June 7-9 2021</h1>
+    <h1>{{ page.hero.title }}</h1>
     <p>
-      A virtual gathering for the maintainers that make open source possible.
+      {{ page.hero.subtitle }}
     </p>
     <div style="display: flex; flex-direction: column; gap: 16px">
       <CustomLink href="#">Terms</CustomLink>
@@ -13,6 +13,18 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  async asyncData({ $content }) {
+    const page = await $content('home').fetch()
+
+    return {
+      page,
+    }
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .main {
