@@ -38,6 +38,7 @@ export default {
 
     max-width: 480px;
     margin-top: 40px;
+    margin-bottom: 0;
     font-weight: var(--fw-bold);
     line-height: 1;
   }
@@ -45,7 +46,8 @@ export default {
   &__subtitle {
     margin-top: 24px;
     color: var(--fc-dimmed);
-    font-size: var(--fs-default);
+    font-weight: var(--fw-medium);
+    font-size: var(--fw-default);
   }
 }
 </style>

@@ -3,7 +3,7 @@
  */
 @mixin mobileToDesktopFontSize($mobileSize, $desktopSize) {
   font-size: $mobileSize;
-  @media screen and (min-width: $screen-ipad) {
+  @media screen and (min-width: $screen-sm) {
     font-size: $desktopSize;
   }
 }
@@ -32,7 +32,13 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 24px;
+  @media screen and (min-width: $screen-sm) {
+    padding: 0 40px;
+  }
   @media screen and (min-width: $screen-ipad) {
+    padding: 0 80px;
+  }
+  @media screen and (min-width: $screen-xl) {
     padding: 0 160px;
   }
 }

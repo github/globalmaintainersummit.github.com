@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card__badge" :style="`background-color:${badgeBg}`">
       <img
-        :src="require(`~/assets/imagery/badges/${projectBadge}.png`)"
+        :src="require(`~/assets/img/badges/${projectBadge}.png`)"
         :alt="project"
       />
     </div>

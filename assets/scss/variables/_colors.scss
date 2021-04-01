@@ -16,6 +16,9 @@
   --blue-zodiac-50: hsla(221, 64%, 11%, 0.6);
   --blue-zodiac-90: hsla(221, 64%, 11%, 0.9);
   --venice-blue: hsla(201.9, 94.4%, 27.8%, 1); // #04598a
+  --venice-blue-40: hsla(201.9, 94.4%, 27.8%, 4);
+  --salomie: hsla(43, 100%, 75%, 1); // #FFDB7F
+  --salomie-23: hsla(43, 100%, 75%, 0.23);
 
   // Background Colors
   --bg-body: var(--black-pearl);
@@ -23,7 +26,8 @@
   --bg-gradient-end: var(--kournikova);
   --bg-floating-card: var(--blue-zodiac-50);
   --bg-floating-card--fallback: var(--blue-zodiac-90);
-  --bg-glow: var(--venice-blue);
+  --bg-glow: var(--venice-blue-40);
+  --bg-glow-accent: var(--salomie-23);
 
   // Font Colors
   --fc-default: var(--white);

@@ -29,6 +29,7 @@ export default {
     @include gradientTitle(var(--bg-gradient-start), var(--bg-gradient-end));
 
     max-width: 1024px;
+    margin-bottom: 0;
     color: var(--fc-default);
     font-weight: var(--fw-bold);
     line-height: 1;
@@ -37,8 +38,9 @@ export default {
   &__dates {
     margin-top: 40px;
     color: var(--fc-default);
-    font-weight: var(--fs-medium);
+    font-weight: var(--fw-medium);
     font-size: var(--fs-medium);
+    @include mobileToDesktopFontSize(var(--fs-regular), var(--fs-medium));
   }
 }
 </style>
