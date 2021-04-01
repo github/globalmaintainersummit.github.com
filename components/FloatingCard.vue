@@ -8,7 +8,7 @@
     </div>
     <div class="card__content">
       <h4>{{ project }}</h4>
-      <p>by {{ mantainer }}</p>
+      <p>by {{ maintainer }}</p>
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
       type: String,
       required: true,
     },
-    mantainer: {
+    maintainer: {
       type: String,
       required: true,
     },
@@ -63,13 +63,13 @@ export default {
       margin: 0;
     }
     h4 {
-      font-size: 1.125rem;
-      font-family: 'AllianceNo1', serif;
+      font-size: var(--fs-default);
+      font-family: var(--ff-title);
     }
     p {
       margin-top: 4px;
       color: var(--fc-floating-pill-mantainer);
-      font-size: 0.875rem;
+      font-size: var(--fs-small);
     }
   }
 
