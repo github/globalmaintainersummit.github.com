@@ -30,7 +30,7 @@ export default {
   &__highlight,
   &__content {
     color: var(--fc-default);
-    font-size: var(--fs-default);
+    font-size: var(--fs-regular);
   }
   &__content {
     color: var(--fc-dimmed);
