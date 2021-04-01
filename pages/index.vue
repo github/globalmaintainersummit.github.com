@@ -1,9 +1,12 @@
 <template>
-  <div class="main">
-    <Hero :content="hero" />
-    <Lead :content="lead" />
-    <Details :content="details" />
-  </div>
+  <main class="main">
+    <section>
+      <Hero :content="hero" />
+      <Lead :content="lead" />
+      <Details :content="details" />
+    </section>
+    <DecorativeGlows />
+  </main>
 </template>
 
 <script>
@@ -22,6 +25,11 @@ export default {
 
 <style lang="scss" scoped>
 .main {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+section {
   @include section();
 }
 </style>
