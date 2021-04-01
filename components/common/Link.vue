@@ -1,9 +1,9 @@
 <template>
   <Component
     :is="type"
-    :href="href ? href : null"
-    :to="to ? to : null"
-    :target="href ? '_blank' : null"
+    :href="href !== '' ? href : null"
+    :to="to !== '' ? to : null"
+    :target="href !== '' ? '_blank' : null"
     class="link"
     :class="button && 'button'"
     role="link"
@@ -20,11 +20,11 @@ export default {
   props: {
     to: {
       type: String,
-      required: true,
+      default: '',
     },
     href: {
       type: String,
-      required: true,
+      default: '',
     },
     button: {
       type: Boolean,
@@ -33,9 +33,9 @@ export default {
   },
   computed: {
     type() {
-      if (this.to !== undefined) {
+      if (this.to !== '') {
         return 'nuxt-link'
-      } else if (this.href !== undefined) {
+      } else if (this.href !== '') {
         return 'a'
       } else {
         return 'span'
@@ -79,6 +79,8 @@ export default {
 }
 
 .button {
+  @include mobileToDesktopFontSize(var(--fs-small), var(--fs-default));
+
   padding: 16px 40px 20px;
   color: var(--fc-dark);
   font-weight: var(--fw-semi-bold);
@@ -91,6 +93,7 @@ export default {
   border-radius: 8px;
   outline-offset: 4px;
   transition: background 0.75s linear;
+
   &:hover,
   &:focus {
     background-size: 250%;
