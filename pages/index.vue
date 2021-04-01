@@ -4,6 +4,11 @@
       <Hero :content="hero" />
       <Lead :content="lead" />
       <Details :content="details" />
+      <div class="cta">
+        <CommonLink button :href="cta.url">
+          {{ cta.label }}
+        </CommonLink>
+      </div>
     </section>
     <DecorativeGlows />
   </main>
@@ -12,12 +17,13 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const { hero, lead, details } = await $content('home').fetch()
+    const { hero, lead, details, cta } = await $content('home').fetch()
 
     return {
       hero,
       lead,
       details,
+      cta,
     }
   },
 }
@@ -31,5 +37,8 @@ export default {
 }
 section {
   @include section();
+}
+.cta {
+  margin-top: 88px;
 }
 </style>
