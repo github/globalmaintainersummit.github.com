@@ -1,7 +1,7 @@
 <template>
   <Component
     :is="type"
-    :href="href ? link : null"
+    :href="href ? href : null"
     :to="to ? to : null"
     :target="href ? '_blank' : null"
     class="link"
@@ -47,26 +47,33 @@ export default {
 
 <style lang="scss" scoped>
 .link {
+  display: inline-block;
+  color: var(--fc-default);
   font-weight: var(--fw-medium);
   font-size: var(--fs-default);
+  text-decoration: none;
   cursor: pointer;
-
   &__content {
-    display: inline-block;
     &::after {
       position: relative;
-      top: 0;
+      top: 8px;
       display: block;
       width: 100%;
-      height: 0.25rem;
+      height: 2px;
       margin: 0 auto;
-      background: white;
-      transition: margin 0.3s ease-in;
+      background-image: linear-gradient(
+        90deg,
+        var(--bg-gradient-start) 50%,
+        var(--bg-gradient-end) 100%
+      );
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease-in-out;
       content: '';
     }
     &:hover::after,
     &:focus::after {
-      margin-top: 4px;
+      transform: scaleX(1);
     }
   }
 }
