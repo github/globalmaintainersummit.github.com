@@ -1,10 +1,7 @@
 <template>
-  <div>
-    <div class="details">
-      <p class="details__highlight">{{ content.highlight }}</p>
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="details__content" v-html="content.body" />
-    </div>
+  <div class="details">
+    <p class="details__highlight">{{ content.highlight }}</p>
+    <div class="details__content" v-html="content.body" />
   </div>
 </template>
 
