@@ -1,14 +1,18 @@
 <template>
   <div class="card">
-    <div class="card__badge" :style="`background-color:${badgeBg}`">
+    <div class="card__badge">
       <img
-        :src="require(`~/assets/img/badges/${projectBadge}.png`)"
+        :src="
+          require(`~/assets/img/badges/${project.name
+            .replace(/\s/g, '')
+            .toLowerCase()}.png`)
+        "
         :alt="project"
       />
     </div>
     <div class="card__content">
-      <h4>{{ project }}</h4>
-      <p>by {{ maintainer }}</p>
+      <h4>{{ project.name }}</h4>
+      <p>by {{ project.speaker }} ({{ project.handler }})</p>
     </div>
   </div>
 </template>
@@ -17,20 +21,8 @@
 export default {
   props: {
     project: {
-      type: String,
+      type: Object,
       required: true,
-    },
-    maintainer: {
-      type: String,
-      required: true,
-    },
-    projectBadge: {
-      type: String,
-      required: true,
-    },
-    badgeBg: {
-      type: String,
-      default: '#FFFFFF',
     },
   },
 }

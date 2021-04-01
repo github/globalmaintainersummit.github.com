@@ -9,6 +9,7 @@
           {{ cta.label }}
         </CommonLink>
       </div>
+      <Projects :content="projects" />
     </section>
     <DecorativeGlows />
   </main>
@@ -17,13 +18,16 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const { hero, lead, details, cta } = await $content('home').fetch()
+    const { hero, lead, details, cta, projects } = await $content(
+      'home'
+    ).fetch()
 
     return {
       hero,
       lead,
       details,
       cta,
+      projects,
     }
   },
 }
