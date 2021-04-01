@@ -90,11 +90,10 @@ export default {
   background-size: 100%;
   border-radius: 8px;
   outline-offset: 4px;
-
+  transition: background 0.75s linear;
   &:hover,
   &:focus {
     background-size: 250%;
-    transition: background 0.75s linear;
   }
 }
 </style>
