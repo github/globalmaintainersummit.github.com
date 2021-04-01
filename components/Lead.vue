@@ -25,7 +25,7 @@ export default {
     margin-top: 160px;
   }
   &__title {
-    @include mobileToDesktopFontSize(var(--fs-large), var(--fs-giant));
+    @include mobileToDesktopFontSize(var(--fs-medium), var(--fs-giant));
     @include gradientTitle(var(--bg-gradient-start), var(--bg-gradient-end));
 
     max-width: 1024px;

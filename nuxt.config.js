@@ -139,5 +139,9 @@ export default {
   content: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    loaders: {
+      scss: { sourceMap: false },
+    },
+  },
 }

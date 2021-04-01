@@ -14,5 +14,25 @@
   "cta":{
     "label":"Nominate an Open Source project",
     "url":"https://github.com/"
-  }
+  },
+  "projects": [
+    {
+      "name": "PyLadies",
+      "url":"https://github.com/pyladies",
+      "speaker": "Lorena Mesa",
+      "handler":"@lorenanicole"
+    },
+    {
+      "name": "Ruby on Rails",
+      "url":"https://github.com/rails",
+      "speaker": "Eileen Uchitelle",
+      "handler":"@eileencodes"
+    },
+    {
+      "name": "Wordpress",
+      "url":"https://github.com/wordpress/wordpress-develop",
+      "speaker": "Helen Hou-Sandí",
+      "handler":"@helen"
+    }
+  ]
 }
