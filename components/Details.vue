@@ -26,10 +26,10 @@ export default {
 
   &__highlight,
   &__content {
+    @include mobileToDesktopFontSize(var(--fs-default), var(--fs-regular));
+
     color: var(--fc-default);
     font-weight: var(--fw-medium);
-    font-size: var(--fs-regular);
-    @include mobileToDesktopFontSize(var(--fs-default), var(--fs-regular));
   }
   &__content {
     color: var(--fc-dimmed);

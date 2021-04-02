@@ -27,7 +27,6 @@ export default {
 <style lang="scss" scoped>
 .hero {
   position: relative;
-  z-index: var(--z-index-bg-content);
   margin-top: 40px;
   @media screen and (min-width: $screen-ipad) {
     margin-top: 80px;

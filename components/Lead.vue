@@ -36,11 +36,12 @@ export default {
   }
 
   &__dates {
+    @include mobileToDesktopFontSize(var(--fs-regular), var(--fs-medium));
+
     margin-top: 40px;
     color: var(--fc-default);
     font-weight: var(--fw-medium);
     font-size: var(--fs-medium);
-    @include mobileToDesktopFontSize(var(--fs-regular), var(--fs-medium));
   }
 }
 </style>
