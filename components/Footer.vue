@@ -14,12 +14,20 @@
       <CommonLink :mailto="content.contact.mailto">
         {{ content.contact.label }}
       </CommonLink>
+      <CommonLink :href="content.project.url">
+        <GitHub :aria-label="content.project.label" role="presentation" />
+      </CommonLink>
     </div>
   </footer>
 </template>
 
 <script>
+import GitHub from '~/assets/svg/github.svg?inline'
+
 export default {
+  components: {
+    GitHub,
+  },
   props: {
     content: {
       type: Object,
@@ -46,14 +54,26 @@ export default {
   &__right,
   &__left {
     display: flex;
+    vertical-align: middle;
     a {
       @include mobileToDesktopFontSize(var(--fs-small), var(--fs-default));
 
-      margin: 0 32px 16px 0;
+      margin: 0 32px 24px 0;
+      &:last-child {
+        margin: 0 0 24px 0;
+      }
+      svg {
+        width: 18px;
+        height: 18px;
+        @media (min-width: $screen-sm) {
+          width: 24px;
+          height: 24px;
+        }
+      }
     }
   }
   &__copy {
-    margin: 0 32px 16px 0;
+    margin: 0 32px 24px 0;
     padding: 0;
   }
 }
