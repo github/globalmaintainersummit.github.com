@@ -1,9 +1,14 @@
-name: ci
+name: cd
 
-on: [push, pull_request]
-
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 jobs:
-  ci:
+  cd:
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -32,6 +37,11 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: npm ci
 
-      - name: Run linter 👀
-        run: npm run lint
+      - name: Generate ⚙️
+        run: npm run generate
 
+      - name: Deploy 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
