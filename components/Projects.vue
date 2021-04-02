@@ -1,5 +1,8 @@
 <template>
   <div class="projects__grid">
+    <div class="decorative-background">
+      <pixelsBG />
+    </div>
     <div class="projects">
       <h3>Projects</h3>
       <ProjectPill
@@ -10,8 +13,14 @@
     </div>
   </div>
 </template>
+
 <script>
+import pixelsBG from '~/assets/svg/pixelsBG.svg?inline'
+
 export default {
+  components: {
+    pixelsBG,
+  },
   props: {
     content: {
       type: Array,
@@ -23,6 +32,7 @@ export default {
 
 <style lang="scss" scoped>
 .projects__grid {
+  position: relative;
   display: grid;
   flex-direction: column;
   grid-template-columns: 1fr;
@@ -39,6 +49,20 @@ export default {
       font-weight: var(--fs-medium);
       font-size: var(--fs-regular);
     }
+  }
+}
+
+.decorative-background {
+  position: absolute;
+  top: -40px;
+  right: -55%;
+  z-index: var(--z-index-decorative);
+  z-index: -1;
+  opacity: 0.1;
+  pointer-events: none;
+  svg {
+    width: 200%;
+    height: 200%;
   }
 }
 </style>

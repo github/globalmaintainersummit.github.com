@@ -4,13 +4,19 @@
       <h2 class="project__name">{{ project.name }}</h2>
       <p class="project__speaker">
         by {{ project.speaker }} ({{ project.handler }})
+        <span aria-hidden="true"><LinkIcon /></span>
       </p>
     </a>
   </div>
 </template>
 
 <script>
+import LinkIcon from '~/assets/svg/linkIcon.svg?inline'
+
 export default {
+  components: {
+    LinkIcon,
+  },
   props: {
     project: {
       type: Object,
@@ -55,6 +61,9 @@ export default {
     color: var(--fc-dimmed);
     font-weight: var(--fw-medium);
     transition: color 0.5s ease-in;
+    span {
+      margin-left: 16px;
+    }
   }
 
   a {
