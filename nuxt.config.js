@@ -5,7 +5,9 @@ export default {
   router: {
     base: process.env.BASE_PATH || '/',
   },
-
+  generate: {
+    fallback: '404.html',
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Open Source Maintainer Summit - June 7-9 2021',
