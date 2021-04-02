@@ -12,7 +12,7 @@
 }
 .glow {
   position: absolute;
-  z-index: var(--z-index-bg-glow);
+  z-index: var(--z-index-decorative);
   width: 40%;
   min-width: 400px;
   height: calc(100vw * 0.4);

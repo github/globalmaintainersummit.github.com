@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import GitHub from '~/assets/svg/github.svg'
+import GitHub from '~/assets/svg/github.svg?inline'
 
 export default {
   components: {
