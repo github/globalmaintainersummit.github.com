@@ -1,6 +1,12 @@
 name: ci
 
-on: [push, pull_request]
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
+    branches-ignore:
+      - main
 
 jobs:
   ci:
@@ -34,4 +40,3 @@ jobs:
 
       - name: Run linter 👀
         run: npm run lint
-
