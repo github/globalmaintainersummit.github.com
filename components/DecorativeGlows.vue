@@ -27,13 +27,13 @@
     background-color: var(--bg-glow);
   }
   &--right {
-    top: -25%;
-    right: -25%;
+    top: -18%;
+    right: -23%;
     background-color: var(--bg-glow-accent);
   }
   &--middle {
     top: 35%;
-    right: -15%;
+    right: -19%;
     background-color: var(--bg-glow);
   }
   &--bottom {
