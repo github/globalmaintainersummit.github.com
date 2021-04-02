@@ -4,12 +4,12 @@
       <Hero :content="hero" />
       <Lead :content="lead" />
       <Details :content="details" />
-      <!-- <div class="cta">
+      <div class="cta">
         <CommonLink button :href="cta.url">
           {{ cta.label }}
         </CommonLink>
       </div>
-      <Projects :content="projects" /> -->
+      <Projects :content="projects" />
       <Footer :content="footer" />
     </section>
     <DecorativeGlows />
