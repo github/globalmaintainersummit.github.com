@@ -13,6 +13,11 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
+        name: 'apple-mobile-web-app-status-bar-style',
+        content: 'black-translucent',
+      },
+      { name: 'theme-color', content: '#040e21' },
+      {
         hid: 'description',
         name: 'description',
         content:
