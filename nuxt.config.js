@@ -48,7 +48,7 @@ export default {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'https://globalmaintainersummit.github.com/image.png',
+        content: 'https://globalmaintainersummit.github.com/social-card.png',
       },
       {
         hid: 'twitter:image:alt',
@@ -76,7 +76,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://globalmaintainersummit.github.com/image.png',
+        content: 'https://globalmaintainersummit.github.com/social-card.png',
       },
       {
         hid: 'og:image:width',
@@ -91,7 +91,7 @@ export default {
       {
         hid: 'og:image:secure_url',
         property: 'og:image:secure_url',
-        content: 'https://globalmaintainersummit.github.com/image.png',
+        content: 'https://globalmaintainersummit.github.com/social-card.png',
       },
       {
         hid: 'og:image:alt',
