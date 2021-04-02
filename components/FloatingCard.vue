@@ -36,16 +36,17 @@ export default {
   overflow: hidden;
   border: 1px solid var(--border-floating-card);
   border-radius: 8px;
-  box-shadow: 0 8px 48px 0 var(--bs-floating-card);
+  box-shadow: 0 0 32px 0 var(--bs-floating-card);
   &__badge {
     display: grid;
     width: 64px;
     height: 64px;
     margin-right: 16px;
+    overflow: hidden;
     border-radius: 32px;
     place-items: center;
     img {
-      max-width: 32px;
+      width: 100%;
     }
   }
   &__content {
@@ -53,6 +54,7 @@ export default {
     h4,
     p {
       margin: 0;
+      white-space: nowrap;
     }
     h4 {
       font-size: var(--fs-default);

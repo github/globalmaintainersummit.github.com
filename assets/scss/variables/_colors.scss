@@ -11,10 +11,10 @@
   --black-pearl: hsla(221, 78%, 7%, 1); // #040d21
   --black-pearl-72: hsla(221, 78%, 7%, 0.72);
   --tea-blue: hsla(202, 87%, 21%, 1); // #074264
-  --tea-blue-32: hsla(202, 87%, 21%, 0.32);
+  --tea-blue-40: hsla(202, 87%, 21%, 0.4);
   --blue-zodiac: hsla(221, 64%, 11%, 1); // #0A152E
-  --blue-zodiac-50: hsla(221, 64%, 11%, 0.6);
-  --blue-zodiac-90: hsla(221, 64%, 11%, 0.9);
+  --blue-zodiac-60: hsla(221, 64%, 11%, 0.6);
+  --blue-zodiac-80: hsla(221, 64%, 11%, 0.9);
   --venice-blue: hsla(201.9, 94.4%, 27.8%, 1); // #04598a
   --venice-blue-40: hsla(201.9, 94.4%, 27.8%, 4);
   --salomie: hsla(43, 100%, 75%, 1); // #FFDB7F
@@ -24,8 +24,8 @@
   --bg-body: var(--black-pearl);
   --bg-gradient-start: var(--bittersweet);
   --bg-gradient-end: var(--kournikova);
-  --bg-floating-card: var(--blue-zodiac-50);
-  --bg-floating-card--fallback: var(--blue-zodiac-90);
+  --bg-floating-card: var(--blue-zodiac-60);
+  --bg-floating-card-fallback: var(--blue-zodiac-80);
   --bg-glow: var(--venice-blue-40);
   --bg-glow-accent: var(--salomie-23);
 
@@ -40,5 +40,5 @@
   --border-floating-card: var(--black-pearl-72);
 
   // BoxShadow
-  --bs-floating-card: var(--tea-blue-32);
+  --bs-floating-card: var(--tea-blue-40);
 }

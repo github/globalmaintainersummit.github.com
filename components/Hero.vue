@@ -33,12 +33,18 @@ export default {
   }
 
   &__title {
-    @include mobileToDesktopFontSize(var(--fs-giant), var(--fs-colossal));
-
     max-width: 480px;
     margin-top: 40px;
     margin-bottom: 0;
     font-weight: var(--fw-bold);
+    font-size: var(--fs-large);
+    @media screen and (min-width: $screen-sm) {
+      font-size: var(--fs-giant);
+    }
+    @media screen and (min-width: $screen-ipad) {
+      font-size: var(--fs-colossal);
+    }
+
     line-height: 1;
   }
 
