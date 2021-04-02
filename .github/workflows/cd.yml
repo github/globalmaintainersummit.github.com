@@ -39,6 +39,8 @@ jobs:
         run: npm run lint
 
       - name: Generate ⚙️
+        env:
+          BASE_PATH: ${{ secrets.BASE_PATH }}
         run: npm run generate
 
       - name: Deploy 🚀
