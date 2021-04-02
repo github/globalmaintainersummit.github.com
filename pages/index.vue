@@ -10,6 +10,7 @@
         </CommonLink>
       </div>
       <Projects :content="projects" />
+      <Footer :content="footer" />
     </section>
     <DecorativeGlows />
   </main>
@@ -18,7 +19,7 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const { hero, lead, details, cta, projects } = await $content(
+    const { hero, lead, details, cta, projects, footer } = await $content(
       'home'
     ).fetch()
 
@@ -28,6 +29,7 @@ export default {
       details,
       cta,
       projects,
+      footer,
     }
   },
 }

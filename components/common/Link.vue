@@ -1,13 +1,13 @@
 <template>
   <Component
     :is="type"
-    :href="href !== '' ? href : null"
-    :to="to !== '' ? to : null"
-    :target="href !== '' ? '_blank' : null"
+    :href="href ? href : mailto ? `mailto:${mailto}` : null"
+    :to="to ? to : null"
+    :target="href ? '_blank' : null"
     class="link"
     :class="button && 'button'"
     role="link"
-    tabindex="0"
+    :tabindex="button ? 0 : null"
   >
     <span :class="!button && 'link__content'">
       <slot />
@@ -20,11 +20,15 @@ export default {
   props: {
     to: {
       type: String,
-      default: '',
+      default: null,
     },
     href: {
       type: String,
-      default: '',
+      default: null,
+    },
+    mailto: {
+      type: String,
+      default: null,
     },
     button: {
       type: Boolean,
@@ -33,9 +37,9 @@ export default {
   },
   computed: {
     type() {
-      if (this.to !== '') {
+      if (this.to) {
         return 'nuxt-link'
-      } else if (this.href !== '') {
+      } else if (this.href || this.mailto) {
         return 'a'
       } else {
         return 'span'
@@ -56,7 +60,7 @@ export default {
   &__content {
     &::after {
       position: relative;
-      top: 8px;
+      top: 4px;
       display: block;
       width: 100%;
       height: 2px;

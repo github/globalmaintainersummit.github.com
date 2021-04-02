@@ -34,5 +34,22 @@
       "speaker": "Helen Hou-Sandí",
       "handler":"@helen"
     }
-  ]
+  ],
+  "footer":{
+    "github": "© 2021 GitHub, Inc.",
+    "links": [
+      {
+        "label": "Terms",
+        "url":"https://docs.github.com/en/github/site-policy/github-terms-of-service"
+      },
+      {
+        "label": "Privacy",
+        "url":"https://docs.github.com/en/github/site-policy/github-privacy-statement"
+      }
+    ],
+    "contact": {
+      "label": "opensource@github.com",
+      "mailto": "opensource@github.com"
+    }
+  }
 }
