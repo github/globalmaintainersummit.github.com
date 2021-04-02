@@ -1,9 +1,9 @@
 <template>
   <Component
     :is="type"
-    :href="href ? href : mailto ? `mailto:${mailto}` : null"
-    :to="to ? to : null"
-    :target="href ? '_blank' : null"
+    :href="href !== null ? href : mailto !== null ? `mailto:${mailto}` : null"
+    :to="to !== null ? to : null"
+    :target="href !== null ? '_blank' : null"
     class="link"
     :class="button && 'button'"
     role="link"
@@ -37,9 +37,9 @@ export default {
   },
   computed: {
     type() {
-      if (this.to) {
+      if (this.to !== null) {
         return 'nuxt-link'
-      } else if (this.href || this.mailto) {
+      } else if (this.href !== null || this.mailto !== null) {
         return 'a'
       } else {
         return 'span'
