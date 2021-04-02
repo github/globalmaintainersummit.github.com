@@ -1,0 +1,44 @@
+:root {
+  // Private variables
+  // Neutral colors
+  --white: hsla(0, 0%, 100%, 1);
+  --black: hsla(0, 0%, 0, 1%);
+
+  // Color palette
+  --bali-hai: hsla(218, 24%, 60%, 1); // #8193B2
+  --bittersweet: hsla(0, 100%, 72%, 1); // #FF7170
+  --kournikova: hsla(48, 100%, 75%, 1); // #FFE57F
+  --black-pearl: hsla(221, 78%, 7%, 1); // #040d21
+  --black-pearl-72: hsla(221, 78%, 7%, 0.72);
+  --tea-blue: hsla(202, 87%, 21%, 1); // #074264
+  --tea-blue-32: hsla(202, 87%, 21%, 0.32);
+  --blue-zodiac: hsla(221, 64%, 11%, 1); // #0A152E
+  --blue-zodiac-50: hsla(221, 64%, 11%, 0.6);
+  --blue-zodiac-90: hsla(221, 64%, 11%, 0.9);
+  --venice-blue: hsla(201.9, 94.4%, 27.8%, 1); // #04598a
+  --venice-blue-40: hsla(201.9, 94.4%, 27.8%, 4);
+  --salomie: hsla(43, 100%, 75%, 1); // #FFDB7F
+  --salomie-23: hsla(43, 100%, 75%, 0.23);
+
+  // Background Colors
+  --bg-body: var(--black-pearl);
+  --bg-gradient-start: var(--bittersweet);
+  --bg-gradient-end: var(--kournikova);
+  --bg-floating-card: var(--blue-zodiac-50);
+  --bg-floating-card--fallback: var(--blue-zodiac-90);
+  --bg-glow: var(--venice-blue-40);
+  --bg-glow-accent: var(--salomie-23);
+
+  // Font Colors
+  --fc-default: var(--white);
+  --fc-accent: var(--kournikova);
+  --fc-dark: var(--black-pearl);
+  --fc-floating-pill-mantainer: var(--bali-hai);
+  --fc-dimmed: var(--bali-hai);
+
+  // Borders
+  --border-floating-card: var(--black-pearl-72);
+
+  // BoxShadow
+  --bs-floating-card: var(--tea-blue-32);
+}
