@@ -6,7 +6,7 @@
     <div class="projects">
       <h3>Projects</h3>
       <ProjectPill
-        v-for="project in content"
+        v-for="project in projectsSortedByName"
         :key="project.name"
         :project="project"
       />
@@ -25,6 +25,13 @@ export default {
     content: {
       type: Array,
       required: true,
+    },
+  },
+  computed: {
+    projectsSortedByName() {
+      return [...this.content].sort((a, b) =>
+        a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+      )
     },
   },
 }
