@@ -11,40 +11,40 @@
     "highlight": "Talks for Open Source maintainers are often scattered across various conferences, or discussions between collaborators at project-specific summits.",
     "body": "<p>Join us in going beyond the 101 of being a maintainer, and dive into the tough (and rewarding) specifics. In a series of talks, maintainers will be talking directly about how their projects handle the many details of their daily work.</p><p>How do they survive the onslaught of notifications? These are the conversations we need to be having with each other.</p>"
   },
-  "cta":{
-    "label":"Nominate an Open Source project",
-    "url":"https://github.com/"
+  "cta": {
+    "label": "Nominate an Open Source project",
+    "url": "https://sessionize.com/global-maintainer-summit-2021/"
   },
   "projects": [
     {
       "name": "PyLadies",
-      "url":"https://github.com/pyladies",
+      "url": "https://github.com/pyladies",
       "speaker": "Lorena Mesa",
-      "handler":"@lorenanicole"
+      "handler": "@lorenanicole"
     },
     {
       "name": "Ruby on Rails",
-      "url":"https://github.com/rails",
+      "url": "https://github.com/rails",
       "speaker": "Eileen Uchitelle",
-      "handler":"@eileencodes"
+      "handler": "@eileencodes"
     },
     {
       "name": "Wordpress",
-      "url":"https://github.com/wordpress/wordpress-develop",
+      "url": "https://github.com/wordpress/wordpress-develop",
       "speaker": "Helen Hou-Sandí",
-      "handler":"@helen"
+      "handler": "@helen"
     }
   ],
-  "footer":{
+  "footer": {
     "github": "© 2021 GitHub, Inc.",
     "links": [
       {
         "label": "Terms",
-        "url":"https://docs.github.com/en/github/site-policy/github-terms-of-service"
+        "url": "https://docs.github.com/en/github/site-policy/github-terms-of-service"
       },
       {
         "label": "Privacy",
-        "url":"https://docs.github.com/en/github/site-policy/github-privacy-statement"
+        "url": "https://docs.github.com/en/github/site-policy/github-privacy-statement"
       }
     ],
     "contact": {
