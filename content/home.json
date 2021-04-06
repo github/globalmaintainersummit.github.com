@@ -12,7 +12,7 @@
     "body": "<p> Project maintenance is uniquely challenging and rewarding work. Yet, as open source maintainers, we rarely get the opportunity to discuss the meta aspects of this role with our peers. Talks for maintainers are often scattered across various conferences, or are limited to discussions between collaborators at project-specific summits. Let's go beyond the 101 together.</p><p> At the Global Maintainer Summit, we're taking the time to have those conversations. We'll feature a wide variety of short streaming talks on different projects' approaches to common problems. The content will be exclusively from maintainers, for maintainers. Get ready for vulnerable honesty. How do you survive the onslaught of notifications? Is it possible to (gasp) take a vacation? What kinds of automation ease your workflow? Together, we can help ease our individual burdens and elevate open source.</p>"
   },
   "cta": {
-    "label": "Share with your peers: Submit a talk",
+    "label": "Submit a talk",
     "url": "https://sessionize.com/global-maintainer-summit-2021/"
   },
   "projects": [
@@ -55,7 +55,7 @@
     {
       "name": "Prometheus",
       "url": "https://github.com/prometheus/prometheus",
-      "speaker": "Bartłomiej Płotka (Bartek)",
+      "speaker": "Bartłomiej Płotka",
       "handler": "@bwplotka"
     },
     {
