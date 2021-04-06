@@ -49,8 +49,7 @@ export default {
       {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content:
-          'A virtual event for the maintainers that make open source possible, hosted by GitHub.',
+        content: 'Global Maintainers Summit Event 2021',
       },
       {
         hid: 'twitter:description',
