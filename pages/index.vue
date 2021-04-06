@@ -2,24 +2,24 @@
   <main class="main">
     <section>
       <Hero :content="hero" />
+      <FloatingCards :content="projects" />
       <Lead :content="lead" />
       <Details :content="details" />
-      <!-- <div class="cta">
+      <div class="cta">
         <CommonLink button :href="cta.url">
           {{ cta.label }}
         </CommonLink>
       </div>
-      <Projects :content="projects" /> -->
-      <Footer :content="footer" />
+      <Projects :content="projects" />
+      <Footer />
     </section>
     <DecorativeGlows />
   </main>
 </template>
-
 <script>
 export default {
   async asyncData({ $content }) {
-    const { hero, lead, details, cta, projects, footer } = await $content(
+    const { hero, lead, details, cta, projects } = await $content(
       'home'
     ).fetch()
 
@@ -29,7 +29,6 @@ export default {
       details,
       cta,
       projects,
-      footer,
     }
   },
 }

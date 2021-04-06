@@ -1,9 +1,9 @@
 <template>
-  <footer class="footer">
+  <footer v-if="footer" class="footer">
     <div class="footer__left">
-      <p class="footer__copy">{{ content.github }}</p>
+      <p class="footer__copy">{{ footer.github }}</p>
       <CommonLink
-        v-for="link in content.links"
+        v-for="link in footer.links"
         :key="link.label"
         :href="link.url"
       >
@@ -11,11 +11,11 @@
       </CommonLink>
     </div>
     <div class="footer__right">
-      <CommonLink :mailto="content.contact.mailto">
-        {{ content.contact.label }}
+      <CommonLink :mailto="footer.contact.mailto">
+        {{ footer.contact.label }}
       </CommonLink>
-      <CommonLink :href="content.project.url">
-        <GitHub :aria-label="content.project.label" role="presentation" />
+      <CommonLink :href="footer.project.url">
+        <GitHub :aria-label="footer.project.label" role="presentation" />
       </CommonLink>
     </div>
   </footer>
@@ -28,17 +28,19 @@ export default {
   components: {
     GitHub,
   },
-  props: {
-    content: {
-      type: Object,
-      required: true,
-    },
+  data() {
+    return { footer: null }
+  },
+  async fetch() {
+    const { footer } = await this.$content('home').only(['footer']).fetch()
+    this.footer = footer
   },
 }
 </script>
 
 <style lang="scss" scoped>
 .footer {
+  @include section();
   @include mobileToDesktopFontSize(var(--fs-small), var(--fs-default));
 
   position: relative;
