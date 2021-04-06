@@ -39,6 +39,8 @@ jobs:
         run: npm run lint
 
       - name: Generate ⚙️
+        env:
+          FATHOM_TOKEN: JDHEHWUV
         run: npm run generate
 
       - name: Deploy 🚀
