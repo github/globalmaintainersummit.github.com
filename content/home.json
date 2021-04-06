@@ -12,7 +12,7 @@
     "body": "<p>Join us in going beyond the 101 of being a maintainer, and dive into the tough (and rewarding) specifics. In a series of talks, maintainers will be talking directly about how their projects handle the many details of their daily work.</p><p>How do they survive the onslaught of notifications? These are the conversations we need to be having with each other.</p>"
   },
   "cta": {
-    "label": "Nominate an Open Source project",
+    "label": "Share with your peers: Submit a talk",
     "url": "https://sessionize.com/global-maintainer-summit-2021/"
   },
   "projects": [
@@ -59,7 +59,7 @@
       "handler": "@bwplotka"
     },
     {
-      "name": "Rust Rust",
+      "name": "Rust",
       "url": "https://github.com/rust-lang/rust",
       "speaker": "Siân Griffin",
       "handler": "@sgrif"
