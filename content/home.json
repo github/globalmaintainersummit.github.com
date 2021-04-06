@@ -59,8 +59,8 @@
       "handler": "@bwplotka"
     },
     {
-      "name": "Rust",
-      "url": "https://github.com/rust-lang/rust",
+      "name": "Diesel",
+      "url": "https://github.com/diesel-rs/diesel",
       "speaker": "Siân Griffin",
       "handler": "@sgrif"
     }
