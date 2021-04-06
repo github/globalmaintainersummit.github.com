@@ -8,6 +8,9 @@ export default {
   generate: {
     fallback: '404.html',
   },
+  env: {
+    fathomToken: process.env.FATHOM_TOKEN || null,
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Open Source Maintainer Summit - June 7-9 2021',

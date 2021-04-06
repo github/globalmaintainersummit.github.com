@@ -2,9 +2,12 @@
 <html {{ HTML_ATTRS }}>
     <head {{ HEAD_ATTRS }}>
         {{ HEAD }}
-        <!-- <script src="https://cdn.usefathom.com/script.js" data-site="JDHEHWUV" data-spa="auto" defer></script> -->
+        {% if (ENV["fathomToken"] !== null) { %}
+        <script src="https://cdn.usefathom.com/script.js" data-site="{{ ENV['fathomToken'] }}" data-spa="auto" defer></script>
+        {% } %}
     </head>
     <body {{ BODY_ATTRS }}>
+
         {{ APP }}
     </body>
 </html>
