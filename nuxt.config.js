@@ -13,7 +13,7 @@ export default {
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Open Source Maintainer Summit - June 7-9 2021',
+    title: 'Global Maintainers Summit Event 2021',
     htmlAttrs: {
       lang: 'en',
     },
@@ -29,7 +29,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          'A virtual gathering for the maintainers that make open source possible.',
+          'A virtual event for the maintainers that make open source possible, hosted by GitHub.',
       },
       {
         hid: 'twitter:card',
@@ -50,24 +50,24 @@ export default {
         hid: 'twitter:title',
         name: 'twitter:title',
         content:
-          'A virtual gathering for the maintainers that make open source possible.',
+          'A virtual event for the maintainers that make open source possible, hosted by GitHub.',
       },
       {
         hid: 'twitter:description',
         name: 'twitter:description',
         content:
-          'A virtual gathering for the maintainers that make open source possible.',
+          'A virtual event for the maintainers that make open source possible, hosted by GitHub.',
       },
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'https://globalmaintainersummit.github.com/social-card.png',
+        content: 'https://globalmaintainersummit.github.com/social-card.jpg',
       },
       {
         hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
         content:
-          'A virtual gathering for the maintainers that make open source possible.',
+          'A virtual event for the maintainers that make open source possible, hosted by GitHub.',
       },
       {
         hid: 'og:type',
@@ -77,19 +77,18 @@ export default {
       {
         hid: 'og:title',
         property: 'og:title',
-        content:
-          'A virtual gathering for the maintainers that make open source possible.',
+        content: 'Global Maintainers Summit Event 2021',
       },
       {
         hid: 'og:description',
         property: 'og:description',
         content:
-          'A virtual gathering for the maintainers that make open source possible.',
+          'A virtual event for the maintainers that make open source possible, hosted by GitHub.',
       },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://globalmaintainersummit.github.com/social-card.png',
+        content: 'https://globalmaintainersummit.github.com/social-card.jpg',
       },
       {
         hid: 'og:image:width',
@@ -104,13 +103,13 @@ export default {
       {
         hid: 'og:image:secure_url',
         property: 'og:image:secure_url',
-        content: 'https://globalmaintainersummit.github.com/social-card.png',
+        content: 'https://globalmaintainersummit.github.com/social-card.jpg',
       },
       {
         hid: 'og:image:alt',
         property: 'og:image:alt',
         content:
-          'A virtual gathering for the maintainers that make open source possible.',
+          'A virtual event for the maintainers that make open source possible, hosted by GitHub.',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
