@@ -41,7 +41,7 @@
       "handler": "@MikeMcQuaid"
     },
     {
-      "name": "node.js",
+      "name": "Node.js",
       "url": "https://github.com/nodejs/node",
       "speaker": "Myles Borins",
       "handler": "@MylesBorins"

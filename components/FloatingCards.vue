@@ -2,7 +2,7 @@
   <div class="floating">
     <div class="floating__wrapper">
       <FloatingCard
-        v-for="project in slicedProjects(3)"
+        v-for="project in slicedProjects(8)"
         :key="project.name"
         :project="project"
       />
@@ -35,25 +35,55 @@ export default {
     display: block;
   }
   &__wrapper {
+    --position-y: -100px;
+
     position: absolute;
-    top: 0;
+    top: var(--position-y);
     right: 0;
+    width: 100%;
+    height: 400px;
+    transition: top 0.25s ease;
     .card {
       position: absolute;
-
       &:nth-child(1) {
-        top: -80px;
-        left: -620px;
+        // PyLadies
+        top: -10px;
+        right: calc(100vw * 0.07);
       }
       &:nth-child(2) {
-        top: 260px;
-        left: calc(100vw * -0.4);
-        left: -420px;
+        // Ruby on Rails
+        top: 95px;
+        right: calc(100vw * 0.25);
       }
       &:nth-child(3) {
-        top: 100px;
-        left: calc(100vw * -0.25);
-        left: -200px;
+        // Wordpress
+        top: 200px;
+        right: calc(100vw * -0.1);
+      }
+      &:nth-child(4) {
+        // Homebrew
+        top: 350px;
+        right: calc(100vw * 0.075);
+      }
+      &:nth-child(5) {
+        // Node.js
+        top: 800px;
+        right: calc(100vw * 0.075);
+      }
+      &:nth-child(6) {
+        // Phyton
+        top: 550px;
+        right: calc(100vw * 0.02);
+      }
+      &:nth-child(7) {
+        // Prometheus
+        top: 1300px;
+        right: calc(100vw * 0.49);
+      }
+      &:nth-child(8) {
+        // Rust
+        top: 1500px;
+        right: calc(100vw * 0.4);
       }
     }
   }
