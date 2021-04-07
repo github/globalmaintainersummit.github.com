@@ -4,8 +4,6 @@
     <h1 class="error__title">Oh god!</h1>
     <p>We can't find the page you're looking for, sorry.</p>
     <CommonLink button to="/">Back to Homepage</CommonLink>
-    <Footer />
-    <DecorativeGlows />
   </main>
 </template>
 

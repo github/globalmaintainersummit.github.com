@@ -11,9 +11,7 @@
         </CommonLink>
       </div>
       <Projects :content="projects" />
-      <Footer />
     </section>
-    <DecorativeGlows />
   </main>
 </template>
 <script>
