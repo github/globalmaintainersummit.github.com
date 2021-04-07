@@ -1,14 +1,14 @@
 <template>
-  <div class="projects__grid">
+  <div class="maintainers__grid">
     <div class="decorative-background">
       <pixelsBG />
     </div>
-    <div class="projects">
-      <h3>Projects</h3>
-      <ProjectPill
-        v-for="project in projectsSortedByName"
-        :key="project.name"
-        :project="project"
+    <div class="maintainers">
+      <h3>Maintainers</h3>
+      <MaintainerPill
+        v-for="maintainer in maintainersSortedByName"
+        :key="maintainer.speaker"
+        :maintainer="maintainer"
       />
     </div>
   </div>
@@ -28,9 +28,9 @@ export default {
     },
   },
   computed: {
-    projectsSortedByName() {
+    maintainersSortedByName() {
       return [...this.content].sort((a, b) =>
-        a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+        a.speaker.toLowerCase().localeCompare(b.speaker.toLowerCase())
       )
     },
   },
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.projects__grid {
+.maintainers__grid {
   position: relative;
   display: grid;
   flex-direction: column;
@@ -47,7 +47,7 @@ export default {
   @media screen and (min-width: $screen-xl) {
     grid-template-columns: 1fr 1fr;
   }
-  .projects {
+  .maintainers {
     grid-column: 1;
     @media screen and (min-width: $screen-xl) {
       grid-column: 2;

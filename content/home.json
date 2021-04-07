@@ -15,54 +15,86 @@
     "label": "Submit a talk",
     "url": "https://sessionize.com/global-maintainer-summit-2021/"
   },
-  "projects": [
+  "maintainers": [
     {
-      "name": "PyLadies",
-      "url": "https://github.com/pyladies",
       "speaker": "Lorena Mesa",
-      "handler": "@lorenanicole"
+      "handler": "lorenanicole",
+      "projects": [
+        {
+          "name": "PyLadies",
+          "url": "https://github.com/pyladies"
+        }
+      ]
     },
     {
-      "name": "Ruby on Rails",
-      "url": "https://github.com/rails",
       "speaker": "Eileen Uchitelle",
-      "handler": "@eileencodes"
+      "handler": "eileencodes",
+      "projects": [
+        {
+          "name": "Ruby on Rails",
+          "url": "https://github.com/rails"
+        }
+      ]
     },
     {
-      "name": "Wordpress",
-      "url": "https://github.com/wordpress/wordpress-develop",
       "speaker": "Helen Hou-Sandí",
-      "handler": "@helen"
+      "handler": "helen",
+      "projects": [
+        {
+          "name": "Wordpress",
+          "url": "https://github.com/wordpress/wordpress-develop"
+        }
+      ]
     },
     {
-      "name": "Homebrew",
-      "url": "https://github.com/Homebrew",
       "speaker": "Mike McQuaid",
-      "handler": "@MikeMcQuaid"
+      "handler": "MikeMcQuaid",
+      "projects": [
+        {
+          "name": "Homebrew",
+          "url": "https://github.com/Homebrew"
+        }
+      ]
     },
     {
-      "name": "Node.js",
-      "url": "https://github.com/nodejs/node",
       "speaker": "Myles Borins",
-      "handler": "@MylesBorins"
+      "handler": "MylesBorins",
+      "projects": [
+        {
+          "name": "Node.js",
+          "url": "https://github.com/nodejs/node"
+        }
+      ]
     },
     {
-      "name": "Python",
-      "url": "https://github.com/python/cpython",
       "speaker": "Mariatta Wijaya",
-      "handler": "@Mariatta"
+      "handler": "Mariatta",
+      "projects": [
+        {
+          "name": "Python",
+          "url": "https://github.com/python/cpython"
+        }
+      ]
     },
     {
-      "name": "Prometheus",
-      "url": "https://github.com/prometheus/prometheus",
       "speaker": "Bartłomiej Płotka",
-      "handler": "@bwplotka"
+      "handler": "bwplotka",
+      "projects": [
+        {
+          "name": "Prometheus",
+          "url": "https://github.com/prometheus/prometheus"
+        }
+      ]
     },
     {
-      "name": "Diesel",
-      "url": "https://github.com/diesel-rs/diesel",
       "speaker": "Siân Griffin",
-      "handler": "@sgrif"
+      "handler": "sgrif",
+      "projects": [
+        {
+          "name": "Diesel",
+          "url": "https://github.com/diesel-rs/diesel"
+        }
+      ]
     }
   ],
   "footer": {

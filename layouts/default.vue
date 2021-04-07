@@ -1,3 +1,8 @@
 <template>
-  <Nuxt />
+  <div>
+    <Header />
+    <Nuxt />
+    <Footer />
+    <DecorativeGlows />
+  </div>
 </template>

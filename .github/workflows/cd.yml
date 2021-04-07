@@ -40,6 +40,7 @@ jobs:
 
       - name: Generate ⚙️
         env:
+          BASE_PATH: ${{ secrets.BASE_PATH }}
           FATHOM_TOKEN: JDHEHWUV
         run: npm run generate
 

@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="hero">
-      <GitHub aria-hidden="true" role="presentation" />
       <h1 class="hero__title">{{ content.title }}</h1>
       <p class="hero__subtitle">{{ content.subtitle }}</p>
     </div>
@@ -9,12 +8,7 @@
 </template>
 
 <script>
-import GitHub from '~/assets/svg/github.svg?inline'
-
 export default {
-  components: {
-    GitHub,
-  },
   props: {
     content: {
       type: Object,
@@ -26,12 +20,6 @@ export default {
 
 <style lang="scss" scoped>
 .hero {
-  position: relative;
-  margin-top: 40px;
-  @media screen and (min-width: $screen-ipad) {
-    margin-top: 80px;
-  }
-
   &__title {
     max-width: 480px;
     margin-top: 40px;
