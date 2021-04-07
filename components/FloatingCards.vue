@@ -2,7 +2,7 @@
   <div class="floating">
     <div ref="wrapper" class="floating__wrapper">
       <FloatingCard
-        v-for="project in slicedProjects(8)"
+        v-for="project in projects"
         :key="project.name"
         :project="project"
       />
@@ -22,6 +22,18 @@ export default {
     return {
       observers: [],
     }
+  },
+  computed: {
+    projects() {
+      return this.content.flatMap((maintainer) => {
+        const projects = maintainer.projects
+        projects.forEach((project) => {
+          project.speaker = maintainer.speaker
+          project.handler = maintainer.handler
+        })
+        return projects
+      })
+    },
   },
   mounted() {
     this.$nextTick(() => {
@@ -66,10 +78,6 @@ export default {
 
       thresholds.push(0)
       return thresholds
-    },
-    slicedProjects(limit) {
-      // Limit the content lenght to display only an specific amount of cards.
-      return this.content.slice(0, limit)
     },
   },
 }
