@@ -14,7 +14,7 @@
     </div>
     <div class="card__content">
       <h4>{{ project.name }}</h4>
-      <p>{{ project.speaker }} (@{{ project.handler }})</p>
+      <p>{{ project.speaker }}</p>
     </div>
   </a>
 </template>

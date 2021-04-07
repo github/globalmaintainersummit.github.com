@@ -25,14 +25,12 @@ export default {
   },
   computed: {
     projects() {
-      return this.content.flatMap((maintainer) => {
-        const projects = maintainer.projects
-        projects.forEach((project) => {
-          project.speaker = maintainer.speaker
-          project.handler = maintainer.handler
-        })
-        return projects
-      })
+      return this.content.flatMap((maintainer) =>
+        maintainer.projects.map((project) => ({
+          ...project,
+          speaker: maintainer.speaker,
+        }))
+      )
     },
   },
   mounted() {
