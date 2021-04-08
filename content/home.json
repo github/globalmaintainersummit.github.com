@@ -8,6 +8,10 @@
     "dates": {
       "start": "2021-06-08",
       "end": "2021-06-09"
+    },
+    "calendarEvent": {
+      "text": "Global Maintainer Event",
+      "details": "<p>A virtual gathering for the maintainers that make open source possible</p><a href=\"https://globalmaintainersummit.github.com/\">https://globalmaintainersummit.github.com/</p>"
     }
   },
   "details": {

@@ -50,9 +50,8 @@ export default {
       // In order to set an all day event in Google Calendar, the end day has to be a day more of the actual date
       // e.g. To create an event for dates June 8-9 it needs to be set June 8-10
       const endDate = this.formatDateCalendar(this.nextDay(this.endDate))
-      const text = 'Global Maintainer Event'
-      const details =
-        'A virtual gathering for the maintainers that make open source possible'
+      const text = this.lead?.calendarEvent.text
+      const details = this.lead?.calendarEvent.details
 
       return `http://www.google.com/calendar/event?action=TEMPLATE&dates=${startDate}%2F${endDate}&text=${text}&&details=${details}`
     },
