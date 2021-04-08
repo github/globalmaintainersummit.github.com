@@ -12,20 +12,21 @@
 
 <script>
 export default {
-  props: {
-    content: {
-      type: Array,
-      required: true,
-    },
-  },
   data() {
     return {
       observers: [],
+      maintainers: null,
     }
+  },
+  async fetch() {
+    const { maintainers } = await this.$content('home')
+      .only(['maintainers'])
+      .fetch()
+    this.maintainers = maintainers
   },
   computed: {
     projects() {
-      return this.content.flatMap((maintainer) =>
+      return this.maintainers?.flatMap((maintainer) =>
         maintainer.projects.map((project) => ({
           ...project,
           speaker: maintainer.speaker,

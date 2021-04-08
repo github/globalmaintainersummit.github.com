@@ -1,19 +1,20 @@
 <template>
-  <div>
+  <div v-if="hero">
     <div class="hero">
-      <h1 class="hero__title">{{ content.title }}</h1>
-      <p class="hero__subtitle">{{ content.subtitle }}</p>
+      <h1 class="hero__title">{{ hero.title }}</h1>
+      <p class="hero__subtitle">{{ hero.subtitle }}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: {
-    content: {
-      type: Object,
-      required: true,
-    },
+  data() {
+    return { hero: null }
+  },
+  async fetch() {
+    const { hero } = await this.$content('home').only(['hero']).fetch()
+    this.hero = hero
   },
 }
 </script>
