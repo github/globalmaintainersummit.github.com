@@ -5,7 +5,10 @@
   },
   "lead": {
     "title": "A virtual gathering for the maintainers that make open source possible.",
-    "dates": "June 8–9, 2021"
+    "dates": {
+      "start": "2021-06-08",
+      "end": "2021-06-09"
+    }
   },
   "details": {
     "highlight": "If you're an open source maintainer, you know that keeping the wheels of the open source ecosystem turning is quite a task.",
