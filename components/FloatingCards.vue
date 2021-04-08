@@ -83,6 +83,7 @@ export default {
 
 <style lang="scss" scoped>
 .floating {
+  z-index: var(--z-index-cards);
   display: none;
   @media screen and (min-width: $screen-xl) {
     position: absolute;
@@ -137,12 +138,18 @@ export default {
       &:nth-child(7) {
         // Prometheus
         top: 1800px;
-        right: calc(100vw * 0.49);
+        right: calc(100vw * 0.6);
+        @media screen and (min-width: $screen-max) {
+          right: calc(100vw * 0.49);
+        }
       }
       &:nth-child(8) {
-        // Rust
+        // Diesel
         top: 2000px;
-        right: calc(100vw * 0.4);
+        right: calc(100vw * 0.5);
+        @media screen and (min-width: $screen-max) {
+          right: calc(100vw * 0.4);
+        }
       }
     }
   }
