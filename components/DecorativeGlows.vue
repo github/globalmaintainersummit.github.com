@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-hidden">
+  <div>
     <span class="glow glow--left" />
     <span class="glow glow--right" />
     <span class="glow glow--middle" />
@@ -8,9 +8,6 @@
 </template>
 
 <style lang="scss" scoped>
-.overflow-hidden {
-  overflow: hidden;
-}
 .glow {
   position: absolute;
   z-index: var(--z-index-decorative);
