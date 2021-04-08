@@ -12,27 +12,26 @@
 
 <script>
 export default {
-  props: {
-    content: {
-      type: Array,
-      required: true,
-    },
-  },
   data() {
     return {
       observers: [],
+      maintainers: null,
     }
+  },
+  async fetch() {
+    const { maintainers } = await this.$content('home')
+      .only(['maintainers'])
+      .fetch()
+    this.maintainers = maintainers
   },
   computed: {
     projects() {
-      return this.content.flatMap((maintainer) => {
-        const projects = maintainer.projects
-        projects.forEach((project) => {
-          project.speaker = maintainer.speaker
-          project.handler = maintainer.handler
-        })
-        return projects
-      })
+      return this.maintainers?.flatMap((maintainer) =>
+        maintainer.projects.map((project) => ({
+          ...project,
+          speaker: maintainer.speaker,
+        }))
+      )
     },
   },
   mounted() {
@@ -85,6 +84,7 @@ export default {
 
 <style lang="scss" scoped>
 .floating {
+  z-index: var(--z-index-cards);
   display: none;
   @media screen and (min-width: $screen-xl) {
     position: absolute;
@@ -139,12 +139,18 @@ export default {
       &:nth-child(7) {
         // Prometheus
         top: 1800px;
-        right: calc(100vw * 0.49);
+        right: calc(100vw * 0.6);
+        @media screen and (min-width: $screen-max) {
+          right: calc(100vw * 0.49);
+        }
       }
       &:nth-child(8) {
-        // Rust
+        // Diesel
         top: 2000px;
-        right: calc(100vw * 0.4);
+        right: calc(100vw * 0.5);
+        @media screen and (min-width: $screen-max) {
+          right: calc(100vw * 0.4);
+        }
       }
     }
   }

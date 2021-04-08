@@ -1,17 +1,18 @@
 <template>
-  <div class="details">
-    <p class="details__highlight">{{ content.highlight }}</p>
-    <div class="details__content" v-html="content.body" />
+  <div v-if="details" class="details">
+    <p class="details__highlight">{{ details.highlight }}</p>
+    <div class="details__content" v-html="details.body" />
   </div>
 </template>
 
 <script>
 export default {
-  props: {
-    content: {
-      type: Object,
-      required: true,
-    },
+  data() {
+    return { details: null }
+  },
+  async fetch() {
+    const { details } = await this.$content('home').only(['details']).fetch()
+    this.details = details
   },
 }
 </script>

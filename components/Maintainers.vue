@@ -1,12 +1,12 @@
 <template>
-  <div class="maintainers__grid">
+  <div v-if="maintainers" class="maintainers__grid">
     <div class="decorative-background">
       <pixelsBG />
     </div>
     <div class="maintainers">
       <h3>Maintainers</h3>
       <MaintainerPill
-        v-for="maintainer in maintainersSortedByName"
+        v-for="maintainer in maintainers"
         :key="maintainer.speaker"
         :maintainer="maintainer"
       />
@@ -21,18 +21,15 @@ export default {
   components: {
     pixelsBG,
   },
-  props: {
-    content: {
-      type: Array,
-      required: true,
-    },
+  data() {
+    return { maintainers: null }
   },
-  computed: {
-    maintainersSortedByName() {
-      return [...this.content].sort((a, b) =>
-        a.speaker.toLowerCase().localeCompare(b.speaker.toLowerCase())
-      )
-    },
+  async fetch() {
+    const { maintainers } = await this.$content('home')
+      .only(['maintainers'])
+      .sortBy('speaker')
+      .fetch()
+    this.maintainers = maintainers
   },
 }
 </script>
