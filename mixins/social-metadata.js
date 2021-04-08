@@ -8,7 +8,7 @@ const socialMetadata = {
       : 'A virtual event for the maintainers that make open source possible, hosted by GitHub.'
     const image = this.metadata.image
       ? this.metadata.image
-      : 'https://globalmaintainersummit.github.com/social-card.jpg'
+      : require(`~/assets/img/meta/social-card.jpg`)
     const meta = [
       {
         hid: 'description',
