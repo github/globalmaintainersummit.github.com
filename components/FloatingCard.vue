@@ -47,6 +47,7 @@ export default {
   border: 1px solid var(--border-floating-card);
   border-radius: 8px;
   box-shadow: 0 0 32px 0 var(--bs-floating-card);
+  pointer-events: auto;
 
   @supports (
     (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))
