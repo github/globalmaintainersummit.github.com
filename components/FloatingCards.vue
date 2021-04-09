@@ -26,12 +26,15 @@ export default {
   },
   computed: {
     projects() {
-      return this.maintainers?.flatMap((maintainer) =>
-        maintainer.projects.map((project) => ({
-          ...project,
-          speaker: maintainer.speaker,
-        }))
-      )
+      const TOTAL_CARDS = 8
+      return this.maintainers
+        ?.flatMap((maintainer) =>
+          maintainer.projects.map((project) => ({
+            ...project,
+            speaker: maintainer.speaker,
+          }))
+        )
+        .slice(0, TOTAL_CARDS)
     },
   },
   mounted() {
