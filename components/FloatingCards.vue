@@ -103,6 +103,7 @@ export default {
     width: 100%;
     height: 500px;
     transition: top linear;
+    pointer-events: none;
     will-change: top;
     .card {
       position: absolute;
