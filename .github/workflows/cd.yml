@@ -38,6 +38,9 @@ jobs:
       - name: Run linter 👀
         run: npm run lint
 
+      - name: Run tests 🧪
+        run: npm run test
+
       - name: Generate ⚙️
         env:
           BASE_PATH: ${{ secrets.BASE_PATH }}
