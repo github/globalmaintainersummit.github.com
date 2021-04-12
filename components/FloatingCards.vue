@@ -91,7 +91,7 @@ export default {
   display: none;
   @media screen and (min-width: $screen-xl) {
     position: absolute;
-    top: 380px;
+    top: 310px;
     right: 0;
     left: 0;
     display: block;
@@ -127,7 +127,7 @@ export default {
       }
       &:nth-child(4) {
         // Homebrew
-        top: 350px;
+        top: 370px;
         right: calc(100vw * 0.075);
       }
       &:nth-child(5) {
