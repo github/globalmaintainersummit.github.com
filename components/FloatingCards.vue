@@ -26,7 +26,7 @@ export default {
   },
   computed: {
     projects() {
-      const TOTAL_CARDS = 8
+      const TOTAL_CARDS = 9
       return this.maintainers
         ?.flatMap((maintainer) =>
           maintainer.projects.map((project) => ({
@@ -143,17 +143,25 @@ export default {
       &:nth-child(7) {
         // Prometheus
         top: 1800px;
-        right: calc(100vw * 0.6);
+        right: calc(100vw * 0.7);
         @media screen and (min-width: $screen-max) {
-          right: calc(100vw * 0.49);
+          right: calc(100vw * 0.6);
         }
       }
       &:nth-child(8) {
         // Diesel
-        top: 2000px;
-        right: calc(100vw * 0.5);
+        top: 1700px;
+        right: calc(100vw * 0.53);
         @media screen and (min-width: $screen-max) {
           right: calc(100vw * 0.4);
+        }
+      }
+      &:nth-child(9) {
+        // dbatools
+        top: 1970px;
+        right: calc(100vw * 0.6);
+        @media screen and (min-width: $screen-max) {
+          right: calc(100vw * 0.47);
         }
       }
     }
