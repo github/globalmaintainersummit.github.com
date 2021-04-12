@@ -102,6 +102,16 @@
           "url": "https://github.com/diesel-rs/diesel"
         }
       ]
+    },
+    {
+      "speaker": "Chrissy LeMaire",
+      "handler": "potatoqualitee",
+      "projects": [
+        {
+          "name": "dbatools",
+          "url": "https://github.com/sqlcollaborative/dbatools"
+        }
+      ]
     }
   ],
   "footer": {

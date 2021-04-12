@@ -27,9 +27,11 @@ export default {
   async fetch() {
     const { maintainers } = await this.$content('home')
       .only(['maintainers'])
-      .sortBy('speaker')
       .fetch()
-    this.maintainers = maintainers
+    this.maintainers = maintainers.sort(
+      ({ speaker: speakerA }, { speaker: speakerB }) =>
+        speakerA.localeCompare(speakerB)
+    )
   },
 }
 </script>
