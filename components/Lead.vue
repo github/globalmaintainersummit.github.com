@@ -31,15 +31,15 @@ export default {
   },
   computed: {
     dates() {
-      const startDay = this.startDate.getDate()
+      const startDay = this.startDate.getUTCDate()
       const startMonth = this.startDate.toLocaleDateString(this.locale, {
         month: 'long',
       })
-      const endDay = this.endDate.getDate()
+      const endDay = this.endDate.getUTCDate()
       const endMonth = this.endDate.toLocaleDateString(this.locale, {
         month: 'long',
       })
-      const year = this.startDate.getFullYear()
+      const year = this.startDate.getUTCFullYear()
 
       return startMonth === endMonth
         ? `${startMonth} ${startDay}-${endDay}, ${year}`
@@ -62,7 +62,7 @@ export default {
     },
     nextDay(date) {
       const nextDate = new Date(date)
-      return new Date(nextDate.setDate(nextDate.getDate() + 1))
+      return new Date(nextDate.setDate(nextDate.getUTCDate() + 1))
     },
   },
 }
