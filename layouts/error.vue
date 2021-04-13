@@ -1,8 +1,10 @@
 <template>
   <main class="error">
     <Error404 />
-    <h1 class="error__title">Oh god!</h1>
-    <p>We can't find the page you're looking for, sorry.</p>
+    <h1 class="error__title">Oopsie!</h1>
+    <p>
+      We can't find the page you're looking for, sorry. It's probably our bad.
+    </p>
     <CommonLink button to="/">Back to Homepage</CommonLink>
   </main>
 </template>
