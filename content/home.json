@@ -103,6 +103,16 @@
         }
       ]
     },
+     {
+      "speaker": "Ifiok Jr.",
+      "handler": "ifiokjr",
+      "projects": [
+        {
+          "name": "Remirror",
+          "url": "https://github.com/remirror"
+        }
+      ]
+    },
     {
       "speaker": "Chrissy LeMaire",
       "handler": "potatoqualitee",
