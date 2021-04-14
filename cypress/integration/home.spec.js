@@ -32,4 +32,11 @@ describe('Home', () => {
       cy.get($link).click()
     })
   })
+
+  it('Cards are clickable', () => {
+    cy.visit('/')
+    cy.get('[data-cy=card]').each(($link) => {
+      cy.get($link).click()
+    })
+  })
 })

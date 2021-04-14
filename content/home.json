@@ -29,7 +29,8 @@
       "projects": [
         {
           "name": "PyLadies",
-          "url": "https://github.com/pyladies"
+          "url": "https://github.com/pyladies",
+          "badge": "logo_pyladies.png"
         }
       ]
     },
@@ -39,7 +40,8 @@
       "projects": [
         {
           "name": "Ruby on Rails",
-          "url": "https://github.com/rails"
+          "url": "https://github.com/rails",
+          "badge": "logo_rubyonrails.png"
         }
       ]
     },
@@ -49,7 +51,8 @@
       "projects": [
         {
           "name": "Wordpress",
-          "url": "https://github.com/wordpress/wordpress-develop"
+          "url": "https://github.com/wordpress/wordpress-develop",
+          "badge": "logo_wordpress.png"
         }
       ]
     },
@@ -59,7 +62,8 @@
       "projects": [
         {
           "name": "Homebrew",
-          "url": "https://github.com/Homebrew"
+          "url": "https://github.com/Homebrew",
+          "badge": "logo_homebrew.png"
         }
       ]
     },
@@ -69,7 +73,8 @@
       "projects": [
         {
           "name": "Node.js",
-          "url": "https://github.com/nodejs/node"
+          "url": "https://github.com/nodejs/node",
+          "badge": "logo_nodejs.png"
         }
       ]
     },
@@ -79,7 +84,8 @@
       "projects": [
         {
           "name": "Python",
-          "url": "https://github.com/python/cpython"
+          "url": "https://github.com/python/cpython",
+          "badge": "logo_python.png"
         }
       ]
     },
@@ -89,7 +95,8 @@
       "projects": [
         {
           "name": "Prometheus",
-          "url": "https://github.com/prometheus/prometheus"
+          "url": "https://github.com/prometheus/prometheus",
+          "badge": "logo_prometheus.png"
         }
       ]
     },
@@ -99,17 +106,19 @@
       "projects": [
         {
           "name": "Diesel",
-          "url": "https://github.com/diesel-rs/diesel"
+          "url": "https://github.com/diesel-rs/diesel",
+          "badge": "logo_diesel.png"
         }
       ]
     },
-     {
+    {
       "speaker": "Ifiok Jr.",
       "handler": "ifiokjr",
       "projects": [
         {
           "name": "Remirror",
-          "url": "https://github.com/remirror"
+          "url": "https://github.com/remirror",
+          "badge": ""
         }
       ]
     },
@@ -119,7 +128,8 @@
       "projects": [
         {
           "name": "dbatools",
-          "url": "https://github.com/sqlcollaborative/dbatools"
+          "url": "https://github.com/sqlcollaborative/dbatools",
+          "badge": "logo_dbatools.png"
         }
       ]
     }
