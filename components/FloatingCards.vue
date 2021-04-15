@@ -34,6 +34,9 @@ export default {
             speaker: maintainer.speaker,
           }))
         )
+        .filter(
+          (project) => project.badge !== undefined && project.badge !== ''
+        )
         .slice(0, TOTAL_CARDS)
     },
   },

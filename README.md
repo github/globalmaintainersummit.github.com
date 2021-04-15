@@ -1,14 +1,14 @@
 # Global Maintainers Summit
 
-## Add new maintainers or projects to current maintainers
+## Add new speaker or projects to current speakers
 
 ### Step 1
 
 Go to `content/home.json` file.
 
-To add a new maintainer just add to the `maintainers` array a new `maintainer` object providing the speaker name, their GitHub profile handler and a list with the projects they maintain.
+To add a new speaker just add to the `maintainers` array a new `maintainer` object providing the speaker name, their GitHub profile handler and a list with the projects they maintain.
 
-To add a new project, find the maintainer in the array and just add a new `project` object to the projects array, providing the project name and GitHub repo URL for each project.
+To add a new project, find the maintainer in the array and just add a new `project` object to the projects array, providing the project name, GitHub repo URL and the name of the badge file (optional) for each project.
 
 ```json
 {
@@ -17,7 +17,8 @@ To add a new project, find the maintainer in the array and just add a new `proje
   "projects": [
     {
       "name": "Diesel",
-      "url": "https://github.com/diesel-rs/diesel"
+      "url": "https://github.com/diesel-rs/diesel",
+      "badge": "logo_diesel.png"
     }
   ]
 }
@@ -25,17 +26,23 @@ To add a new project, find the maintainer in the array and just add a new `proje
 
 ### Step 2
 
-For each new **project** added, there should be the correspondent logo in `assets/img/badges` in order to be able to render the project in the floating cards.
+If you want to add the badge for a new **project** added project (the logo), then add the file to `assets/img/badges`. If there is no logo provided, then it won't be displayed as a floating card, just in the maintainers list.
 
-The logo filename must be as follows:
+If you don't want to provide a logo for the project, then simply leave the badge property empty, e.g.:
 
-- One file with normal quality named `logo_[project-name].png`
-- Another bigger file with better quality named `logo_[project-name]@2x.png`
-
-E.g. for the previous json, we should add the two following files:
-
-- `logo_diesel.png`
-- `logo_diesel@2x.png`
+```json
+{
+  "speaker": "Siân Griffin",
+  "handler": "sgrif",
+  "projects": [
+    {
+      "name": "Diesel",
+      "url": "https://github.com/diesel-rs/diesel",
+      "badge": ""
+    }
+  ]
+}
+```
 
 ---
 

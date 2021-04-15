@@ -1,16 +1,10 @@
 <template>
-  <a :href="project.url" target="_blank" class="card">
+  <a :href="project.url" target="_blank" class="card" data-cy="card">
     <div class="card-badge">
-      <picture>
-        <source
-          :srcset="require(`~/assets/img/badges/logo_${projectName}@2x.png`)"
-          media="(min-width: 600px)"
-        />
-        <img
-          :src="require(`~/assets/img/badges/logo_${projectName}.png`)"
-          :alt="project"
-        />
-      </picture>
+      <img
+        :src="require(`~/assets/img/badges/${project.badge}`)"
+        :alt="project"
+      />
     </div>
     <div class="card-content">
       <p class="card-content__name">{{ project.name }}</p>
@@ -25,13 +19,6 @@ export default {
     project: {
       type: Object,
       required: true,
-    },
-  },
-  computed: {
-    projectName() {
-      return this.project.name
-        .replace(/([$&+,:;=?@#|'<>.^*()%!-])|(\s)/g, '')
-        .toLowerCase()
     },
   },
 }
