@@ -19,6 +19,21 @@ describe('Home', () => {
     })
   })
 
+  it('There are no duplicated speakers in the Maintainers list', () => {
+    cy.visit('/')
+    cy.get('[data-cy=speaker]').then(($speakers) => {
+      let speakers = []
+
+      $speakers.each((_, speakerElement) => {
+        speakers = [...speakers, speakerElement.innerText]
+      })
+
+      const uniqueSpeakers = new Set(speakers).size
+
+      expect(uniqueSpeakers).to.equal(speakers.length)
+    })
+  })
+
   it('Maintainers are clickable', () => {
     cy.visit('/')
     cy.get('[data-cy=speaker]').each(($link) => {
