@@ -27,16 +27,6 @@ export default {
       maintainers,
     }
   },
-  data() {
-    return {
-      metadata: {
-        title: 'Global Maintainers Summit Event 2021',
-        description:
-          'A virtual event for the maintainers that make open source possible, hosted by GitHub.',
-        image: 'https://globalmaintainersummit.github.com/social-card.jpg',
-      },
-    }
-  },
 }
 </script>
 
