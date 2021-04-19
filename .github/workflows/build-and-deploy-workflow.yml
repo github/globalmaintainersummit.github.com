@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - staging
+      - develop
   pull_request:
 
 jobs:
@@ -73,7 +73,7 @@ jobs:
           path: cypress/downloads/
 
   cd_staging:
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/staging' }}
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/develop' }}
     environment: staging
     needs: ci
     runs-on: ${{ matrix.os }}
