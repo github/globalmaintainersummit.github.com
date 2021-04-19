@@ -4,10 +4,11 @@ on:
   push:
     branches:
       - main
+      - staging
   pull_request:
 
 jobs:
-  cd:
+  ci:
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -43,9 +44,6 @@ jobs:
         run: npm run test
 
       - name: Generate ⚙️
-        env:
-          BASE_PATH: ${{ secrets.BASE_PATH }}
-          FATHOM_TOKEN: JDHEHWUV
         run: npm run generate
 
       - name: Run E2E Tests 🧪
@@ -74,8 +72,91 @@ jobs:
           name: cypress downloads
           path: cypress/downloads/
 
+  cd_staging:
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/staging' }}
+    environment: staging
+    needs: ci
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [15]
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@master
+
+      - name: Setup node env 🏗
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: ${{ matrix.node }}
+          check-latest: true
+
+      - name: Cache node_modules 📦
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies 👨🏻‍💻
+        run: npm ci
+
+      - name: Generate ⚙️
+        env:
+          BASE_PATH: ${{ secrets.BASE_PATH }}
+          FATHOM_TOKEN: ${{ secrets.FATHOM_TOKEN }}
+        run: npm run generate
+
       - name: Deploy 🚀
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --dir=dist --functions=functions --prod
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+  cd_production:
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    environment: production
+    needs: ci
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [15]
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@master
+
+      - name: Setup node env 🏗
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: ${{ matrix.node }}
+          check-latest: true
+
+      - name: Cache node_modules 📦
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies 👨🏻‍💻
+        run: npm ci
+
+      - name: Generate ⚙️
+        env:
+          BASE_PATH: ${{ secrets.BASE_PATH }}
+          FATHOM_TOKEN: ${{ secrets.FATHOM_TOKEN }}
+        run: npm run generate
+
+      - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
