@@ -1,0 +1,158 @@
+{
+  "hero": {
+    "title": "Global Maintainer Summit 2021",
+    "subtitle": "hosted by GitHub"
+  },
+  "lead": {
+    "title": "A virtual gathering for the maintainers that make open source possible.",
+    "dates": {
+      "start": "2021-06-08",
+      "end": "2021-06-09"
+    },
+    "calendarEvent": {
+      "text": "Global Maintainer Summit",
+      "details": "<p>A virtual gathering for the maintainers that make open source possible</p><a href=\"https://globalmaintainersummit.github.com/\">https://globalmaintainersummit.github.com/</a>"
+    }
+  },
+  "details": {
+    "highlight": "If you're an open source maintainer, you know that keeping the wheels of the open source ecosystem turning is quite a task.",
+    "body": "<p> Project maintenance is uniquely challenging and rewarding work. Yet, as open source maintainers, we rarely get the opportunity to discuss the meta aspects of this role with our peers.</p><p> At the Global Maintainer Summit, we're taking the time to have those conversations. We'll feature a wide variety of short streaming talks on different projects' approaches to common problems. The content will be exclusively from maintainers, for maintainers. Get ready for vulnerable honesty. How do you survive the onslaught of notifications? Is it possible to (gasp) take a vacation? What kinds of automation ease your workflow? Together, we can help ease our individual burdens and elevate open source.</p>"
+  },
+  "cta": {
+    "label": "Submit a talk",
+    "url": "https://sessionize.com/global-maintainer-summit-2021/"
+  },
+  "maintainers": [
+    {
+      "speaker": "Lorena Mesa",
+      "handler": "lorenanicole",
+      "projects": [
+        {
+          "name": "PyLadies",
+          "url": "https://github.com/pyladies",
+          "badge": "logo_pyladies.png"
+        }
+      ]
+    },
+    {
+      "speaker": "Eileen Uchitelle",
+      "handler": "eileencodes",
+      "projects": [
+        {
+          "name": "Ruby on Rails",
+          "url": "https://github.com/rails",
+          "badge": "logo_rubyonrails.png"
+        }
+      ]
+    },
+    {
+      "speaker": "Helen Hou-Sandí",
+      "handler": "helen",
+      "projects": [
+        {
+          "name": "Wordpress",
+          "url": "https://github.com/wordpress/wordpress-develop",
+          "badge": "logo_wordpress.png"
+        }
+      ]
+    },
+    {
+      "speaker": "Mike McQuaid",
+      "handler": "MikeMcQuaid",
+      "projects": [
+        {
+          "name": "Homebrew",
+          "url": "https://github.com/Homebrew",
+          "badge": "logo_homebrew.png"
+        }
+      ]
+    },
+    {
+      "speaker": "Myles Borins",
+      "handler": "MylesBorins",
+      "projects": [
+        {
+          "name": "Node.js",
+          "url": "https://github.com/nodejs/node",
+          "badge": "logo_nodejs.png"
+        }
+      ]
+    },
+    {
+      "speaker": "Mariatta Wijaya",
+      "handler": "Mariatta",
+      "projects": [
+        {
+          "name": "Python",
+          "url": "https://github.com/python/cpython",
+          "badge": "logo_python.png"
+        }
+      ]
+    },
+    {
+      "speaker": "Bartłomiej Płotka",
+      "handler": "bwplotka",
+      "projects": [
+        {
+          "name": "Prometheus",
+          "url": "https://github.com/prometheus/prometheus",
+          "badge": "logo_prometheus.png"
+        }
+      ]
+    },
+    {
+      "speaker": "Siân Griffin",
+      "handler": "sgrif",
+      "projects": [
+        {
+          "name": "Diesel",
+          "url": "https://github.com/diesel-rs/diesel",
+          "badge": "logo_diesel.png"
+        }
+      ]
+    },
+    {
+      "speaker": "Ifiok Jr.",
+      "handler": "ifiokjr",
+      "projects": [
+        {
+          "name": "Remirror",
+          "url": "https://github.com/remirror",
+          "badge": ""
+        }
+      ]
+    },
+    {
+      "speaker": "Chrissy LeMaire",
+      "handler": "potatoqualitee",
+      "projects": [
+        {
+          "name": "dbatools",
+          "url": "https://github.com/sqlcollaborative/dbatools",
+          "badge": "logo_dbatools.png"
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "github": "© 2021 GitHub, Inc.",
+    "links": [
+      {
+        "label": "Terms",
+        "url": "https://docs.github.com/en/github/site-policy/github-terms-of-service"
+      },
+      {
+        "label": "Privacy",
+        "url": "https://docs.github.com/en/github/site-policy/github-privacy-statement"
+      }
+    ],
+    "contact": {
+      "label": "opensource@github.com",
+      "mailto": "opensource@github.com"
+    },
+    "project": {
+      "label": "GitHub",
+      "url": "https://github.com/github/globalmaintainersummit.github.com"
+    }
+  }
+}
