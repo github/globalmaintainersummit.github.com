@@ -1,5 +1,5 @@
 export const state = () => ({
-  selectedYear: new Date().getFullYear(),
+  selectedYear: new Date().getFullYear() + 1,
 })
 
 export const mutations = {

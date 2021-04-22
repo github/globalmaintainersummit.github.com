@@ -22,18 +22,19 @@
 <script>
 export default {
   data() {
-    return { hero: null }
+    return { hero: null, currentYear: new Date().getFullYear() + 1 }
   },
   async fetch() {
-    const { hero } = await this.$content('2021/home').only(['hero']).fetch()
+    const { hero } = await this.$content(`${this.currentYear}/home`)
+      .only(['hero'])
+      .fetch()
     this.hero = hero
   },
   computed: {
     yearList() {
-      const currentYear = new Date().getFullYear() + 1
       const YEAR_FIRST_CONFERENCE = 2021
       const yearList = []
-      for (let year = YEAR_FIRST_CONFERENCE; year <= currentYear; year++) {
+      for (let year = YEAR_FIRST_CONFERENCE; year <= this.currentYear; year++) {
         yearList.push(year)
       }
       return yearList.reverse()
