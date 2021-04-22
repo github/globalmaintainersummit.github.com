@@ -1,6 +1,18 @@
 <template>
   <div v-if="hero">
     <div class="hero">
+      <div style="float: right">
+        <select id="year" name="year" @change="updateSelectedYear">
+          <option
+            v-for="year in yearList"
+            :key="year"
+            :value="year"
+            :selected="year === selectedYear"
+          >
+            {{ year }}
+          </option>
+        </select>
+      </div>
       <h1 class="hero__title">{{ hero.title }}</h1>
       <p class="hero__subtitle">{{ hero.subtitle }}</p>
     </div>
@@ -13,8 +25,31 @@ export default {
     return { hero: null }
   },
   async fetch() {
-    const { hero } = await this.$content('home').only(['hero']).fetch()
+    const { hero } = await this.$content('2021/home').only(['hero']).fetch()
     this.hero = hero
+  },
+  computed: {
+    yearList() {
+      const currentYear = new Date().getFullYear() + 1
+      const YEAR_FIRST_CONFERENCE = 2021
+      const yearList = []
+      for (let year = YEAR_FIRST_CONFERENCE; year <= currentYear; year++) {
+        yearList.push(year)
+      }
+      return yearList.reverse()
+    },
+    selectedYear() {
+      return this.$store.state.selectedYear
+    },
+  },
+  methods: {
+    async updateSelectedYear(selectedYear) {
+      this.$store.commit('updateSelectedYear', selectedYear.target.value)
+      const { hero } = await this.$content(`${this.selectedYear}/home`)
+        .only(['hero'])
+        .fetch()
+      this.hero = hero
+    },
   },
 }
 </script>
