@@ -12,16 +12,12 @@
     "lint": "npm run lint:js && npm run lint:style",
     "test": "jest",
     "e2e": "TZ=America/New_York cypress open --browser chrome",
-    "e2e:ci": "TZ=America/New_York cypress run"
+    "e2e:ci": "TZ=America/New_York cypress run",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
     "*.{css,vue}": "stylelint"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
