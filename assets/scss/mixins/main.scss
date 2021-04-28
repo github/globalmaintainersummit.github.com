@@ -45,3 +45,22 @@
     padding: 0 120px;
   }
 }
+
+@mixin select {
+  min-width: 192px;
+  padding: 24px;
+  background: var(--bg-default);
+  border-radius: 12px;
+  box-shadow: 0 16px 24px 0 rgba(13, 9, 16, 0.08),
+    0 8px 16px 0 rgba(13, 9, 16, 0.12);
+
+  ul {
+    list-style-type: none;
+    margin-block: 0;
+    padding-inline: 0;
+  }
+
+  li {
+    padding: 10px 0;
+  }
+}
