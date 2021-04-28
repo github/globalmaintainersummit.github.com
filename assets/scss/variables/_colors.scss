@@ -21,6 +21,7 @@
   --salomie-23: hsla(43, 100%, 75%, 0.23);
   --medium-purple: hsla(280.8, 75%, 59.2%, 1); // #B349E5
   --tolopea: hsla(277.1, 96.5%, 11.2%, 1); // #230138
+  --geyser: hsla(198.5, 15.7%, 83.7%, 1); // #CFD8DC
 
   // Background Colors
   --bg-default: var(--white);
@@ -31,6 +32,7 @@
   --bg-floating-card-fallback: var(--blue-zodiac-80);
   --bg-glow: var(--venice-blue-40);
   --bg-glow-accent: var(--salomie-23);
+  --bg-close-icon: var(--geyser);
 
   // Font Colors
   --fc-default: var(--tolopea);
