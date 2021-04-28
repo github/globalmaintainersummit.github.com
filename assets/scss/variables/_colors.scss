@@ -19,9 +19,12 @@
   --venice-blue-40: hsla(201.9, 94.4%, 27.8%, 4);
   --salomie: hsla(43, 100%, 75%, 1); // #FFDB7F
   --salomie-23: hsla(43, 100%, 75%, 0.23);
+  --medium-purple: hsla(280.8, 75%, 59.2%, 1); // #B349E5
+  --tolopea: hsla(277.1, 96.5%, 11.2%, 1); // #230138
 
   // Background Colors
-  --bg-body: var(--black-pearl);
+  --bg-default: var(--white);
+  --bg-body: var(--white);
   --bg-gradient-start: var(--bittersweet);
   --bg-gradient-end: var(--kournikova);
   --bg-floating-card: var(--blue-zodiac-60);
@@ -30,8 +33,8 @@
   --bg-glow-accent: var(--salomie-23);
 
   // Font Colors
-  --fc-default: var(--white);
-  --fc-accent: var(--kournikova);
+  --fc-default: var(--tolopea);
+  --fc-accent: var(--medium-purple);
   --fc-dark: var(--black-pearl);
   --fc-floating-pill-mantainer: var(--bali-hai);
   --fc-dimmed: var(--bali-hai);
