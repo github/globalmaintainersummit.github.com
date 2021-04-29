@@ -51,6 +51,11 @@ jobs:
           npx serve dist &
           npm run e2e:ci
 
+      - name: run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli@0.7.x
+          lhci autorun
+
       - name: Upload artifacts (screenshots) 📸
         if: ${{ always() }}
         uses: actions/upload-artifact@v2
