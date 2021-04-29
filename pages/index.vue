@@ -1,11 +1,8 @@
 <template>
   <section>
-    <Hero />
-    <FloatingCards />
-    <Lead />
-    <Details />
-    <Cta />
-    <Maintainers />
+    <h1 style="display: flex; margin-top: 100px; place-content: center">
+      Work in progress
+    </h1>
   </section>
 </template>
 
@@ -14,19 +11,6 @@ import socialMetadata from '~/mixins/social-metadata'
 
 export default {
   mixins: [socialMetadata],
-  async asyncData({ $content }) {
-    const { hero, lead, details, cta, maintainers } = await $content(
-      'home'
-    ).fetch()
-
-    return {
-      hero,
-      lead,
-      details,
-      cta,
-      maintainers,
-    }
-  },
 }
 </script>
 

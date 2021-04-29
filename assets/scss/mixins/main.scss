@@ -29,19 +29,13 @@
  */
 @mixin section {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 24px;
-  @media screen and (min-width: $screen-sm) {
-    padding: 0 40px;
-  }
   @media screen and (min-width: $screen-ipad) {
-    padding: 0 64px;
-  }
-  @media screen and (min-width: $screen-xl) {
-    padding: 0 80px;
+    padding: 0 32px;
   }
   @media screen and (min-width: $screen-max) {
-    padding: 0 120px;
+    padding: 0 40px;
   }
 }

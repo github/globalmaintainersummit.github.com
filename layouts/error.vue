@@ -1,6 +1,5 @@
 <template>
   <main class="error">
-    <Error404 />
     <h1 class="error__title">Oopsie!</h1>
     <p>
       We can't find the page you're looking for, sorry. It's probably our bad.
@@ -10,12 +9,7 @@
 </template>
 
 <script>
-import Error404 from '~/assets/svg/bg_404.svg?inline'
-
 export default {
-  components: {
-    Error404,
-  },
   transition: {
     name: 'fade',
   },
@@ -33,7 +27,6 @@ export default {
   place-items: center;
   &__title {
     @include mobileToDesktopFontSize(var(--fs-medium), var(--fs-large));
-    @include gradientTitle(var(--bg-gradient-start), var(--bg-gradient-end));
 
     max-width: 1024px;
     height: 4rem;

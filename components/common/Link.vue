@@ -57,50 +57,16 @@ export default {
   font-size: var(--fs-default);
   text-decoration: none;
   cursor: pointer;
-  &__content {
-    &::after {
-      position: relative;
-      top: 4px;
-      display: block;
-      width: 100%;
-      height: 2px;
-      margin: 0 auto;
-      background-image: linear-gradient(
-        90deg,
-        var(--bg-gradient-start) 50%,
-        var(--bg-gradient-end) 100%
-      );
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.25s ease-in-out;
-      content: '';
-    }
-    &:hover::after,
-    &:focus::after {
-      transform: scaleX(1);
-    }
-  }
 }
 
 .button {
   @include mobileToDesktopFontSize(var(--fs-small), var(--fs-default));
 
   padding: 16px 40px 20px;
-  color: var(--fc-dark);
+  color: var(--white);
   font-weight: var(--fw-semi-bold);
-  background: linear-gradient(
-    119.72deg,
-    var(--bg-gradient-start) 0%,
-    var(--bg-gradient-end) 100%
-  );
-  background-size: 100%;
+  background-color: var(--black);
   border-radius: 8px;
   outline-offset: 4px;
-  transition: background 0.75s linear;
-
-  &:hover,
-  &:focus {
-    background-size: 250%;
-  }
 }
 </style>
