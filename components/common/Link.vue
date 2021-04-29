@@ -53,8 +53,8 @@ export default {
 .link {
   display: inline-block;
   color: var(--fc-default);
-  font-weight: var(--fw-medium);
-  font-size: var(--fs-default);
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-small);
   text-decoration: none;
   cursor: pointer;
 }
