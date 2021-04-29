@@ -51,7 +51,7 @@ jobs:
           npx serve dist &
           npm run e2e:ci
 
-      - name: run Lighthouse CI
+      - name: Run Lighthouse CI 💡🏠
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
         run: |
