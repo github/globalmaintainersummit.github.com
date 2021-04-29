@@ -51,6 +51,13 @@ jobs:
           npx serve dist &
           npm run e2e:ci
 
+      - name: Run Lighthouse CI 💡🏠
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+        run: |
+          npm install -g @lhci/cli@0.7.x
+          lhci autorun
+
       - name: Upload artifacts (screenshots) 📸
         if: ${{ always() }}
         uses: actions/upload-artifact@v2
