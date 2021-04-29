@@ -1,14 +1,13 @@
 :root {
   // Font Family
   --ff-default: 'AllianceNo2', georgia, serif;
-  --ff-title: 'AllianceNo1', arial, sans-serif;
+  --ff-secondary: roc-grotesk, sans-serif;
+  --ff-title: roc-grotesk-wide, sans-serif;
 
   // Font Weight
-  --fw-default: 400;
-  --fw-medium: 500;
-  --fw-semi-bold: 600;
-  --fw-bold: 800;
-  --fw-extra-bold: 900;
+  --fw-default: 500;
+  --fw-bold: 600;
+  --fw-extra-bold: 9700;
 
   // Fonts Sizes
   --fs-colossal: 4.5rem; // 72px
