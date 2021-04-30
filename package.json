@@ -13,6 +13,8 @@
     "test": "jest",
     "e2e": "TZ=America/New_York cypress open --browser chrome",
     "e2e:ci": "TZ=America/New_York cypress run",
+    "component": "TZ=America/New_York cypress open-ct --browser chrome",
+    "component:ci": "TZ=America/New_York cypress run-ct",
     "prepare": "husky install"
   },
   "lint-staged": {
