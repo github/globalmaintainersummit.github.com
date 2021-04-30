@@ -24,11 +24,14 @@
     <ul v-if="showDropdown">
       <li
         v-for="option in options"
-        :key="option"
+        :key="option.name"
         :tabindex="showDropdown && '0'"
         class="select__option"
       >
-        {{ option }}
+        <img :src="option.icon" alt="" role="presentation" />
+        <span>
+          {{ option.name }}
+        </span>
       </li>
     </ul>
   </div>
@@ -41,7 +44,13 @@ export default {
       showDropdown: false,
       label: 'Select a calendar to save the conference date',
       title: 'Save the Date',
-      options: ['apple', 'yahoo', 'google'],
+      options: [
+        { name: 'Apple', icon: 'apple' },
+        { name: 'Google', icon: 'google' },
+        { name: 'Office 365', icon: 'office' },
+        { name: 'Outlook', icon: 'outlook' },
+        { name: 'Yahoo', icon: 'yahoo' },
+      ],
     }
   },
   methods: {
