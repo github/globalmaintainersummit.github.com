@@ -1,0 +1,42 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--ff-title);
+}
+
+h1 {
+  @include mobileToDesktopFontSize(var(--fs-large), var(--fs-colossal));
+
+  font-weight: var(--fw-extra-bold);
+}
+h2 {
+  @include mobileToDesktopFontSize(var(--fs-large), var(--fs-giant));
+
+  font-weight: var(--fw-bold);
+}
+h3 {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-large);
+}
+h4 {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-medium);
+}
+h5 {
+  @include mobileToDesktopFontSize(var(--fs-small), var(--fs-default));
+
+  font-weight: var(--fw-bold);
+}
+
+p {
+  @include mobileToDesktopFontSize(var(--fs-small), var(--fs-default));
+
+  font-weight: var(--fw-regular);
+}
+
+small {
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-small);
+}

@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Setup node env 🏗
         uses: actions/setup-node@v2.1.2
@@ -50,6 +52,13 @@ jobs:
         run: |
           npx serve dist &
           npm run e2e:ci
+
+      - name: Run Lighthouse CI 💡🏠
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+        run: |
+          npm install -g @lhci/cli@0.7.x
+          lhci autorun
 
       - name: Upload artifacts (screenshots) 📸
         if: ${{ always() }}

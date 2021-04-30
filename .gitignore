@@ -91,3 +91,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# Ignore lighthouse CI artifacts
+.lighthouseci
