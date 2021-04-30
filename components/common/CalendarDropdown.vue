@@ -35,9 +35,13 @@
         @keydown.space="saveDate(option.key)"
         @keydown.esc="saveDate(option.key)"
       >
-        <a :href="showDropdown ? calendarUrl(option.key) : null" class="option">
+        <a
+          :href="showDropdown ? calendarUrl(option.key) : null"
+          class="option"
+          target="_blank"
+        >
           <img
-            :src="require(`~/assets/svg/calendars/${option.key}.svg`)"
+            :src="require(`~/assets/svg/calendars/cal_${option.key}.svg`)"
             height="20px"
             width="20px"
             alt=""
@@ -54,7 +58,8 @@
 </template>
 
 <script>
-import { buildGoogleCalendarUrl } from '~/utils/date-utils.js'
+// import { buildGoogleCalendarUrl } from '~/utils/date-utils.js'
+import { google, outlook, office365, yahoo, ics } from 'calendar-link'
 
 const KEY_CALENDAR_APPLE = 'apple'
 const KEY_CALENDAR_GOOGLE = 'google'
@@ -84,37 +89,36 @@ export default {
       .fetch()
     this.calendarEvent = calendarEvent
   },
+  computed: {
+    event() {
+      return {
+        start: this.calendarEvent.startDate,
+        end: this.calendarEvent.endDate,
+        duration: [1, 'day'],
+        title: this.calendarEvent.title,
+        description: this.calendarEvent.description,
+      }
+    },
+  },
   methods: {
     toggleDropdown() {
       this.showDropdown = !this.showDropdown
     },
-    saveDate(calendar) {
+    calendarUrl(calendar) {
       switch (calendar) {
         case KEY_CALENDAR_APPLE:
-          // TODO
-          break
+          return ics(this.event)
         case KEY_CALENDAR_GOOGLE:
-          this.createGoogleEvent()
-          break
+          return google(this.event)
         case KEY_CALENDAR_OFFICE:
-          // TODO
-          break
+          return office365(this.event)
         case KEY_CALENDAR_OUTLOOK:
-          // TODO
-          break
+          return outlook(this.event)
         case KEY_CALENDAR_YAHOO:
-          // TODO
-          break
+          return yahoo(this.event)
+        default:
+          return ''
       }
-    },
-    createGoogleEvent() {
-      const google = buildGoogleCalendarUrl(
-        this.calendarEvent.startDate,
-        this.calendarEvent.endDate,
-        this.calendarEvent.subject,
-        this.calendarEvent.details
-      )
-      window.open(google, '_blank')
     },
   },
 }
@@ -179,6 +183,7 @@ export default {
 .option {
   display: flex;
   align-items: center;
+  color: var(--fc-default);
   font-size: var(--fs-smaller);
   transition: color 0.3s ease-in;
   &:hover {

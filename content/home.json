@@ -23,7 +23,7 @@
   "calendarEvent": {
     "startDate": "2021-06-08",
     "endDate": "2021-06-09",
-    "subject": "Global Maintainer Summit",
-    "details": "<p>A virtual gathering for the maintainers that make open source possible</p><a href=\"https://globalmaintainersummit.github.com/\">https://globalmaintainersummit.github.com/</a>"
+    "title": "Global Maintainer Summit",
+    "description": "<p>A virtual gathering for the maintainers that make open source possible</p><a href=\"https://globalmaintainersummit.github.com/\">https://globalmaintainersummit.github.com/</a>"
   }
 }
