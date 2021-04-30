@@ -28,31 +28,4 @@ describe('Date utils', () => {
       expect(actualDate).toEqual('')
     })
   })
-
-  describe('Build Google Calendar URL', () => {
-    it('builds a valid Google Calendar URL', () => {
-      const actualGoogleCalendarUrl = buildGoogleCalendarUrl(
-        startDate,
-        endDate,
-        'This is some text',
-        'These are the details'
-      )
-      const expectedGoogleCalendarUrl =
-        'http://www.google.com/calendar/event?action=TEMPLATE&dates=20210608%2F20210610&text=This is some text&&details=These are the details'
-
-      expect(actualGoogleCalendarUrl).not.toBeUndefined()
-      expect(actualGoogleCalendarUrl).toEqual(expectedGoogleCalendarUrl)
-    })
-    it('returns void if a date is invalid', () => {
-      const actualGoogleCalendarUrl = buildGoogleCalendarUrl(
-        new Date('2021-70-9'),
-        endDate,
-        'This is some text',
-        'These are the details'
-      )
-
-      expect(actualGoogleCalendarUrl).not.toBeUndefined()
-      expect(actualGoogleCalendarUrl).toEqual('')
-    })
-  })
 })
