@@ -1,18 +1,17 @@
 <template>
-  <div
-    class="dropdown"
-    :class="showDropdown && 'dropdown--open'"
-    :aria-label="label"
-    tabindex="0"
-    aria-haspopup="listbox"
-    :aria-expanded="showDropdown"
-    role="listbox"
-    @click="toggleDropdown"
-    @keydown.enter="toggleDropdown"
-    @keydown.space="toggleDropdown"
-    @keydown.esc="toggleDropdown"
-  >
-    <p class="dropdown__title">
+  <div class="dropdown" :class="showDropdown && 'dropdown--open'">
+    <p
+      class="dropdown__title"
+      :aria-label="label"
+      tabindex="0"
+      aria-haspopup="listbox"
+      :aria-expanded="showDropdown"
+      role="listbox"
+      @click="toggleDropdown"
+      @keydown.enter="toggleDropdown"
+      @keydown.space="toggleDropdown"
+      @keydown.esc="toggleDropdown"
+    >
       <span v-if="title"> {{ title }} </span>
       <span
         class="dropdown__close"
@@ -27,18 +26,12 @@
       :class="showDropdown && 'dropdown__options--visible'"
       :aria-hidden="!showDropdown"
     >
-      <li
-        v-for="option in options"
-        :key="option.key"
-        @click="saveDate(option.key)"
-        @keydown.enter="saveDate(option.key)"
-        @keydown.space="saveDate(option.key)"
-        @keydown.esc="saveDate(option.key)"
-      >
+      <li v-for="option in options" :key="option.key">
         <a
           :href="showDropdown ? calendarUrl(option.key) : null"
           class="option"
           target="_blank"
+          :aria-label="`Save the date in your ${option.name} calendar`"
         >
           <img
             :src="require(`~/assets/svg/calendars/cal_${option.key}.svg`)"
@@ -58,7 +51,6 @@
 </template>
 
 <script>
-// import { buildGoogleCalendarUrl } from '~/utils/date-utils.js'
 import { google, outlook, office365, yahoo, ics } from 'calendar-link'
 
 const KEY_CALENDAR_APPLE = 'apple'
@@ -116,8 +108,6 @@ export default {
           return outlook(this.event)
         case KEY_CALENDAR_YAHOO:
           return yahoo(this.event)
-        default:
-          return ''
       }
     },
   },
