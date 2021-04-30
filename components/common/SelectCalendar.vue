@@ -26,9 +26,16 @@
         v-for="option in options"
         :key="option.name"
         :tabindex="showDropdown && '0'"
-        class="select__option"
+        class="option"
       >
-        <img :src="option.icon" alt="" role="presentation" />
+        <img
+          :src="require(`~/assets/svg/calendars/${option.icon}.svg`)"
+          height="20px"
+          width="20px"
+          alt=""
+          role="presentation"
+          class="option__icon"
+        />
         <span>
           {{ option.name }}
         </span>
@@ -65,18 +72,34 @@ export default {
 .select {
   cursor: pointer;
   &--open {
-    @include select();
+    margin: -24px;
+    padding: 24px;
+    background-color: var(--bg-default);
+    border-radius: 12px;
+    box-shadow: 0 16px 24px 0 rgba(13, 9, 16, 0.08),
+      0 8px 16px 0 rgba(13, 9, 16, 0.12);
+
+    ul {
+      list-style-type: none;
+      margin-block: 0;
+      padding-inline: 0;
+    }
+
+    li {
+      padding: 10px 0;
+    }
   }
 
   &__title {
     margin-top: 0;
-    color: var(--fc-accent);
+    color: var(--fc-primary);
     font-family: var(--ff-title);
   }
 
   &__close {
     padding-left: 8px;
     color: var(--bg-close-icon);
+    font-size: smaller;
     visibility: hidden;
     cursor: pointer;
 
@@ -84,12 +107,18 @@ export default {
       visibility: visible;
     }
   }
+}
 
-  &__option {
-    transition: color 0.3s ease-in;
-    &:hover {
-      color: var(--fc-accent);
-    }
+.option {
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease-in;
+  &:hover {
+    color: var(--fc-primary);
+  }
+
+  &__icon {
+    margin-right: 16px;
   }
 }
 </style>
