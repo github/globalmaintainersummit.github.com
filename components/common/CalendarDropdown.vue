@@ -130,10 +130,6 @@ export default {
       margin-block: 0;
       padding-inline: 0;
     }
-
-    li {
-      padding: 10px 0;
-    }
   }
 
   &__options {
@@ -168,6 +164,7 @@ export default {
 .option {
   display: flex;
   align-items: center;
+  padding: 10px 0;
   color: var(--fc-default);
   font-size: var(--fs-smaller);
   transition: color 0.3s ease-in;
