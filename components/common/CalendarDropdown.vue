@@ -10,7 +10,7 @@
       @click="toggleDropdown"
       @keydown.enter="toggleDropdown"
       @keydown.space="toggleDropdown"
-      @keydown.esc="toggleDropdown"
+      @keydown.esc="showDropdown = false"
     >
       <span v-if="title"> {{ title }} </span>
       <span
@@ -168,7 +168,8 @@ export default {
   color: var(--fc-default);
   font-size: var(--fs-smaller);
   transition: color 0.3s ease-in;
-  &:hover {
+  &:hover,
+  &:focus {
     color: var(--fc-primary);
   }
 
