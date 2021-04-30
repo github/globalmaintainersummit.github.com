@@ -25,28 +25,29 @@
     <ul
       class="dropdown__options"
       :class="showDropdown && 'dropdown__options--visible'"
+      :aria-hidden="!showDropdown"
     >
       <li
         v-for="option in options"
         :key="option.key"
-        :tabindex="showDropdown && '0'"
-        class="option"
         @click="saveDate(option.key)"
         @keydown.enter="saveDate(option.key)"
         @keydown.space="saveDate(option.key)"
         @keydown.esc="saveDate(option.key)"
       >
-        <img
-          :src="require(`~/assets/svg/calendars/${option.key}.svg`)"
-          height="20px"
-          width="20px"
-          alt=""
-          role="presentation"
-          class="option__icon"
-        />
-        <span>
-          {{ option.name }}
-        </span>
+        <a :href="showDropdown ? calendarUrl(option.key) : null" class="option">
+          <img
+            :src="require(`~/assets/svg/calendars/${option.key}.svg`)"
+            height="20px"
+            width="20px"
+            alt=""
+            role="presentation"
+            class="option__icon"
+          />
+          <span>
+            {{ option.name }}
+          </span>
+        </a>
       </li>
     </ul>
   </div>
