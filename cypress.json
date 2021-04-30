@@ -1,5 +1,10 @@
 {
   "baseUrl": "http://localhost:5000",
   "viewportWidth": 1024,
-  "viewportHeight": 768
+  "viewportHeight": 768,
+  "fixturesFolder": false,
+  "component": {
+    "componentFolder": "components",
+    "testFiles": "**/*spec.js"
+  }
 }
