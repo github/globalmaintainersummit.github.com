@@ -2,14 +2,29 @@
   // Private variables
 
   // Neutral colors
-  --white: hsla(0, 0%, 100%, 1);
-  --gray-50: hsla(0, 0%, 50%, 1);
-  --black: hsl(0, 0%, 0%, 1);
+  --white: hsla(0, 0%, 100%, 1); // #FFFFFF
+  --gray-200: hsla(204, 15%, 94%, 1); // #ECEFF1
+  --gray-400: hsla(198, 16%, 84%, 1); // #CFD8DC
+
+  // Palette
+  --salmon: hsla(358, 87%, 73%, 1); // #F68084
+  --purple: hsla(281, 75%, 59%, 1); // #B349E5
+  --heliotrope: hsla(280, 88%, 67%, 1); //#C562F5
+  --navy: hsla(277, 96%, 11%, 1); // #230138
+
+  // Gradients
+  --grad-gray-transparent: linear-gradient(
+    90deg,
+    hsla(204, 15%, 94%, 0) 0%,
+    hsla(204, 15%, 94%, 1) 100%
+  ); // Transparent to #ECEFF1
 
   // Background Colors
   --bg-body: var(--white);
 
   // Font Colors
-  --fc-default: var(--black);
-  --fc-dimmed: var(--gray-50);
+  --fc-default: var(--navy);
+  --fc-primary: var(--purple);
+  --fc-accent: var(--salmon);
+  --fc-dimmed: var(--gray-400);
 }

@@ -14,20 +14,15 @@
       <CommonLink :mailto="footer.contact.mailto">
         {{ footer.contact.label }}
       </CommonLink>
-      <CommonLink :href="footer.project.url">
-        <GitHub :aria-label="footer.project.label" role="presentation" />
-      </CommonLink>
+      <CommonLink :href="footer.project.url"> Repository </CommonLink>
+      <CommonLink :href="footer.project.url"> Code of Conduct </CommonLink>
     </div>
   </footer>
 </template>
 
 <script>
-import GitHub from '~/assets/svg/github.svg?inline'
-
 export default {
-  components: {
-    GitHub,
-  },
+  components: {},
   data() {
     return { footer: null }
   },
@@ -41,7 +36,6 @@ export default {
 <style lang="scss" scoped>
 .footer {
   @include section();
-  @include mobileToDesktopFontSize(var(--fs-small), var(--fs-default));
 
   position: relative;
   display: flex;
@@ -49,6 +43,7 @@ export default {
   justify-content: space-between;
   margin-top: 80px;
   margin-bottom: 32px;
+  font-size: var(--fs-small);
   @media screen and (min-width: $screen-ipad) {
     margin-top: 160px;
     margin-bottom: 64px;
@@ -58,8 +53,6 @@ export default {
     display: flex;
     vertical-align: middle;
     a {
-      @include mobileToDesktopFontSize(var(--fs-small), var(--fs-default));
-
       margin: 0 32px 24px 0;
       &:last-child {
         margin: 0 0 24px 0;
@@ -77,6 +70,9 @@ export default {
   &__copy {
     margin: 0 32px 24px 0;
     padding: 0;
+    color: var(--fc-dimmed);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-small);
   }
 }
 </style>
