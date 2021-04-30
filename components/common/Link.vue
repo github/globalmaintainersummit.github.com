@@ -52,7 +52,6 @@ export default {
 <style lang="scss" scoped>
 .link {
   display: inline-block;
-  color: var(--fc-default);
   font-weight: var(--fw-semi-bold);
   font-size: var(--fs-small);
   text-decoration: none;
@@ -63,7 +62,6 @@ export default {
   @include mobileToDesktopFontSize(var(--fs-small), var(--fs-default));
 
   padding: 16px 40px 20px;
-  color: var(--white);
   font-weight: var(--fw-semi-bold);
   background-color: var(--black);
   border-radius: 8px;

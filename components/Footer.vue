@@ -51,7 +51,9 @@ export default {
   &__right,
   &__left {
     display: flex;
+    flex-wrap: wrap;
     vertical-align: middle;
+
     a {
       margin: 0 32px 24px 0;
       &:last-child {
