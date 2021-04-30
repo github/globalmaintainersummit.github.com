@@ -28,16 +28,16 @@
     >
       <li
         v-for="option in options"
-        :key="option.name"
+        :key="option.key"
         :tabindex="showDropdown && '0'"
         class="option"
-        @click="toggleDropdown"
-        @keydown.enter="toggleDropdown"
-        @keydown.space="toggleDropdown"
-        @keydown.esc="toggleDropdown"
+        @click="saveDate(option.key)"
+        @keydown.enter="saveDate(option.key)"
+        @keydown.space="saveDate(option.key)"
+        @keydown.esc="saveDate(option.key)"
       >
         <img
-          :src="require(`~/assets/svg/calendars/${option.icon}.svg`)"
+          :src="require(`~/assets/svg/calendars/${option.key}.svg`)"
           height="20px"
           width="20px"
           alt=""
@@ -53,24 +53,67 @@
 </template>
 
 <script>
+import { buildGoogleCalendarUrl } from '~/utils/date-utils.js'
+
+const KEY_CALENDAR_APPLE = 'apple'
+const KEY_CALENDAR_GOOGLE = 'google'
+const KEY_CALENDAR_OFFICE = 'office'
+const KEY_CALENDAR_OUTLOOK = 'outlook'
+const KEY_CALENDAR_YAHOO = 'yahoo'
+
 export default {
   data() {
     return {
       showDropdown: false,
       label: 'Select a calendar to save the conference date',
       title: 'Save the Date',
+      calendarEvent: null,
       options: [
-        { name: 'Apple', icon: 'apple' },
-        { name: 'Google', icon: 'google' },
-        { name: 'Office 365', icon: 'office' },
-        { name: 'Outlook', icon: 'outlook' },
-        { name: 'Yahoo', icon: 'yahoo' },
+        { name: 'Apple', key: KEY_CALENDAR_APPLE },
+        { name: 'Google', key: KEY_CALENDAR_GOOGLE },
+        { name: 'Office 365', key: KEY_CALENDAR_OFFICE },
+        { name: 'Outlook', key: KEY_CALENDAR_OUTLOOK },
+        { name: 'Yahoo', key: KEY_CALENDAR_YAHOO },
       ],
     }
+  },
+  async fetch() {
+    const { calendarEvent } = await this.$content('home')
+      .only(['calendarEvent'])
+      .fetch()
+    this.calendarEvent = calendarEvent
   },
   methods: {
     toggleDropdown() {
       this.showDropdown = !this.showDropdown
+    },
+    saveDate(calendar) {
+      switch (calendar) {
+        case KEY_CALENDAR_APPLE:
+          // TODO
+          break
+        case KEY_CALENDAR_GOOGLE:
+          this.createGoogleEvent()
+          break
+        case KEY_CALENDAR_OFFICE:
+          // TODO
+          break
+        case KEY_CALENDAR_OUTLOOK:
+          // TODO
+          break
+        case KEY_CALENDAR_YAHOO:
+          // TODO
+          break
+      }
+    },
+    createGoogleEvent() {
+      const google = buildGoogleCalendarUrl(
+        this.calendarEvent.startDate,
+        this.calendarEvent.endDate,
+        this.calendarEvent.subject,
+        this.calendarEvent.details
+      )
+      window.open(google, '_blank')
     },
   },
 }

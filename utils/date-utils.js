@@ -43,12 +43,8 @@ export function formatDate(startDate, endDate, locale) {
  * @returns {String}
  */
 export function buildGoogleCalendarUrl(startDate, endDate, text, details) {
-  if (!isValidDate(startDate) || !isValidDate(endDate)) {
-    return ''
-  }
-
-  const startDateFormatted = formatDateCalendar(startDate)
-  const endDateFormatted = formatDateCalendar(nextDay(endDate))
+  const startDateFormatted = formatDateCalendar(new Date(startDate))
+  const endDateFormatted = formatDateCalendar(nextDay(new Date(endDate)))
 
   return `http://www.google.com/calendar/event?action=TEMPLATE&dates=${startDateFormatted}%2F${endDateFormatted}&text=${text}&&details=${details}`
 }
