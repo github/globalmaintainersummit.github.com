@@ -93,6 +93,7 @@ export default {
   &__title {
     margin-top: 0;
     color: var(--fc-primary);
+    font-size: var(--fs-small);
     font-family: var(--ff-title);
   }
 
@@ -112,6 +113,7 @@ export default {
 .option {
   display: flex;
   align-items: center;
+  font-size: var(--fs-smaller);
   transition: color 0.3s ease-in;
   &:hover {
     color: var(--fc-primary);
