@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@master
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Setup node env 🏗
         uses: actions/setup-node@v2.1.2
