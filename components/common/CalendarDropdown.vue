@@ -2,21 +2,22 @@
   <div
     class="dropdown"
     :class="showDropdown && 'dropdown--open'"
-    role="listbox"
     :aria-label="label"
+    tabindex="0"
+    aria-haspopup="listbox"
+    :aria-expanded="showDropdown"
+    role="listbox"
+    @click="toggleDropdown"
+    @keydown.enter="toggleDropdown"
+    @keydown.space="toggleDropdown"
+    @keydown.esc="toggleDropdown"
   >
-    <p
-      class="dropdown__title"
-      tabindex="0"
-      @click="toggleDropdown"
-      @keydown.enter="toggleDropdown"
-      @keydown.space="toggleDropdown"
-    >
+    <p class="dropdown__title">
       <span v-if="title"> {{ title }} </span>
       <span
         class="dropdown__close"
         :class="showDropdown && 'dropdown__close--visible'"
-        :tabindex="showDropdown && '0'"
+        aria-hidden="true"
       >
         ✖
       </span>
@@ -30,6 +31,10 @@
         :key="option.name"
         :tabindex="showDropdown && '0'"
         class="option"
+        @click="toggleDropdown"
+        @keydown.enter="toggleDropdown"
+        @keydown.space="toggleDropdown"
+        @keydown.esc="toggleDropdown"
       >
         <img
           :src="require(`~/assets/svg/calendars/${option.icon}.svg`)"
@@ -75,7 +80,7 @@ export default {
 .dropdown {
   --dropdown-height: 302px;
 
-  height: 100px;
+  height: 30px;
   cursor: pointer;
   transition: height 0.26s ease;
   &--open {
