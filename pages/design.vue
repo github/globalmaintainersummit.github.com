@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <CommonSelectCalendar />
+    <CommonCalendarDropdown />
   </div>
 </template>
 

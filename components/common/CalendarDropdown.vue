@@ -1,12 +1,12 @@
 <template>
   <div
-    class="select"
-    :class="showDropdown && 'select--open'"
+    class="dropdown"
+    :class="showDropdown && 'dropdown--open'"
     role="listbox"
     :aria-label="label"
   >
     <p
-      class="select__title"
+      class="dropdown__title"
       tabindex="0"
       @click="toggleDropdown"
       @keydown.enter="toggleDropdown"
@@ -14,16 +14,16 @@
     >
       <span v-if="title"> {{ title }} </span>
       <span
-        class="select__close"
-        :class="showDropdown && 'select__close--visible'"
+        class="dropdown__close"
+        :class="showDropdown && 'dropdown__close--visible'"
         :tabindex="showDropdown && '0'"
       >
         ✖
       </span>
     </p>
     <ul
-      class="select__options"
-      :class="showDropdown && 'select__options--visible'"
+      class="dropdown__options"
+      :class="showDropdown && 'dropdown__options--visible'"
     >
       <li
         v-for="option in options"
@@ -72,14 +72,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.select {
-  --select-height: 302px;
+.dropdown {
+  --dropdown-height: 302px;
 
   height: 100px;
   cursor: pointer;
   transition: height 0.26s ease;
   &--open {
-    height: var(--select-height);
+    height: var(--dropdown-height);
     margin: -24px;
     padding: 24px;
     background-color: var(--bg-default);
