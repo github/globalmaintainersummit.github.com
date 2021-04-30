@@ -79,18 +79,13 @@ export default {
     const { calendarEvent } = await this.$content('home')
       .only(['calendarEvent'])
       .fetch()
-    this.calendarEvent = calendarEvent
-  },
-  computed: {
-    event() {
-      return {
-        start: this.calendarEvent.startDate,
-        end: this.calendarEvent.endDate,
-        duration: [1, 'day'],
-        title: this.calendarEvent.title,
-        description: this.calendarEvent.description,
-      }
-    },
+    this.calendarEvent = {
+      start: calendarEvent.startDate,
+      end: calendarEvent.endDate,
+      duration: [1, 'day'],
+      title: calendarEvent.title,
+      description: calendarEvent.description,
+    }
   },
   methods: {
     toggleDropdown() {
@@ -99,15 +94,15 @@ export default {
     calendarUrl(calendar) {
       switch (calendar) {
         case KEY_CALENDAR_APPLE:
-          return ics(this.event)
+          return ics(this.calendarEvent)
         case KEY_CALENDAR_GOOGLE:
-          return google(this.event)
+          return google(this.calendarEvent)
         case KEY_CALENDAR_OFFICE:
-          return office365(this.event)
+          return office365(this.calendarEvent)
         case KEY_CALENDAR_OUTLOOK:
-          return outlook(this.event)
+          return outlook(this.calendarEvent)
         case KEY_CALENDAR_YAHOO:
-          return yahoo(this.event)
+          return yahoo(this.calendarEvent)
       }
     },
   },
