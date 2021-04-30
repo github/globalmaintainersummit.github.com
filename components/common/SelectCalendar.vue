@@ -21,7 +21,10 @@
         ✖
       </span>
     </p>
-    <ul v-if="showDropdown">
+    <ul
+      class="select__options"
+      :class="showDropdown && 'select__options--visible'"
+    >
       <li
         v-for="option in options"
         :key="option.name"
@@ -70,8 +73,13 @@ export default {
 
 <style lang="scss" scoped>
 .select {
+  --select-height: 302px;
+
+  height: 100px;
   cursor: pointer;
+  transition: height 0.26s ease;
   &--open {
+    height: var(--select-height);
     margin: -24px;
     padding: 24px;
     background-color: var(--bg-default);
@@ -87,6 +95,15 @@ export default {
 
     li {
       padding: 10px 0;
+    }
+  }
+
+  &__options {
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.26s ease;
+    &--visible {
+      transform: scaleY(1);
     }
   }
 
