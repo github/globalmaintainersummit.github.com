@@ -1,19 +1,17 @@
 <template>
   <div class="dropdown-wrapper">
     <div class="dropdown" :class="showDropdown && 'dropdown--open'">
-      <p
+      <button
         class="dropdown__title"
         :aria-label="label"
-        tabindex="0"
         aria-haspopup="true"
         :aria-expanded="showDropdown"
         role="listbox"
+        aria-controls="calendar-list"
         @click="toggleDropdown"
-        @keydown.enter="toggleDropdown"
-        @keydown.space="toggleDropdown"
-        @keydown.esc="showDropdown = false"
+        @keyup.esc="showDropdown = false"
       >
-        <span v-if="title"> {{ title }} </span>
+        {{ title }}
         <span
           class="dropdown__close"
           :class="showDropdown && 'dropdown__close--visible'"
@@ -21,13 +19,18 @@
         >
           ✖
         </span>
-      </p>
+      </button>
       <ul
+        id="calendar-list"
         class="dropdown__options"
         :class="showDropdown && 'dropdown__options--visible'"
         :aria-hidden="!showDropdown"
       >
-        <li v-for="option in options" :key="option.key">
+        <li
+          v-for="option in options"
+          :key="option.key"
+          @keydown.esc="showDropdown = false"
+        >
           <a
             :href="showDropdown ? calendarUrl(option.key) : null"
             class="option"
@@ -117,7 +120,7 @@ export default {
 }
 
 .dropdown {
-  --dropdown-height: 302px;
+  --dropdown-height: 280px;
 
   position: absolute;
   top: 0;
@@ -149,14 +152,18 @@ export default {
   }
 
   &__title {
-    margin-top: 0;
+    margin-bottom: 12px;
+    padding: 0;
     color: var(--fc-primary);
     font-size: var(--fs-small);
     font-family: var(--ff-title);
+    background: transparent;
+    border: none;
+    cursor: pointer;
   }
 
   &__close {
-    padding-left: 8px;
+    margin-left: 8px;
     color: var(--bg-close-icon);
     font-size: smaller;
     visibility: hidden;
