@@ -1,62 +1,65 @@
 <template>
-  <div class="dropdown-wrapper">
-    <div class="dropdown" :class="showDropdown && 'dropdown--open'">
-      <button
-        class="dropdown__title"
-        :aria-label="label"
-        aria-haspopup="true"
-        :aria-expanded="showDropdown"
-        role="listbox"
-        aria-controls="calendar-list"
-        @click="toggleDropdown"
-        @keyup.esc="showDropdown = false"
-      >
-        {{ title }}
-        <span
-          class="dropdown__close"
-          :class="showDropdown && 'dropdown__close--visible'"
-          aria-hidden="true"
+  <focus-trap :active="showDropdown">
+    <div class="dropdown-wrapper">
+      <div class="dropdown" :class="showDropdown && 'dropdown--open'">
+        <button
+          class="dropdown__title"
+          :aria-label="label"
+          aria-haspopup="true"
+          :aria-expanded="showDropdown"
+          role="listbox"
+          aria-controls="calendar-list"
+          @click="toggleDropdown"
+          @keyup.esc="showDropdown = false"
         >
-          ✖
-        </span>
-      </button>
-      <ul
-        id="calendar-list"
-        class="dropdown__options"
-        :class="showDropdown && 'dropdown__options--visible'"
-        :aria-hidden="!showDropdown"
-      >
-        <li
-          v-for="option in options"
-          :key="option.key"
-          @keydown.esc="showDropdown = false"
-        >
-          <a
-            :href="showDropdown ? calendarUrl(option.key) : null"
-            class="option"
-            target="_blank"
-            :aria-label="`Save the date in your ${option.name} calendar`"
+          {{ title }}
+          <span
+            class="dropdown__close"
+            :class="showDropdown && 'dropdown__close--visible'"
+            aria-hidden="true"
           >
-            <img
-              :src="require(`~/assets/svg/calendars/cal_${option.key}.svg`)"
-              height="20px"
-              width="20px"
-              alt=""
-              role="presentation"
-              class="option__icon"
-            />
-            <span>
-              {{ option.name }}
-            </span>
-          </a>
-        </li>
-      </ul>
+            ✖
+          </span>
+        </button>
+        <ul
+          id="calendar-list"
+          class="dropdown__options"
+          :class="showDropdown && 'dropdown__options--visible'"
+          :aria-hidden="!showDropdown"
+        >
+          <li
+            v-for="option in options"
+            :key="option.key"
+            @keydown.esc="showDropdown = false"
+          >
+            <a
+              :href="showDropdown ? calendarUrl(option.key) : null"
+              class="option"
+              target="_blank"
+              :aria-label="`Save the date in your ${option.name} calendar`"
+            >
+              <img
+                :src="require(`~/assets/svg/calendars/cal_${option.key}.svg`)"
+                height="20px"
+                width="20px"
+                alt=""
+                role="presentation"
+                class="option__icon"
+              />
+              <span>
+                {{ option.name }}
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </focus-trap>
 </template>
 
 <script>
 import { google, outlook, office365, yahoo, ics } from 'calendar-link'
+import { FocusTrap } from 'focus-trap-vue'
 
 const KEY_CALENDAR_APPLE = 'apple'
 const KEY_CALENDAR_GOOGLE = 'google'
@@ -65,6 +68,9 @@ const KEY_CALENDAR_OUTLOOK = 'outlook'
 const KEY_CALENDAR_YAHOO = 'yahoo'
 
 export default {
+  components: {
+    FocusTrap,
+  },
   data() {
     return {
       showDropdown: false,
