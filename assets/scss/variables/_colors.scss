@@ -13,7 +13,7 @@
   --navy: hsla(277, 96%, 11%, 1); // #230138
 
   // Gradients
-  --grad-gray-transparent: linear-gradient(
+  --grad-transparent-gray: linear-gradient(
     90deg,
     hsla(204, 15%, 94%, 0) 0%,
     hsla(204, 15%, 94%, 1) 100%
@@ -21,10 +21,19 @@
 
   // Background Colors
   --bg-body: var(--white);
+  --grad-navigation-mobile: linear-gradient(
+    135deg,
+    var(--purple) 0%,
+    var(--salmon) 100%
+  ); // Transparent to #ECEFF1
+
+  --bg-hamburguer: var(--navy);
+  --bg-hamburguer--open: var(--white);
 
   // Font Colors
   --fc-default: var(--navy);
   --fc-primary: var(--purple);
   --fc-accent: var(--salmon);
+  --fc-light: var(--white);
   --fc-dimmed: var(--gray-400);
 }
