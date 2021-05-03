@@ -1,11 +1,12 @@
 <template>
   <Component
     :is="type"
-    :href="href !== null ? href : mailto !== null ? `mailto:${mailto}` : null"
-    :to="to !== null ? to : null"
-    :target="href !== null ? '_blank' : null"
+    v-bind="
+      href ? { href: mailto !== null ? `mailto:${mailto}` : href } : { to }
+    "
+    :target="href ? '_blank' : null"
     class="link"
-    :class="button && 'button'"
+    :class="{ button: button }"
     role="link"
     :tabindex="button ? 0 : null"
   >
@@ -52,7 +53,6 @@ export default {
 <style lang="scss" scoped>
 .link {
   display: inline-block;
-  color: var(--fc-default);
   font-weight: var(--fw-semi-bold);
   font-size: var(--fs-small);
   text-decoration: none;
@@ -63,7 +63,6 @@ export default {
   @include mobileToDesktopFontSize(var(--fs-small), var(--fs-default));
 
   padding: 16px 40px 20px;
-  color: var(--white);
   font-weight: var(--fw-semi-bold);
   background-color: var(--black);
   border-radius: 8px;
