@@ -1,4 +1,4 @@
-import { formatDate, buildGoogleCalendarUrl } from '~/utils/date-utils.js'
+import { formatDate } from '~/utils/date-utils.js'
 
 describe('Date utils', () => {
   const startDate = new Date('2021-06-08')
