@@ -13,9 +13,6 @@ module.exports = {
     '.*\\.(vue)$': 'vue-jest',
   },
   collectCoverage: true,
-  collectCoverageFrom: [
-    '<rootDir>/components/**/*.vue',
-    '<rootDir>/pages/*.vue',
-  ],
-  testPathIgnorePatterns: ['/cypress/'],
+  collectCoverageFrom: ['<rootDir>/utils/**/*.js'],
+  testPathIgnorePatterns: ['/cypress/', '/components/'],
 }

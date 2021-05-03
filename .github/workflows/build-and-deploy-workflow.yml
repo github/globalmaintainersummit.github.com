@@ -45,6 +45,9 @@ jobs:
       - name: Run Unit Tests 🧪
         run: npm run test
 
+      - name: Run Component Tests 🧪
+        run: npm run component:ci
+
       - name: Generate ⚙️
         run: npm run generate
 
