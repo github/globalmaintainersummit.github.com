@@ -1,5 +1,5 @@
 <template>
-  <div class="burguer" :class="{ 'burguer--open': open }">
+  <div class="burguer" :class="{ 'burguer--active': active }">
     <span />
     <span />
     <span />
@@ -9,7 +9,7 @@
 <script>
 export default {
   props: {
-    open: {
+    active: {
       type: Boolean,
       required: true,
     },
@@ -31,7 +31,7 @@ export default {
     transition: transform 0.2s linear, top 0.15s ease-in-out 0.3s,
       color 0.25s ease 0.2s;
   }
-  &--open {
+  &--active {
     span {
       background: var(--bg-hamburguer--open);
       &:nth-child(1) {

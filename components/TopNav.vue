@@ -1,6 +1,6 @@
 <template>
-  <focus-trap :active="open">
-    <nav class="nav" :class="{ 'nav--open': open }">
+  <focus-trap :active="active">
+    <nav class="nav" :class="{ 'nav--active': active }" data-cy="navigation">
       <div class="nav__brand">
         <nuxt-link to="/" class="nav__home">
           <GitHub
@@ -15,10 +15,10 @@
       </div>
       <button
         class="nav__hamburguer"
-        aria-label="Open menu"
-        @click="open = !open"
+        :aria-label="`${active ? 'Close' : 'Open'} navigation`"
+        @click="active = !active"
       >
-        <Hamburguer :open="open" />
+        <Hamburguer :active="active" />
       </button>
       <div class="nav__container">
         <div class="nav__wrapper">
@@ -35,10 +35,10 @@
           </ul>
           <ul class="nav__only-mobile">
             <li class="nav__only-mobile-item">
-              <CommonLink to="/"> Save the Date</CommonLink>
+              <CommonLink to="/">Save the Date</CommonLink>
             </li>
             <li class="nav__only-mobile-item">
-              <CommonLink to="/"> opensource@github.com </CommonLink>
+              <CommonLink to="/">opensource@github.com </CommonLink>
             </li>
           </ul>
         </div>
@@ -58,7 +58,7 @@ export default {
   },
   data() {
     return {
-      open: false,
+      active: false,
     }
   },
 }
@@ -218,7 +218,7 @@ export default {
   }
 
   @media (max-width: $screen-sm) {
-    &--open {
+    &--active {
       .nav__home,
       .nav__home-date {
         color: var(--fc-light);
