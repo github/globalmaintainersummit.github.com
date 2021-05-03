@@ -6,9 +6,7 @@
 
 <style lang="scss" scoped>
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 100px;
+  height: 50vh;
+  padding: 100px;
 }
 </style>

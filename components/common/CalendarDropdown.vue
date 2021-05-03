@@ -1,52 +1,54 @@
 <template>
-  <div class="dropdown" :class="showDropdown && 'dropdown--open'">
-    <p
-      class="dropdown__title"
-      :aria-label="label"
-      tabindex="0"
-      aria-haspopup="listbox"
-      :aria-expanded="showDropdown"
-      role="listbox"
-      @click="toggleDropdown"
-      @keydown.enter="toggleDropdown"
-      @keydown.space="toggleDropdown"
-      @keydown.esc="showDropdown = false"
-    >
-      <span v-if="title"> {{ title }} </span>
-      <span
-        class="dropdown__close"
-        :class="showDropdown && 'dropdown__close--visible'"
-        aria-hidden="true"
+  <div class="dropdown-wrapper">
+    <div class="dropdown" :class="showDropdown && 'dropdown--open'">
+      <p
+        class="dropdown__title"
+        :aria-label="label"
+        tabindex="0"
+        aria-haspopup="true"
+        :aria-expanded="showDropdown"
+        role="listbox"
+        @click="toggleDropdown"
+        @keydown.enter="toggleDropdown"
+        @keydown.space="toggleDropdown"
+        @keydown.esc="showDropdown = false"
       >
-        ✖
-      </span>
-    </p>
-    <ul
-      class="dropdown__options"
-      :class="showDropdown && 'dropdown__options--visible'"
-      :aria-hidden="!showDropdown"
-    >
-      <li v-for="option in options" :key="option.key">
-        <a
-          :href="showDropdown ? calendarUrl(option.key) : null"
-          class="option"
-          target="_blank"
-          :aria-label="`Save the date in your ${option.name} calendar`"
+        <span v-if="title"> {{ title }} </span>
+        <span
+          class="dropdown__close"
+          :class="showDropdown && 'dropdown__close--visible'"
+          aria-hidden="true"
         >
-          <img
-            :src="require(`~/assets/svg/calendars/cal_${option.key}.svg`)"
-            height="20px"
-            width="20px"
-            alt=""
-            role="presentation"
-            class="option__icon"
-          />
-          <span>
-            {{ option.name }}
-          </span>
-        </a>
-      </li>
-    </ul>
+          ✖
+        </span>
+      </p>
+      <ul
+        class="dropdown__options"
+        :class="showDropdown && 'dropdown__options--visible'"
+        :aria-hidden="!showDropdown"
+      >
+        <li v-for="option in options" :key="option.key">
+          <a
+            :href="showDropdown ? calendarUrl(option.key) : null"
+            class="option"
+            target="_blank"
+            :aria-label="`Save the date in your ${option.name} calendar`"
+          >
+            <img
+              :src="require(`~/assets/svg/calendars/cal_${option.key}.svg`)"
+              height="20px"
+              width="20px"
+              alt=""
+              role="presentation"
+              class="option__icon"
+            />
+            <span>
+              {{ option.name }}
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -110,9 +112,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.dropdown-wrapper {
+  position: relative;
+}
+
 .dropdown {
   --dropdown-height: 302px;
 
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 248px;
   height: 30px;
   cursor: pointer;
   transition: height 0.26s ease;
@@ -124,18 +134,15 @@ export default {
     border-radius: 12px;
     box-shadow: 0 16px 24px 0 rgba(13, 9, 16, 0.08),
       0 8px 16px 0 rgba(13, 9, 16, 0.12);
-
-    ul {
-      list-style-type: none;
-      margin-block: 0;
-      padding-inline: 0;
-    }
   }
 
   &__options {
+    list-style-type: none;
     transform: scaleY(0);
     transform-origin: top;
     transition: transform 0.26s ease;
+    margin-block: 0;
+    padding-inline: 0;
     &--visible {
       transform: scaleY(1);
     }
