@@ -6,7 +6,20 @@
       <p class="follow__lead">{{ followEvent.lead }}</p>
     </div>
     <div class="gather">
-      <CommonLink :to="followEvent.joinUs.link">
+      <img
+        src="~/assets/svg/gather_logo.svg"
+        alt=""
+        role="presentation"
+        class="gather__logo"
+      />
+      <picture role="presentation" class="gather__dancers">
+        <source
+          srcset="~/assets/img/gather_dancers.png"
+          media="(prefers-reduced-motion: reduce)"
+        />
+        <img srcset="~/assets/img/gather_dancers.gif" alt="" />
+      </picture>
+      <CommonLink :to="followEvent.joinUs.link" class="gather__link">
         {{ followEvent.joinUs.text }}
       </CommonLink>
     </div>
@@ -32,11 +45,15 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 684px;
   margin: 0 auto;
+  padding-top: 160px;
+  background-image: url('~/assets/svg/bg_pills/graphic_pills_footer.svg');
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .follow {
+  max-width: 684px;
   text-align: center;
 
   &__title {
@@ -60,6 +77,21 @@ export default {
 }
 
 .gather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-top: 120px;
+  row-gap: 42px;
+
+  &__logo {
+    max-width: 40px;
+    max-height: 53px;
+  }
+
+  &__dancers {
+    max-width: 292px;
+    max-height: 62px;
+  }
 }
 </style>
