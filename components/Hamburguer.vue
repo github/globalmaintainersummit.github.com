@@ -29,7 +29,13 @@ export default {
     background: var(--bg-hamburguer);
     cursor: pointer;
     transition: transform 0.2s linear, top 0.15s ease-in-out 0.3s,
-      color 0.25s ease 0.2s;
+      color 0.25s ease 0.2s, width 0.25s ease 0.2s;
+    &:nth-child(2) {
+      width: 18px;
+    }
+    &:nth-child(3) {
+      width: 8px;
+    }
   }
   &--active {
     span {
@@ -41,11 +47,12 @@ export default {
           color 0.25s ease 0.2s;
       }
       &:nth-child(2) {
-        opacity: 0;
+        width: 0;
         transition: color 0.25s ease 0.2s;
       }
       &:nth-child(3) {
         top: -6px;
+        width: 28px;
         transform: rotate(-45deg);
         transition: top 0.2s linear, transform 0.15s ease 0.3s,
           color 0.25s ease 0.2s;
