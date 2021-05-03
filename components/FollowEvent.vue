@@ -60,26 +60,26 @@ export default {
   text-align: center;
 
   &__title {
-    @include mobileToDesktopFontSize(var(--fs-medium), var(--fs-large));
+    @include mobileToDesktopFontSize(var(--fs-small), var(--fs-large));
 
-    margin: 0;
+    margin: 0 auto;
+    padding: 0 24px;
   }
 
   &__hashtag {
+    @include mobileToDesktopFontSize(var(--fs-medium), var(--fs-colossal));
     @include gradientTitle(var(--fc-primary), var(--fc-accent));
 
     margin: 8px 0 40px;
     font-weight: var(--fw-extra-bold);
-    font-size: var(--fs-large);
-
-    @media screen and (min-width: 500px) {
-      @include mobileToDesktopFontSize(var(--fs-giant), var(--fs-colossal));
-    }
   }
 
   &__lead {
-    padding: 0 112px;
+    padding: 0 24px;
     font-size: var(--fs-small);
+    @media screen and (min-width: $screen-sm) {
+      padding: 0 112px;
+    }
   }
 }
 
@@ -88,8 +88,12 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 120px;
+  margin-top: 56px;
   row-gap: 42px;
+
+  @media screen and (min-width: $screen-sm) {
+    margin-top: 120px;
+  }
 
   &__logo {
     max-width: 40px;
