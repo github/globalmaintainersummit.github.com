@@ -24,7 +24,7 @@
         <div class="nav__wrapper">
           <ul class="nav__list">
             <li class="nav__list-item">
-              <CommonLink to="/">Save the Date</CommonLink>
+              <CommonCalendarDropdown />
             </li>
             <li class="nav__list-item">
               <CommonLink to="/maintainers">Maintainers</CommonLink>
@@ -35,7 +35,7 @@
           </ul>
           <ul class="nav__only-mobile">
             <li class="nav__only-mobile-item">
-              <CommonLink to="/">Save the Date</CommonLink>
+              <CommonCalendarDropdown />
             </li>
             <li class="nav__only-mobile-item">
               <CommonLink to="/">opensource@github.com </CommonLink>
