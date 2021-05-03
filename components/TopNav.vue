@@ -34,9 +34,9 @@
             </li>
           </ul>
           <ul class="nav__only-mobile">
-            <li class="nav__only-mobile-item">
+            <!-- <li class="nav__only-mobile-item">
               <CommonCalendarDropdown />
-            </li>
+            </li> -->
             <li class="nav__only-mobile-item">
               <CommonLink to="/">opensource@github.com </CommonLink>
             </li>
@@ -66,6 +66,8 @@ export default {
 
 <style scoped lang="scss">
 .nav {
+  position: relative;
+  z-index: var(--z-index-topbar);
   display: flex;
   align-items: center;
   justify-content: space-between;
