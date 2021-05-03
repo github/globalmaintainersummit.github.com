@@ -53,6 +53,9 @@ export default {
 }
 
 .follow {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   max-width: 684px;
   text-align: center;
 
@@ -63,11 +66,15 @@ export default {
   }
 
   &__hashtag {
-    @include mobileToDesktopFontSize(var(--fs-giant), var(--fs-colossal));
     @include gradientTitle(var(--fc-primary), var(--fc-accent));
 
     margin: 8px 0 40px;
     font-weight: var(--fw-extra-bold);
+    font-size: var(--fs-large);
+
+    @media screen and (min-width: 500px) {
+      @include mobileToDesktopFontSize(var(--fs-giant), var(--fs-colossal));
+    }
   }
 
   &__lead {
@@ -87,11 +94,6 @@ export default {
   &__logo {
     max-width: 40px;
     max-height: 53px;
-  }
-
-  &__dancers {
-    max-width: 292px;
-    max-height: 62px;
   }
 }
 </style>
