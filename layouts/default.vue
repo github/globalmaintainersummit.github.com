@@ -3,6 +3,7 @@
     <main class="main">
       <Nuxt />
     </main>
+    <FollowEvent />
     <Footer />
   </div>
 </template>
