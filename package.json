@@ -49,7 +49,7 @@
     "prettier": "^2.2.1",
     "sass": "^1.32.11",
     "sass-loader": "^10.1.1",
-    "stylelint": "^13.12.0",
+    "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^22.0.0",
