@@ -44,7 +44,7 @@ export default {
   margin-top: 80px;
   margin-bottom: 32px;
   font-size: var(--fs-small);
-  @media screen and (min-width: $screen-ipad) {
+  @media screen and (min-width: $screen-tablet) {
     margin-top: 160px;
     margin-bottom: 64px;
   }

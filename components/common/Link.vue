@@ -1,11 +1,12 @@
 <template>
   <Component
     :is="type"
-    :href="href !== null ? href : mailto !== null ? `mailto:${mailto}` : null"
-    :to="to !== null ? to : null"
-    :target="href !== null ? '_blank' : null"
+    v-bind="
+      href ? { href: mailto !== null ? `mailto:${mailto}` : href } : { to }
+    "
+    :target="href ? '_blank' : null"
     class="link"
-    :class="button && 'button'"
+    :class="{ button: button }"
     role="link"
     :tabindex="button ? 0 : null"
   >

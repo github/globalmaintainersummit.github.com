@@ -27,6 +27,9 @@
     var(--salmon) 100%
   ); // Transparent to #ECEFF1
 
+  --bg-hamburguer: var(--navy);
+  --bg-hamburguer--open: var(--white);
+
   // Font Colors
   --fc-default: var(--navy);
   --fc-primary: var(--purple);

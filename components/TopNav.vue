@@ -1,50 +1,60 @@
 <template>
-  <nav class="nav" :class="{ 'nav--open': open }">
-    <div class="nav__brand">
-      <nuxt-link to="/" class="nav__home">
-        <GitHub
-          aria-label="Github Global Maintainers Summit"
-          role="presentation"
-          class="nav__home-gh"
-        />
-        <span class="nav__home-gh--desktop">Global Maintainer Summit</span>
-        <span class="nav__home-gh--mobile">GMS</span>
-      </nuxt-link>
-      <span class="nav__home-date">2021</span>
-    </div>
-    <button class="nav__hamburguer" @click="open = !open">B</button>
-    <div class="nav__container">
-      <div class="nav__wrapper">
-        <ul class="nav__list">
-          <li class="nav__list-item">
-            <CommonLink to="/">Save the Date</CommonLink>
-          </li>
-          <li class="nav__list-item">
-            <CommonLink to="/maintainers">Maintainers</CommonLink>
-          </li>
-          <li class="nav__list-item">
-            <CommonLink to="/schedule">Schedule</CommonLink>
-          </li>
-        </ul>
-        <ul class="nav__only-mobile">
-          <li class="nav__only-mobile-item">
-            <CommonLink to="/"> Save the Date</CommonLink>
-          </li>
-          <li class="nav__only-mobile-item">
-            <CommonLink to="/"> opensource@github.com </CommonLink>
-          </li>
-        </ul>
+  <focus-trap :active="open">
+    <nav class="nav" :class="{ 'nav--open': open }">
+      <div class="nav__brand">
+        <nuxt-link to="/" class="nav__home">
+          <GitHub
+            aria-label="Github Global Maintainers Summit"
+            role="presentation"
+            class="nav__home-gh"
+          />
+          <span class="nav__home-gh--desktop">Global Maintainer Summit</span>
+          <span class="nav__home-gh--mobile">GMS</span>
+        </nuxt-link>
+        <span class="nav__home-date">2021</span>
       </div>
-    </div>
-  </nav>
+      <button
+        class="nav__hamburguer"
+        aria-label="Open menu"
+        @click="open = !open"
+      >
+        <Hamburguer :open="open" />
+      </button>
+      <div class="nav__container">
+        <div class="nav__wrapper">
+          <ul class="nav__list">
+            <li class="nav__list-item">
+              <CommonLink to="/">Save the Date</CommonLink>
+            </li>
+            <li class="nav__list-item">
+              <CommonLink to="/maintainers">Maintainers</CommonLink>
+            </li>
+            <li class="nav__list-item">
+              <CommonLink to="/schedule">Schedule</CommonLink>
+            </li>
+          </ul>
+          <ul class="nav__only-mobile">
+            <li class="nav__only-mobile-item">
+              <CommonLink to="/"> Save the Date</CommonLink>
+            </li>
+            <li class="nav__only-mobile-item">
+              <CommonLink to="/"> opensource@github.com </CommonLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </focus-trap>
 </template>
 
 <script>
+import { FocusTrap } from 'focus-trap-vue'
 import GitHub from '~/assets/svg/github.svg?inline'
 
 export default {
   components: {
     GitHub,
+    FocusTrap,
   },
   data() {
     return {
@@ -120,9 +130,9 @@ export default {
       width: 100%;
       margin: 32px 0;
       padding: 0 0 0 0;
-      color: var(--fc-light);
       text-align: center;
       a {
+        color: var(--fc-light);
         font-size: var(--fs-small);
         font-family: var(--ff-title);
       }
@@ -145,6 +155,7 @@ export default {
         padding: 0;
       }
       a {
+        color: var(--fc-default);
         font-size: var(--fs-small);
       }
     }
@@ -196,6 +207,11 @@ export default {
     display: none;
     width: 30px;
     height: 30px;
+    padding: 0;
+    color: var(--fc-default);
+    background: transparent;
+    border: none;
+    cursor: pointer;
     @media (max-width: $screen-sm) {
       display: block;
     }
