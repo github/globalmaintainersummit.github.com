@@ -94,3 +94,6 @@ sw.*
 
 # Ignore lighthouse CI artifacts
 .lighthouseci
+
+# Ignore cypress artifacts
+cypress/videos
