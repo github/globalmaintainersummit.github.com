@@ -3,7 +3,7 @@
     <h1 style="display: flex; margin-top: 100px; place-content: center">
       Work in progress
     </h1>
-    <CommonGrid :items="maintainersHome" three-cols />
+    <CommonGrid :items="maintainers.list" three-cols data-cy="maintainers" />
   </section>
 </template>
 
@@ -12,16 +12,10 @@ import socialMetadata from '~/mixins/social-metadata'
 
 export default {
   mixins: [socialMetadata],
-  data() {
+  async asyncData({ $content }) {
+    const { maintainers } = await $content('home').fetch()
     return {
-      maintainersHome: [
-        { name: 'Bartłomiej Płotka', project: 'Prometheus' },
-        { name: 'Chrissy LeMaire', project: 'dbatools' },
-        { name: 'Eileen Uchitelle', project: 'Ruby on Rails' },
-        { name: 'Helen Hou-Sandí', project: 'WordPress' },
-        { name: 'Ifiok Jr.', project: 'Remirror' },
-        { name: 'Lorena Mesa', project: 'PyLadies' },
-      ],
+      maintainers,
     }
   },
 }

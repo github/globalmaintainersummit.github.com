@@ -1,4 +1,30 @@
 {
+  "maintainers": {
+    "list": [
+      {
+        "name": "Bartłomiej Płotka",
+        "project": "Prometheus",
+        "src": "bartlomiej-plotka"
+      },
+      {
+        "name": "Chrissy LeMaire",
+        "project": "dbatools",
+        "src": "chrissy-lemaire"
+      },
+      {
+        "name": "Eileen Uchitelle",
+        "project": "Ruby on Rails",
+        "src": "eileen-uchitelle"
+      },
+      {
+        "name": "Helen Hou-Sandí",
+        "project": "WordPress",
+        "src": "helen-hou-sandi"
+      },
+      { "name": "Ifiok Jr.", "project": "Remirror", "src": "ifiok-jr" },
+      { "name": "Lorena Mesa", "project": "PyLadies", "src": "lorena-mesa" }
+    ]
+  },
   "footer": {
     "github": "© 2021 GitHub, Inc.",
     "links": [
