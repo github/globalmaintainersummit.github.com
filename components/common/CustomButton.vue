@@ -3,23 +3,37 @@
     <Component
       :is="type"
       class="button"
-      :class="iconPrefix && 'button--reverse'"
+      :class="iconSuffix && 'button--reverse'"
       :href="href"
       :to="to"
       role="link"
     >
-      <span class="button__text" role="presentation" aria-hidden="true">
-        <slot name="text" />
+      <span class="button__icon" role="presentation" aria-hidden="true">
+        <ArrowRight v-if="icon === 'arrow-right'" class="button__icon--arrow" />
+        <HeartEmpty v-if="icon === 'heart'" class="button__icon--heart" />
+        <HeartFilled
+          v-if="icon === 'heart'"
+          class="button__icon--heart-filled"
+        />
       </span>
-      <span class="button__icon">
-        <slot name="icon" />
+      <span class="button__text">
+        <slot />
       </span>
     </Component>
   </div>
 </template>
 
 <script>
+import ArrowRight from '~/assets/svg/icons/arrow_right.svg?inline'
+import HeartEmpty from '~/assets/svg/icons/heart_empty.svg?inline'
+import HeartFilled from '~/assets/svg/icons/heart_filled.svg?inline'
+
 export default {
+  components: {
+    ArrowRight,
+    HeartEmpty,
+    HeartFilled,
+  },
   props: {
     href: {
       type: String,
@@ -29,7 +43,14 @@ export default {
       type: String,
       default: null,
     },
-    iconPrefix: {
+    icon: {
+      type: String,
+      default: null,
+      validator: (value) => {
+        return ['arrow-right', 'heart'].includes(value)
+      },
+    },
+    iconSuffix: {
       type: Boolean,
       default: false,
     },
