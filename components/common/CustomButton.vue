@@ -52,9 +52,9 @@ export default {
 
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  margin-bottom: 10px;
+  margin: 0 8px 10px 0;
   padding: 24px 32px;
+  column-gap: 24px;
   background-color: var(--bg-button);
   border: 3px solid var(--bg-body);
   border-radius: 33px;
@@ -75,7 +75,10 @@ export default {
   }
 
   &__text {
+    @include mobileToDesktopFontSize(var(--fs-smaller), var(--fs-small));
+
     color: var(--fc-light);
+    font-family: var(--ff-title);
   }
 }
 </style>
