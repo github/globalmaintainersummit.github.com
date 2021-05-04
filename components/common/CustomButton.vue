@@ -59,6 +59,7 @@ export default {
   border: 3px solid var(--bg-body);
   border-radius: 33px;
   box-shadow: 6px 8px 0 0 var(--box-shadow-color);
+  cursor: pointer;
   transition: all 0.3s ease-in;
   &:hover {
     --box-shadow-color: var(--bs-button--hover);
