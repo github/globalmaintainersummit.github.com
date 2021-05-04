@@ -20,6 +20,15 @@
       "url": "https://github.com/github/globalmaintainersummit.github.com"
     }
   },
+  "followEvent": {
+    "title": "Follow the event",
+    "hashtag": "#GitHubGMS21",
+    "lead": "Hear from open source maintainers coming live to your screen from all around the world.",
+    "joinUs": {
+      "text": "Join us at Gather",
+      "link": "https://gather.town/app/JMpiYvZerIxEBgPn/codegram"
+    }
+  },
   "calendarEvent": {
     "startDate": "2021-06-08",
     "endDate": "2021-06-09",
