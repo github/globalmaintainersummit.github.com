@@ -3,10 +3,15 @@
     <Component
       :is="type"
       class="button"
-      :class="iconSuffix && 'button--reverse'"
+      :class="{
+        'button--reverse': iconSuffix,
+        'button--animate-heart': icon === 'heart',
+      }"
       :href="href"
+      :target="href && '__blank'"
       :to="to"
       role="link"
+      tabindex="0"
     >
       <span class="button__icon" role="presentation" aria-hidden="true">
         <ArrowRight v-if="icon === 'arrow-right'" class="button__icon--arrow" />
@@ -82,18 +87,38 @@ export default {
   box-shadow: 6px 8px 0 0 var(--box-shadow-color);
   cursor: pointer;
   transition: all 0.3s ease-in;
-  &:hover {
+  &:hover,
+  &:focus {
     --box-shadow-color: var(--bs-button--hover);
 
     background-color: var(--bg-button--hover);
   }
+
   &--reverse {
     flex-direction: row-reverse;
   }
 
   &__icon {
-    width: 21px;
-    height: 23px;
+    &--arrow-right {
+      width: 32px;
+      height: 24px;
+    }
+    &--heart {
+      width: 25px;
+      height: 32px;
+      &-filled {
+        display: none;
+      }
+    }
+  }
+
+  &:active {
+    .button__icon--heart {
+      display: none;
+    }
+    .button__icon--heart-filled {
+      display: inline-block;
+    }
   }
 
   &__text {
