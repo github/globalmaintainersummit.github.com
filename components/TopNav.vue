@@ -14,11 +14,11 @@
         <span class="nav__home-date">2021</span>
       </div>
       <button
-        class="nav__hamburger"
+        class="nav__hamburguer"
         :aria-label="`${active ? 'Close' : 'Open'} navigation`"
         @click="active = !active"
       >
-        <hamburger :active="active" />
+        <Hamburguer :active="active" />
       </button>
       <div class="nav__container">
         <div class="nav__wrapper">
@@ -72,7 +72,7 @@ export default {
   background: var(--bg-body);
   &__brand {
     position: relative;
-    z-index: var(--z-index-hamburger);
+    z-index: var(--z-index-hamburguer);
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
@@ -206,9 +206,9 @@ export default {
     }
   }
 
-  &__hamburger {
+  &__hamburguer {
     position: relative;
-    z-index: var(--z-index-hamburger);
+    z-index: var(--z-index-hamburguer);
     display: none;
     width: 30px;
     height: 30px;

@@ -26,7 +26,7 @@ export default {
     width: 28px;
     height: 3px;
     margin: 3px 0;
-    background: var(--bg-hamburger);
+    background: var(--bg-hamburguer);
     cursor: pointer;
     transition: transform 0.2s linear, top 0.15s ease-in-out 0.3s,
       color 0.25s ease 0.2s, width 0.25s ease 0.2s;
@@ -39,7 +39,7 @@ export default {
   }
   &--active {
     span {
-      background: var(--bg-hamburger--open);
+      background: var(--bg-hamburguer--open);
       &:nth-child(1) {
         top: 6px;
         transform: rotate(45deg);
