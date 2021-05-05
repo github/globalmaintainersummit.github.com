@@ -52,8 +52,6 @@ export default {
 
 <style lang="scss" scoped>
 .link {
-  --d: 0%;
-  --p: 0%;
   --underline-color: var(--salmon);
 
   position: relative;
@@ -83,10 +81,10 @@ export default {
     background-repeat: repeat-x;
     background-size: 36px 16px;
     cursor: pointer;
-    transition: 0.5s, mask-position 0s 0.5s;
+    transition: 0.5s ease, mask-position 0s 0.5s;
     content: '';
-    mask: linear-gradient(#fff 0 0) top / 100% calc(100% - 24px),
-      linear-gradient(#fff 0 0) var(--p, 0) 100% / var(--d, 0) 24px;
+    mask: linear-gradient(#fff 0 0) top / 100% calc(100% - 18px),
+      linear-gradient(#fff 0 0) var(--p, 0) 100% / var(--d, 0) 18px;
     mask-repeat: no-repeat;
   }
   &:hover {
