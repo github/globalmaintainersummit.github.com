@@ -18,11 +18,7 @@
           v-if="icon === 'arrow-right'"
           class="button__icon--arrow-right"
         />
-        <HeartEmpty v-if="icon === 'heart'" class="button__icon--heart" />
-        <HeartFilled
-          v-if="icon === 'heart'"
-          class="button__icon--heart-filled"
-        />
+        <Heart v-else-if="icon === 'heart'" class="button__icon--heart" />
       </span>
       <span class="button__text">
         <slot />
@@ -33,14 +29,12 @@
 
 <script>
 import ArrowRight from '~/assets/svg/icons/arrow_right.svg?inline'
-import HeartEmpty from '~/assets/svg/icons/heart_empty.svg?inline'
-import HeartFilled from '~/assets/svg/icons/heart_filled.svg?inline'
+import Heart from '~/assets/svg/icons/heart.svg?inline'
 
 export default {
   components: {
     ArrowRight,
-    HeartEmpty,
-    HeartFilled,
+    Heart,
   },
   props: {
     href: {
@@ -88,11 +82,6 @@ export default {
   box-shadow: 6px 8px 0 0 var(--bs-button);
   cursor: pointer;
   transition: all 0.3s ease-in;
-  &:hover,
-  &:focus {
-    background-color: var(--bg-button--hover);
-    box-shadow: 8px 10px 0 0 var(--bs-button--hover);
-  }
 
   &--reverse {
     flex-direction: row-reverse;
@@ -100,24 +89,38 @@ export default {
 
   &__icon {
     &--arrow-right {
-      width: 21px;
-      height: 23px;
+      width: 18px;
+      height: 14px;
     }
     &--heart {
-      width: 25px;
-      height: 32px;
-      &-filled {
-        display: none;
+      width: 22px;
+      height: 19px;
+      path {
+        transition: fill-opacity 0.3s linear;
+        stroke: white;
+        stroke-width: 2px;
+        fill-opacity: 0;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--bg-button--hover);
+    box-shadow: 8px 10px 0 0 var(--bs-button--hover);
+    .button__icon--heart {
+      path {
+        fill: white;
+        fill-opacity: 1;
       }
     }
   }
 
   &:active {
     .button__icon--heart {
-      display: none;
-    }
-    .button__icon--heart-filled {
-      display: inline-block;
+      path {
+        fill: #eb5281;
+      }
     }
   }
 
