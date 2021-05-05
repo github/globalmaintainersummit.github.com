@@ -14,8 +14,8 @@
       <CommonLink :mailto="footer.contact.mailto">
         {{ footer.contact.label }}
       </CommonLink>
-      <CommonLink :href="footer.project.url"> Repository </CommonLink>
-      <CommonLink :href="footer.project.url"> Code of Conduct </CommonLink>
+      <CommonLink :href="footer.project.url">Repository</CommonLink>
+      <CommonLink :href="footer.project.url">Code of Conduct</CommonLink>
     </div>
   </footer>
 </template>
