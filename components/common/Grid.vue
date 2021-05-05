@@ -9,7 +9,7 @@
                 require(`~/assets/img/maintainers/${item.src
                   .toLowerCase()
                   .replace(/\s+/g, '-')
-                  .replace(/\./g, '')}.png`)
+                  .replace(/\./g, '')}.jpg`)
               "
               :alt="item.name"
             />
