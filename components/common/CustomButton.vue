@@ -14,7 +14,10 @@
       tabindex="0"
     >
       <span class="button__icon" role="presentation" aria-hidden="true">
-        <ArrowRight v-if="icon === 'arrow-right'" class="button__icon--arrow" />
+        <ArrowRight
+          v-if="icon === 'arrow-right'"
+          class="button__icon--arrow-right"
+        />
         <HeartEmpty v-if="icon === 'heart'" class="button__icon--heart" />
         <HeartFilled
           v-if="icon === 'heart'"
@@ -74,8 +77,6 @@ export default {
 }
 
 .button {
-  --box-shadow-color: var(--bs-button);
-
   display: flex;
   align-items: center;
   margin: 0 8px 10px 0;
@@ -83,15 +84,14 @@ export default {
   column-gap: 24px;
   background-color: var(--bg-button);
   border: 3px solid var(--bg-body);
-  border-radius: 33px;
-  box-shadow: 6px 8px 0 0 var(--box-shadow-color);
+  border-radius: 42px;
+  box-shadow: 6px 8px 0 0 var(--bs-button);
   cursor: pointer;
   transition: all 0.3s ease-in;
   &:hover,
   &:focus {
-    --box-shadow-color: var(--bs-button--hover);
-
     background-color: var(--bg-button--hover);
+    box-shadow: 8px 10px 0 0 var(--bs-button--hover);
   }
 
   &--reverse {
