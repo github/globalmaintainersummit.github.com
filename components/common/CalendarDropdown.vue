@@ -1,9 +1,13 @@
 <template>
   <focus-trap :active="showDropdown">
-    <div class="dropdown-wrapper">
+    <div class="dropdown-wrapper" :class="isNavItem && 'dropdown-wrapper--nav'">
       <div class="dropdown" :class="showDropdown && 'dropdown--open'">
         <button
           class="dropdown__title"
+          :class="{
+            'dropdown__title--nav': isNavItem,
+            'dropdown__title--nav-open': showDropdown,
+          }"
           :aria-label="label"
           aria-haspopup="true"
           :aria-expanded="showDropdown"
@@ -11,8 +15,9 @@
           aria-controls="calendar-list"
           @click="toggleDropdown"
           @keyup.esc="showDropdown = false"
-          @blur="showDropdown = false"
         >
+          <!-- @blur="showDropdown = false"
+        > -->
           {{ title }}
           <CloseIcon
             class="dropdown__close"
@@ -72,6 +77,12 @@ export default {
     FocusTrap,
     CloseIcon,
   },
+  props: {
+    isNavItem: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       showDropdown: false,
@@ -124,21 +135,36 @@ export default {
 <style lang="scss" scoped>
 .dropdown-wrapper {
   --dropdown-height: 280px;
+  --dropdown-width-default: 196px;
+  --wrapper-width-default: 142px;
+  --dropdown-width: var(--dropdown-width-default);
+  --wrapper-width: var(--wrapper-width-default);
+
+  @media (max-width: $screen-sm) {
+    &--nav {
+      --dropdown-width: 100%;
+      --wrapper-width: 100%;
+    }
+  }
 
   position: relative;
   display: inline-block;
-  width: 142px;
+  width: var(--wrapper-width);
 }
 
 .dropdown {
   position: absolute;
   top: 0;
   display: block;
-  width: 192px;
+  width: var(--dropdown-width);
   height: 30px;
   cursor: pointer;
   transition: height 0.26s ease;
   &--open {
+    --dropdown-width: var(--dropdown-width-default);
+    --wrapper-width: var(--wrapper-width-default);
+
+    width: var(--dropdown-width);
     height: var(--dropdown-height);
     margin: -24px;
     padding: 24px 12px 24px 24px;
@@ -147,7 +173,7 @@ export default {
     box-shadow: 0 16px 24px 0 rgba(13, 9, 16, 0.08),
       0 8px 16px 0 rgba(13, 9, 16, 0.12);
 
-    .dropdown__title {
+    .dropdown__title--nav {
       @media (max-width: $screen-sm) {
         color: var(--fc-primary);
       }
@@ -170,13 +196,23 @@ export default {
     margin-bottom: 12px;
     padding: 0;
     color: var(--fc-primary);
+    font-weight: var(--fw-bold);
     font-size: var(--fs-small);
     background: transparent;
     border: none;
     cursor: pointer;
 
-    @media (max-width: $screen-sm) {
-      color: var(--fc-light);
+    &--nav {
+      @media (max-width: $screen-sm) {
+        color: var(--fc-light);
+        font-size: var(--fs-large);
+        font-family: var(--ff-title);
+        &-open {
+          font-weight: var(--fw-bold);
+          font-size: var(--fs-small);
+          font-family: var(--ff-secondary);
+        }
+      }
     }
   }
 
@@ -198,6 +234,7 @@ export default {
   align-items: center;
   padding: 10px 0;
   color: var(--fc-default);
+  font-weight: var(--fw-regular);
   font-size: var(--fs-smaller);
   transition: color 0.3s ease-in;
   &:hover,

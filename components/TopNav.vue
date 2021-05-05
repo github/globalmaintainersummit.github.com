@@ -24,7 +24,10 @@
         <div class="nav__wrapper">
           <ul class="nav__list">
             <li class="nav__list-item">
-              <CommonCalendarDropdown class="nav__list-item--calendar" />
+              <CommonCalendarDropdown
+                is-nav-item
+                class="nav__list-item--calendar"
+              />
             </li>
             <li class="nav__list-item">
               <CommonLink to="/maintainers">Maintainers</CommonLink>
@@ -152,9 +155,6 @@ export default {
       padding: 0 40px 0 0;
       &--calendar {
         top: -15px;
-        @media (max-width: $screen-sm) {
-          left: -15px;
-        }
       }
       &:last-child {
         padding: 0;
