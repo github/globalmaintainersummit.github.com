@@ -13,13 +13,11 @@
           @keyup.esc="showDropdown = false"
         >
           {{ title }}
-          <span
+          <CloseIcon
             class="dropdown__close"
             :class="showDropdown && 'dropdown__close--visible'"
             aria-hidden="true"
-          >
-            ✖
-          </span>
+          />
         </button>
         <ul
           id="calendar-list"
@@ -60,6 +58,7 @@
 <script>
 import { google, outlook, office365, yahoo, ics } from 'calendar-link'
 import { FocusTrap } from 'focus-trap-vue'
+import CloseIcon from '~/assets/img/icons/close.svg?inline'
 
 const KEY_CALENDAR_APPLE = 'apple'
 const KEY_CALENDAR_GOOGLE = 'google'
@@ -70,6 +69,7 @@ const KEY_CALENDAR_YAHOO = 'yahoo'
 export default {
   components: {
     FocusTrap,
+    CloseIcon,
   },
   data() {
     return {
@@ -125,23 +125,23 @@ export default {
   --dropdown-height: 280px;
 
   position: relative;
-  width: 180px;
+  width: 142px;
 }
 
 .dropdown {
   position: absolute;
   top: 0;
   display: block;
-  width: 248px;
+  width: 192px;
   height: 30px;
   cursor: pointer;
   transition: height 0.26s ease;
   &--open {
     height: var(--dropdown-height);
     margin: -24px;
-    padding: 24px;
+    padding: 24px 12px 24px 24px;
     background-color: var(--bg-body);
-    border-radius: 12px;
+    border-radius: 24px;
     box-shadow: 0 16px 24px 0 rgba(13, 9, 16, 0.08),
       0 8px 16px 0 rgba(13, 9, 16, 0.12);
   }
@@ -163,7 +163,6 @@ export default {
     padding: 0;
     color: var(--fc-primary);
     font-size: var(--fs-small);
-    font-family: var(--ff-title);
     background: transparent;
     border: none;
     cursor: pointer;
