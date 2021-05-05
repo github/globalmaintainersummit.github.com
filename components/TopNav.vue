@@ -34,9 +34,6 @@
             </li>
           </ul>
           <ul class="nav__only-mobile">
-            <!-- <li class="nav__only-mobile-item">
-              <CommonCalendarDropdown />
-            </li> -->
             <li class="nav__only-mobile-item">
               <CommonLink to="/">opensource@github.com </CommonLink>
             </li>
@@ -154,7 +151,10 @@ export default {
     &-item {
       padding: 0 40px 0 0;
       &--calendar {
-        margin-top: -11px;
+        top: -15px;
+        @media (max-width: $screen-sm) {
+          left: -15px;
+        }
       }
       &:last-child {
         padding: 0;
@@ -200,7 +200,7 @@ export default {
       }
       .nav__list:first-child {
         li:first-child {
-          display: none;
+          order: 3;
         }
       }
     }

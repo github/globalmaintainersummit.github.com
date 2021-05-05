@@ -11,6 +11,7 @@
           aria-controls="calendar-list"
           @click="toggleDropdown"
           @keyup.esc="showDropdown = false"
+          @blur="showDropdown = false"
         >
           {{ title }}
           <CloseIcon
@@ -125,6 +126,7 @@ export default {
   --dropdown-height: 280px;
 
   position: relative;
+  display: inline-block;
   width: 142px;
 }
 
@@ -144,6 +146,12 @@ export default {
     border-radius: 24px;
     box-shadow: 0 16px 24px 0 rgba(13, 9, 16, 0.08),
       0 8px 16px 0 rgba(13, 9, 16, 0.12);
+
+    .dropdown__title {
+      @media (max-width: $screen-sm) {
+        color: var(--fc-primary);
+      }
+    }
   }
 
   &__options {
@@ -166,6 +174,10 @@ export default {
     background: transparent;
     border: none;
     cursor: pointer;
+
+    @media (max-width: $screen-sm) {
+      color: var(--fc-light);
+    }
   }
 
   &__close {
