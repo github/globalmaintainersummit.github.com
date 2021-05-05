@@ -21,9 +21,8 @@
           aria-controls="calendar-list"
           @click="toggleDropdown"
           @keyup.esc="showDropdown = false"
+          @blur="showDropdown = false"
         >
-          <!-- @blur="showDropdown = false"
-        > -->
           {{ title }}
           <CloseIcon
             class="dropdown__close"
