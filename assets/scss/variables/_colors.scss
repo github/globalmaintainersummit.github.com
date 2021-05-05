@@ -19,6 +19,12 @@
     hsla(204, 15%, 94%, 1) 100%
   ); // Transparent to #ECEFF1
 
+  --grad-navigation-mobile: linear-gradient(
+    135deg,
+    var(--purple) 0%,
+    var(--salmon) 100%
+  ); // Transparent to #ECEFF1
+
   // Background Colors
   --bg-body: var(--white);
   --bg-primary: var(--purple);
@@ -27,11 +33,12 @@
   --bg-close-icon: var(--gray-400);
   --bg-hamburguer: var(--navy);
   --bg-hamburguer--open: var(--white);
-  --grad-navigation-mobile: linear-gradient(
-    135deg,
-    var(--purple) 0%,
-    var(--salmon) 100%
-  ); // Transparent to #ECEFF1
+  --bg-button: var(--navy);
+  --bg-button--hover: var(--purple);
+
+  // Box shadow
+  --bs-button: var(--purple);
+  --bs-button--hover: var(--salmon);
 
   // Font Colors
   --fc-default: var(--navy);
