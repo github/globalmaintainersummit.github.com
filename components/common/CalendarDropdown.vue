@@ -1,6 +1,12 @@
 <template>
   <focus-trap :active="showDropdown">
-    <div class="dropdown-wrapper" :class="isNavItem && 'dropdown-wrapper--nav'">
+    <div
+      class="dropdown-wrapper"
+      :class="{
+        'dropdown-wrapper--nav': isNavItem,
+        'dropdown-wrapper--open': showDropdown,
+      }"
+    >
       <div class="dropdown" :class="showDropdown && 'dropdown--open'">
         <button
           class="dropdown__title"
@@ -144,6 +150,9 @@ export default {
     &--nav {
       --dropdown-width: 100%;
       --wrapper-width: 100%;
+    }
+    &--open {
+      transform: translateX(35%);
     }
   }
 
