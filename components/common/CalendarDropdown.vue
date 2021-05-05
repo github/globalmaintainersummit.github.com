@@ -122,16 +122,18 @@ export default {
 
 <style lang="scss" scoped>
 .dropdown-wrapper {
+  --dropdown-height: 280px;
+  --dropdown-width: 248px;
+
   position: relative;
+  width: var(--dropdown-width);
 }
 
 .dropdown {
-  --dropdown-height: 280px;
-
   position: absolute;
   top: 0;
   display: block;
-  width: 248px;
+  width: var(--dropdown-width);
   height: 30px;
   cursor: pointer;
   transition: height 0.26s ease;
@@ -139,7 +141,7 @@ export default {
     height: var(--dropdown-height);
     margin: -24px;
     padding: 24px;
-    background-color: var(--bg-default);
+    background-color: var(--bg-body);
     border-radius: 12px;
     box-shadow: 0 16px 24px 0 rgba(13, 9, 16, 0.08),
       0 8px 16px 0 rgba(13, 9, 16, 0.12);
