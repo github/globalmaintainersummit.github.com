@@ -119,7 +119,10 @@ export default {
   &:active {
     .button__icon--heart {
       path {
-        fill: #eb5281;
+        --heart-fill: #eb5281;
+
+        fill: var(--heart-fill);
+        stroke: var(--heart-fill);
       }
     }
   }
