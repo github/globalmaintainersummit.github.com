@@ -24,7 +24,7 @@
         <div class="nav__wrapper">
           <ul class="nav__list">
             <li class="nav__list-item">
-              <CommonCalendarDropdown />
+              <CommonCalendarDropdown class="nav__list-item--calendar" />
             </li>
             <li class="nav__list-item">
               <CommonLink to="/maintainers">Maintainers</CommonLink>
@@ -153,6 +153,9 @@ export default {
     list-style: none;
     &-item {
       padding: 0 40px 0 0;
+      &--calendar {
+        margin-top: -11px;
+      }
       &:last-child {
         padding: 0;
       }

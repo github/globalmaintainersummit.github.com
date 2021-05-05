@@ -123,17 +123,16 @@ export default {
 <style lang="scss" scoped>
 .dropdown-wrapper {
   --dropdown-height: 280px;
-  --dropdown-width: 248px;
 
   position: relative;
-  width: var(--dropdown-width);
+  width: 180px;
 }
 
 .dropdown {
   position: absolute;
   top: 0;
   display: block;
-  width: var(--dropdown-width);
+  width: 248px;
   height: 30px;
   cursor: pointer;
   transition: height 0.26s ease;
