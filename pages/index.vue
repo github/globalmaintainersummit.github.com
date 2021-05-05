@@ -12,6 +12,7 @@
     >
       Sponsor PyLadies
     </CommonCustomButton>
+    <CommonGrid :items="maintainers.list" three-cols data-cy="maintainers" />
   </section>
 </template>
 
@@ -20,6 +21,12 @@ import socialMetadata from '~/mixins/social-metadata'
 
 export default {
   mixins: [socialMetadata],
+  async asyncData({ $content }) {
+    const { maintainers } = await $content('home').fetch()
+    return {
+      maintainers,
+    }
+  },
 }
 </script>
 
