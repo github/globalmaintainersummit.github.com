@@ -100,8 +100,8 @@ export default {
 
   &__icon {
     &--arrow-right {
-      width: 32px;
-      height: 24px;
+      width: 21px;
+      height: 23px;
     }
     &--heart {
       width: 25px;
