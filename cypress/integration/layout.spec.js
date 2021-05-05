@@ -46,5 +46,18 @@ describe('Default Layout', () => {
         cy.findAllByText('Save the Date').first().should('be.visible')
       })
     })
+
+    it('expands and collapses Save the date dropdown', () => {
+      cy.get('[data-cy=navigation]').within(() => {
+        cy.findByText('Save the Date').click()
+        cy.findByText('Apple').should('be.visible')
+        cy.findByText('Google').should('be.visible')
+        cy.findByText('Office 365').should('be.visible')
+        cy.findByText('Outlook').should('be.visible')
+        cy.findByText('Yahoo').should('be.visible')
+        cy.findByText('Save the Date').click()
+        cy.findByText('Apple').should('not.be.visible')
+      })
+    })
   })
 })
