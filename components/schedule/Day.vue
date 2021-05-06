@@ -1,7 +1,7 @@
 <template>
   <div class="day">
     <h3>{{ content.date }}</h3>
-    <div v-for="slot in content.slots" :key="slot.label" class="slots">
+    <div v-for="slot in content.slots" :key="slot.label" class="slot">
       <ScheduleTopicSlot v-if="slot.talks" :content="slot" />
       <ScheduleSlot v-else :content="slot" />
     </div>
@@ -25,5 +25,9 @@ export default {
   h3 {
     color: var(--fc-primary);
   }
+}
+
+.slot {
+  margin-bottom: 24px;
 }
 </style>
