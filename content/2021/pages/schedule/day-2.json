@@ -87,12 +87,10 @@
     },
     {
       "time": "2:00 pm",
-      "label": "Closing",
-      "break": "none"
+      "label": "Closing"
     },
     {
-      "label": "Hangout",
-      "break": "none"
+      "label": "Hangout"
     }
   ]
 }
