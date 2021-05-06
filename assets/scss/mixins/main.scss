@@ -39,27 +39,3 @@
     padding: 0 40px;
   }
 }
-
-@mixin button {
-  @include mobileToDesktopFontSize(var(--fs-smaller), var(--fs-small));
-
-  display: flex;
-  align-items: center;
-  margin: 0 8px 10px 0;
-  padding: 24px 32px;
-  color: var(--fc-light);
-  font-family: var(--ff-title);
-  column-gap: 24px;
-  background-color: var(--bg-button);
-  border: 3px solid var(--bg-body);
-  border-radius: 42px;
-  box-shadow: 6px 8px 0 0 var(--bs-button);
-  cursor: pointer;
-  transition: all 0.3s ease-in;
-
-  &:hover,
-  &:focus {
-    background-color: var(--bg-button--hover);
-    box-shadow: 8px 10px 0 0 var(--bs-button--hover);
-  }
-}

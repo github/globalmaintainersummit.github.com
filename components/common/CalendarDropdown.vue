@@ -1,70 +1,81 @@
 <template>
-  <div
-    class="dropdown-wrapper"
-    :class="[
-      `dropdown-wrapper--${type}`,
-      {
-        'dropdown-wrapper--open': showDropdown,
-      },
-    ]"
-  >
-    <div class="dropdown" :class="showDropdown && 'dropdown--open'">
-      <button
-        class="dropdown__title"
-        :class="[
-          `dropdown__title--${type}`,
-          {
-            'dropdown__title--nav-open': showDropdown,
-          },
-        ]"
-        :aria-label="label"
-        aria-haspopup="true"
-        :aria-expanded="showDropdown"
-        role="listbox"
-        aria-controls="calendar-list"
-        @click="toggleDropdown"
-        @keyup.esc="showDropdown = false"
-      >
-        {{ title }}
-        <CloseIcon
-          class="dropdown__close"
-          :class="showDropdown && 'dropdown__close--visible'"
-          aria-hidden="true"
-        />
-      </button>
-      <focus-trap :active="showDropdown">
-        <ul
-          id="calendar-list"
-          class="dropdown__options"
-          :class="showDropdown && 'dropdown__options--visible'"
-          :aria-hidden="!showDropdown"
+  <div>
+    <CommonCustomButton
+      v-if="type == 'button' && !showDropdown"
+      icon="calendar"
+      icon-suffix
+      @click="toggleDropdown"
+    >
+      Save the Date
+    </CommonCustomButton>
+    <div
+      v-else
+      class="dropdown-wrapper"
+      :class="[
+        `dropdown-wrapper--${type}`,
+        {
+          'dropdown-wrapper--open': showDropdown,
+        },
+      ]"
+    >
+      <div class="dropdown" :class="showDropdown && 'dropdown--open'">
+        <button
+          class="dropdown__title"
+          :class="[
+            `dropdown__title--${type}`,
+            {
+              'dropdown__title--nav-open': showDropdown,
+            },
+          ]"
+          :aria-label="label"
+          aria-haspopup="true"
+          :aria-expanded="showDropdown"
+          role="listbox"
+          aria-controls="calendar-list"
+          @click="toggleDropdown"
+          @keyup.esc="showDropdown = false"
         >
-          <li
-            v-for="option in options"
-            :key="option.key"
-            @keydown.esc="showDropdown = false"
+          {{ title }}
+          <CloseIcon
+            class="dropdown__close"
+            :class="showDropdown && 'dropdown__close--visible'"
+            aria-hidden="true"
+          />
+        </button>
+        <focus-trap :active="showDropdown">
+          <ul
+            id="calendar-list"
+            class="dropdown__options"
+            :class="showDropdown && 'dropdown__options--visible'"
+            :aria-hidden="!showDropdown"
           >
-            <a
-              :href="showDropdown ? calendarUrl(option.key) : null"
-              class="option"
-              target="_blank"
-              :aria-label="`Save the date in your ${option.name} calendar`"
+            <li
+              v-for="option in options"
+              :key="option.key"
+              @keydown.esc="showDropdown = false"
             >
-              <img
-                :src="require(`~/assets/svg/calendars/cal_${option.key}.svg`)"
-                height="20px"
-                width="20px"
-                alt=""
-                role="presentation"
-                class="option__icon"
-              />
-              <span>
-                {{ option.name }}
-              </span>
-            </a>
-          </li>
-        </ul>
-      </focus-trap>
+              <a
+                :href="showDropdown ? calendarUrl(option.key) : null"
+                class="option"
+                target="_blank"
+                :aria-label="`Save the date in your ${option.name} calendar`"
+              >
+                <img
+                  :src="require(`~/assets/svg/calendars/cal_${option.key}.svg`)"
+                  height="20px"
+                  width="20px"
+                  alt=""
+                  role="presentation"
+                  class="option__icon"
+                />
+                <span>
+                  {{ option.name }}
+                </span>
+              </a>
+            </li>
+          </ul>
+        </focus-trap>
+      </div>
     </div>
   </div>
 </template>
