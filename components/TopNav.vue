@@ -154,7 +154,10 @@ export default {
     &-item {
       padding: 0 40px 0 0;
       &--calendar {
-        top: -15px;
+        margin-top: -23px;
+        @media (max-width: $screen-sm) {
+          margin-left: 27px;
+        }
       }
       &:last-child {
         padding: 0;
