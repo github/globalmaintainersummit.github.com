@@ -117,7 +117,7 @@ export default {
       color: var(--fc-default);
     }
     p {
-      margin: 1rem 0 0 0;
+      margin: 16px 0 0 0;
       padding: 0;
       color: var(--fc-primary);
       font-size: var(--fs-small);
