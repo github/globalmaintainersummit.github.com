@@ -24,7 +24,10 @@
         <div class="nav__wrapper">
           <ul class="nav__list">
             <li class="nav__list-item">
-              <CommonLink to="/">Save the Date</CommonLink>
+              <CommonCalendarDropdown
+                is-nav-item
+                class="nav__list-item--calendar"
+              />
             </li>
             <li class="nav__list-item">
               <CommonLink to="/maintainers">Maintainers</CommonLink>
@@ -34,9 +37,6 @@
             </li>
           </ul>
           <ul class="nav__only-mobile">
-            <li class="nav__only-mobile-item">
-              <CommonLink to="/">Save the Date</CommonLink>
-            </li>
             <li class="nav__only-mobile-item">
               <CommonLink to="/">opensource@github.com </CommonLink>
             </li>
@@ -66,6 +66,8 @@ export default {
 
 <style scoped lang="scss">
 .nav {
+  position: relative;
+  z-index: var(--z-index-topbar);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -151,6 +153,9 @@ export default {
     list-style: none;
     &-item {
       padding: 0 40px 0 0;
+      &--calendar {
+        top: -15px;
+      }
       &:last-child {
         padding: 0;
       }
@@ -195,7 +200,7 @@ export default {
       }
       .nav__list:first-child {
         li:first-child {
-          display: none;
+          order: 3;
         }
       }
     }

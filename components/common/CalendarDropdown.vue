@@ -1,8 +1,18 @@
 <template>
-  <div class="dropdown-wrapper">
+  <div
+    class="dropdown-wrapper"
+    :class="{
+      'dropdown-wrapper--nav': isNavItem,
+      'dropdown-wrapper--open': showDropdown,
+    }"
+  >
     <div class="dropdown" :class="showDropdown && 'dropdown--open'">
       <button
         class="dropdown__title"
+        :class="{
+          'dropdown__title--nav': isNavItem,
+          'dropdown__title--nav-open': showDropdown,
+        }"
         :aria-label="label"
         aria-haspopup="true"
         :aria-expanded="showDropdown"
@@ -12,51 +22,53 @@
         @keyup.esc="showDropdown = false"
       >
         {{ title }}
-        <span
+        <CloseIcon
           class="dropdown__close"
           :class="showDropdown && 'dropdown__close--visible'"
           aria-hidden="true"
-        >
-          ✖
-        </span>
+        />
       </button>
-      <ul
-        id="calendar-list"
-        class="dropdown__options"
-        :class="showDropdown && 'dropdown__options--visible'"
-        :aria-hidden="!showDropdown"
-      >
-        <li
-          v-for="option in options"
-          :key="option.key"
-          @keydown.esc="showDropdown = false"
+      <focus-trap :active="showDropdown">
+        <ul
+          id="calendar-list"
+          class="dropdown__options"
+          :class="showDropdown && 'dropdown__options--visible'"
+          :aria-hidden="!showDropdown"
         >
-          <a
-            :href="showDropdown ? calendarUrl(option.key) : null"
-            class="option"
-            target="_blank"
-            :aria-label="`Save the date in your ${option.name} calendar`"
+          <li
+            v-for="option in options"
+            :key="option.key"
+            @keydown.esc="showDropdown = false"
           >
-            <img
-              :src="require(`~/assets/svg/calendars/cal_${option.key}.svg`)"
-              height="20px"
-              width="20px"
-              alt=""
-              role="presentation"
-              class="option__icon"
-            />
-            <span>
-              {{ option.name }}
-            </span>
-          </a>
-        </li>
-      </ul>
+            <a
+              :href="showDropdown ? calendarUrl(option.key) : null"
+              class="option"
+              target="_blank"
+              :aria-label="`Save the date in your ${option.name} calendar`"
+            >
+              <img
+                :src="require(`~/assets/svg/calendars/cal_${option.key}.svg`)"
+                height="20px"
+                width="20px"
+                alt=""
+                role="presentation"
+                class="option__icon"
+              />
+              <span>
+                {{ option.name }}
+              </span>
+            </a>
+          </li>
+        </ul>
+      </focus-trap>
     </div>
   </div>
 </template>
 
 <script>
 import { google, outlook, office365, yahoo, ics } from 'calendar-link'
+import { FocusTrap } from 'focus-trap-vue'
+import CloseIcon from '~/assets/img/icons/close.svg?inline'
 
 const KEY_CALENDAR_APPLE = 'apple'
 const KEY_CALENDAR_GOOGLE = 'google'
@@ -65,6 +77,16 @@ const KEY_CALENDAR_OUTLOOK = 'outlook'
 const KEY_CALENDAR_YAHOO = 'yahoo'
 
 export default {
+  components: {
+    FocusTrap,
+    CloseIcon,
+  },
+  props: {
+    isNavItem: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       showDropdown: false,
@@ -116,27 +138,53 @@ export default {
 
 <style lang="scss" scoped>
 .dropdown-wrapper {
+  --dropdown-height: 280px;
+  --dropdown-width-default: 196px;
+  --wrapper-width-default: 142px;
+  --dropdown-width: var(--dropdown-width-default);
+  --wrapper-width: var(--wrapper-width-default);
+
+  @media (max-width: $screen-sm) {
+    &--nav {
+      --dropdown-width: 100%;
+      --wrapper-width: 100%;
+    }
+    &--open {
+      transform: translateX(35%);
+    }
+  }
+
   position: relative;
+  display: inline-block;
+  width: var(--wrapper-width);
 }
 
 .dropdown {
-  --dropdown-height: 280px;
-
   position: absolute;
   top: 0;
   display: block;
-  width: 248px;
+  width: var(--dropdown-width);
   height: 30px;
   cursor: pointer;
   transition: height 0.26s ease;
   &--open {
+    --dropdown-width: var(--dropdown-width-default);
+    --wrapper-width: var(--wrapper-width-default);
+
+    width: var(--dropdown-width);
     height: var(--dropdown-height);
     margin: -24px;
-    padding: 24px;
-    background-color: var(--bg-default);
-    border-radius: 12px;
+    padding: 24px 12px 24px 24px;
+    background-color: var(--bg-body);
+    border-radius: 24px;
     box-shadow: 0 16px 24px 0 rgba(13, 9, 16, 0.08),
       0 8px 16px 0 rgba(13, 9, 16, 0.12);
+
+    .dropdown__title--nav {
+      @media (max-width: $screen-sm) {
+        color: var(--fc-primary);
+      }
+    }
   }
 
   &__options {
@@ -155,11 +203,25 @@ export default {
     margin-bottom: 12px;
     padding: 0;
     color: var(--fc-primary);
+    font-weight: var(--fw-bold);
     font-size: var(--fs-small);
-    font-family: var(--ff-title);
     background: transparent;
     border: none;
     cursor: pointer;
+
+    &--nav {
+      transition: all 0.3s ease-in;
+      @media (max-width: $screen-sm) {
+        color: var(--fc-light);
+        font-size: var(--fs-large);
+        font-family: var(--ff-title);
+        &-open {
+          font-weight: var(--fw-bold);
+          font-size: var(--fs-small);
+          font-family: var(--ff-secondary);
+        }
+      }
+    }
   }
 
   &__close {
@@ -180,6 +242,7 @@ export default {
   align-items: center;
   padding: 10px 0;
   color: var(--fc-default);
+  font-weight: var(--fw-regular);
   font-size: var(--fs-smaller);
   transition: color 0.3s ease-in;
   &:hover,
