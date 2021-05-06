@@ -71,17 +71,7 @@ export default {
 }
 
 .button {
-  display: flex;
-  align-items: center;
-  margin: 0 8px 10px 0;
-  padding: 24px 32px;
-  column-gap: 24px;
-  background-color: var(--bg-button);
-  border: 3px solid var(--bg-body);
-  border-radius: 42px;
-  box-shadow: 6px 8px 0 0 var(--bs-button);
-  cursor: pointer;
-  transition: all 0.3s ease-in;
+  @include button();
 
   &--reverse {
     flex-direction: row-reverse;
@@ -106,8 +96,6 @@ export default {
 
   &:hover,
   &:focus {
-    background-color: var(--bg-button--hover);
-    box-shadow: 8px 10px 0 0 var(--bs-button--hover);
     .button__icon--heart {
       path {
         fill: white;
@@ -125,13 +113,6 @@ export default {
         stroke: var(--heart-fill);
       }
     }
-  }
-
-  &__text {
-    @include mobileToDesktopFontSize(var(--fs-smaller), var(--fs-small));
-
-    color: var(--fc-light);
-    font-family: var(--ff-title);
   }
 }
 </style>
