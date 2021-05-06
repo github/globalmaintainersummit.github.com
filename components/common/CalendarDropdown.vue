@@ -1,35 +1,34 @@
 <template>
-  <focus-trap :active="showDropdown">
-    <div
-      class="dropdown-wrapper"
-      :class="{
-        'dropdown-wrapper--nav': isNavItem,
-        'dropdown-wrapper--open': showDropdown,
-      }"
-    >
-      <div class="dropdown" :class="showDropdown && 'dropdown--open'">
-        <button
-          class="dropdown__title"
-          :class="{
-            'dropdown__title--nav': isNavItem,
-            'dropdown__title--nav-open': showDropdown,
-          }"
-          :aria-label="label"
-          aria-haspopup="true"
-          :aria-expanded="showDropdown"
-          role="listbox"
-          aria-controls="calendar-list"
-          @click="toggleDropdown"
-          @keyup.esc="showDropdown = false"
-          @blur="showDropdown = false"
-        >
-          {{ title }}
-          <CloseIcon
-            class="dropdown__close"
-            :class="showDropdown && 'dropdown__close--visible'"
-            aria-hidden="true"
-          />
-        </button>
+  <div
+    class="dropdown-wrapper"
+    :class="{
+      'dropdown-wrapper--nav': isNavItem,
+      'dropdown-wrapper--open': showDropdown,
+    }"
+  >
+    <div class="dropdown" :class="showDropdown && 'dropdown--open'">
+      <button
+        class="dropdown__title"
+        :class="{
+          'dropdown__title--nav': isNavItem,
+          'dropdown__title--nav-open': showDropdown,
+        }"
+        :aria-label="label"
+        aria-haspopup="true"
+        :aria-expanded="showDropdown"
+        role="listbox"
+        aria-controls="calendar-list"
+        @click="toggleDropdown"
+        @keyup.esc="showDropdown = false"
+      >
+        {{ title }}
+        <CloseIcon
+          class="dropdown__close"
+          :class="showDropdown && 'dropdown__close--visible'"
+          aria-hidden="true"
+        />
+      </button>
+      <focus-trap :active="showDropdown">
         <ul
           id="calendar-list"
           class="dropdown__options"
@@ -61,9 +60,9 @@
             </a>
           </li>
         </ul>
-      </div>
+      </focus-trap>
     </div>
-  </focus-trap>
+  </div>
 </template>
 
 <script>
@@ -211,6 +210,7 @@ export default {
     cursor: pointer;
 
     &--nav {
+      transition: all 0.3s ease-in;
       @media (max-width: $screen-sm) {
         color: var(--fc-light);
         font-size: var(--fs-large);
