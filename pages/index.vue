@@ -12,7 +12,11 @@
     >
       Sponsor PyLadies
     </CommonCustomButton>
-    <CommonGrid :items="maintainers.list" three-cols data-cy="maintainers" />
+    <CommonGrid
+      :maintainers="maintainers.list"
+      three-cols
+      data-cy="maintainers"
+    />
   </section>
 </template>
 

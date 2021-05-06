@@ -56,6 +56,7 @@ export default {
 
     a {
       margin: 0 32px 24px 0;
+      color: var(--fc-default);
       &:last-child {
         margin: 0 0 24px 0;
       }

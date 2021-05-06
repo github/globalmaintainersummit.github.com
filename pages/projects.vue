@@ -1,19 +1,19 @@
 <template>
   <section>
-    <CommonGrid :maintainers="maintainersList" data-cy="maintainers" />
+    <CommonGrid :projects="projectsList" data-cy="projects" />
   </section>
 </template>
 
 <script>
 export default {
   async asyncData({ $content }) {
-    const { maintainers } = await $content('maintainers').fetch()
+    const { projects } = await $content('projects').fetch()
 
-    const maintainersList = maintainers.list.sort(
+    const projectsList = projects.list.sort(
       ({ name: nameA }, { name: nameB }) => nameA.localeCompare(nameB)
     )
     return {
-      maintainersList,
+      projectsList,
     }
   },
 }

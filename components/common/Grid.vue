@@ -1,24 +1,13 @@
 <template>
   <div class="container">
     <ul class="grid" :class="{ 'grid--three-cols': threeCols }">
-      <li v-for="item in items" :key="item.name" class="grid_item item">
-        <a href="/grid" class="item">
-          <div class="item__image">
-            <img
-              :src="
-                require(`~/assets/img/maintainers/${item.src
-                  .toLowerCase()
-                  .replace(/\s+/g, '-')
-                  .replace(/\./g, '')}.jpg`)
-              "
-              :alt="item.name"
-            />
-          </div>
-          <div class="item__content">
-            <h3>{{ item.name }}</h3>
-            <p>{{ item.project }}</p>
-          </div>
-        </a>
+      <li
+        v-for="item in maintainers || projects"
+        :key="item.name"
+        class="grid_item item"
+      >
+        <ProjectCard v-if="projects" :project="item" />
+        <MaintainerCard v-else :maintainer="item" :oversize="threeCols" />
       </li>
     </ul>
   </div>
@@ -31,9 +20,13 @@ export default {
       type: Boolean,
       default: false,
     },
-    items: {
+    maintainers: {
       type: Array,
-      required: true,
+      default: null,
+    },
+    projects: {
+      type: Array,
+      default: null,
     },
   },
 }
@@ -51,34 +44,30 @@ export default {
 }
 
 .grid {
-  --item-width: 256px;
-  --item-height: 284px;
-  --item-border: 5px;
+  --column-width: 256px;
 
   display: grid;
   grid-gap: 3rem;
-  grid-template-columns: repeat(1, var(--item-width));
+  grid-template-columns: repeat(1, var(--column-width));
   justify-content: center;
   box-sizing: border-box;
-  min-width: var(--item-width);
+  min-width: var(--column-width);
   margin: 0;
   padding: 0;
   @media only screen and (min-width: 680px) {
-    grid-template-columns: repeat(2, var(--item-width));
+    grid-template-columns: repeat(2, var(--column-width));
   }
   @media only screen and (min-width: 1024px) {
     grid-gap: 5rem;
-    grid-template-columns: repeat(3, var(--item-width));
+    grid-template-columns: repeat(3, var(--column-width));
   }
   @media only screen and (min-width: 1440px) {
-    grid-template-columns: repeat(4, var(--item-width));
+    grid-template-columns: repeat(4, var(--column-width));
   }
   li {
     --gradient-position: top left;
 
     display: flex;
-    place-content: center;
-    place-items: center;
     text-transform: capitalize;
     transform: translateY(0);
     @media only screen and (min-width: 680px) {
@@ -113,19 +102,19 @@ export default {
   }
 
   &--three-cols {
-    --item-width: 376px;
+    --column-width: 376px;
     --item-height: 420px;
     --gradient-position: top left;
 
-    grid-template-columns: repeat(1, var(--item-width));
-    min-width: var(--item-width);
+    grid-template-columns: repeat(1, var(--column-width));
+    min-width: var(--column-width);
 
     @media only screen and (min-width: 920px) {
       grid-gap: 5rem;
-      grid-template-columns: repeat(2, var(--item-width));
+      grid-template-columns: repeat(2, var(--column-width));
     }
     @media only screen and (min-width: 1440px) {
-      grid-template-columns: repeat(3, var(--item-width));
+      grid-template-columns: repeat(3, var(--column-width));
     }
     li {
       @media only screen and (min-width: 920px) {
@@ -149,114 +138,6 @@ export default {
           --gradient-position: bottom right;
 
           transform: translateY(80px);
-        }
-      }
-    }
-  }
-}
-
-.item {
-  /*
-  Optional display table to avoid the
-  focus ring to include the "shadow" shape
-  */
-  display: table;
-  cursor: pointer;
-  isolation: isolate;
-  &__image {
-    position: relative;
-    width: calc(var(--item-width) + var(--item-border));
-    height: calc(var(--item-height) + var(--item-border));
-
-    img {
-      position: relative;
-      top: 0;
-      left: 0;
-      width: calc(var(--item-width) + var(--item-border));
-      height: calc(var(--item-height) + var(--item-border));
-      object-fit: cover;
-      object-position: center;
-      border: var(--item-border) white solid;
-      transition: top 0.25s ease-in-out, left 0.25s ease-in-out;
-    }
-    &::before {
-      position: absolute;
-      z-index: 1;
-      display: block;
-      width: 100%;
-      height: 100%;
-      background: rgba(197, 98, 245, 1);
-      background: radial-gradient(
-        circle at var(--gradient-position),
-        rgba(197, 98, 245, 1),
-        rgba(246, 128, 132, 0.4)
-      );
-      background-position: center;
-      opacity: 0.75;
-      mix-blend-mode: color;
-      transition: opacity 0.25s ease-in-out;
-      content: '';
-      @media (prefers-reduced-motion: reduce) {
-        opacity: 0;
-      }
-    }
-    &::after {
-      position: absolute;
-      top: 19px;
-      left: 19px;
-      z-index: -1;
-      display: block;
-      width: var(--item-width);
-      height: var(--item-height);
-      background-color: var(--bg-dimmed);
-      transition: background-color 0.25s ease-in-out, top 0.25s ease-in-out,
-        left 0.25s ease-in-out;
-      content: '';
-      -webkit-mask-image: url('~/assets/svg/pattern_shadow.svg');
-      mask-image: url('~/assets/svg/pattern_shadow.svg');
-    }
-  }
-  &__content {
-    margin-top: 40px;
-    h3 {
-      margin: 0;
-      padding: 0;
-      color: var(--fc-default);
-      font-size: 40px;
-    }
-    p {
-      margin: 1rem 0 0 0;
-      padding: 0;
-      color: var(--fc-primary);
-      font-size: 20px;
-    }
-  }
-  &:hover,
-  &:focus {
-    .item__image {
-      img {
-        top: -2px;
-        left: -2px;
-      }
-      &::before {
-        opacity: 0;
-      }
-      &::after {
-        top: 21px;
-        left: 21px;
-        background-color: var(--bg-accent);
-      }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .item__image {
-        img {
-          top: 0;
-          left: 0;
-        }
-        &::after {
-          top: 19px;
-          left: 19px;
-          background-color: var(--bg-accent);
         }
       }
     }
