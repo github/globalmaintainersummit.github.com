@@ -52,8 +52,6 @@ export default {
 
 <style lang="scss" scoped>
 .link {
-  --underline-color: var(--salmon);
-
   position: relative;
   display: inline-block;
   font-weight: var(--fw-semi-bold);
