@@ -1,5 +1,6 @@
 <template>
   <section>
+    <CommonSwitchButton />
     <CommonGrid :maintainers="maintainersList" data-cy="maintainers" />
   </section>
 </template>
