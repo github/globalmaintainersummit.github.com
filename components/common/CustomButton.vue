@@ -12,6 +12,9 @@
       :to="to"
       role="link"
       tabindex="0"
+      @click="handleClick"
+      @keydown.enter="handleClick"
+      @keydown.space="handleClick"
     >
       <span class="button__icon" role="presentation" aria-hidden="true">
         <ArrowRight
@@ -19,6 +22,10 @@
           class="button__icon--arrow-right"
         />
         <Heart v-else-if="icon === 'heart'" class="button__icon--heart" />
+        <Calendar
+          v-else-if="icon === 'calendar'"
+          class="button__icon--calendar"
+        />
       </span>
       <span class="button__text">
         <slot />
@@ -30,11 +37,13 @@
 <script>
 import ArrowRight from '~/assets/svg/icons/arrow_right.svg?inline'
 import Heart from '~/assets/svg/icons/heart.svg?inline'
+import Calendar from '~/assets/svg/icons/calendar.svg?inline'
 
 export default {
   components: {
     ArrowRight,
     Heart,
+    Calendar,
   },
   props: {
     href: {
@@ -49,7 +58,7 @@ export default {
       type: String,
       default: null,
       validator: (value) => {
-        return ['arrow-right', 'heart'].includes(value)
+        return ['arrow-right', 'heart', 'calendar'].includes(value)
       },
     },
     iconSuffix: {
@@ -59,7 +68,12 @@ export default {
   },
   computed: {
     type() {
-      return this.to ? 'nuxt-link' : 'a'
+      return this.to ? 'nuxt-link' : this.href ? 'a' : 'span'
+    },
+  },
+  methods: {
+    handleClick() {
+      this.$emit('click')
     },
   },
 }
@@ -71,10 +85,14 @@ export default {
 }
 
 .button {
+  @include mobileToDesktopFontSize(var(--fs-smaller), var(--fs-small));
+
   display: flex;
   align-items: center;
   margin: 0 8px 10px 0;
   padding: 24px 32px;
+  color: var(--fc-light);
+  font-family: var(--ff-title);
   column-gap: 24px;
   background-color: var(--bg-button);
   border: 3px solid var(--bg-body);
@@ -125,13 +143,6 @@ export default {
         stroke: var(--heart-fill);
       }
     }
-  }
-
-  &__text {
-    @include mobileToDesktopFontSize(var(--fs-smaller), var(--fs-small));
-
-    color: var(--fc-light);
-    font-family: var(--ff-title);
   }
 }
 </style>

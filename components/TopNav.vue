@@ -25,7 +25,7 @@
           <ul class="nav__list">
             <li class="nav__list-item">
               <CommonCalendarDropdown
-                is-nav-item
+                type="nav"
                 class="nav__list-item--calendar"
               />
             </li>
@@ -154,7 +154,10 @@ export default {
     &-item {
       padding: 0 40px 0 0;
       &--calendar {
-        top: -15px;
+        margin-top: -23px;
+        @media (max-width: $screen-sm) {
+          margin-left: 27px;
+        }
       }
       &:last-child {
         padding: 0;

@@ -3,6 +3,7 @@
     <h1 style="display: flex; margin-top: 100px; place-content: center">
       Work in progress
     </h1>
+    <CommonCalendarDropdown type="button" />
     <CommonCustomButton to="/design" icon="arrow-right" icon-suffix>
       All Maintainers
     </CommonCustomButton>
