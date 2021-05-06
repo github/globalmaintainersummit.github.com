@@ -2,7 +2,7 @@
   <Component
     :is="type"
     v-bind="
-      href ? { href: mailto !== null ? `mailto:${mailto}` : href } : { to }
+      href || mailto ? { href: mailto ? `mailto:${mailto}` : href } : { to }
     "
     :target="href ? '_blank' : null"
     class="link"
@@ -61,7 +61,7 @@ export default {
   text-decoration: none;
   &::after {
     position: absolute;
-    bottom: -18px;
+    bottom: -20px;
     left: 0;
     width: 100%;
     height: 24px;
