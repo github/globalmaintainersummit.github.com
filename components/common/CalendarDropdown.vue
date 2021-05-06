@@ -1,18 +1,22 @@
 <template>
   <div
     class="dropdown-wrapper"
-    :class="{
-      'dropdown-wrapper--nav': isNavItem,
-      'dropdown-wrapper--open': showDropdown,
-    }"
+    :class="[
+      `dropdown-wrapper--${type}`,
+      {
+        'dropdown-wrapper--open': showDropdown,
+      },
+    ]"
   >
     <div class="dropdown" :class="showDropdown && 'dropdown--open'">
       <button
         class="dropdown__title"
-        :class="{
-          'dropdown__title--nav': isNavItem,
-          'dropdown__title--nav-open': showDropdown,
-        }"
+        :class="[
+          `dropdown__title--${type}`,
+          {
+            'dropdown__title--nav-open': showDropdown,
+          },
+        ]"
         :aria-label="label"
         aria-haspopup="true"
         :aria-expanded="showDropdown"
@@ -82,9 +86,12 @@ export default {
     CloseIcon,
   },
   props: {
-    isNavItem: {
-      type: Boolean,
-      default: false,
+    type: {
+      type: String,
+      default: null,
+      validator: (type) => {
+        return ['nav', 'button'].includes(type)
+      },
     },
   },
   data() {
@@ -210,7 +217,6 @@ export default {
     cursor: pointer;
 
     &--nav {
-      transition: all 0.3s ease-in;
       @media (max-width: $screen-sm) {
         color: var(--fc-light);
         font-size: var(--fs-large);

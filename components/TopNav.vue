@@ -25,7 +25,7 @@
           <ul class="nav__list">
             <li class="nav__list-item">
               <CommonCalendarDropdown
-                is-nav-item
+                type="nav"
                 class="nav__list-item--calendar"
               />
             </li>
