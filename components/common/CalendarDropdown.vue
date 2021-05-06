@@ -1,48 +1,50 @@
 <template>
   <div>
-    <CommonCustomButton
-      v-if="type == 'button' && !showDropdown"
-      icon="calendar"
-      icon-suffix
-      @click="toggleDropdown"
-    >
-      Save the Date
-    </CommonCustomButton>
-    <div
-      v-else
-      class="dropdown-wrapper"
-      :class="[
-        `dropdown-wrapper--${type}`,
-        {
-          'dropdown-wrapper--open': showDropdown,
-        },
-      ]"
-    >
-      <div class="dropdown" :class="showDropdown && 'dropdown--open'">
-        <button
-          class="dropdown__title"
-          :class="[
-            `dropdown__title--${type}`,
-            {
-              'dropdown__title--nav-open': showDropdown,
-            },
-          ]"
-          :aria-label="label"
-          aria-haspopup="true"
-          :aria-expanded="showDropdown"
-          role="listbox"
-          aria-controls="calendar-list"
-          @click="toggleDropdown"
-          @keyup.esc="showDropdown = false"
-        >
-          {{ title }}
-          <CloseIcon
-            class="dropdown__close"
-            :class="showDropdown && 'dropdown__close--visible'"
-            aria-hidden="true"
-          />
-        </button>
-        <focus-trap :active="showDropdown">
+    <focus-trap :active="showDropdown">
+      <CommonCustomButton
+        v-if="type == 'button' && !showDropdown"
+        icon="calendar"
+        icon-suffix
+        @click="toggleDropdown"
+        @keyup.esc="showDropdown = false"
+      >
+        Save the Date
+      </CommonCustomButton>
+      <div
+        v-else
+        class="dropdown-wrapper"
+        :class="[
+          `dropdown-wrapper--${type}`,
+          {
+            'dropdown-wrapper--open': showDropdown,
+          },
+        ]"
+      >
+        <div class="dropdown" :class="showDropdown && 'dropdown--open'">
+          <button
+            class="dropdown__title"
+            :class="[
+              `dropdown__title--${type}`,
+              {
+                'dropdown__title--nav-open': showDropdown,
+              },
+            ]"
+            :aria-label="label"
+            aria-haspopup="true"
+            :aria-expanded="showDropdown"
+            role="listbox"
+            aria-controls="calendar-list"
+            @click="toggleDropdown"
+            @keyup.esc="showDropdown = false"
+          >
+            {{ title }}
+            <CloseIcon
+              class="dropdown__close"
+              :class="showDropdown && 'dropdown__close--visible'"
+              aria-hidden="true"
+            />
+          </button>
+
           <ul
             id="calendar-list"
             class="dropdown__options"
@@ -74,9 +76,9 @@
               </a>
             </li>
           </ul>
-        </focus-trap>
+        </div>
       </div>
-    </div>
+    </focus-trap>
   </div>
 </template>
 
