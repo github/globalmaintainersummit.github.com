@@ -6,7 +6,6 @@
         icon="calendar"
         icon-suffix
         @click="toggleDropdown"
-        @keyup.esc="showDropdown = false"
       >
         Save the Date
       </CommonCustomButton>
