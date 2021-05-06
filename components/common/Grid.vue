@@ -39,7 +39,7 @@ export default {
   margin: 0 auto;
   padding: 40px 24px;
   @media only screen and (min-width: 680px) {
-    padding: 56px 40px 0;
+    padding: 56px 40px 92px;
   }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="projects">
     <CommonSwitchButton />
     <CommonGrid :projects="projectsList" data-cy="projects" />
   </section>
@@ -19,3 +19,15 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  background-image: url('~/assets/svg/bg_pills/graphic_pills.svg');
+  background-repeat: no-repeat;
+  background-position: top;
+}
+</style>
