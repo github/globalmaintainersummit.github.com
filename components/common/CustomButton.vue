@@ -13,6 +13,8 @@
       role="link"
       tabindex="0"
       @click="handleClick"
+      @keydown.enter="handleClick"
+      @keydown.space="handleClick"
     >
       <span class="button__icon" role="presentation" aria-hidden="true">
         <ArrowRight
