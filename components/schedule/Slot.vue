@@ -39,7 +39,7 @@ export default {
 .slot {
   display: grid;
   grid-template-areas:
-    '. time'
+    'time time'
     'title title'
     'wave wave';
   grid-template-columns: 300px 1fr;
@@ -57,13 +57,22 @@ export default {
 
   &--topic {
     grid-template-areas:
-      '. time'
-      'title talks'
-      'wave wave';
+      'time'
+      'title'
+      'talks'
+      'wave';
+    grid-template-columns: 1fr;
+    @media screen and (min-width: $screen-sm) {
+      grid-template-areas:
+        'time time'
+        'title talks'
+        'wave wave';
+    }
     @media screen and (min-width: $screen-xl) {
       grid-template-areas:
         'time title talks'
         '. wave wave';
+      grid-template-columns: 240px 300px 1fr;
     }
   }
 
