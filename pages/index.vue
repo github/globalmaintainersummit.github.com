@@ -1,18 +1,9 @@
 <template>
   <section>
-    <h1 style="display: flex; margin-top: 100px; place-content: center">
-      Work in progress
-    </h1>
-    <CommonCalendarDropdown type="button" />
-    <CommonCustomButton to="/design" icon="arrow-right" icon-suffix>
-      All Maintainers
-    </CommonCustomButton>
-    <CommonCustomButton
-      icon="heart"
-      href="https://vuejs.org/v2/guide/components-slots.html"
-    >
-      Sponsor PyLadies
-    </CommonCustomButton>
+    <div class="decoration" aria-hidden="true">
+      <img src="~/assets/svg/bg_pills/graphic_hero.svg" alt="" />
+    </div>
+    <HomeHero />
     <CommonGrid
       :maintainers="maintainers.list"
       three-cols
@@ -38,5 +29,13 @@ export default {
 <style lang="scss" scoped>
 section {
   @include section();
+
+  position: relative;
+}
+.decoration {
+  position: absolute;
+  top: -105px;
+  left: -110px;
+  width: 100%;
 }
 </style>
