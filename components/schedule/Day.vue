@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>{{ content.date }}</h3>
-    <div v-for="slot in content.slots" :key="slot.label" class="slot">
+    <div v-for="slot in content.slots" :key="slot.label">
       <ScheduleSlot :content="slot" />
     </div>
   </div>
@@ -22,9 +22,5 @@ export default {
 h3 {
   margin-bottom: 80px;
   color: var(--fc-primary);
-}
-
-.slot {
-  margin-bottom: 24px;
 }
 </style>

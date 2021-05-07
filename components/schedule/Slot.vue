@@ -41,10 +41,9 @@ export default {
   grid-template-areas:
     'time title title'
     '. wave wave';
-  grid-template-columns: 0.2fr 0.2fr 0.6fr;
-  align-items: flex-start;
-  justify-content: flex-start;
+  grid-template-columns: 240px repeat(2, 1fr);
   width: 100%;
+  margin-bottom: 24px;
   font-family: var(--ff-title);
   column-gap: 50px;
 
@@ -62,6 +61,7 @@ export default {
     display: flex;
     flex-direction: column;
     grid-area: time;
+    justify-self: baseline;
     text-align: right;
 
     &--timezone {
@@ -86,6 +86,7 @@ export default {
 
 .wave {
   grid-area: wave;
+  width: 100%;
 }
 
 .talks {

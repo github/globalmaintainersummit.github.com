@@ -41,5 +41,6 @@ export default {
 
 .long-wave {
   margin-top: -8px;
+  margin-bottom: 32px;
 }
 </style>
