@@ -39,26 +39,44 @@ export default {
 .slot {
   display: grid;
   grid-template-areas:
-    'time title title'
-    '. wave wave';
-  grid-template-columns: 240px 300px 1fr;
+    '. time'
+    'title title'
+    'wave wave';
+  grid-template-columns: 300px 1fr;
   width: 100%;
   margin-bottom: 24px;
   font-family: var(--ff-title);
   column-gap: 50px;
 
+  @media screen and (min-width: $screen-xl) {
+    grid-template-areas:
+      'time title title'
+      '. wave wave';
+    grid-template-columns: 240px 300px 1fr;
+  }
+
   &--topic {
     grid-template-areas:
-      'time title talks'
-      '. wave wave';
+      '. time'
+      'title talks'
+      'wave wave';
+    @media screen and (min-width: $screen-xl) {
+      grid-template-areas:
+        'time title talks'
+        '. wave wave';
+    }
   }
 
   &__time {
     display: flex;
     flex-direction: column;
     grid-area: time;
-    justify-self: baseline;
+    padding-bottom: 16px;
     text-align: right;
+
+    @media screen and (min-width: $screen-xl) {
+      justify-self: baseline;
+    }
 
     &--timezone {
       color: var(--fc-dimmed);
