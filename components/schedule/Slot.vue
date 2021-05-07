@@ -41,15 +41,11 @@ export default {
   grid-template-areas:
     'time title title'
     '. wave wave';
-  grid-template-columns: 240px repeat(2, 1fr);
+  grid-template-columns: 240px 300px 1fr;
   width: 100%;
   margin-bottom: 24px;
   font-family: var(--ff-title);
   column-gap: 50px;
-
-  @media screen and (min-width: $screen-tablet) {
-    column-gap: 116px;
-  }
 
   &--topic {
     grid-template-areas:
@@ -72,6 +68,7 @@ export default {
 
   &__title {
     grid-area: title;
+    height: 60px;
     &--topic {
       color: var(--fc-primary);
     }

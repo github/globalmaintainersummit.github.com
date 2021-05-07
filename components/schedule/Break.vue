@@ -24,7 +24,7 @@ export default {
       return this.break === 'long'
     },
     hasBreak() {
-      return this.break !== undefined
+      return ['long', 'short'].includes(this.break)
     },
   },
 }
