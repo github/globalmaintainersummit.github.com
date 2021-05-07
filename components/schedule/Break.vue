@@ -4,7 +4,10 @@
       <p>Break</p>
       <CommonWave />
     </div>
-    <CommonWave v-if="isLongBreak || !hasBreak" class="long-wave" />
+    <CommonWave
+      v-if="isLongBreak || !hasBreak"
+      :class="isLongBreak && 'long-wave'"
+    />
   </div>
 </template>
 
@@ -13,7 +16,7 @@ export default {
   props: {
     break: {
       type: String || null,
-      required: true,
+      default: null,
     },
   },
   computed: {
@@ -36,7 +39,7 @@ export default {
   column-gap: 20px;
 }
 
-// .long-wave {
-//   margin-top: -16px;
-// }
+.long-wave {
+  margin-top: -8px;
+}
 </style>

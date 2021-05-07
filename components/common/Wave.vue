@@ -6,7 +6,6 @@
 .wave {
   position: relative;
   top: -8px;
-  display: inline-block;
   width: 100%;
   content: '';
   &::after {
