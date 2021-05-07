@@ -71,8 +71,6 @@ export default {
           0 calc(100% - 15px);
       background-repeat: repeat-x;
       background-size: 36px 20px;
-      cursor: pointer;
-      transition: 0.5s ease, mask-position 0s 0.5s;
       content: '';
     }
   }
