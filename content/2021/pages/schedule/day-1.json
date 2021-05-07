@@ -3,11 +3,11 @@
   "slots": [
     {
       "time": "9:00 am",
-      "label": "Kickoff and Keynote",
+      "title": "Kickoff and Keynote",
       "break": "short"
     },
     {
-      "label": "Contributor Relations",
+      "title": "Contributor Relations",
       "hasDiscussions": true,
       "break": "short",
       "talks": [
@@ -26,7 +26,7 @@
       ]
     },
     {
-      "label": "Maintainer Health",
+      "title": "Maintainer Health",
       "time": "11:00 am",
       "discussions": false,
       "break": "long",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "label": "Project Health",
+      "title": "Project Health",
       "time": "12:15 pm",
       "hasDiscussions": true,
       "break": "short",
@@ -66,7 +66,7 @@
       ]
     },
     {
-      "label": "Measuring Success",
+      "title": "Measuring Success",
       "time": "1:30 pm",
       "discussions": false,
       "talks": [
@@ -86,10 +86,10 @@
     },
     {
       "time": "2:00 pm",
-      "label": "Closing"
+      "title": "Closing"
     },
     {
-      "label": "Hangout"
+      "title": "Hangout"
     }
   ]
 }

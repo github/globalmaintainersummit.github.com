@@ -1,20 +1,18 @@
 <template>
-  <div class="label" :class="isTopic && 'label--topic'">
-    <p v-if="content.time" class="label__time">
+  <div class="slot" :class="isTopic && 'slot--topic'">
+    <p v-if="content.time" class="slot__time">
       <span>{{ content.time }}</span>
-      <span class="label__time--timezone">PDT</span>
+      <span class="slot__time--timezone">PDT</span>
     </p>
-    <div class="label__title">
-      <p :class="isTopic && 'label__title--topic'">
-        {{ content.label }}
-      </p>
-      <ScheduleTopicSlot
-        v-if="isTopic"
-        :talks="content.talks"
-        :has-discussions="!!content.hasDiscussions"
-        class="talks"
-      />
-    </div>
+    <p class="slot__title" :class="isTopic && 'slot__title--topic'">
+      {{ content.title }}
+    </p>
+    <ScheduleTopicSlot
+      v-if="isTopic"
+      :talks="content.talks"
+      :has-discussions="!!content.hasDiscussions"
+      class="talks"
+    />
     <div class="wave">
       <ScheduleBreak :break="content.break" />
     </div>
@@ -38,12 +36,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.label {
+.slot {
   display: grid;
   grid-template-areas:
     'time title title'
     '. wave wave';
-  grid-template-columns: 0.25fr 0.75fr;
+  grid-template-columns: 0.2fr 0.2fr 0.6fr;
+  align-items: flex-start;
+  justify-content: flex-start;
   width: 100%;
   font-family: var(--ff-title);
   column-gap: 50px;
@@ -55,8 +55,6 @@ export default {
   &--topic {
     grid-template-areas:
       'time title talks'
-      '. . talks'
-      '. . talks'
       '. wave wave';
   }
 
