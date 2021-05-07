@@ -92,6 +92,10 @@ export default {
     display: contents;
     grid-area: title;
     height: 60px;
+
+    @media screen and (min-width: $screen-sm) {
+      display: block;
+    }
     &--topic {
       color: var(--fc-primary);
     }
