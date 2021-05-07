@@ -20,7 +20,11 @@ export default {
 
 <style lang="scss" scoped>
 h3 {
-  margin-bottom: 80px;
+  margin-bottom: 32px;
   color: var(--fc-primary);
+
+  @media screen and (min-width: $screen-sm) {
+    margin-bottom: 80px;
+  }
 }
 </style>

@@ -34,9 +34,13 @@ export default {
     @include mobileToDesktopFontSize(var(--fs-small), var(--fs-default));
 
     margin-top: 8px;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
     font-weight: var(--fw-regular);
     font-family: var(--ff-default);
+
+    @media screen and (min-width: $screen-sm) {
+      margin-bottom: 40px;
+    }
   }
 }
 </style>

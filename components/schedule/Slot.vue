@@ -39,14 +39,15 @@ export default {
 .slot {
   display: grid;
   grid-template-areas:
-    'time time'
-    'title title'
-    'wave wave';
-  grid-template-columns: 300px 1fr;
+    'time'
+    'title'
+    'wave';
+  grid-template-columns: 1fr;
   width: 100%;
   margin-bottom: 24px;
   font-family: var(--ff-title);
   column-gap: 50px;
+  row-gap: 16px;
 
   @media screen and (min-width: $screen-xl) {
     grid-template-areas:
@@ -88,6 +89,7 @@ export default {
   }
 
   &__title {
+    display: contents;
     grid-area: title;
     height: 60px;
     &--topic {
