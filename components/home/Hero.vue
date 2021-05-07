@@ -2,12 +2,24 @@
   <section class="hero">
     <div class="hero__message">
       <h1>
-        A virtual gathering for the maintainers who make open source possible.
+        {{ hero.lead }}
       </h1>
-      <h3>June 8-9, 2021</h3>
+      <h3>{{ hero.date }}</h3>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return { hero: null }
+  },
+  async fetch() {
+    const { hero } = await this.$content('home').only(['hero']).fetch()
+    this.hero = hero
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .hero {

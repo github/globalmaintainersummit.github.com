@@ -25,6 +25,10 @@
       { "name": "Lorena Mesa", "project": "PyLadies", "src": "lorena-mesa" }
     ]
   },
+  "hero": {
+    "lead": "A virtual gathering for the maintainers who make open source possible.",
+    "date": "June 8-9, 2021"
+  },
   "footer": {
     "github": "© 2021 GitHub, Inc.",
     "links": [
