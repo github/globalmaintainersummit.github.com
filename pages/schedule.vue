@@ -1,6 +1,11 @@
 <template>
   <div>
-    <ScheduleDay v-for="day in schedule" :key="day.slug" :content="day" />
+    <ScheduleDay
+      v-for="day in schedule"
+      :key="day.slug"
+      :content="day"
+      class="day"
+    />
   </div>
 </template>
 
@@ -14,3 +19,12 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.day {
+  margin: 40px;
+  &:last-child {
+    margin-top: 120px;
+  }
+}
+</style>
