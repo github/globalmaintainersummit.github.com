@@ -1,9 +1,8 @@
 <template>
-  <div class="day">
+  <div>
     <h3>{{ content.date }}</h3>
     <div v-for="slot in content.slots" :key="slot.label" class="slot">
-      <ScheduleTopicSlot v-if="slot.talks" :content="slot" />
-      <ScheduleSlot v-else :content="slot" />
+      <ScheduleSlot :content="slot" />
     </div>
   </div>
 </template>
@@ -20,11 +19,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.day {
-  margin: 40px;
-  h3 {
-    color: var(--fc-primary);
-  }
+h3 {
+  margin-bottom: 80px;
+  color: var(--fc-primary);
 }
 
 .slot {

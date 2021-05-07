@@ -1,13 +1,22 @@
 <template>
-  <div class="label">
+  <div class="label" :class="isTopic && 'label--topic'">
     <p v-if="content.time" class="label__time">
       <span>{{ content.time }}</span>
       <span class="label__time--timezone">PDT</span>
     </p>
-    <p class="label__description">{{ content.label }}</p>
-    <div class="label__wave">
-      <ScheduleBreak v-if="content.break" />
-      <CommonWave v-else />
+    <div class="label__title">
+      <p :class="isTopic && 'label__title--topic'">
+        {{ content.label }}
+      </p>
+      <ScheduleTopicSlot
+        v-if="isTopic"
+        :talks="content.talks"
+        :has-discussions="!!content.hasDiscussions"
+        class="talks"
+      />
+    </div>
+    <div class="wave">
+      <ScheduleBreak :break="content.break" />
     </div>
   </div>
 </template>
@@ -20,6 +29,11 @@ export default {
       required: true,
     },
   },
+  computed: {
+    isTopic() {
+      return this.content.talks?.length > 1
+    },
+  },
 }
 </script>
 
@@ -27,8 +41,8 @@ export default {
 .label {
   display: grid;
   grid-template-areas:
-    'time description'
-    '. wave';
+    'time title title'
+    '. wave wave';
   grid-template-columns: 0.25fr 0.75fr;
   width: 100%;
   font-family: var(--ff-title);
@@ -38,11 +52,18 @@ export default {
     column-gap: 116px;
   }
 
+  &--topic {
+    grid-template-areas:
+      'time title talks'
+      '. . talks'
+      '. . talks'
+      '. wave wave';
+  }
+
   &__time {
     display: flex;
     flex-direction: column;
     grid-area: time;
-    // padding-right: 40px; PLAY WITH POSITION IN GRID CELL
     text-align: right;
 
     &--timezone {
@@ -51,12 +72,11 @@ export default {
     }
   }
 
-  &__description {
-    grid-area: description;
-  }
-
-  &__wave {
-    grid-area: wave;
+  &__title {
+    grid-area: title;
+    &--topic {
+      color: var(--fc-primary);
+    }
   }
 
   p {
@@ -64,5 +84,13 @@ export default {
 
     margin: 0;
   }
+}
+
+.wave {
+  grid-area: wave;
+}
+
+.talks {
+  grid-area: talks;
 }
 </style>
