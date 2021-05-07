@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1718" height="1061" viewBox="0 0 1718 1061">
+  <defs>
+    <linearGradient id="pills-a" x1="0%" x2="100%" y1="49.362%" y2="50.638%">
+      <stop offset="0%" stop-color="#F9F9F9"/>
+      <stop offset="100%" stop-color="#FDFDFD"/>
+    </linearGradient>
+    <linearGradient id="pills-b" x1="0%" x2="100%" y1="47.469%" y2="52.074%">
+      <stop offset="0%" stop-color="#FCFCFC"/>
+      <stop offset="100%" stop-color="#FFF"/>
+    </linearGradient>
+    <linearGradient id="pills-c" x1="0%" x2="100%" y1="49.161%" y2="50.501%">
+      <stop offset="0%" stop-color="#FDFDFD"/>
+      <stop offset="100%" stop-color="#F6F6F6"/>
+    </linearGradient>
+    <linearGradient id="pills-d" x1="0%" x2="100%" y1="45.886%" y2="53.371%">
+      <stop offset="0%" stop-color="#FCFCFC"/>
+      <stop offset="100%" stop-color="#FFF"/>
+    </linearGradient>
+    <linearGradient id="pills-e" x1="0%" x2="100%" y1="52.258%" y2="47.742%">
+      <stop offset="0%" stop-color="#F9F9F9"/>
+      <stop offset="100%" stop-color="#FFF"/>
+    </linearGradient>
+    <linearGradient id="pills-f" x1="0%" x2="100%" y1="47.811%" y2="52.189%">
+      <stop offset="0%" stop-color="#F8F8F8"/>
+      <stop offset="100%" stop-color="#FBFBFB"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(-14 -8)">
+    <rect width="1124" height="127" x="-2.715" y="812.559" fill="url(#pills-a)" rx="63.5" transform="scale(1 -1) rotate(15 7213.617 0)"/>
+    <rect width="320" height="72" x="1191.954" y="599.194" fill="url(#pills-b)" rx="36" transform="scale(1 -1) rotate(15 6176.734 0)"/>
+    <rect width="651" height="72" x="54.293" y="357.575" fill="url(#pills-c)" rx="36" transform="scale(1 -1) rotate(15 3369.293 0)"/>
+    <rect width="251" height="72" x="1483.727" y="31.255" fill="url(#pills-d)" rx="36" transform="scale(1 -1) rotate(15 2120.08 0)"/>
+    <rect width="1214" height="258" x="527.065" y="315.076" fill="url(#pills-e)" rx="129" transform="rotate(-15 1134.065 444.076)"/>
+    <rect width="607" height="127" x="751.461" y="83.424" fill="url(#pills-f)" rx="63.5" transform="scale(1 -1) rotate(15 2170.963 0)"/>
+  </g>
+</svg>
