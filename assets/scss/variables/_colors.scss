@@ -9,7 +9,7 @@
   // Palette
   --salmon: hsla(358, 87%, 73%, 1); // #F68084
   --purple: hsla(281, 75%, 59%, 1); // #B349E5
-  --heliotrope: hsla(280, 88%, 67%, 1); //#C562F5
+  --deep-purple: hsla(279, 97%, 35%, 1); //#7203AE
   --navy: hsla(277, 96%, 11%, 1); // #230138
 
   // Gradients
@@ -28,17 +28,13 @@
   // Background Colors
   --bg-body: var(--white);
   --bg-primary: var(--purple);
+  --bg-primary-dark: var(--deep-purple);
+  --bg-dark: var(--navy);
   --bg-accent: var(--salmon);
   --bg-dimmed: var(--gray-400);
   --bg-close-icon: var(--gray-400);
   --bg-hamburguer: var(--navy);
   --bg-hamburguer--open: var(--white);
-  --bg-button: var(--navy);
-  --bg-button--hover: var(--purple);
-
-  // Box shadow
-  --bs-button: var(--purple);
-  --bs-button--hover: var(--salmon);
 
   // Font Colors
   --fc-default: var(--navy);
