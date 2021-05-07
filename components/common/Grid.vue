@@ -37,9 +37,9 @@ export default {
   position: relative;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 7.5rem 1.5rem 1.5rem 1.5rem;
+  padding: 40px 24px;
   @media only screen and (min-width: 680px) {
-    padding: 7.5rem 2.5rem 7.5rem 2.5rem;
+    padding: 56px 40px 92px;
   }
 }
 

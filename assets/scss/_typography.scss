@@ -9,7 +9,7 @@ h5 {
 h1 {
   @include mobileToDesktopFontSize(var(--fs-large), var(--fs-colossal));
 
-  font-weight: var(--fw-extra-bold);
+  font-weight: var(--fw-bold);
 }
 h2 {
   @include mobileToDesktopFontSize(var(--fs-large), var(--fs-giant));

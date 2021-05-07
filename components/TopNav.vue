@@ -72,7 +72,6 @@ export default {
   align-items: center;
   justify-content: space-between;
   padding: 36px 40px 33px;
-  background: var(--bg-body);
   &__brand {
     position: relative;
     z-index: var(--z-index-hamburguer);

@@ -3,8 +3,11 @@ describe('Home', () => {
     cy.visit('/')
   })
 
-  it('Display work in progress', () => {
-    cy.contains('Work in progress')
+  it('displays the hero lead and the correct dates/', () => {
+    cy.contains(
+      'A virtual gathering for the maintainers who make open source possible'
+    )
+    cy.contains('June 8-9, 2021')
   })
 
   it('Maintainers are listed and there are no duplicated maintainers in the Maintainers list', () => {
