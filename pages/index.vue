@@ -64,7 +64,7 @@ section {
     h2 {
       max-width: 786px;
     }
-    p {
+    div {
       max-width: 671px;
       font-family: var(--ff-default);
       line-height: 1.5;
