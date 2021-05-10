@@ -2,21 +2,20 @@
   <section class="hero">
     <div class="hero__message">
       <h1>
-        {{ hero.lead }}
+        {{ content.lead }}
       </h1>
-      <h3>{{ hero.date }}</h3>
+      <h3>{{ content.date }}</h3>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  data() {
-    return { hero: null }
-  },
-  async fetch() {
-    const { hero } = await this.$content('home').only(['hero']).fetch()
-    this.hero = hero
+  props: {
+    content: {
+      type: String,
+      required: true,
+    },
   },
 }
 </script>
