@@ -6,12 +6,7 @@
   >
     <div class="maintainer__image">
       <img
-        :src="
-          require(`~/assets/img/maintainers/${maintainer.src
-            .toLowerCase()
-            .replace(/\s+/g, '-')
-            .replace(/\./g, '')}.jpg`)
-        "
+        :src="require(`~/assets/img/maintainers/${handler}.jpg`)"
         :alt="maintainer.name"
       />
     </div>
