@@ -12,11 +12,7 @@
       <p v-html="content.block2" />
       <CommonCalendarDropdown type="button" />
     </section>
-    <CommonGrid
-      :maintainers="maintainers.list"
-      three-cols
-      data-cy="maintainers"
-    />
+    <CommonGrid :maintainers="maintainers" three-cols data-cy="maintainers" />
   </section>
 </template>
 
@@ -26,13 +22,13 @@ import socialMetadata from '~/mixins/social-metadata'
 export default {
   mixins: [socialMetadata],
   async asyncData({ $content }) {
-    const { maintainers, content, hero } = await $content(
-      '2021/pages/home/index'
-    ).fetch()
+    const { content, hero } = await $content('2021/pages/home/index').fetch()
+    const maintainers = await $content('2021/shared/maintainers').fetch()
+
     return {
-      maintainers,
       content,
       hero,
+      maintainers,
     }
   },
 }
