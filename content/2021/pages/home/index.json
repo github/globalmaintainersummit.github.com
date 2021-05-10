@@ -1,0 +1,55 @@
+{
+  "maintainers": {
+    "title": "Maintainers",
+    "cta": "All maintainers",
+    "list": [
+      {
+        "name": "Bartłomiej Płotka",
+        "project": "Prometheus",
+        "src": "bartlomiej-plotka"
+      },
+      {
+        "name": "Chrissy LeMaire",
+        "project": "dbatools",
+        "src": "chrissy-lemaire"
+      },
+      {
+        "name": "Eileen Uchitelle",
+        "project": "Ruby on Rails",
+        "src": "eileen-uchitelle"
+      },
+      {
+        "name": "Helen Hou-Sandí",
+        "project": "WordPress",
+        "src": "helen-hou-sandi"
+      },
+      { "name": "Ifiok Jr.", "project": "Remirror", "src": "ifiok-jr" },
+      { "name": "Lorena Mesa", "project": "PyLadies", "src": "lorena-mesa" }
+    ]
+  },
+  "hero": {
+    "lead": "A virtual gathering for the maintainers who make open source possible.",
+    "date": "June 8-9, 2021"
+  },
+  "content": {
+    "title1": "Open source project management is uniquely challenging and rewarding work.",
+    "block1": "<p>Calling all past, present, and future maintainers -—whether you're waiting for your first issue or you've triaged 2000 before lunch. Join us for honest talks and conversations on your challenges, triumphs, and projects.</p><p>While we spend lots of time in our own communities we rarely get the chance to get together with maintainers of other projects to laugh, cry, celebrate and share. At the Global Maintainer Summit, we’re taking the time to have those conversations and would love you to join us.</p><p>We’ll feature a wide variety of lightning talks on different projects’ approach to common problems. In between, we’ll chat with each other, and know we’re not alone in the issues we face.</p><p>Global Maintainer Summit is your chance to build collaborative relationships with other maintainers, cultivate new skills to reinforce your resiliency and avoid burnout, and explore solutions to the myriad of shared challenges maintainers face.</p>",
+    "title2": "Let’s get vulnerable",
+    "block2": "<p>What is it possible to automate, and what will always need to be hand–crafted?</p><p>When it comes to contributors, when do you accept help and when do you say no?</p><p>Is it possible to (gasp) take a vacation?</p><p>When everything was on fire, how did you put out the flames?</p><p>We’ll tackle all that, and much more. We’re here for each other, us maintainers.</p>"
+  },
+  "followEvent": {
+    "title": "Follow the event",
+    "hashtag": "#GitHubGMS21",
+    "lead": "Hear from open source maintainers coming live to your screen from all around the world.",
+    "joinUs": {
+      "text": "Join us at Gather",
+      "link": "https://gather.town/app/JMpiYvZerIxEBgPn/codegram"
+    }
+  },
+  "calendarEvent": {
+    "startDate": "2021-06-08",
+    "endDate": "2021-06-09",
+    "title": "Global Maintainer Summit",
+    "description": "<p>A virtual gathering for the maintainers that make open source possible</p><a href=\"https://globalmaintainersummit.github.com/\">https://globalmaintainersummit.github.com/</a>"
+  }
+}

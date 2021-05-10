@@ -14,12 +14,8 @@
       <CommonLink :mailto="footer.contact.mailto">
         {{ footer.contact.label }}
       </CommonLink>
-      <CommonLink :href="footer.repository.url">
-        {{ footer.repository.label }}
-      </CommonLink>
-      <CommonLink :to="footer.codeOfConduct.url">
-        {{ footer.codeOfConduct.label }}
-      </CommonLink>
+      <CommonLink :href="footer.project.url">Repository</CommonLink>
+      <CommonLink to="/code-of-conduct">Code of Conduct</CommonLink>
     </div>
   </footer>
 </template>
@@ -31,7 +27,7 @@ export default {
     return { footer: null }
   },
   async fetch() {
-    const { footer } = await this.$content('home').only(['footer']).fetch()
+    const { footer } = await this.$content('footer').only(['footer']).fetch()
     this.footer = footer
   },
 }

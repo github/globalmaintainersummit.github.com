@@ -32,7 +32,7 @@ export default {
     return { followEvent: null }
   },
   async fetch() {
-    const { followEvent } = await this.$content('home')
+    const { followEvent } = await this.$content('2021/pages/home/index')
       .only(['followEvent'])
       .fetch()
     this.followEvent = followEvent
