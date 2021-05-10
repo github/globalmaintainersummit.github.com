@@ -9,7 +9,14 @@
   "project": {
     "name": "WordPress",
     "description": "",
-    "links": [{ "platform": "", "url": "" }]
+    "badge": "logo_wordpress.png",
+    "url": "https://github.com/wordpress/wordpress-develop",
+    "links": [
+      {
+        "platform": "",
+        "url": ""
+      }
+    ]
   },
   "talkTitle": ""
 }

@@ -8,10 +8,11 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const { maintainers } = await $content('2021/shared/maintainers').fetch()
+    const maintainers = await $content('2021/shared/maintainers').fetch()
 
     const maintainersList = maintainers.sort(
-      ({ name: nameA }, { name: nameB }) => nameA.localeCompare(nameB)
+      ({ profile: profileA }, { profile: profileB }) =>
+        profileA.name.localeCompare(profileB.name)
     )
     return {
       maintainersList,

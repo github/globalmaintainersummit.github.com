@@ -9,7 +9,14 @@
   "project": {
     "name": "dbatools",
     "description": "",
-    "links": [{ "platform": "", "url": "" }]
+    "badge": "logo_dbatools.png",
+    "url": "https://github.com/sqlcollaborative/dbatools",
+    "links": [
+      {
+        "platform": "",
+        "url": ""
+      }
+    ]
   },
   "talkTitle": "Maintaining: The People Part"
 }

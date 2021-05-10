@@ -9,6 +9,8 @@
   "project": {
     "name": "Ruby on Rails",
     "description": "",
+    "badge": "logo_rubyonrails.png",
+    "url": "https://github.com/rails",
     "links": [{ "platform": "", "url": "" }]
   },
   "talkTitle": ""

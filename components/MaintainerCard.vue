@@ -6,13 +6,13 @@
   >
     <div class="maintainer__image">
       <img
-        :src="require(`~/assets/img/maintainers/${handler}.jpg`)"
+        :src="require(`~/assets/img/maintainers/${maintainer.handler}.jpg`)"
         :alt="maintainer.name"
       />
     </div>
     <div class="maintainer__content">
-      <h3>{{ maintainer.name }}</h3>
-      <p>{{ maintainer.project }}</p>
+      <h3>{{ maintainer.profile.name }}</h3>
+      <p>{{ maintainer.project.name }}</p>
     </div>
   </a>
 </template>

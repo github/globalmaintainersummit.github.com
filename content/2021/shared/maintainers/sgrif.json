@@ -9,6 +9,8 @@
   "project": {
     "name": "Diesel",
     "description": "",
+    "badge": "logo_diesel.png",
+    "url": "https://github.com/diesel-rs/diesel",
     "links": [{ "platform": "", "url": "" }]
   },
   "talkTitle": ""

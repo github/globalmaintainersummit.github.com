@@ -9,6 +9,8 @@
   "project": {
     "name": "PyLadies",
     "description": "",
+    "badge": "logo_pyladies.png",
+    "url": "https://github.com/pyladies",
     "links": [{ "platform": "", "url": "" }]
   },
   "talkTitle": ""

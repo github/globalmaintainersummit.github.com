@@ -1,6 +1,6 @@
 {
   "handler": "ifiokjr",
-  "featured": true,
+  "featured": false,
   "profile": {
     "name": "Ifiok Jr.",
     "bio": "",
@@ -9,6 +9,8 @@
   "project": {
     "name": "Remirror",
     "description": "",
+    "badge": "",
+    "url": "#",
     "links": [{ "platform": "", "url": "" }]
   },
   "talkTitle": ""

@@ -9,6 +9,8 @@
   "project": {
     "name": "Python",
     "description": "",
+    "badge": "logo_python.png",
+    "url": "https://github.com/python/cpython",
     "links": [{ "platform": "", "url": "" }]
   },
   "talkTitle": ""
