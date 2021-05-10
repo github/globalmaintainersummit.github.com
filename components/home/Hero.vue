@@ -43,36 +43,11 @@ export default {
     line-height: 1;
   }
   h3 {
-    position: relative;
+    @include mobileToDesktopFontSize(var(--fs-medium), var(--fs-large));
+    @include wave($bottom: -16px);
+
     display: inline-block;
     margin-top: 64px;
-    @include mobileToDesktopFontSize(var(--fs-medium), var(--fs-large));
-
-    &::after {
-      --underline-color: var(--salmon);
-
-      position: absolute;
-      bottom: -16px;
-      left: 0;
-      width: 100%;
-      height: 24px;
-      background: radial-gradient(
-            52% 100% at 50% -12px,
-            transparent calc(100% - 5px),
-            var(--underline-color) calc(100% - 4px) calc(100% - 1px),
-            transparent
-          ) -18px 100%,
-        radial-gradient(
-            52% 100% at 50% calc(100% + 12px),
-            transparent calc(100% - 5px),
-            var(--underline-color) calc(100% - 4px) calc(100% - 1px),
-            transparent
-          )
-          0 calc(100% - 15px);
-      background-repeat: repeat-x;
-      background-size: 36px 20px;
-      content: '';
-    }
   }
 }
 </style>

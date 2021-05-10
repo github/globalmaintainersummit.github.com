@@ -1,0 +1,95 @@
+{
+  "date": "Tuesday ⌁ June 9, 2021",
+  "slots": [
+    {
+      "time": "9:00 am",
+      "title": "Kickoff and Keynote",
+      "break": "short"
+    },
+    {
+      "title": "Contributor Relations",
+      "hasDiscussions": true,
+      "break": "short",
+      "talks": [
+        {
+          "title": "You Can't Have a Solution Without a Problem",
+          "speaker": "Helen Hou-Sandí"
+        },
+        {
+          "title": "Should I merge this feature? Avoiding Hidden Cost of Extra Code or Blocking Users",
+          "speaker": "Bartłomiej Płotka"
+        },
+        {
+          "title": "Maintaining: The People Part",
+          "speaker": "Chrissy LeMaire"
+        }
+      ]
+    },
+    {
+      "title": "Maintainer Health",
+      "time": "11:00 am",
+      "discussions": false,
+      "break": "long",
+      "talks": [
+        {
+          "title": "You Can't Have a Solution Without a Problem",
+          "speaker": "Helen Hou-Sandí"
+        },
+        {
+          "title": "Should I merge this feature? Avoiding Hidden Cost of Extra Code or Blocking Users",
+          "speaker": "Bartłomiej Płotka"
+        },
+        {
+          "title": "Maintaining: The People Part",
+          "speaker": "Chrissy LeMaire"
+        }
+      ]
+    },
+    {
+      "title": "Project Health",
+      "time": "12:15 pm",
+      "hasDiscussions": true,
+      "break": "short",
+      "talks": [
+        {
+          "title": "You Can't Have a Solution Without a Problem",
+          "speaker": "Helen Hou-Sandí"
+        },
+        {
+          "title": "Should I merge this feature? Avoiding Hidden Cost of Extra Code or Blocking Users",
+          "speaker": "Bartłomiej Płotka"
+        },
+        {
+          "title": "Maintaining: The People Part",
+          "speaker": "Chrissy LeMaire"
+        }
+      ]
+    },
+    {
+      "title": "Measuring Success",
+      "time": "1:30 pm",
+      "discussions": false,
+      "talks": [
+        {
+          "title": "You Can't Have a Solution Without a Problem",
+          "speaker": "Helen Hou-Sandí"
+        },
+        {
+          "title": "Should I merge this feature? Avoiding Hidden Cost of Extra Code or Blocking Users",
+          "speaker": "Bartłomiej Płotka"
+        },
+        {
+          "title": "Maintaining: The People Part",
+          "speaker": "Chrissy LeMaire"
+        }
+      ]
+    },
+    {
+      "time": "2:00 pm",
+      "title": "Closing"
+    },
+    {
+      "title": "Hangout"
+    }
+  ]
+}

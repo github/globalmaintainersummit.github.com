@@ -17,8 +17,9 @@ h2 {
   font-weight: var(--fw-bold);
 }
 h3 {
+  @include mobileToDesktopFontSize(var(--fs-medium), var(--fs-large));
+
   font-weight: var(--fw-bold);
-  font-size: var(--fs-large);
 }
 h4 {
   font-weight: var(--fw-bold);
