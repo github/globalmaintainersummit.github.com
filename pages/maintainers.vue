@@ -6,7 +6,10 @@
 </template>
 
 <script>
+import socialMetadata from '~/mixins/social-metadata'
+
 export default {
+  mixins: [socialMetadata],
   async asyncData({ $content }) {
     const { maintainers } = await $content('maintainers').fetch()
 
