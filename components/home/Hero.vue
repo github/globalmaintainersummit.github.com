@@ -13,7 +13,7 @@
 export default {
   props: {
     content: {
-      type: String,
+      type: Object,
       required: true,
     },
   },
