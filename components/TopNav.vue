@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     toggleNav() {
-      this.$emit('toggle', !this.active)
+      this.$emit('toggle')
     },
   },
 }

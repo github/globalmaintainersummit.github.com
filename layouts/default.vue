@@ -16,8 +16,8 @@ export default {
     }
   },
   methods: {
-    toggleNav(value) {
-      this.navActive = value
+    toggleNav() {
+      this.navActive = !this.navActive
     },
   },
 }
