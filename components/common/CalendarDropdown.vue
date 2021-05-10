@@ -122,7 +122,7 @@ export default {
     }
   },
   async fetch() {
-    const { calendarEvent } = await this.$content('home')
+    const { calendarEvent } = await this.$content('2021/pages/home/index')
       .only(['calendarEvent'])
       .fetch()
     this.calendarEvent = {

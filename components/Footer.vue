@@ -1,5 +1,5 @@
 <template>
-  <footer v-if="footer" class="footer">
+  <footer class="footer">
     <div class="footer__left">
       <p class="footer__copy">{{ footer.github }}</p>
       <CommonLink
@@ -31,9 +31,7 @@ export default {
     return { footer: null }
   },
   async fetch() {
-    const { footer } = await this.$content('2021/pages/home/index')
-      .only(['footer'])
-      .fetch()
+    const { footer } = await this.$content('footer').fetch()
     this.footer = footer
   },
 }
