@@ -1,0 +1,30 @@
+{
+  "maintainers": [
+    {
+      "name": "Bartłomiej Płotka",
+      "project": "Prometheus",
+      "src": "bartlomiej-plotka"
+    },
+    {
+      "name": "Chrissy LeMaire",
+      "project": "dbatools",
+      "src": "chrissy-lemaire"
+    },
+    {
+      "name": "Eileen Uchitelle",
+      "project": "Ruby on Rails",
+      "src": "eileen-uchitelle"
+    },
+    {
+      "name": "Helen Hou-Sandí",
+      "project": "WordPress",
+      "src": "helen-hou-sandi"
+    },
+    { "name": "Ifiok Jr.", "project": "Remirror", "src": "ifiok-jr" },
+    { "name": "Lorena Mesa", "project": "PyLadies", "src": "lorena-mesa" },
+    { "name": "Mariatta Wijaya", "project": "Python", "src": "mariatta-wijaya"},
+    { "name": "Mike McQuaid", "project": "Homebrew", "src": "mike-mcquaid"},
+    { "name": "Myles Borins", "project": "Node.js", "src": "myles-borins"},
+    { "name": "Siân Griffin", "project": "Diesel", "src": "sian-griffin"}
+  ]
+}

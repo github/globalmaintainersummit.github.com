@@ -11,7 +11,7 @@ import socialMetadata from '~/mixins/social-metadata'
 export default {
   mixins: [socialMetadata],
   async asyncData({ $content }) {
-    const { projects } = await $content('projects').fetch()
+    const { projects } = await $content('2021/pages/projects/index').fetch()
 
     const projectsList = projects.list.sort(
       ({ name: nameA }, { name: nameB }) => nameA.localeCompare(nameB)

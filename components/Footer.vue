@@ -31,7 +31,9 @@ export default {
     return { footer: null }
   },
   async fetch() {
-    const { footer } = await this.$content('home').only(['footer']).fetch()
+    const { footer } = await this.$content('2021/pages/home/index')
+      .only(['footer'])
+      .fetch()
     this.footer = footer
   },
 }
