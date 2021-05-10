@@ -1,0 +1,15 @@
+{
+  "handler": "ifiokjr",
+  "featured": true,
+  "profile": {
+    "name": "Ifiok Jr.",
+    "bio": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "project": {
+    "name": "Remirror",
+    "description": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "talkTitle": ""
+}

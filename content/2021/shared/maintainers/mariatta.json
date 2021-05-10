@@ -1,0 +1,15 @@
+{
+  "handler": "mariatta",
+  "featured": true,
+  "profile": {
+    "name": "Mariatta Wijaya",
+    "bio": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "project": {
+    "name": "Python",
+    "description": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "talkTitle": ""
+}

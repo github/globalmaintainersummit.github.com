@@ -1,0 +1,15 @@
+{
+  "handler": "",
+  "featured": true,
+  "profile": {
+    "name": "",
+    "bio": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "project": {
+    "name": "",
+    "description": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "talkTitle": ""
+}

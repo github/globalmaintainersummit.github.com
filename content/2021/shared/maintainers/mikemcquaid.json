@@ -1,0 +1,15 @@
+{
+  "handler": "mikemcquaid",
+  "featured": true,
+  "profile": {
+    "name": "Mike McQuaid",
+    "bio": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "project": {
+    "name": "Homebrew",
+    "description": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "talkTitle": ""
+}

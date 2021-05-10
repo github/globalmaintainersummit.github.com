@@ -1,0 +1,15 @@
+{
+  "handler": "lorenanicole",
+  "featured": true,
+  "profile": {
+    "name": "Lorena Mesa",
+    "bio": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "project": {
+    "name": "PyLadies",
+    "description": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "talkTitle": ""
+}

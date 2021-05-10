@@ -1,0 +1,15 @@
+{
+  "handler": "helen",
+  "featured": true,
+  "profile": {
+    "name": "Helen Hou-Sandí",
+    "bio": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "project": {
+    "name": "WordPress",
+    "description": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "talkTitle": ""
+}

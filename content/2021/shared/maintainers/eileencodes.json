@@ -1,0 +1,15 @@
+{
+  "handler": "eileencodes",
+  "featured": true,
+  "profile": {
+    "name": "Eileen Uchitelle",
+    "bio": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "project": {
+    "name": "Ruby on Rails",
+    "description": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "talkTitle": ""
+}
