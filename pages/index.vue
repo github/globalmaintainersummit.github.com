@@ -7,9 +7,9 @@
     <HomeHero :content="hero" />
     <div class="home__content">
       <h2>{{ content.title1 }}</h2>
-      <p :html="content.block1" />
+      <div v-html="content.block1" />
       <h1>{{ content.title2 }}</h1>
-      <p :html="content.block2" />
+      <div v-html="content.block2" />
     </div>
     <div class="home__save">
       <CommonCalendarDropdown type="button" class="home__save-button" />
