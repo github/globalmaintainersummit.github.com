@@ -46,10 +46,14 @@ export default {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  padding-top: 160px;
+  padding-top: 56px;
   background-image: url('~/assets/svg/bg_pills/graphic_pills_footer.svg');
   background-repeat: no-repeat;
   background-position: bottom;
+
+  @media screen and (min-width: $screen-sm) {
+    padding-top: 160px;
+  }
 }
 
 .follow {

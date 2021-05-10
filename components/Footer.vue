@@ -15,7 +15,7 @@
         {{ footer.contact.label }}
       </CommonLink>
       <CommonLink :href="footer.project.url">Repository</CommonLink>
-      <CommonLink :href="footer.project.url">Code of Conduct</CommonLink>
+      <CommonLink to="/code-of-conduct">Code of Conduct</CommonLink>
     </div>
   </footer>
 </template>
@@ -27,9 +27,7 @@ export default {
     return { footer: null }
   },
   async fetch() {
-    const { footer } = await this.$content('2021/pages/home/index')
-      .only(['footer'])
-      .fetch()
+    const { footer } = await this.$content('footer').only(['footer']).fetch()
     this.footer = footer
   },
 }

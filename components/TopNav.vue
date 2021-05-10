@@ -16,7 +16,7 @@
       <button
         class="nav__hamburguer"
         :aria-label="`${active ? 'Close' : 'Open'} navigation`"
-        @click="active = !active"
+        @click="toggleNav"
       >
         <Hamburguer :active="active" />
       </button>
@@ -56,10 +56,16 @@ export default {
     GitHub,
     FocusTrap,
   },
-  data() {
-    return {
-      active: false,
-    }
+  props: {
+    active: {
+      type: Boolean,
+      required: true,
+    },
+  },
+  methods: {
+    toggleNav() {
+      this.$emit('toggle')
+    },
   },
 }
 </script>
