@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer v-if="footer" class="footer">
     <div class="footer__left">
       <p class="footer__copy">{{ footer.github }}</p>
       <CommonLink
@@ -14,12 +14,8 @@
       <CommonLink :mailto="footer.contact.mailto">
         {{ footer.contact.label }}
       </CommonLink>
-      <CommonLink :href="footer.repository.url">
-        {{ footer.repository.label }}
-      </CommonLink>
-      <CommonLink :to="footer.codeOfConduct.url">
-        {{ footer.codeOfConduct.label }}
-      </CommonLink>
+      <CommonLink :href="footer.project.url">Repository</CommonLink>
+      <CommonLink :href="footer.project.url">Code of Conduct</CommonLink>
     </div>
   </footer>
 </template>
@@ -31,7 +27,7 @@ export default {
     return { footer: null }
   },
   async fetch() {
-    const { footer } = await this.$content('footer').fetch()
+    const { footer } = await this.$content('footer').only(['footer']).fetch()
     this.footer = footer
   },
 }
