@@ -10,7 +10,10 @@
 </template>
 
 <script>
+import socialMetadata from '~/mixins/social-metadata'
+
 export default {
+  mixins: [socialMetadata],
   async asyncData({ $content }) {
     const schedule = await $content('2021/pages/schedule').fetch()
     return {
