@@ -23,7 +23,9 @@ export default {
   mixins: [socialMetadata],
   async asyncData({ $content }) {
     const { content, hero } = await $content('2021/pages/home/index').fetch()
-    const maintainers = await $content('2021/shared/maintainers').fetch()
+    const maintainers = await $content('2021/shared/maintainers')
+      .where({ featured: true })
+      .fetch()
 
     return {
       content,
