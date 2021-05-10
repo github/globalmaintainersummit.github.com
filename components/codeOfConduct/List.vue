@@ -23,3 +23,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+li {
+  padding: 8px 0;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <CodeOfConductPill :content="intro" />
     <CodeOfConductMain :content="codeOfConduct" />
     <CodeOfConductPill :content="reportingIncident" />
@@ -25,3 +25,31 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  font-size: var(--fs-small);
+
+  ::v-deep p {
+    font-size: var(--fs-small);
+  }
+
+  ::v-deep a {
+    display: inline;
+    color: var(--fc-primary);
+    transition: color 0.3s linear;
+
+    &:hover {
+      color: var(--fc-accent);
+    }
+  }
+
+  ::v-deep h4 {
+    margin-top: 56px;
+    margin-bottom: 32px;
+  }
+}
+</style>
