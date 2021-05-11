@@ -105,7 +105,8 @@ section {
     margin-top: 200px;
     &-button {
       align-self: center;
-      margin-top: 80px;
+      margin-top: 70px;
+      margin-bottom: 10px;
     }
   }
 }
