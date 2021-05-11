@@ -4,14 +4,16 @@
   "profile": {
     "name": "Myles Borins",
     "bio": "",
-    "links": [{ "platform": "", "url": "" }]
+    "links": [{ "platform": "", "url": "" }],
+    "sponsorLink": ""
   },
   "project": {
     "name": "Node.js",
     "description": "",
     "badge": "logo_nodejs.png",
     "url": "https://github.com/nodejs/node",
-    "links": [{ "platform": "", "url": "" }]
+    "links": [{ "platform": "", "url": "" }],
+    "sponsorLink": ""
   },
   "talkTitle": ""
 }

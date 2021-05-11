@@ -2,13 +2,14 @@
   "handler": "bwplotka",
   "featured": true,
   "profile": {
-    "name": "Bartłomiej Płotka",
-    "bio": "",
-    "links": [{ "platform": "", "url": "" }]
+    "name": "Bartłomiej Płotka (Bartek)",
+    "bio": "Bartek Plotka is an engineer, the co-author of the <a href=\"https://github.com/prometheus/prometheus\" target=\"_blank\">CNCF Thanos project</a> and the core maintainer of various open-source projects including <a href=\"https://github.com/thanos-io/thanos\" target=\"_blank\">Prometheus</a>. He enjoys building OSS communities and maintainable, reliable distributed systems, ideally in Go. On top of that, he is active in the CNCF SIG Observability as the technical lead. He writes a book with O'Reilly.",
+    "links": [{ "platform": "", "url": "" }],
+    "sponsorLink": ""
   },
   "project": {
-    "name": "Prometheus",
-    "description": "",
+    "name": "Prometheus and Thanos",
+    "description": "see version with links: https://github.slack.com/archives/C01HYM10H9B/p1620262120224600",
     "badge": "logo_prometheus.png",
     "url": "https://github.com/prometheus/prometheus",
     "links": [
@@ -16,7 +17,8 @@
         "platform": "",
         "url": ""
       }
-    ]
+    ],
+    "sponsorLink": ""
   },
   "talkTitle": "Should I merge this feature? Avoiding Hidden Cost of Extra Code or Blocking Users"
 }

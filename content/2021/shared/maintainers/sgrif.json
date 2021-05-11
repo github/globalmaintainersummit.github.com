@@ -4,14 +4,16 @@
   "profile": {
     "name": "Siân Griffin",
     "bio": "",
-    "links": [{ "platform": "", "url": "" }]
+    "links": [{ "platform": "", "url": "" }],
+    "sponsorLink": ""
   },
   "project": {
     "name": "Diesel",
     "description": "",
     "badge": "logo_diesel.png",
     "url": "https://github.com/diesel-rs/diesel",
-    "links": [{ "platform": "", "url": "" }]
+    "links": [{ "platform": "", "url": "" }],
+    "sponsorLink": ""
   },
   "talkTitle": "So let's talk a bit about PR things"
 }

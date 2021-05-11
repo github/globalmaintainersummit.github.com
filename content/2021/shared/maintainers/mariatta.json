@@ -4,14 +4,16 @@
   "profile": {
     "name": "Mariatta Wijaya",
     "bio": "",
-    "links": [{ "platform": "", "url": "" }]
+    "links": [{ "platform": "", "url": "" }],
+    "sponsorLink": ""
   },
   "project": {
     "name": "Python",
     "description": "",
     "badge": "logo_python.png",
     "url": "https://github.com/python/cpython",
-    "links": [{ "platform": "", "url": "" }]
+    "links": [{ "platform": "", "url": "" }],
+    "sponsorLink": ""
   },
   "talkTitle": ""
 }

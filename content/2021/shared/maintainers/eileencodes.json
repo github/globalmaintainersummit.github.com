@@ -4,14 +4,16 @@
   "profile": {
     "name": "Eileen Uchitelle",
     "bio": "",
-    "links": [{ "platform": "", "url": "" }]
+    "links": [{ "platform": "", "url": "" }],
+    "sponsorLink": ""
   },
   "project": {
     "name": "Ruby on Rails",
     "description": "",
     "badge": "logo_rubyonrails.png",
     "url": "https://github.com/rails",
-    "links": [{ "platform": "", "url": "" }]
+    "links": [{ "platform": "", "url": "" }],
+    "sponsorLink": ""
   },
   "talkTitle": "This is another talk about stuff"
 }

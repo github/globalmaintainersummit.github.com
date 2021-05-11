@@ -4,14 +4,16 @@
   "profile": {
     "name": "Lorena Mesa",
     "bio": "",
-    "links": [{ "platform": "", "url": "" }]
+    "links": [{ "platform": "", "url": "" }],
+    "sponsorLink": ""
   },
   "project": {
     "name": "PyLadies",
     "description": "",
     "badge": "logo_pyladies.png",
     "url": "https://github.com/pyladies",
-    "links": [{ "platform": "", "url": "" }]
+    "links": [{ "platform": "", "url": "" }],
+    "sponsorLink": ""
   },
   "talkTitle": ""
 }

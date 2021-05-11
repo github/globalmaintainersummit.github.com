@@ -4,7 +4,8 @@
   "profile": {
     "name": "Chrissy LeMaire",
     "bio": "",
-    "links": [{ "platform": "", "url": "" }]
+    "links": [{ "platform": "", "url": "" }],
+    "sponsorLink": ""
   },
   "project": {
     "name": "dbatools",
@@ -16,7 +17,8 @@
         "platform": "",
         "url": ""
       }
-    ]
+    ],
+    "sponsorLink": ""
   },
   "talkTitle": "Maintaining: The People Part"
 }
