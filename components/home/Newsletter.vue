@@ -14,24 +14,34 @@
         >
           {{ content.label }}
         </label>
-        <input
-          id="newsletter"
-          ref="input"
-          v-model="formData.email"
-          type="text"
-          name="newsletter"
-          :placeholder="content.placeholder"
-          required
-          aria-labelledby="label-newsletter"
-        />
-        <CommonCustomButton
-          type="submit"
-          icon="arrow-right"
-          icon-suffix
-          theme="light"
-        >
-          {{ content.cta }}
-        </CommonCustomButton>
+        <template v-if="!formData.submitted">
+          <input
+            id="newsletter"
+            ref="input"
+            v-model="formData.email"
+            type="text"
+            name="newsletter"
+            :placeholder="content.placeholder"
+            required
+            aria-labelledby="label-newsletter"
+          />
+          <CommonCustomButton
+            type="submit"
+            icon="arrow-right"
+            icon-suffix
+            theme="light"
+            :disabled="formData.loading"
+          >
+            {{ content.cta }}
+          </CommonCustomButton>
+        </template>
+        <p v-else-if="formData.successful">
+          Happy to have you onboard! Check your inbox to confirm the
+          subscription.
+        </p>
+        <p v-else-if="formData.error">
+          Uops... something went wrong. Try it later (we don’t promise anything)
+        </p>
       </form>
     </div>
   </div>
@@ -48,13 +58,30 @@ export default {
   data() {
     return {
       formData: {
+        loading: false,
+        submitted: false,
+        successful: false,
+        error: false,
         email: null,
       },
     }
   },
   methods: {
     async handleSubmit(event) {
-      // Send the email
+      const formData = new FormData()
+      formData.append('email', this.formData.email)
+      formData.append('list_id', '5a3ca1f0-a9ee-4eda-bb71-6c9c60a6a782')
+      this.formData.loading = true
+      try {
+        await fetch('https://30cccd97-b967-4c1f-98cd-c705c798c494.trayapp.io', {
+          method: 'POST',
+          body: formData,
+        })
+        this.formData.successful = true
+      } catch {
+        this.formData.error = true
+      }
+      this.formData.submitted = true
     },
   },
 }
