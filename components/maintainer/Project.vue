@@ -12,6 +12,7 @@
     <div class="project__description" v-html="project.description"></div>
     <MaintainerLinks :links="project.links" />
     <CommonCustomButton
+      v-if="project.sponsorLink"
       icon="heart"
       :href="project.sponsorLink"
       class="project__sponsor"
