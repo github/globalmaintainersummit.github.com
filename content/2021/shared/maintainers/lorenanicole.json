@@ -3,17 +3,20 @@
   "featured": true,
   "profile": {
     "name": "Lorena Mesa",
-    "bio": "",
-    "links": [{ "platform": "", "url": "" }],
+    "bio": "<p>Political scientist turned coder, Lorena Mesa is a data engineer, Director & Chair of the Python Software Foundation, JOSS editor, and PyLadies Chicago co-organizer. Lorena's time at Obama for America and her subsequent graduate research required her to learn how to transform messy, incomplete data into intelligible analysis on topics like predicting Latinx voter behavior. It's this unique background in research and applied mathematics that drove Lorena to pursue a career in engineering and data science. One part activist, one part Star Wars fanatic, and another part Trekkie, Lorena abides by the motto to \"live long and prosper\".</p>",
+    "links": [
+      { "platform": "github", "url": "https://github.com/lorenanicole" },
+      { "platform": "twitter", "url": "https://twitter.com/loooorenanicole" }
+    ],
     "sponsorLink": ""
   },
   "project": {
     "name": "PyLadies",
-    "description": "",
+    "description": "<p>PyLadies is an international mentorship group for marginalized genders, such as but not limited to non-binary people, trans people, and women in tech.</p><p>We host monthly events, talks, and study groups where you can meet other pythonistas and learn more about programming, data science, web development, and more.</p>",
     "badge": "logo_pyladies.png",
     "url": "https://github.com/pyladies",
-    "links": [{ "platform": "", "url": "" }],
+    "links": [{ "platform": "github", "url": "https://github.com/pyladies" }],
     "sponsorLink": ""
   },
-  "talkTitle": ""
+  "talkTitle": "PR incoming!"
 }

@@ -5,6 +5,7 @@
     <div class="profile__bio" v-html="profile.bio"></div>
     <MaintainerLinks :links="profile.links" />
     <CommonCustomButton
+      v-if="profile.sponsorLink"
       icon="heart"
       :href="profile.sponsorLink"
       class="profile__sponsor"

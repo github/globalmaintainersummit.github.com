@@ -2,6 +2,7 @@
   <section class="project">
     <div class="project__decoration">
       <img
+        v-if="project.badge"
         :src="require(`~/assets/img/badges/${project.badge}`)"
         alt=""
         role="presentation"
@@ -12,6 +13,7 @@
     <div class="project__description" v-html="project.description"></div>
     <MaintainerLinks :links="project.links" />
     <CommonCustomButton
+      v-if="project.sponsorLink"
       icon="heart"
       :href="project.sponsorLink"
       class="project__sponsor"

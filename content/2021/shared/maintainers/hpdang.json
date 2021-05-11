@@ -1,0 +1,29 @@
+{
+  "handler": "hpdang",
+  "featured": false,
+  "profile": {
+    "name": "Hong Phuc Dang",
+    "bio": "<p>PR incomming!</p>",
+    "links": [
+      {
+        "platform": "github",
+        "url": "https://github.com/hpdang"
+      }
+    ],
+    "sponsorLink": ""
+  },
+  "project": {
+    "name": "Eventyay",
+    "description": "<p>The Open Event Server enables organizers to manage events from concerts to conferences and meet-ups.  Developed in conjuntion with the large open source conference FOSSASIA.</p>",
+    "badge": "",
+    "url": "https://github.com/fossasia/open-event-server/",
+    "links": [
+      {
+        "platform": "github",
+        "url": "https://github.com/fossasia/open-event-server/"
+      }
+    ],
+    "sponsorLink": ""
+  },
+  "talkTitle": "PR incomming!"
+}

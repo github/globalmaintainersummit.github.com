@@ -3,17 +3,22 @@
   "featured": false,
   "profile": {
     "name": "Ifiok Jr.",
-    "bio": "",
-    "links": [{ "platform": "", "url": "" }],
+    "bio": "<p>PR incoming!</p>",
+    "links": [
+      { "platform": "github", "url": "https://github.com/ifiokjr" },
+      { "platform": "twitter", "url": "https://twitter.com/ifiokjr" }
+    ],
     "sponsorLink": ""
   },
   "project": {
-    "name": "Remirror",
-    "description": "",
+    "name": "remirror",
+    "description": "<p>ProseMirror toolkit for React</p>",
     "badge": "",
     "url": "#",
-    "links": [{ "platform": "", "url": "" }],
+    "links": [
+      { "platform": "github", "url": "https://github.com/remirror/remirror" }
+    ],
     "sponsorLink": ""
   },
-  "talkTitle": ""
+  "talkTitle": "PR incoming!"
 }
