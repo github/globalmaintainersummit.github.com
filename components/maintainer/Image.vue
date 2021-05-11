@@ -29,7 +29,9 @@ export default {
   --maintainer-border: 5px;
 
   @media screen and (min-width: $screen-xl) {
-    --maintainer-width: 876px;
+    // TODO use the wide width once we have the wide images
+    // --maintainer-width: 876px;
+    --maintainer-width: 256px;
   }
 
   position: relative;
