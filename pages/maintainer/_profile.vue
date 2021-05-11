@@ -19,7 +19,7 @@
         :handler="maintainer.handler"
         :profile="maintainer.profile"
       />
-      <MaintainerProject />
+      <MaintainerProject :project="maintainer.project" />
       <MaintainerTalk />
     </div>
   </section>

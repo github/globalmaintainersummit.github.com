@@ -2,7 +2,7 @@
   <section class="profile">
     <h1 class="profile__name">{{ profile.name }}</h1>
     <p class="profile__handler">@{{ handler }}</p>
-    <p class="profile__bio" v-html="profile.bio"></p>
+    <div class="profile__bio" v-html="profile.bio"></div>
     <MaintainerLinks :links="profile.links" />
     <CommonCustomButton
       icon="heart"
@@ -50,8 +50,16 @@ export default {
     font-weight: var(--fw-bold);
   }
   &__bio {
-    margin: 0;
     line-height: 1.5;
+
+    ::v-deep p {
+      &:first-of-type {
+        margin-top: 0;
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
 
     ::v-deep a {
       @include linksWithinText();
