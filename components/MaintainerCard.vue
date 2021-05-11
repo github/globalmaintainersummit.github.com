@@ -32,7 +32,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .maintainer {
   --maintainer-width: 256px;
   --maintainer-height: 284px;
