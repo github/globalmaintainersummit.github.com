@@ -24,7 +24,7 @@ export default {
     }
   },
   async fetch() {
-    if (this.speakerHandler) {
+    if (this.speakerHandler !== '') {
       const maintainer = await this.$content(
         `2021/shared/maintainers/${this.speakerHandler}`
       ).fetch()
