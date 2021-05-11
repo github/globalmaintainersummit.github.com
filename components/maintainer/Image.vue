@@ -24,9 +24,13 @@ export default {
 
 <style lang="scss" scoped>
 .image {
-  --maintainer-width: 876px;
+  --maintainer-width: 256px;
   --maintainer-height: 284px;
   --maintainer-border: 5px;
+
+  @media screen and (min-width: $screen-xl) {
+    --maintainer-width: 876px;
+  }
 
   position: relative;
   width: calc(var(--maintainer-width) + var(--maintainer-border));

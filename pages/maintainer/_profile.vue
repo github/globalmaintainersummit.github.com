@@ -58,7 +58,11 @@ export default {
   background-position: top;
   &__go-back {
     align-self: flex-start;
-    margin-bottom: 44px;
+    margin-bottom: 24px;
+
+    @media screen and (min-width: $screen-tablet) {
+      margin-bottom: 42px;
+    }
   }
   &__image {
     margin-bottom: 72px;
