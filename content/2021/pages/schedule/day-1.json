@@ -12,13 +12,13 @@
       "break": "short",
       "talks": [
         {
+          "speakerHandler": "bwplotka"
+        },
+        {
           "speakerHandler": "helen"
         },
         {
-          "speakerHandler": "eileencodes"
-        },
-        {
-          "speakerHandler": "sgrif"
+          "speakerHandler": "potatoqualitee"
         }
       ]
     },
@@ -29,13 +29,13 @@
       "break": "long",
       "talks": [
         {
-          "speakerHandler": "helen"
+          "speakerHandler": ""
         },
         {
-          "speakerHandler": "eileencodes"
+          "speakerHandler": ""
         },
         {
-          "speakerHandler": "sgrif"
+          "speakerHandler": ""
         }
       ]
     },
@@ -46,13 +46,13 @@
       "break": "short",
       "talks": [
         {
-          "speakerHandler": "helen"
+          "speakerHandler": ""
         },
         {
-          "speakerHandler": "eileencodes"
+          "speakerHandler": ""
         },
         {
-          "speakerHandler": "sgrif"
+          "speakerHandler": ""
         }
       ]
     },
@@ -62,13 +62,13 @@
       "discussions": false,
       "talks": [
         {
-          "speakerHandler": "helen"
+          "speakerHandler": ""
         },
         {
-          "speakerHandler": "eileencodes"
+          "speakerHandler": ""
         },
         {
-          "speakerHandler": "sgrif"
+          "speakerHandler": ""
         }
       ]
     },
