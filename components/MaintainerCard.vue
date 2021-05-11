@@ -62,7 +62,7 @@ export default {
       height: calc(var(--maintainer-height) + var(--maintainer-border));
       object-fit: cover;
       object-position: center;
-      border: var(--maintainer-border) white solid;
+      border: var(--maintainer-border) var(--bg-body) solid;
       transition: top 0.25s ease-in-out, left 0.25s ease-in-out;
     }
     &::before {
