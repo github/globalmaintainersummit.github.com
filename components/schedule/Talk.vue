@@ -1,5 +1,5 @@
 <template>
-  <div v-if="maintainer" class="talk">
+  <div class="talk">
     <p class="talk__title">{{ maintainer.talkTitle }}</p>
     <p class="talk__speaker">{{ maintainer.profile.name }}</p>
   </div>
@@ -14,13 +14,22 @@ export default {
     },
   },
   data() {
-    return { maintainer: null }
+    return {
+      maintainer: {
+        talkTitle: 'PR incoming',
+        profile: {
+          name: 'PR incoming!',
+        },
+      },
+    }
   },
   async fetch() {
-    const maintainer = await this.$content(
-      `2021/shared/maintainers/${this.speakerHandler}`
-    ).fetch()
-    this.maintainer = maintainer
+    if (this.speakerHandler !== '') {
+      const maintainer = await this.$content(
+        `2021/shared/maintainers/${this.speakerHandler}`
+      ).fetch()
+      this.maintainer = maintainer
+    }
   },
 }
 </script>

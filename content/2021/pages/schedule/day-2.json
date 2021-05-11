@@ -7,68 +7,68 @@
       "break": "short"
     },
     {
-      "title": "Contributor Relations",
+      "title": "Contributor Relations (more!)",
       "hasDiscussions": true,
       "break": "short",
       "talks": [
         {
-          "speakerHandler": "helen"
+          "speakerHandler": ""
         },
         {
-          "speakerHandler": "eileencodes"
+          "speakerHandler": ""
         },
         {
-          "speakerHandler": "sgrif"
+          "speakerHandler": ""
         }
       ]
     },
     {
-      "title": "Maintainer Health",
+      "title": "Organiza-tional Auto-mation",
       "time": "11:00 am",
       "discussions": false,
       "break": "long",
       "talks": [
         {
-          "speakerHandler": "helen"
+          "speakerHandler": ""
         },
         {
-          "speakerHandler": "eileencodes"
+          "speakerHandler": ""
         },
         {
-          "speakerHandler": "sgrif"
+          "speakerHandler": ""
         }
       ]
     },
     {
-      "title": "Project Health",
+      "title": "Into the Unknown",
       "time": "12:15 pm",
       "hasDiscussions": true,
       "break": "short",
       "talks": [
         {
-          "speakerHandler": "helen"
+          "speakerHandler": ""
         },
         {
-          "speakerHandler": "eileencodes"
+          "speakerHandler": ""
         },
         {
-          "speakerHandler": "sgrif"
+          "speakerHandler": ""
         }
       ]
     },
     {
-      "title": "Measuring Success",
+      "title": "Talking Money",
       "time": "1:30 pm",
       "discussions": false,
       "talks": [
         {
-          "speakerHandler": "helen"
+          "speakerHandler": ""
         },
         {
-          "speakerHandler": "eileencodes"
+          "speakerHandler": ""
         },
         {
-          "speakerHandler": "sgrif"
+          "speakerHandler": ""
         }
       ]
     },
