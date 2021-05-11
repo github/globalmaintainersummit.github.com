@@ -3,15 +3,20 @@
   "featured": true,
   "profile": {
     "name": "Eileen Uchitelle",
-    "bio": "",
-    "links": [{ "platform": "", "url": "" }]
+    "bio": "<p>PR incoming!</p>",
+    "links": [
+      { "platform": "github", "url": "https://github.com/eileencodes" },
+      { "platform": "twitter", "url": "https://twitter.com/eileencodes" }
+    ],
+    "sponsorLink": ""
   },
   "project": {
     "name": "Ruby on Rails",
-    "description": "",
+    "description": "<p>PR incoming!</p>",
     "badge": "logo_rubyonrails.png",
     "url": "https://github.com/rails",
-    "links": [{ "platform": "", "url": "" }]
+    "links": [{ "platform": "github", "url": "https://github.com/rails" }],
+    "sponsorLink": ""
   },
-  "talkTitle": "This is another talk about stuff"
+  "talkTitle": "PR incoming!"
 }

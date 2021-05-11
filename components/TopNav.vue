@@ -49,7 +49,7 @@
 
 <script>
 import { FocusTrap } from 'focus-trap-vue'
-import GitHub from '~/assets/svg/github.svg?inline'
+import GitHub from '~/assets/svg/social/github.svg?inline'
 
 export default {
   components: {

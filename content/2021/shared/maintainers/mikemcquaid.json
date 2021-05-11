@@ -3,15 +3,20 @@
   "featured": true,
   "profile": {
     "name": "Mike McQuaid",
-    "bio": "",
-    "links": [{ "platform": "", "url": "" }]
+    "bio": "<p>Mike McQuaid, Homebrew Project Leader?</p>",
+    "links": [
+      { "platform": "github", "url": "https://github.com/MikeMcQuaid" },
+      { "platform": "twitter", "url": "https://twitter.com/mikemcquaid" }
+    ],
+    "sponsorLink": ""
   },
   "project": {
     "name": "Homebrew",
-    "description": "",
+    "description": "<p>Homebrew is an open-source package manager for macOS (and Linux)</p>",
     "badge": "logo_homebrew.png",
     "url": "https://github.com/Homebrew",
-    "links": [{ "platform": "", "url": "" }]
+    "links": [{ "platform": "github", "url": "https://github.com/Homebrew" }],
+    "sponsorLink": ""
   },
-  "talkTitle": ""
+  "talkTitle": "Robot Pedantry, Human Empathy: Automation and Homebrew"
 }

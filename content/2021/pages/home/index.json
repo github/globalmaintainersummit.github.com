@@ -3,6 +3,13 @@
     "lead": "A virtual gathering for the maintainers who make open source possible.",
     "date": "June 8-9, 2021"
   },
+  "newsletter": {
+    "lead": "Stay in the know",
+    "body": "Be the first to know about Global Maintainers Summit news!",
+    "label": "Please enter your email",
+    "placeholder": "Enter your@email.here",
+    "cta": "Sign up"
+  },
   "content": {
     "title1": "Open source project management is uniquely challenging and rewarding work.",
     "block1": "<p>Calling all past, present, and future maintainers -—whether you're waiting for your first issue or you've triaged 2000 before lunch. Join us for honest talks and conversations on your challenges, triumphs, and projects.</p><p>While we spend lots of time in our own communities we rarely get the chance to get together with maintainers of other projects to laugh, cry, celebrate and share. At the Global Maintainer Summit, we’re taking the time to have those conversations and would love you to join us.</p><p>We’ll feature a wide variety of lightning talks on different projects’ approach to common problems. In between, we’ll chat with each other, and know we’re not alone in the issues we face.</p><p>Global Maintainer Summit is your chance to build collaborative relationships with other maintainers, cultivate new skills to reinforce your resiliency and avoid burnout, and explore solutions to the myriad of shared challenges maintainers face.</p>",

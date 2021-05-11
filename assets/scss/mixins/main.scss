@@ -70,3 +70,16 @@
     content: '';
   }
 }
+
+/**
+ * Style links that are part of a text (external links)
+*/
+@mixin linksWithinText() {
+  display: inline;
+  color: var(--fc-primary);
+  transition: color 0.3s linear;
+
+  &:hover {
+    color: var(--fc-accent);
+  }
+}

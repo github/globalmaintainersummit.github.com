@@ -5,6 +5,7 @@
       <img src="~/assets/svg/bg_pills/graphic_hero.svg" alt="" />
     </div>
     <HomeHero :content="hero" />
+    <HomeNewsletter :content="newsletter" />
     <div class="home__content">
       <h2>{{ content.title1 }}</h2>
       <div v-html="content.block1" />
@@ -33,7 +34,9 @@ import socialMetadata from '~/mixins/social-metadata'
 export default {
   mixins: [socialMetadata],
   async asyncData({ $content }) {
-    const { content, hero } = await $content('2021/pages/home/index').fetch()
+    const { content, hero, newsletter } = await $content(
+      '2021/pages/home/index'
+    ).fetch()
     const maintainers = await $content('2021/shared/maintainers')
       .where({ featured: true })
       .fetch()
@@ -41,6 +44,7 @@ export default {
     return {
       content,
       hero,
+      newsletter,
       maintainers,
     }
   },

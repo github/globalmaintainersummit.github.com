@@ -1,0 +1,33 @@
+{
+  "handler": "vertedinde",
+  "featured": false,
+  "profile": {
+    "name": "Keeley Hammond",
+    "bio": "<p>Keeley Hammond (she/her) is an Electron maintainer and a senior software engineer at Slack. She is based in Portland, OR. When not working on Electron, Keeley volunteers for Women Who Code Portland and spends as much time as possible with her dog, Luna.</p>",
+    "links": [
+      {
+        "platform": "github",
+        "url": "https://github.com/VerteDinde"
+      },
+      {
+        "platform": "twitter",
+        "url": "https://twitter.com/keeleyhammond"
+      }
+    ],
+    "sponsorLink": ""
+  },
+  "project": {
+    "name": "Electron",
+    "description": "<p>Electron is a framework that allows developers to create native applications with web technologies. Built with C++, Chromium and Node.js, Electron apps build and run on Mac, Windows, and Linux. Electron powers some of your favorite apps, like VSCode, Slack, Figma and Signal.</p>",
+    "badge": "",
+    "url": "https://github.com/electron",
+    "links": [
+      {
+        "platform": "github",
+        "url": "https://github.com/electron"
+      }
+    ],
+    "sponsorLink": ""
+  },
+  "talkTitle": "Measuring Electron: Setting Project OKRs"
+}

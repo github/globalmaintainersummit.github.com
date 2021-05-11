@@ -1,0 +1,22 @@
+{
+  "handler": "brandonroberts",
+  "featured": true,
+  "profile": {
+    "name": "Brandon Roberts",
+    "bio": "<p>Brandon is a Developer Advocate, focused on community engagement, content creation, and collaboration. Brandon enjoy learning new things, helping other developers solve problems, and contributing to open source. Brandon is a GDE, technical writer, and a maintainer of the NgRx project.</p>",
+    "links": [
+      { "platform": "github", "url": "https://github.com/brandonroberts" },
+      { "platform": "twitter", "url": "https://twitter.com/brandontroberts" }
+    ],
+    "sponsorLink": ""
+  },
+  "project": {
+    "name": "NgRx",
+    "description": "<p>NgRx is a framework for building reactive applications in Angular. NgRx provides libraries for global and local state management, isolation of side effects, and developer tooling to enhance application development.</p>",
+    "badge": "",
+    "url": "https://github.com/ngrx",
+    "links": [{ "platform": "github", "url": "https://github.com/ngrx" }],
+    "sponsorLink": ""
+  },
+  "talkTitle": " All PR's welcome! ...for now: the evolution of contribution standards as our project grew"
+}
