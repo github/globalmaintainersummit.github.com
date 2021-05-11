@@ -3,11 +3,7 @@
     <h1 class="profile__name">{{ profile.name }}</h1>
     <p class="profile__handler">@{{ handler }}</p>
     <p class="profile__bio" v-html="profile.bio"></p>
-    <ul class="links">
-      <li v-for="link in profile.links" :key="link.url">
-        {{ link.platform }}
-      </li>
-    </ul>
+    <MaintainerLinks :links="profile.links" />
     <CommonCustomButton
       icon="heart"
       :href="profile.sponsorLink"
@@ -44,7 +40,22 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   &__name {
-    margin-bottom: 0;
+    margin: 0;
+  }
+  &__handler {
+    @include mobileToDesktopFontSize(var(--fs-medium), var(--fs-large));
+
+    margin-top: 0;
+    color: var(--fc-primary);
+    font-weight: var(--fw-bold);
+  }
+  &__bio {
+    margin-top: 0;
+    line-height: 1.5;
+
+    ::v-deep a {
+      @include linksWithinText();
+    }
   }
   &__sponsor {
     align-self: flex-end;

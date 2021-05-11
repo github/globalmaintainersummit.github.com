@@ -56,6 +56,10 @@ export default {
   background-position: top;
   &__go-back {
     align-self: flex-start;
+    margin-bottom: 44px;
+  }
+  &__image {
+    margin-bottom: 72px;
   }
   &__details {
     max-width: 720px;
