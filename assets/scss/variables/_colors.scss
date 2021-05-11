@@ -11,7 +11,7 @@
   --purple: hsla(281, 75%, 59%, 1); // #B349E5
   --deep-purple: hsla(279, 97%, 35%, 1); //#7203AE
   --navy: hsla(277, 96%, 11%, 1); // #230138
-
+  --lime: hsla(97, 81%, 48%, 1); //#64dd17;
   // Gradients
   --grad-transparent-gray: linear-gradient(
     90deg,
@@ -45,4 +45,5 @@
 
   // Others
   --underline-color: var(--salmon);
+  --input-border--hover: var(--lime);
 }

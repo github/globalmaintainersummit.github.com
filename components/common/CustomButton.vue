@@ -109,6 +109,7 @@ export default {
   padding: 24px 32px;
   color: var(--button-text-color);
   font-family: var(--ff-title);
+  white-space: nowrap;
   column-gap: 24px;
   background-color: var(--button-bg);
   border: var(--button-border);
@@ -116,7 +117,6 @@ export default {
   box-shadow: var(--button-box-shadow);
   cursor: pointer;
   transition: all 0.3s ease-in;
-
   &--reverse {
     flex-direction: row-reverse;
   }
