@@ -50,7 +50,7 @@ export default {
     font-weight: var(--fw-bold);
   }
   &__bio {
-    margin-top: 0;
+    margin: 0;
     line-height: 1.5;
 
     ::v-deep a {
