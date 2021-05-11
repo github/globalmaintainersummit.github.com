@@ -37,7 +37,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 38px;
+  margin-top: 56px;
   &__decoration {
     display: flex;
     align-items: center;

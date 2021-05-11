@@ -1,5 +1,5 @@
 <template>
-  <div class="image">
+  <div class="profile-image">
     <img
       :src="require(`~/assets/img/maintainers/${handler}.jpg`)"
       :alt="name"
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.image {
+.profile-image {
   --maintainer-width: 256px;
   --maintainer-height: 284px;
   --maintainer-border: 5px;
