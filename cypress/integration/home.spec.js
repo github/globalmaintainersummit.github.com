@@ -29,40 +29,9 @@ describe('Home', () => {
     cy.url().should('include', '/maintainers')
   })
 
-  describe('when subscribing to the newsletter', () => {
-    const SERVICE_URL =
-      'https://30cccd97-b967-4c1f-98cd-c705c798c494.trayapp.io'
-
-    it('when everything is ok', () => {
-      cy.intercept(
-        {
-          url: SERVICE_URL,
-          method: 'POST',
-        },
-        []
-      ).as('newsletterForm')
-      cy.findByPlaceholderText('Enter your@email.here').type('user@example.org')
-      cy.findByText('Sign up').click()
-      cy.wait('@newsletterForm')
-        .its('request.body')
-        .should('include', 'user@example.org')
-      cy.findByText(/Happy to have you onboard!/).should('be.visible')
-    })
-
-    it('when something whent wrong', () => {
-      cy.intercept(
-        {
-          url: SERVICE_URL,
-          method: 'POST',
-        },
-        { forceNetworkError: true }
-      ).as('newsletterForm')
-      cy.findByPlaceholderText('Enter your@email.here').type('user@example.org')
-      cy.findByText('Sign up').click()
-      cy.wait('@newsletterForm')
-        .its('request.body')
-        .should('include', 'user@example.org')
-      cy.findByText(/Uops... something went wrong./).should('be.visible')
-    })
+  it('users can subsribe to the newsletter', () => {
+    cy.findByPlaceholderText('Enter your@email.here').type('user@example.org')
+    cy.findByText('Sign up').click()
+    cy.findByText(/Happy to have you onboard!/).should('be.visible')
   })
 })

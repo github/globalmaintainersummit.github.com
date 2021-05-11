@@ -5,7 +5,13 @@
         <h3>{{ content.lead }}</h3>
         <p>{{ content.body }}</p>
       </div>
-      <form class="newsletter__form" @submit.prevent="handleSubmit">
+      <form
+        action="https://github.us11.list-manage.com/subscribe/post?u=9d7ced8c4bbd6c2f238673f0f&amp;id=e21329ec0b"
+        method="post"
+        class="newsletter__form"
+        target="_blank"
+        @submit.prevent="handleSubmit"
+      >
         <label
           id="label-newsletter"
           for="newsletter"
@@ -20,27 +26,29 @@
             ref="input"
             v-model="formData.email"
             type="text"
-            name="newsletter"
+            name="EMAIL"
             :placeholder="content.placeholder"
             required
             aria-labelledby="label-newsletter"
+          />
+          <input
+            type="hidden"
+            name="b_9d7ced8c4bbd6c2f238673f0f_e21329ec0b"
+            tabindex="-1"
+            value=""
           />
           <CommonCustomButton
             type="submit"
             icon="arrow-right"
             icon-suffix
             theme="light"
-            :disabled="formData.loading"
           >
             {{ content.cta }}
           </CommonCustomButton>
         </template>
-        <p v-else-if="formData.successful">
+        <p v-else>
           Happy to have you onboard! Check your inbox to confirm the
           subscription.
-        </p>
-        <p v-else-if="formData.error">
-          Uops... something went wrong. Try it later (we don’t promise anything)
         </p>
       </form>
     </div>
@@ -58,29 +66,15 @@ export default {
   data() {
     return {
       formData: {
-        loading: false,
         submitted: false,
         successful: false,
-        error: false,
-        email: null,
       },
     }
   },
   methods: {
-    async handleSubmit(event) {
-      const formData = new FormData()
-      formData.append('email', this.formData.email)
-      formData.append('list_id', '5a3ca1f0-a9ee-4eda-bb71-6c9c60a6a782')
-      this.formData.loading = true
-      try {
-        await fetch('https://30cccd97-b967-4c1f-98cd-c705c798c494.trayapp.io', {
-          method: 'POST',
-          body: formData,
-        })
-        this.formData.successful = true
-      } catch {
-        this.formData.error = true
-      }
+    handleSubmit(event) {
+      event.target.submit()
+      this.formData.successful = true
       this.formData.submitted = true
     },
   },
