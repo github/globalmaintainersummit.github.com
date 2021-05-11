@@ -1,0 +1,17 @@
+{
+  "handler": "mylesborins",
+  "featured": true,
+  "profile": {
+    "name": "Myles Borins",
+    "bio": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "project": {
+    "name": "Node.js",
+    "description": "",
+    "badge": "logo_nodejs.png",
+    "url": "https://github.com/nodejs/node",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "talkTitle": ""
+}

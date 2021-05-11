@@ -6,7 +6,7 @@
         :key="item.name"
         class="grid_item item"
       >
-        <ProjectCard v-if="projects" :project="item" />
+        <ProjectCard v-if="projects" :mantainer="item" />
         <MaintainerCard v-else :maintainer="item" :oversize="threeCols" />
       </li>
     </ul>

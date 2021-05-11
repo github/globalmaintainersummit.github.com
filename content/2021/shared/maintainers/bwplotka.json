@@ -1,0 +1,22 @@
+{
+  "handler": "bwplotka",
+  "featured": true,
+  "profile": {
+    "name": "Bartłomiej Płotka",
+    "bio": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "project": {
+    "name": "Prometheus",
+    "description": "",
+    "badge": "logo_prometheus.png",
+    "url": "https://github.com/prometheus/prometheus",
+    "links": [
+      {
+        "platform": "",
+        "url": ""
+      }
+    ]
+  },
+  "talkTitle": "Should I merge this feature? Avoiding Hidden Cost of Extra Code or Blocking Users"
+}

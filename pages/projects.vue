@@ -1,7 +1,7 @@
 <template>
   <section class="projects">
     <CommonSwitchButton />
-    <CommonGrid :projects="projectsList" data-cy="projects" />
+    <CommonGrid :projects="maintainers" data-cy="projects" />
   </section>
 </template>
 
@@ -11,14 +11,9 @@ import socialMetadata from '~/mixins/social-metadata'
 export default {
   mixins: [socialMetadata],
   async asyncData({ $content }) {
-    const { projects } = await $content('2021/pages/projects/index').fetch()
+    const maintainers = await $content('2021/shared/maintainers').fetch()
 
-    const projectsList = projects.list.sort(
-      ({ name: nameA }, { name: nameB }) => nameA.localeCompare(nameB)
-    )
-    return {
-      projectsList,
-    }
+    return { maintainers }
   },
 }
 </script>

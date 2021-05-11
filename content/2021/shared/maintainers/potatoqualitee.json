@@ -1,0 +1,22 @@
+{
+  "handler": "potatoqualitee",
+  "featured": true,
+  "profile": {
+    "name": "Chrissy LeMaire",
+    "bio": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "project": {
+    "name": "dbatools",
+    "description": "",
+    "badge": "logo_dbatools.png",
+    "url": "https://github.com/sqlcollaborative/dbatools",
+    "links": [
+      {
+        "platform": "",
+        "url": ""
+      }
+    ]
+  },
+  "talkTitle": "Maintaining: The People Part"
+}

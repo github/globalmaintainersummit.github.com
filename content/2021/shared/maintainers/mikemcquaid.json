@@ -1,0 +1,17 @@
+{
+  "handler": "mikemcquaid",
+  "featured": true,
+  "profile": {
+    "name": "Mike McQuaid",
+    "bio": "",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "project": {
+    "name": "Homebrew",
+    "description": "",
+    "badge": "logo_homebrew.png",
+    "url": "https://github.com/Homebrew",
+    "links": [{ "platform": "", "url": "" }]
+  },
+  "talkTitle": ""
+}

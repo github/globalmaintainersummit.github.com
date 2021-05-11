@@ -16,6 +16,7 @@ export default {
   mixins: [socialMetadata],
   async asyncData({ $content }) {
     const schedule = await $content('2021/pages/schedule').fetch()
+
     return {
       schedule,
     }

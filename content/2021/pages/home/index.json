@@ -1,32 +1,4 @@
 {
-  "maintainers": {
-    "title": "Maintainers",
-    "cta": "All maintainers",
-    "list": [
-      {
-        "name": "Bartłomiej Płotka",
-        "project": "Prometheus",
-        "src": "bartlomiej-plotka"
-      },
-      {
-        "name": "Chrissy LeMaire",
-        "project": "dbatools",
-        "src": "chrissy-lemaire"
-      },
-      {
-        "name": "Eileen Uchitelle",
-        "project": "Ruby on Rails",
-        "src": "eileen-uchitelle"
-      },
-      {
-        "name": "Helen Hou-Sandí",
-        "project": "WordPress",
-        "src": "helen-hou-sandi"
-      },
-      { "name": "Ifiok Jr.", "project": "Remirror", "src": "ifiok-jr" },
-      { "name": "Lorena Mesa", "project": "PyLadies", "src": "lorena-mesa" }
-    ]
-  },
   "hero": {
     "lead": "A virtual gathering for the maintainers who make open source possible.",
     "date": "June 8-9, 2021"
