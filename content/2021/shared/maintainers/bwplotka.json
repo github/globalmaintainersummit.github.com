@@ -4,7 +4,13 @@
   "profile": {
     "name": "Bartłomiej Płotka (Bartek)",
     "bio": "Bartek Plotka is an engineer, the co-author of the <a href=\"https://github.com/prometheus/prometheus\" target=\"_blank\">CNCF Thanos project</a> and the core maintainer of various open-source projects including <a href=\"https://github.com/thanos-io/thanos\" target=\"_blank\">Prometheus</a>. He enjoys building OSS communities and maintainable, reliable distributed systems, ideally in Go. On top of that, he is active in the CNCF SIG Observability as the technical lead. He writes a book with O'Reilly.",
-    "links": [{ "platform": "", "url": "" }],
+    "links": [
+      { "platform": "github", "url": "#" },
+      { "platform": "gitlab", "url": "#" },
+      { "platform": "readme", "url": "#" },
+      { "platform": "twitter", "url": "#" },
+      { "platform": "other", "url": "#" }
+    ],
     "sponsorLink": ""
   },
   "project": {
