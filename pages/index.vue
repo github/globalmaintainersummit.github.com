@@ -21,7 +21,7 @@
       <CommonGrid :maintainers="maintainers" three-cols data-cy="maintainers" />
       <div class="home__maintainers-button">
         <CommonCustomButton to="/maintainers" icon="arrow-right" icon-suffix>
-          {{ maintainers.cta }}
+          {{ maintainersContent.cta }}
         </CommonCustomButton>
       </div>
     </div>
@@ -34,9 +34,12 @@ import socialMetadata from '~/mixins/social-metadata'
 export default {
   mixins: [socialMetadata],
   async asyncData({ $content }) {
-    const { content, hero, newsletter } = await $content(
-      '2021/pages/home/index'
-    ).fetch()
+    const {
+      maintainers: maintainersContent,
+      content,
+      hero,
+      newsletter,
+    } = await $content('2021/pages/home/index').fetch()
     const maintainers = await $content('2021/shared/maintainers')
       .where({ featured: true })
       .fetch()
@@ -45,6 +48,7 @@ export default {
       content,
       hero,
       newsletter,
+      maintainersContent,
       maintainers,
     }
   },
