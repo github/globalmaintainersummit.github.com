@@ -23,4 +23,9 @@ describe('Home', () => {
       expect(uniquemaintainers).to.equal(maintainers.length)
     })
   })
+
+  it('user can navigate to the complete list of maintainers', () => {
+    cy.findByText('All Maintainers').click()
+    cy.url().should('include', '/maintainers')
+  })
 })
