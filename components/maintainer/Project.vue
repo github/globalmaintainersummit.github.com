@@ -2,6 +2,7 @@
   <section class="project">
     <div class="project__decoration">
       <img
+        v-if="project.badge"
         :src="require(`~/assets/img/badges/${project.badge}`)"
         alt=""
         role="presentation"
