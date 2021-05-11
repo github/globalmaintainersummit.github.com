@@ -2,7 +2,10 @@
   <div class="talk">
     <CommonWave class="talk__decoration" />
     <div class="talk__details">
-      <p>text with <a href="/schedule">link</a></p>
+      <p>
+        {{ speakerName }} will be talking about
+        <a href="/schedule">link</a> with
+      </p>
       <p class="talk__details--date">date</p>
     </div>
     <CommonCustomButton
@@ -15,6 +18,28 @@
     </CommonCustomButton>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    handler: {
+      type: String,
+      required: true,
+    },
+    speakerName: {
+      type: String,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      topic: null,
+      coSpeakers: [],
+      date: null,
+    }
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .talk {

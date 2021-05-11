@@ -20,7 +20,10 @@
         :profile="maintainer.profile"
       />
       <MaintainerProject :project="maintainer.project" />
-      <MaintainerTalk />
+      <!-- <MaintainerTalk
+        :handler="maintainer.handler"
+        :speaker-name="maintainer.profile.name"
+      /> -->
     </div>
   </section>
 </template>
