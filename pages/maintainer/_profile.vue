@@ -20,7 +20,7 @@
         :profile="maintainer.profile"
       />
       <MaintainerProject :project="maintainer.project" />
-      <MaintainerTalk />
+      <!-- <MaintainerTalk /> -->
     </div>
   </section>
 </template>
