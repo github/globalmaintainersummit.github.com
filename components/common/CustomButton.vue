@@ -84,7 +84,7 @@ export default {
   },
   computed: {
     type() {
-      return this.to ? 'nuxt-link' : this.href ? 'a' : 'span'
+      return this.to ? 'nuxt-link' : this.href ? 'a' : 'button'
     },
   },
   methods: {
@@ -105,8 +105,7 @@ export default {
 
   display: flex;
   align-items: center;
-  margin: 0 8px 10px 0;
-  padding: 24px 32px;
+  padding: 20px 32px 18px;
   color: var(--button-text-color);
   font-family: var(--ff-title);
   white-space: nowrap;

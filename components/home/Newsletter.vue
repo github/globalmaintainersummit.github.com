@@ -20,7 +20,7 @@
           v-model="formData.email"
           type="text"
           name="newsletter"
-          :placeholder="content.label"
+          :placeholder="content.placeholder"
           required
           aria-labelledby="label-newsletter"
         />
@@ -68,7 +68,11 @@ export default {
   &__wrapper {
     position: relative;
     max-width: 783px;
-    padding: 40px 56px 56px;
+    padding: 24px 32px 32px;
+    @media only screen and (min-width: 680px) {
+      padding: 40px 56px 56px;
+    }
+
     color: var(--fc-light);
     background-image: linear-gradient(
       135deg,
@@ -103,14 +107,20 @@ export default {
   &__form {
     position: relative;
     display: flex;
+    flex-flow: column;
+    align-items: flex-end;
     margin-top: 32px;
+    @media only screen and (min-width: 680px) {
+      flex-flow: row;
+      align-items: flex-start;
+    }
     input {
+      @include mobileToDesktopFontSize(var(--fs-smaller), var(--fs-small));
+
       width: 100%;
       margin: 0 8px 10px 0;
-      padding: 14px 24px;
+      padding: 20px 24px 18px;
       color: var(--fc-default);
-      font-size: var(--fs-small);
-      column-gap: 24px;
       background-color: var(--bg-body);
       border: 3px solid var(--bg-primary);
       border-radius: 42px;
@@ -122,6 +132,12 @@ export default {
         border-color: var(--input-border--hover);
         outline: none;
         box-shadow: 8px 10px 0 0 var(--bg-dark);
+      }
+    }
+    .button__wrapper {
+      margin-top: 32px;
+      @media only screen and (min-width: 680px) {
+        margin-top: 0;
       }
     }
   }
