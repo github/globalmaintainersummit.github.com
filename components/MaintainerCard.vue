@@ -1,6 +1,6 @@
 <template>
-  <a
-    href="/grid"
+  <nuxt-link
+    :to="`/maintainer/${maintainer.handler}`"
     class="maintainer"
     :class="{ 'maintainer--oversize': oversize }"
   >
@@ -14,7 +14,7 @@
       <h3>{{ maintainer.profile.name }}</h3>
       <p>{{ maintainer.project.name }}</p>
     </div>
-  </a>
+  </nuxt-link>
 </template>
 
 <script>

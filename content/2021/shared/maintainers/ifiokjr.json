@@ -4,14 +4,16 @@
   "profile": {
     "name": "Ifiok Jr.",
     "bio": "",
-    "links": [{ "platform": "", "url": "" }]
+    "links": [{ "platform": "", "url": "" }],
+    "sponsorLink": ""
   },
   "project": {
     "name": "Remirror",
     "description": "",
     "badge": "",
     "url": "#",
-    "links": [{ "platform": "", "url": "" }]
+    "links": [{ "platform": "", "url": "" }],
+    "sponsorLink": ""
   },
   "talkTitle": ""
 }

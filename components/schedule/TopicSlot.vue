@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-for="talk in talks" :key="talk.speakerHandler">
-      <ScheduleTalkTitle :speaker-handler="talk.speakerHandler" />
+      <ScheduleTalk :speaker-handler="talk.speakerHandler" />
     </div>
     <ScheduleDiscussion v-if="hasDiscussions" />
   </div>

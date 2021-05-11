@@ -4,14 +4,16 @@
   "profile": {
     "name": "Mike McQuaid",
     "bio": "",
-    "links": [{ "platform": "", "url": "" }]
+    "links": [{ "platform": "", "url": "" }],
+    "sponsorLink": ""
   },
   "project": {
     "name": "Homebrew",
     "description": "",
     "badge": "logo_homebrew.png",
     "url": "https://github.com/Homebrew",
-    "links": [{ "platform": "", "url": "" }]
+    "links": [{ "platform": "", "url": "" }],
+    "sponsorLink": ""
   },
   "talkTitle": ""
 }
