@@ -25,7 +25,7 @@
     {
       "title": "Maintainer Health",
       "time": "11:00 am",
-      "discussions": false,
+      "hasDiscussions": false,
       "break": "long",
       "talks": [
         {
@@ -59,7 +59,7 @@
     {
       "title": "Measuring Success",
       "time": "1:30 pm",
-      "discussions": false,
+      "hasDiscussions": false,
       "talks": [
         {
           "speakerHandler": ""

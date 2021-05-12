@@ -9,10 +9,7 @@
       Go back
     </CommonCustomButton>
     <div class="maintainer__image">
-      <MaintainerImage
-        :handler="maintainer.handler"
-        :name="maintainer.profile.name"
-      />
+      <MaintainerImage :handler="maintainer.handler" />
     </div>
     <div class="maintainer__details">
       <MaintainerProfile
