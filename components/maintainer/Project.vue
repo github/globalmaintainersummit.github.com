@@ -11,7 +11,7 @@
     </div>
     <h2 class="project__name">{{ project.name }}</h2>
     <div class="project__description" v-html="project.description"></div>
-    <MaintainerLinks :links="project.links" />
+    <MaintainerLinks v-if="project.links" :links="project.links" />
     <CommonCustomButton
       v-if="project.sponsorLink"
       icon="heart"

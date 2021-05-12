@@ -3,7 +3,7 @@
     <h1 class="profile__name">{{ profile.name }}</h1>
     <p class="profile__handler">@{{ handler }}</p>
     <div class="profile__bio" v-html="profile.bio"></div>
-    <MaintainerLinks :links="profile.links" />
+    <MaintainerLinks v-if="profile.links" :links="profile.links" />
     <CommonCustomButton
       v-if="profile.sponsorLink"
       icon="heart"
