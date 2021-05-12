@@ -1,9 +1,13 @@
 <template>
   <div class="profile-image">
-    <img
-      :src="require(`~/assets/img/maintainers/${handler}.jpg`)"
-      :alt="name"
-    />
+    <picture aria-hidden="true" role="presentation">
+      <source
+        media="(min-width: 1024px)"
+        :srcset="require(`~/assets/img/maintainers/${handler}_wide.jpg`)"
+        alt=""
+      />
+      <img :src="require(`~/assets/img/maintainers/${handler}.jpg`)" alt="" />
+    </picture>
   </div>
 </template>
 
@@ -11,10 +15,6 @@
 export default {
   props: {
     handler: {
-      type: String,
-      required: true,
-    },
-    name: {
       type: String,
       required: true,
     },
@@ -29,9 +29,7 @@ export default {
   --maintainer-border: 5px;
 
   @media screen and (min-width: $screen-xl) {
-    // TODO use the wide width once we have the wide images
-    // --maintainer-width: 876px;
-    --maintainer-width: 256px;
+    --maintainer-width: 876px;
   }
 
   position: relative;
