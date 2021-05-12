@@ -19,6 +19,9 @@
         />
         <img srcset="~/assets/img/gather_dancers.gif" alt="" />
       </picture>
+      <div class="gather__description">
+        {{ followEvent.description }}
+      </div>
     </div>
   </div>
 </template>
@@ -107,6 +110,12 @@ export default {
   &__logo {
     max-width: 40px;
     max-height: 53px;
+  }
+
+  &__description {
+    max-width: 588px;
+    padding: 0 24px;
+    text-align: center;
   }
 }
 </style>
