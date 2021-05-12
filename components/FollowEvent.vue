@@ -74,7 +74,7 @@ export default {
 
     margin: 8px 0 40px;
     font-weight: var(--fw-extra-bold);
-    font-size: var(--fs-medium);
+    font-size: var(--fs-small);
     @media screen and (min-width: $screen-sm) {
       font-size: var(--fs-large);
     }
