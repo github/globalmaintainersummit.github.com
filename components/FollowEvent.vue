@@ -57,7 +57,6 @@ export default {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  max-width: 684px;
   text-align: center;
 
   &__title {
@@ -68,11 +67,20 @@ export default {
   }
 
   &__hashtag {
-    @include mobileToDesktopFontSize(var(--fs-medium), var(--fs-colossal));
     @include gradientTitle(var(--fc-primary), var(--fc-accent));
 
     margin: 8px 0 40px;
     font-weight: var(--fw-extra-bold);
+    font-size: var(--fs-medium);
+    @media screen and (min-width: $screen-sm) {
+      font-size: var(--fs-large);
+    }
+    @media screen and (min-width: $screen-tablet) {
+      font-size: var(--fs-giant);
+    }
+    @media screen and (min-width: $screen-xl) {
+      font-size: var(--fs-colossal);
+    }
   }
 
   &__lead {
