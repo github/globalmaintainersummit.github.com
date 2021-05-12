@@ -21,8 +21,9 @@
   },
   "followEvent": {
     "title": "Follow the event",
-    "hashtag": "#GitHubGMS21",
-    "lead": "Hear from open source maintainers coming live to your screen from all around the world.",
+    "hashtag": "#GlobalMaintainerSummit",
+    "lead": "Open source maintainers joining you live from all around the world.",
+    "description": "During the event we'll be hosting a virtual hallway experience in Gather. Jump in to explore and to talk with those standing closest to you, focusing on smaller or personal conversations.",
     "joinUs": {
       "text": "Join us at Gather",
       "link": "https://gather.town/app/JMpiYvZerIxEBgPn/codegram"
