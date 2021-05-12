@@ -1,6 +1,6 @@
 <template>
   <div class="newsletter">
-    <div class="newsletter__wrapper">
+    <div id="newsletter-wrapper" class="newsletter__wrapper">
       <div class="newsletter__copy">
         <h3>{{ content.lead }}</h3>
         <p>{{ content.body }}</p>
@@ -41,13 +41,22 @@
           icon="arrow-right"
           icon-suffix
           theme="light"
+          @click="handleClick"
         >
           {{ content.cta }}
         </CommonCustomButton>
       </form>
-      <div id="mce-responses" class="clear">
-        <p id="mce-error-response" class="response" style="display: none"></p>
-        <p id="mce-success-response" class="response" style="display: none"></p>
+      <div id="mce-responses" class="clear newsletter__feedback">
+        <p
+          id="mce-error-response"
+          class="response newsletter__feedback--warning"
+          style="display: none"
+        ></p>
+        <p
+          id="mce-success-response"
+          class="response newsletter__feedback--success"
+          style="display: none"
+        ></p>
       </div>
       <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
       <script>
@@ -71,6 +80,13 @@ export default {
       required: true,
     },
   },
+  methods: {
+    handleClick() {
+      document
+        .getElementById('newsletter-wrapper')
+        .classList.add('newsletter__wrapper--feedback')
+    },
+  },
 }
 </script>
 
@@ -83,10 +99,6 @@ export default {
     position: relative;
     max-width: 783px;
     padding: 24px 32px 32px;
-    @media only screen and (min-width: 680px) {
-      padding: 40px 56px 56px;
-    }
-
     color: var(--fc-light);
     background-image: linear-gradient(
       135deg,
@@ -95,6 +107,21 @@ export default {
     );
     background-position: center;
     border: 5px var(--bg-body) solid;
+    transition: padding-bottom 0.3s ease-in;
+    @media only screen and (min-width: 680px) {
+      padding: 40px 56px 56px;
+    }
+
+    &--feedback {
+      padding-bottom: 120px;
+
+      @media only screen and (min-width: 680px) {
+        padding-bottom: 148px;
+      }
+      @media only screen and (min-width: 818px) {
+        padding-bottom: 120px;
+      }
+    }
     h3,
     p {
       margin: 0;
@@ -155,9 +182,30 @@ export default {
       }
     }
   }
-  #mce-responses {
-    ::v-deep a {
-      @include linksWithinText();
+  &__feedback {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    p {
+      padding: 14px 36px 12px;
+      @media only screen and (min-width: 680px) {
+        padding: 24px 56px 32px;
+      }
+    }
+
+    &--success {
+      color: var(--fc-feedback--success);
+      background-color: var(--bg-feedback--success);
+    }
+    &--warning {
+      color: var(--fc-feedback--warning);
+      background-color: var(--bg-feedback--warning);
+      ::v-deep a {
+        color: var(--fc-feedback--warning);
+        text-decoration: underline;
+      }
     }
   }
 }
