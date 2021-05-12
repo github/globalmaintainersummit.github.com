@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1710" height="723" viewBox="0 0 1710 723">
+  <defs>
+    <linearGradient id="pills-footer-a" x1="0%" x2="100%" y1="49.379%" y2="50.621%">
+      <stop offset="0%" stop-color="#F9F9F9"/>
+      <stop offset="100%" stop-color="#FDFDFD"/>
+    </linearGradient>
+    <linearGradient id="pills-footer-b" x1="0%" x2="100%" y1="47.469%" y2="52.074%">
+      <stop offset="0%" stop-color="#FCFCFC"/>
+      <stop offset="100%" stop-color="#FFF"/>
+    </linearGradient>
+    <linearGradient id="pills-footer-c" x1="0%" x2="100%" y1="46.529%" y2="52.074%">
+      <stop offset="0%" stop-color="#FDFDFD"/>
+      <stop offset="100%" stop-color="#F6F6F6"/>
+    </linearGradient>
+    <linearGradient id="pills-footer-d" x1="0%" x2="100%" y1="45.886%" y2="53.371%">
+      <stop offset="0%" stop-color="#FCFCFC"/>
+      <stop offset="100%" stop-color="#FFF"/>
+    </linearGradient>
+    <linearGradient id="pills-footer-e" x1="0%" x2="100%" y1="44.204%" y2="55.796%">
+      <stop offset="0%" stop-color="#F8F8F8"/>
+      <stop offset="100%" stop-color="#FBFBFB"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(-14 -8)">
+    <rect width="1140" height="127" x="51.2" y="251.479" fill="url(#pills-footer-a)" rx="63.5" transform="scale(1 -1) rotate(15 3013.702 0)"/>
+    <rect width="320" height="72" x="1246.141" y="40.184" fill="url(#pills-footer-b)" rx="36" transform="scale(1 -1) rotate(15 1984.82 0)"/>
+    <rect width="320" height="72" x="396.17" y="143.825" fill="url(#pills-footer-c)" rx="36" transform="scale(1 -1) rotate(15 1922.073 0)"/>
+    <rect width="251" height="72" x="1475.914" y="194.245" fill="url(#pills-footer-d)" rx="36" transform="scale(1 -1) rotate(15 3350.3 0)"/>
+    <rect width="373" height="127" x="10.08" y="571.921" fill="url(#pills-footer-e)" rx="63.5" transform="scale(1 -1) rotate(15 5023.079 0)"/>
+  </g>
+</svg>
