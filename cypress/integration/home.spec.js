@@ -28,10 +28,4 @@ describe('Home', () => {
     cy.findByText('All Maintainers').click()
     cy.url().should('include', '/maintainers')
   })
-
-  it('users can subsribe to the newsletter', () => {
-    cy.findByPlaceholderText('Enter your@email.here').type('user@example.org')
-    cy.findByText('Sign up').click()
-    cy.findByText(/Happy to have you onboard!/).should('be.visible')
-  })
 })
