@@ -5,7 +5,14 @@
         <h3>{{ content.lead }}</h3>
         <p>{{ content.body }}</p>
       </div>
-      <form class="newsletter__form" @submit.prevent="handleSubmit">
+      <form
+        id="mc-embedded-subscribe-form"
+        action="https://github.us11.list-manage.com/subscribe/post?u=9d7ced8c4bbd6c2f238673f0f&amp;id=e21329ec0b"
+        method="post"
+        class="newsletter__form validate subscribe-form"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <label
           id="label-newsletter"
           for="newsletter"
@@ -17,12 +24,17 @@
         <input
           id="newsletter"
           ref="input"
-          v-model="formData.email"
           type="text"
-          name="newsletter"
+          name="EMAIL"
           :placeholder="content.placeholder"
           required
           aria-labelledby="label-newsletter"
+        />
+        <input
+          type="hidden"
+          name="b_9d7ced8c4bbd6c2f238673f0f_e21329ec0b"
+          tabindex="-1"
+          value=""
         />
         <CommonCustomButton
           type="submit"
@@ -33,6 +45,20 @@
           {{ content.cta }}
         </CommonCustomButton>
       </form>
+      <div id="mce-responses" class="clear">
+        <p id="mce-error-response" class="response" style="display: none"></p>
+        <p id="mce-success-response" class="response" style="display: none"></p>
+      </div>
+      <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+      <script>
+        ;(function ($) {
+          window.fnames = new Array()
+          window.ftypes = new Array()
+          fnames[0] = 'EMAIL'
+          ftypes[0] = 'email'
+        })(jQuery)
+        var $mcj = jQuery.noConflict(true)
+      </script>
     </div>
   </div>
 </template>
@@ -43,18 +69,6 @@ export default {
     content: {
       type: Object,
       required: true,
-    },
-  },
-  data() {
-    return {
-      formData: {
-        email: null,
-      },
-    }
-  },
-  methods: {
-    async handleSubmit(event) {
-      // Send the email
     },
   },
 }
@@ -139,6 +153,11 @@ export default {
       @media only screen and (min-width: 680px) {
         margin-top: 0;
       }
+    }
+  }
+  #mce-responses {
+    ::v-deep a {
+      @include linksWithinText();
     }
   }
 }
