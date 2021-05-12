@@ -19,9 +19,6 @@
         />
         <img srcset="~/assets/img/gather_dancers.gif" alt="" />
       </picture>
-      <CommonLink :to="followEvent.joinUs.link" class="gather__link">
-        {{ followEvent.joinUs.text }}
-      </CommonLink>
     </div>
   </div>
 </template>
