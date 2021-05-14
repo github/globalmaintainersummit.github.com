@@ -12,11 +12,11 @@
   },
   "project": {
     "name": "Ruby on Rails",
-    "description": "<p>PR incoming!</p>",
+    "description": "<p>Rails is a web application framework running on the Ruby programming language.</p>",
     "badge": "logo_rubyonrails.png",
     "url": "https://github.com/rails",
     "links": [{ "platform": "github", "url": "https://github.com/rails" }],
     "sponsorLink": ""
   },
-  "talkTitle": "PR incoming!"
+  "talkTitle": "You'll find out when Eileen submits a pull request :)"
 }
