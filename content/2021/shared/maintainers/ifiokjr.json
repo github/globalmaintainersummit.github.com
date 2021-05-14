@@ -3,7 +3,7 @@
   "featured": false,
   "profile": {
     "name": "Ifiok Jr.",
-    "bio": "<p>PR incoming!</p>",
+    "bio": "<p>Ifiok Jr. is a polyglot software developer based in Swansea, Wales. He is a maintainer for remirror.</p>",
     "links": [
       { "platform": "github", "url": "https://github.com/ifiokjr" },
       { "platform": "twitter", "url": "https://twitter.com/ifiokjr" }
@@ -12,7 +12,7 @@
   },
   "project": {
     "name": "remirror",
-    "description": "<p>ProseMirror toolkit for React</p>",
+    "description": "<p>remirror is a ProseMirror toolkit for React</p>",
     "badge": "",
     "url": "#",
     "links": [
@@ -20,5 +20,5 @@
     ],
     "sponsorLink": ""
   },
-  "talkTitle": "PR incoming!"
+  "talkTitle": "PR incoming, right Ifiok?"
 }
