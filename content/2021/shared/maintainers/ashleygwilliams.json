@@ -19,7 +19,6 @@
   "project": {
     "name": "Rust",
     "description": "<p>Rust, the programming language, not a brutal survival video game or the reaction of iron and oxygen in the catalytic presence of water or air moisture. </p>",
-    "badge": "logo_.png",
     "url": "https://github.com/rust-lang/rust",
     "links": [
       {
