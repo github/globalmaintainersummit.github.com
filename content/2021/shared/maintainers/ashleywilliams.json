@@ -5,9 +5,13 @@
     "name": "Ashley Williams",
     "bio": "<p>Rust Foundation Exectutive Director. @rustlang core, rustWASM working group, and formerly @nodejs director.</p>",
     "links": [
-      { "platform": "github", "url": "hhttps://github.com/ashleygwilliams" },
-      { "platform": "twitter", "url": "https://twitter.com/ag_dubs" }
-
+      {
+        "platform": "github",
+        "url": "https://github.com/ashleygwilliams"
+      },
+      {
+        "platform": "twitter",
+        "url": "https://twitter.com/ag_dubs"
       }
     ],
     "sponsorLink": ""
