@@ -1,8 +1,8 @@
 # Global Maintainers Summit
 
-## Add new speaker or projects to current speakers
+## 🗣️ Add new speakers
 
-### Step 1 - Content
+### Step 1 - 📝 Content
 
 1. Go to `content/{year}/shared/maintainers` folder. For example, for year 2021 the full path would be `content/2021/shared/maintainers`.
 2. Create a new json file named with the github handler of the maintainer, all in lower case, e.g. for VerteDinde it would be `vertedinde.json`.
@@ -10,7 +10,7 @@
 
 All the json properties to fill up in the template are explained below:
 
-- **`handler`**: [_Compulsory_] GitHub handler, e.g. for https://github.com/brandonroberts profile it would be brandonroberts.
+- **`handler`**: [_Compulsory_] GitHub handler, e.g. for `https://github.com/brandonroberts` profile it would be `brandonroberts`.
 - **`featured`**: [_Compulsory_] **THIS CAN ONLY BE EDITED BY THE ORGANIZERS.** Boolean that determines wether the person is displayed in the Home page or not.
 - **`profile`**: [_Compulsory_] All the info related to the speaker.
   - **`name`**: [_Compulsory_] Maintainer full name.
@@ -30,7 +30,7 @@ All the json properties to fill up in the template are explained below:
   - **`sponsorLink`**: [_Optional_] If the project has a sponsor page, a button will be shown in their maintainer page, in the project details section pointing to the provided link here.
 - **`talkTitle`**: [_Compulsory_] The title of the talk.
 
-### Step 2 - Profile image
+### Step 2 - 📸 Profile image
 
 For the **profile pictures** of the maintainer, go to `assets/img/maintainers` and add **two** images using the `.jpg` format following these patterns:
 
@@ -39,13 +39,13 @@ For the **profile pictures** of the maintainer, go to `assets/img/maintainers` a
 
 Taking the same example for VerteDinde it would be adding `vertedinde.jpg` and `vertedinde_wide.jpg` pictures to the folder.
 
-### Step 3 - Project badge
+### Step 3 - 🖼️ Project badge
 
 For the project icon, add the logo to `assets/img/badges` with the same name that you have given in the "badge" property in the json file.
 
 **The resolution MUST be 96x96.**
 
-## Update schedule
+## 📆 Update schedule
 
 1. Go to `content/{year}/page/schedule` folder. For example, for year 2021 the full path would be `content/2021/page/schedule`.
 2. There is a file for each day. Find the day you want to update.
