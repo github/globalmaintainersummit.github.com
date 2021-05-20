@@ -16,7 +16,7 @@
       <CommonWave class="home__save-decoration" />
     </div>
     <div class="home__maintainers">
-      <h3>{{ maintainers.title }}</h3>
+      <h3>{{ maintainersContent.title }}</h3>
       <CommonGrid :maintainers="maintainers" three-cols data-cy="maintainers" />
       <div class="home__maintainers-button">
         <CommonCustomButton to="/maintainers" icon="arrow-right" icon-suffix>

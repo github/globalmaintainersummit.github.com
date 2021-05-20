@@ -17,6 +17,7 @@
     "block2": "<p>What is it possible to automate, and what will always need to be hand–crafted?</p><p>When it comes to contributors, when do you accept help and when do you say no?</p><p>Is it possible to (gasp) take a vacation?</p><p>When everything was on fire, how did you put out the flames?</p><p>We’ll tackle all that, and much more. We’re here for each other, us maintainers.</p>"
   },
   "maintainers": {
+    "title": "Maintainers",
     "cta": "All Maintainers"
   },
   "followEvent": {
