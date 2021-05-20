@@ -28,4 +28,14 @@ describe('Home', () => {
     cy.findByText('All Maintainers').click()
     cy.url().should('include', '/maintainers')
   })
+
+  it('displays the short version of the brand for mobile', () => {
+    cy.viewport('iphone-6+')
+    cy.findByText('GMS')
+  })
+
+  it('displays the full brand info for desktop', () => {
+    cy.findByText('Global Maintainer Summit')
+    cy.findByText('Hosted by GitHub')
+  })
 })
