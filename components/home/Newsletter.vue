@@ -96,21 +96,9 @@ export default {
   margin-top: 160px;
   isolation: isolate;
   &__wrapper {
-    position: relative;
-    max-width: 783px;
-    padding: 24px 32px 32px;
-    color: var(--fc-light);
-    background-image: linear-gradient(
-      135deg,
-      var(--bg-accent) 0%,
-      var(--bg-primary) 100%
-    );
-    background-position: center;
-    border: 5px var(--bg-body) solid;
+    @include highlightedBox();
+
     transition: padding-bottom 0.3s ease-in;
-    @media only screen and (min-width: 680px) {
-      padding: 40px 56px 56px;
-    }
 
     &--feedback {
       padding-bottom: 120px;
@@ -130,19 +118,6 @@ export default {
     p {
       margin-top: 16px;
       font-size: var(--fs-small);
-    }
-    &::after {
-      position: absolute;
-      top: 19px;
-      left: 19px;
-      z-index: -1;
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: var(--bg-dimmed);
-      content: '';
-      -webkit-mask-image: url('~/assets/svg/pattern_shadow.svg');
-      mask-image: url('~/assets/svg/pattern_shadow.svg');
     }
   }
   &__form {
