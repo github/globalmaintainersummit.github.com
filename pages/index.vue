@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <div class="decoration" aria-hidden="true">
+  <section class="home">
+    <div class="home__decoration" aria-hidden="true">
       <img src="~/assets/svg/bg_pills/graphic_hero.svg" alt="" />
     </div>
     <HomeHero :content="hero" />
@@ -41,15 +41,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
+.home {
   @include section();
 
   position: relative;
-}
-.decoration {
-  position: absolute;
-  top: -105px;
-  left: -110px;
-  width: 100%;
+  &__decoration {
+    position: absolute;
+    top: -105px;
+    left: -110px;
+    width: 100%;
+  }
 }
 </style>

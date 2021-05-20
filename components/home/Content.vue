@@ -53,25 +53,32 @@ export default {
   }
   &--highlighted {
     @include highlightedBox();
+    @include mobileToDesktopFontSize(var(--fs-smaller), var(--fs-default));
 
     max-width: 902px;
     margin: 0 auto;
     margin-top: 200px;
-    padding: 80px 120px;
+    padding: 20px 32px;
+    @media screen and (min-width: $screen-sm) {
+      padding: 40px 60px;
+    }
+    @media screen and (min-width: $screen-xl) {
+      padding: 80px 120px;
+    }
 
     h2 {
-      @include mobileToDesktopFontSize(var(--fs-giant), var(--fs-colossal));
+      @include mobileToDesktopFontSize(var(--fs-large), var(--fs-colossal));
 
       max-width: 671px;
       margin-top: 0;
       margin-bottom: 48px;
       line-height: 1;
+      word-break: break-word;
     }
 
     ul {
       margin: 0 0 48px;
       padding: 0;
-      font-size: var(--fs-default);
       list-style-type: '⌁';
       li {
         padding-bottom: 24px;
