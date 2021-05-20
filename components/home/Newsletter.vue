@@ -93,8 +93,11 @@ export default {
 <style lang="scss" scoped>
 .newsletter {
   position: relative;
-  margin-top: 160px;
+  margin-top: 48px;
   isolation: isolate;
+  @media screen and (min-width: $screen-sm) {
+    margin-top: 160px;
+  }
   &__wrapper {
     @include highlightedBox();
 

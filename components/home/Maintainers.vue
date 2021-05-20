@@ -30,7 +30,10 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-top: 200px;
+  margin-top: 80px;
+  @media screen and (min-width: $screen-sm) {
+    margin-top: 200px;
+  }
   &-button {
     align-self: center;
     margin-top: 70px;

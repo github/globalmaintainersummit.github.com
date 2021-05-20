@@ -38,10 +38,13 @@ export default {
 <style lang="scss" scoped>
 .content {
   position: relative;
+  margin-top: 64px;
+  @media screen and (min-width: $screen-sm) {
+    margin-top: 120px;
+  }
   &--normal {
     max-width: 786px;
     margin: 0 auto;
-    margin-top: 120px;
     h2 {
       max-width: 786px;
     }
@@ -57,9 +60,10 @@ export default {
 
     max-width: 902px;
     margin: 0 auto;
-    margin-top: 200px;
+    margin-top: 56px;
     padding: 20px 32px;
     @media screen and (min-width: $screen-sm) {
+      margin-top: 200px;
       padding: 40px 60px;
     }
     @media screen and (min-width: $screen-xl) {
