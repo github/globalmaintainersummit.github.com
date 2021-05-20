@@ -3,12 +3,10 @@
     <nav class="nav" :class="{ 'nav--active': active }" data-cy="navigation">
       <div class="nav__brand">
         <nuxt-link to="/" class="nav__home">
-          <GitHub
-            aria-label="Github Global Maintainers Summit"
-            role="presentation"
-            class="nav__home-gh"
-          />
-          <span class="nav__home-gh--desktop">Global Maintainer Summit</span>
+          <div class="nav__home-gh--desktop">
+            <span>Global Maintainer Summit</span>
+            <span class="nav__home-hosted">Hosted by GitHub</span>
+          </div>
           <span class="nav__home-gh--mobile">GMS</span>
         </nuxt-link>
         <span class="nav__home-date">2021</span>
@@ -49,11 +47,9 @@
 
 <script>
 import { FocusTrap } from 'focus-trap-vue'
-import GitHub from '~/assets/svg/social/github.svg?inline'
 
 export default {
   components: {
-    GitHub,
     FocusTrap,
   },
   props: {
@@ -83,7 +79,7 @@ export default {
     z-index: var(--z-index-hamburguer);
     display: flex;
     flex-wrap: nowrap;
-    align-items: center;
+    align-items: baseline;
   }
   .nav__home {
     @include mobileToDesktopFontSize(var(--fs-small), var(--fs-default));
@@ -101,9 +97,15 @@ export default {
       color: var(--fc-primary);
       font-weight: var(--fw-extra-bold);
       font-size: var(--fs-default);
-      font-family: var(--ff-secondary);
+      font-family: var(--ff-title);
       line-height: 1;
       transition: color 0.25s ease-in;
+    }
+    &-hosted {
+      color: var(--fc-dimmed--darker);
+      font-weight: var(--fw-regular);
+      font-size: 16px;
+      font-family: var(--ff-default);
     }
     &-gh {
       min-width: 32px;
@@ -113,7 +115,8 @@ export default {
       &--desktop {
         display: none;
         @media (min-width: $screen-xl) {
-          display: block;
+          display: flex;
+          flex-direction: column;
         }
       }
       &--mobile {
