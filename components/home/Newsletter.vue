@@ -142,13 +142,12 @@ export default {
 
       width: 100%;
       margin: 0 8px 10px 0;
-      padding: 20px 24px 18px;
+      padding: 18px 24px 20px;
       color: var(--fc-default);
       background-color: var(--bg-body);
       border: 3px solid var(--bg-primary);
       border-radius: 42px;
       box-shadow: 6px 8px 0 0 var(--bg-primary-dark);
-      cursor: pointer;
       transition: all 0.3s ease-in;
       &:hover,
       &:focus {
