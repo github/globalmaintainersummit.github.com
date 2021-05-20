@@ -1,4 +1,3 @@
-\
 <template>
   <section>
     <div class="decoration" aria-hidden="true">
@@ -9,7 +8,7 @@
     <div class="home__content">
       <h2>{{ content.title1 }}</h2>
       <div v-html="content.block1" />
-      <h1>{{ content.title2 }}</h1>
+      <h2 class="home__title--gradient">{{ content.title2 }}</h2>
       <div v-html="content.block2" />
     </div>
     <div class="home__save">
@@ -75,10 +74,14 @@ section {
       font-family: var(--ff-default);
       line-height: 1.5;
     }
-    h1 {
+  }
+  &__title {
+    &--gradient {
+      @include gradientTitle(var(--bg-primary), var(--bg-accent));
+      @include mobileToDesktopFontSize(var(--fs-giant), var(--fs-colossal));
+
       max-width: 671px;
       margin-top: 120px;
-      @include gradientTitle(var(--bg-primary), var(--bg-accent));
     }
   }
   &__save {
