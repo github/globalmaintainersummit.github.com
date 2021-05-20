@@ -1,12 +1,17 @@
 <template>
   <section class="content">
     <div class="content--normal">
-      <h2>{{ content.title1 }}</h2>
-      <div v-html="content.block1" />
+      <h2>{{ normalBlock.title }}</h2>
+      <div v-html="normalBlock.description" />
     </div>
     <div class="content--highlighted">
-      <h2>{{ content.title2 }}</h2>
-      <div v-html="content.block2" />
+      <h2>{{ highlightedBlock.title }}</h2>
+      <ul>
+        <li v-for="(item, index) in highlightedBlock.bulletPoints" :key="index">
+          <span v-html="item"></span>
+        </li>
+      </ul>
+      <div v-html="highlightedBlock.description" />
       <div class="save">
         <CommonCalendarDropdown type="button" class="save-button" />
         <CommonWave class="save-decoration" />
@@ -18,7 +23,11 @@
 <script>
 export default {
   props: {
-    content: {
+    normalBlock: {
+      type: Object,
+      required: true,
+    },
+    highlightedBlock: {
       type: Object,
       required: true,
     },
@@ -57,6 +66,24 @@ export default {
       margin-top: 0;
       margin-bottom: 48px;
       line-height: 1;
+    }
+
+    ul {
+      margin: 0 0 48px;
+      padding: 0;
+      font-size: var(--fs-default);
+      list-style-type: '⌁';
+      li {
+        padding-bottom: 24px;
+        padding-left: 24px;
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    ::v-deep p {
+      margin: 0;
     }
   }
 }

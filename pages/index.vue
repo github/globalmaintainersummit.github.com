@@ -5,7 +5,10 @@
     </div>
     <HomeHero :content="hero" />
     <HomeNewsletter :content="newsletter" />
-    <HomeContent :content="content" />
+    <HomeContent
+      :normal-block="content.normalBlock"
+      :highlighted-block="content.highlightedBlock"
+    />
     <HomeMaintainers :content="maintainersContent" :maintainers="maintainers" />
   </section>
 </template>
