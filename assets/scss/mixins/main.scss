@@ -87,7 +87,6 @@
 @mixin highlightedBox() {
   position: relative;
   max-width: 783px;
-  padding: 24px 32px 32px;
   color: var(--fc-light);
   background-image: linear-gradient(
     135deg,
@@ -96,9 +95,6 @@
   );
   background-position: center;
   border: 5px var(--bg-body) solid;
-  @media only screen and (min-width: 680px) {
-    padding: 40px 56px 56px;
-  }
   &::after {
     position: absolute;
     top: 19px;

@@ -1,19 +1,23 @@
 <template>
-  <section>
-    <div class="decoration" aria-hidden="true">
+  <section class="home">
+    <div class="home__decoration" aria-hidden="true">
       <img src="~/assets/svg/bg_pills/graphic_hero.svg" alt="" />
     </div>
     <HomeHero :content="hero" />
     <HomeNewsletter :content="newsletter" />
     <div class="home__content">
-      <h2>{{ content.title1 }}</h2>
-      <div v-html="content.block1" />
-      <h2 class="home__title--gradient">{{ content.title2 }}</h2>
-      <div v-html="content.block2" />
-    </div>
-    <div class="home__save">
-      <CommonCalendarDropdown type="button" class="home__save-button" />
-      <CommonWave class="home__save-decoration" />
+      <div class="home__content--normal">
+        <h2>{{ content.title1 }}</h2>
+        <div v-html="content.block1" />
+      </div>
+      <div class="home__content--highlighted">
+        <h2>{{ content.title2 }}</h2>
+        <div v-html="content.block2" />
+        <div class="home__save">
+          <CommonCalendarDropdown type="button" class="home__save-button" />
+          <CommonWave class="home__save-decoration" />
+        </div>
+      </div>
     </div>
     <div class="home__maintainers">
       <h3>{{ maintainersContent.title }}</h3>
@@ -55,33 +59,47 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
+.home {
   @include section();
 
   position: relative;
-}
-.home {
+  &__decoration {
+    position: absolute;
+    top: -105px;
+    left: -110px;
+    width: 100%;
+  }
   &__content {
     position: relative;
-    max-width: 786px;
-    margin: 0 auto;
-    margin-top: 120px;
-    h2 {
+    &--normal {
       max-width: 786px;
-    }
-    div {
-      max-width: 671px;
-      font-family: var(--ff-default);
-      line-height: 1.5;
-    }
-  }
-  &__title {
-    &--gradient {
-      @include gradientTitle(var(--bg-primary), var(--bg-accent));
-      @include mobileToDesktopFontSize(var(--fs-giant), var(--fs-colossal));
-
-      max-width: 671px;
+      margin: 0 auto;
       margin-top: 120px;
+      h2 {
+        max-width: 786px;
+      }
+      div {
+        max-width: 671px;
+        font-family: var(--ff-default);
+        line-height: 1.5;
+      }
+    }
+    &--highlighted {
+      @include highlightedBox();
+
+      max-width: 902px;
+      margin: 0 auto;
+      margin-top: 200px;
+      padding: 80px 120px;
+
+      h2 {
+        @include mobileToDesktopFontSize(var(--fs-giant), var(--fs-colossal));
+
+        max-width: 671px;
+        margin-top: 0;
+        margin-bottom: 48px;
+        line-height: 1;
+      }
     }
   }
   &__save {
@@ -112,11 +130,5 @@ section {
       margin-bottom: 10px;
     }
   }
-}
-.decoration {
-  position: absolute;
-  top: -105px;
-  left: -110px;
-  width: 100%;
 }
 </style>

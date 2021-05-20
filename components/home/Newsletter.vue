@@ -98,7 +98,11 @@ export default {
   &__wrapper {
     @include highlightedBox();
 
+    padding: 24px 32px 32px;
     transition: padding-bottom 0.3s ease-in;
+    @media only screen and (min-width: 680px) {
+      padding: 40px 56px 56px;
+    }
 
     &--feedback {
       padding-bottom: 120px;
