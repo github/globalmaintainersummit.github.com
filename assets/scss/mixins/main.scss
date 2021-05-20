@@ -84,6 +84,9 @@
   }
 }
 
+/**
+ * Adds a gradient box with a box shadow to highlight something on the page
+ */
 @mixin highlightedBox() {
   position: relative;
   max-width: 783px;
