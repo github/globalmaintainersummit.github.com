@@ -73,7 +73,10 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 36px 40px 33px;
+  padding: 36px 40px 12px;
+  @media (min-width: $screen-sm) {
+    padding-bottom: 33px;
+  }
   &__brand {
     position: relative;
     z-index: var(--z-index-hamburguer);
