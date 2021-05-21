@@ -93,20 +93,15 @@ export default {
 <style lang="scss" scoped>
 .newsletter {
   position: relative;
-  margin-top: 160px;
+  margin-top: 48px;
   isolation: isolate;
+  @media screen and (min-width: $screen-sm) {
+    margin-top: 160px;
+  }
   &__wrapper {
-    position: relative;
-    max-width: 783px;
+    @include highlightedBox();
+
     padding: 24px 32px 32px;
-    color: var(--fc-light);
-    background-image: linear-gradient(
-      135deg,
-      var(--bg-accent) 0%,
-      var(--bg-primary) 100%
-    );
-    background-position: center;
-    border: 5px var(--bg-body) solid;
     transition: padding-bottom 0.3s ease-in;
     @media only screen and (min-width: 680px) {
       padding: 40px 56px 56px;
@@ -131,19 +126,6 @@ export default {
       margin-top: 16px;
       font-size: var(--fs-small);
     }
-    &::after {
-      position: absolute;
-      top: 19px;
-      left: 19px;
-      z-index: -1;
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: var(--bg-dimmed);
-      content: '';
-      -webkit-mask-image: url('~/assets/svg/pattern_shadow.svg');
-      mask-image: url('~/assets/svg/pattern_shadow.svg');
-    }
   }
   &__form {
     position: relative;
@@ -160,13 +142,12 @@ export default {
 
       width: 100%;
       margin: 0 8px 10px 0;
-      padding: 20px 24px 18px;
+      padding: 18px 24px 20px;
       color: var(--fc-default);
       background-color: var(--bg-body);
       border: 3px solid var(--bg-primary);
       border-radius: 42px;
       box-shadow: 6px 8px 0 0 var(--bg-primary-dark);
-      cursor: pointer;
       transition: all 0.3s ease-in;
       &:hover,
       &:focus {
