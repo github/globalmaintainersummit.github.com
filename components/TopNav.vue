@@ -124,6 +124,7 @@ export default {
       }
       &--mobile {
         display: block;
+        font-size: clamp(var(--fs-small), 8.5vw, var(--fs-medium));
         @media (min-width: $screen-xl) {
           display: none;
         }
