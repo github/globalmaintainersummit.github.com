@@ -1,25 +1,20 @@
 <template>
-  <a
-    href="/grid"
+  <nuxt-link
+    :to="`/maintainer/${maintainer.handler}`"
     class="maintainer"
     :class="{ 'maintainer--oversize': oversize }"
   >
     <div class="maintainer__image">
       <img
-        :src="
-          require(`~/assets/img/maintainers/${maintainer.src
-            .toLowerCase()
-            .replace(/\s+/g, '-')
-            .replace(/\./g, '')}.jpg`)
-        "
+        :src="require(`~/assets/img/maintainers/${maintainer.handler}.jpg`)"
         :alt="maintainer.name"
       />
     </div>
     <div class="maintainer__content">
-      <h3>{{ maintainer.name }}</h3>
-      <p>{{ maintainer.project }}</p>
+      <h3>{{ maintainer.profile.name }}</h3>
+      <p>{{ maintainer.project.name }}</p>
     </div>
-  </a>
+  </nuxt-link>
 </template>
 
 <script>
@@ -37,7 +32,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .maintainer {
   --maintainer-width: 256px;
   --maintainer-height: 284px;
@@ -67,7 +62,7 @@ export default {
       height: calc(var(--maintainer-height) + var(--maintainer-border));
       object-fit: cover;
       object-position: center;
-      border: var(--maintainer-border) white solid;
+      border: var(--maintainer-border) var(--bg-body) solid;
       transition: top 0.25s ease-in-out, left 0.25s ease-in-out;
     }
     &::before {

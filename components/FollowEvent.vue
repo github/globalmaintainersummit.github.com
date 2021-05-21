@@ -19,9 +19,9 @@
         />
         <img srcset="~/assets/img/gather_dancers.gif" alt="" />
       </picture>
-      <CommonLink :to="followEvent.joinUs.link" class="gather__link">
-        {{ followEvent.joinUs.text }}
-      </CommonLink>
+      <div class="gather__description">
+        {{ followEvent.description }}
+      </div>
     </div>
   </div>
 </template>
@@ -60,7 +60,6 @@ export default {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  max-width: 684px;
   text-align: center;
 
   &__title {
@@ -71,11 +70,20 @@ export default {
   }
 
   &__hashtag {
-    @include mobileToDesktopFontSize(var(--fs-medium), var(--fs-colossal));
     @include gradientTitle(var(--fc-primary), var(--fc-accent));
 
     margin: 8px 0 40px;
     font-weight: var(--fw-extra-bold);
+    font-size: var(--fs-small);
+    @media screen and (min-width: $screen-sm) {
+      font-size: var(--fs-large);
+    }
+    @media screen and (min-width: $screen-tablet) {
+      font-size: var(--fs-giant);
+    }
+    @media screen and (min-width: $screen-xl) {
+      font-size: var(--fs-colossal);
+    }
   }
 
   &__lead {
@@ -102,6 +110,12 @@ export default {
   &__logo {
     max-width: 40px;
     max-height: 53px;
+  }
+
+  &__description {
+    max-width: 588px;
+    padding: 0 24px;
+    text-align: center;
   }
 }
 </style>

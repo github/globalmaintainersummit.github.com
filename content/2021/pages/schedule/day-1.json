@@ -12,36 +12,30 @@
       "break": "short",
       "talks": [
         {
-          "title": "You Can't Have a Solution Without a Problem",
-          "speaker": "Helen Hou-Sandí"
+          "speakerHandler": "bwplotka"
         },
         {
-          "title": "Should I merge this feature? Avoiding Hidden Cost of Extra Code or Blocking Users",
-          "speaker": "Bartłomiej Płotka"
+          "speakerHandler": "helen"
         },
         {
-          "title": "Maintaining: The People Part",
-          "speaker": "Chrissy LeMaire"
+          "speakerHandler": "potatoqualitee"
         }
       ]
     },
     {
       "title": "Maintainer Health",
       "time": "11:00 am",
-      "discussions": false,
+      "hasDiscussions": false,
       "break": "long",
       "talks": [
         {
-          "title": "You Can't Have a Solution Without a Problem",
-          "speaker": "Helen Hou-Sandí"
+          "speakerHandler": "mylesborins"
         },
         {
-          "title": "Should I merge this feature? Avoiding Hidden Cost of Extra Code or Blocking Users",
-          "speaker": "Bartłomiej Płotka"
+          "speakerHandler": ""
         },
         {
-          "title": "Maintaining: The People Part",
-          "speaker": "Chrissy LeMaire"
+          "speakerHandler": ""
         }
       ]
     },
@@ -52,35 +46,29 @@
       "break": "short",
       "talks": [
         {
-          "title": "You Can't Have a Solution Without a Problem",
-          "speaker": "Helen Hou-Sandí"
+          "speakerHandler": "helen"
         },
         {
-          "title": "Should I merge this feature? Avoiding Hidden Cost of Extra Code or Blocking Users",
-          "speaker": "Bartłomiej Płotka"
+          "speakerHandler": "lorenanicole"
         },
         {
-          "title": "Maintaining: The People Part",
-          "speaker": "Chrissy LeMaire"
+          "speakerHandler": ""
         }
       ]
     },
     {
       "title": "Measuring Success",
       "time": "1:30 pm",
-      "discussions": false,
+      "hasDiscussions": false,
       "talks": [
         {
-          "title": "You Can't Have a Solution Without a Problem",
-          "speaker": "Helen Hou-Sandí"
+          "speakerHandler": "ifiokjr"
         },
         {
-          "title": "Should I merge this feature? Avoiding Hidden Cost of Extra Code or Blocking Users",
-          "speaker": "Bartłomiej Płotka"
+          "speakerHandler": ""
         },
         {
-          "title": "Maintaining: The People Part",
-          "speaker": "Chrissy LeMaire"
+          "speakerHandler": ""
         }
       ]
     },

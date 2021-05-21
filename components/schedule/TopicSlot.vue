@@ -1,8 +1,7 @@
 <template>
   <div>
-    <div v-for="talk in talks" :key="talk.title" class="topic">
-      <p class="topic__title">{{ talk.title }}</p>
-      <p class="topic__speaker">{{ talk.speaker }}</p>
+    <div v-for="talk in talks" :key="talk.speakerHandler">
+      <ScheduleTalk :speaker-handler="talk.speakerHandler" />
     </div>
     <ScheduleDiscussion v-if="hasDiscussions" />
   </div>
@@ -22,25 +21,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-.topic {
-  &__title {
-    @include mobileToDesktopFontSize(var(--fs-small), var(--fs-medium));
-
-    margin: 0;
-  }
-  &__speaker {
-    @include mobileToDesktopFontSize(var(--fs-small), var(--fs-default));
-
-    margin-top: 8px;
-    margin-bottom: 24px;
-    font-weight: var(--fw-regular);
-    font-family: var(--ff-default);
-
-    @media screen and (min-width: $screen-sm) {
-      margin-bottom: 40px;
-    }
-  }
-}
-</style>

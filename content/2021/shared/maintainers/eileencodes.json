@@ -1,0 +1,22 @@
+{
+  "handler": "eileencodes",
+  "featured": true,
+  "profile": {
+    "name": "Eileen Uchitelle",
+    "bio": "<p>PR incoming!</p>",
+    "links": [
+      { "platform": "github", "url": "https://github.com/eileencodes" },
+      { "platform": "twitter", "url": "https://twitter.com/eileencodes" }
+    ],
+    "sponsorLink": ""
+  },
+  "project": {
+    "name": "Ruby on Rails",
+    "description": "<p>Rails is a web application framework running on the Ruby programming language.</p>",
+    "badge": "logo_rubyonrails.png",
+    "url": "https://github.com/rails",
+    "links": [{ "platform": "github", "url": "https://github.com/rails" }],
+    "sponsorLink": ""
+  },
+  "talkTitle": "You'll find out when Eileen submits a pull request :)"
+}

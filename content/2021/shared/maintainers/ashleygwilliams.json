@@ -1,0 +1,32 @@
+{
+  "handler": "ashleygwilliams",
+  "featured": false,
+  "profile": {
+    "name": "Ashley Williams",
+    "bio": "<p>Rust Foundation Exectutive Director. @rustlang core, rustWASM working group, and formerly @nodejs director.</p>",
+    "links": [
+      {
+        "platform": "github",
+        "url": "https://github.com/ashleygwilliams"
+      },
+      {
+        "platform": "twitter",
+        "url": "https://twitter.com/ag_dubs"
+      }
+    ],
+    "sponsorLink": ""
+  },
+  "project": {
+    "name": "Rust",
+    "description": "<p>Rust, the programming language, not a brutal survival video game or the reaction of iron and oxygen in the catalytic presence of water or air moisture. </p>",
+    "url": "https://github.com/rust-lang/rust",
+    "links": [
+      {
+        "platform": "github",
+        "url": "https://github.com/rust-lang/rust"
+      }
+    ],
+    "sponsorLink": ""
+  },
+  "talkTitle": "Title TBD on the creation of the Rust Foundation"
+}

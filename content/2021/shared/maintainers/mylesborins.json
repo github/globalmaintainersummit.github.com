@@ -1,0 +1,24 @@
+{
+  "handler": "mylesborins",
+  "featured": true,
+  "profile": {
+    "name": "Myles Borins",
+    "bio": "<p>Myles Borins is a developer, musician, artist and maker. They work at GitHub as an Open Source Product Manager, is a Technical Steering Committee member of the Node.js project, and a board member of the OpenJS Foundation. Myles cares about the open web and healthy communities.</p>",
+    "links": [
+      { "platform": "github", "url": "https://github.com/MylesBorins" },
+      { "platform": "twitter", "url": "https://twitter.com/MylesBorins" }
+    ],
+    "sponsorLink": ""
+  },
+  "project": {
+    "name": "node.js",
+    "description": "<p>Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. It has wide adoption ranging from corporate production use cases to education and the arts.</p>",
+    "badge": "logo_nodejs.png",
+    "url": "https://github.com/nodejs/node",
+    "links": [
+      { "platform": "github", "url": "https://github.com/nodejs/node" }
+    ],
+    "sponsorLink": ""
+  },
+  "talkTitle": "Operationalizing and Scaling Release Management in the Node.js Project"
+}

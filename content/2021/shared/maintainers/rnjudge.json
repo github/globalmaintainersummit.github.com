@@ -1,0 +1,33 @@
+{
+  "handler": "rnjudge",
+  "featured": false,
+  "profile": {
+    "name": "Rose Judge",
+    "bio": "<p>Rose is an Open Source Engineer who co-maintains Tern, an Open Source container inspection tool that creates a Software Bill of Materials for a given container. Besides driving the project forward, her goals as a maintainer are to help open source newbies get their first pull request merged and grow the contributor community around Tern. When she’s not chasing her dog or son around the house, you can find her running, baking, reading or napping.</p>",
+    "links": [
+      {
+        "platform": "github",
+        "url": "https://github.com/rnjudge"
+      },
+      {
+        "platform": "twitter",
+        "url": "https://twitter.com/rosejudge5?lang=en"
+      }
+    ],
+    "sponsorLink": ""
+  },
+  "project": {
+    "name": "Tern",
+    "description": "<p>Tern is an Open Source container inspection tool that creates a Software Bill of Materials for a given container.</p>",
+    "badge": "",
+    "url": "https://github.com/tern-tools/tern",
+    "links": [
+      {
+        "platform": "github",
+        "url": "https://github.com/tern-tools/tern"
+      }
+    ],
+    "sponsorLink": ""
+  },
+  "talkTitle": "Letting them down easy: How to nicely say \"no\" to unwanted change proposals"
+}

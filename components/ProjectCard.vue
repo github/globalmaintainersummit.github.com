@@ -1,14 +1,15 @@
 <template>
-  <a :href="project.url" target="_blank" class="project">
+  <a :href="mantainer.project.url" target="_blank" class="project">
     <div class="project__image">
       <img
-        :src="require(`~/assets/img/badges/${project.badge}`)"
-        :alt="project.name"
+        v-if="mantainer.project.badge"
+        :src="require(`~/assets/img/badges/${mantainer.project.badge}`)"
+        :alt="mantainer.project.name"
       />
     </div>
     <div class="project__content">
-      <h4>{{ project.name }}</h4>
-      <p>{{ project.mantainer }}</p>
+      <h4>{{ mantainer.project.name }}</h4>
+      <p>{{ mantainer.profile.name }}</p>
     </div>
   </a>
 </template>
@@ -16,7 +17,7 @@
 <script>
 export default {
   props: {
-    project: {
+    mantainer: {
       type: Object,
       required: true,
     },

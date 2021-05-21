@@ -1,0 +1,33 @@
+{
+  "handler": "brendandburns",
+  "featured": false,
+  "profile": {
+    "name": "Brendan Burns",
+    "bio": "<p>Brendan Burns is a co-founder of Kubernetes, and an emeritus steering committee member. His most recent work is on client libraries for working with the Kubernetes API, where he's a contributor and an active maintainer. Over the course of more than two decades in open source, he has maintained projects as diverse as the JMeter load testing tool, the DroidDraw WYSiWYG designer for Android and a port of the Quake II to Linux.</p>",
+    "links": [
+      {
+        "platform": "github",
+        "url": "https://github.com/brendandburns"
+      },
+      {
+        "platform": "twitter",
+        "url": "https://twitter.com/brendandburns"
+      }
+    ],
+    "sponsorLink": ""
+  },
+  "project": {
+    "name": "Kubernetes Clients",
+    "description": "<p>No surprises here.</p>",
+    "badge": "",
+    "url": "https://github.com/kubernetes-client",
+    "links": [
+      {
+        "platform": "github",
+        "url": "https://github.com/kubernetes-client"
+      }
+    ],
+    "sponsorLink": ""
+  },
+  "talkTitle": "Every order of magnitude the problem changes - Scaling Kubernetes from a single office to the world."
+}

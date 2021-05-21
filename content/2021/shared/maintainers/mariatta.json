@@ -1,0 +1,24 @@
+{
+  "handler": "mariatta",
+  "featured": true,
+  "profile": {
+    "name": "Mariatta Wijaya",
+    "bio": "<p>Mariatta is a Python core developer based in Vancouver, Canada. She focuses on Python core-workflow, documentation, and community-building.</p><p>She's currently working to get the Python Documentation Work Group off the ground, and has started doing Open Source Diary video series on YouTube.</p>",
+    "links": [
+      { "platform": "github", "url": "https://github.com/Mariatta" },
+      { "platform": "twitter", "url": "https://twitter.com/mariatta" }
+    ],
+    "sponsorLink": ""
+  },
+  "project": {
+    "name": "Python",
+    "description": "<p>Python is one of the most popular programming languages. It is #2 on the TIOBE index as of May 2021.</p>",
+    "badge": "logo_python.png",
+    "url": "https://github.com/python/cpython",
+    "links": [
+      { "platform": "github", "url": "https://github.com/python/cpython" }
+    ],
+    "sponsorLink": ""
+  },
+  "talkTitle": "The Bots of CPython"
+}

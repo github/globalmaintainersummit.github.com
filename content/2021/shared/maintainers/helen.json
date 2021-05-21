@@ -1,0 +1,27 @@
+{
+  "handler": "helen",
+  "featured": true,
+  "profile": {
+    "name": "Helen Hou-Sandí",
+    "bio": "<p>Helen is the Director of Open Source Initiatives at 10up and a Lead Developer for the WordPress open source software project. From her start as a PHP/MySQL applications developer to focusing on \"the front-end of the back-end\" from both the development and UX perspectives, she has a knack for figuring out what people need to get things done on their websites, including most recently on the relaunch of WhiteHouse.gov for the Biden-Harris Administration.</p><p>Although she never knows whether to tell people she's a New Yorker or from Virginia Beach, today Helen is based in San José, Costa Rica with her husband, two kids, and their very close-knit extended family. When not at the computer or hanging out with said family, she can be found at the piano or posting pictures of food she's making.</p>",
+    "links": [
+      { "platform": "github", "url": "https://github.com/helen" },
+      { "platform": "twitter", "url": "https://twitter.com/helenhousandi" }
+    ],
+    "sponsorLink": ""
+  },
+  "project": {
+    "name": "WordPress",
+    "description": "<p>WordPress is an open source web publishing platform, now powering more than 41% of the web. In addition to the 18 year old core software, it is the center of a bustling consumer and developer ecosystem, with tens of thousands of plugins and themes available and a healthy commercial market. While WordPress (in)famously does not run its entire development lifecycle on GitHub or even Git, today more and more parts are managed outside of the traditional Trac+SVN workflow.</p>",
+    "badge": "logo_wordpress.png",
+    "url": "https://github.com/wordpress/wordpress-develop",
+    "links": [
+      {
+        "platform": "github",
+        "url": "https://github.com/wordpress/wordpress-develop"
+      }
+    ],
+    "sponsorLink": ""
+  },
+  "talkTitle": "You Can't Have a Solution Without a Problem"
+}

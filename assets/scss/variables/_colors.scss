@@ -11,6 +11,12 @@
   --purple: hsla(281, 75%, 59%, 1); // #B349E5
   --deep-purple: hsla(279, 97%, 35%, 1); //#7203AE
   --navy: hsla(277, 96%, 11%, 1); // #230138
+  --lime: hsla(97, 81%, 48%, 1); //#64dd17
+  --pastel-green: hsla(142.1, 65.4%, 64.9%, 1); //#6BE096
+  --anakiwa: hsla(200.2, 100%, 76.1%, 1); //#85D6FF
+  --seaweed: hsla(109.2, 49.4%, 15.5%, 1); //#1B3B14
+  --firefly: hsla(186, 53.6%, 11%, 1); //#0D282B
+  --pale-sky: hsla(211.6, 8.2%, 45.3%, 1); //#6A737D
 
   // Gradients
   --grad-transparent-gray: linear-gradient(
@@ -35,6 +41,8 @@
   --bg-close-icon: var(--gray-400);
   --bg-hamburguer: var(--navy);
   --bg-hamburguer--open: var(--white);
+  --bg-feedback--success: var(--pastel-green);
+  --bg-feedback--warning: var(--anakiwa);
 
   // Font Colors
   --fc-default: var(--navy);
@@ -42,7 +50,11 @@
   --fc-accent: var(--salmon);
   --fc-light: var(--white);
   --fc-dimmed: var(--gray-400);
+  --fc-dimmed--darker: var(--pale-sky);
+  --fc-feedback--success: var(--firefly);
+  --fc-feedback--warning: var(--seaweed);
 
   // Others
   --underline-color: var(--salmon);
+  --input-border--hover: var(--lime);
 }

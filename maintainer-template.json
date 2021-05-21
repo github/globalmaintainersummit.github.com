@@ -1,0 +1,29 @@
+{
+  "handler": "",
+  "featured": false,
+  "profile": {
+    "name": "",
+    "bio": "<p></p>",
+    "links": [
+      {
+        "platform": "",
+        "url": ""
+      }
+    ],
+    "sponsorLink": ""
+  },
+  "project": {
+    "name": "",
+    "description": "<p></p>",
+    "badge": "logo_.png",
+    "url": "",
+    "links": [
+      {
+        "platform": "",
+        "url": ""
+      }
+    ],
+    "sponsorLink": ""
+  },
+  "talkTitle": ""
+}

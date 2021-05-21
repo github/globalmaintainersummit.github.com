@@ -4,7 +4,7 @@
       <h1>
         {{ content.lead }}
       </h1>
-      <h3>{{ content.date }}</h3>
+      <p>{{ content.date }}</p>
     </div>
   </section>
 </template>
@@ -34,19 +34,20 @@ export default {
     max-width: 900px;
   }
   h1,
-  h3 {
+  p {
     margin: 0;
     padding: 0;
   }
   h1 {
     line-height: 1;
   }
-  h3 {
+  p {
     @include mobileToDesktopFontSize(var(--fs-medium), var(--fs-large));
     @include wave($bottom: -16px);
 
     display: inline-block;
     margin-top: 64px;
+    font-family: var(--ff-title);
   }
 }
 </style>

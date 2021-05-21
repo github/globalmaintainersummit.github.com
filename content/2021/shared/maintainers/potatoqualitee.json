@@ -1,0 +1,26 @@
+{
+  "handler": "potatoqualitee",
+  "featured": true,
+  "profile": {
+    "name": "Chrissy LeMaire",
+    "bio": "<p>Chrissy is a Cloud and Datacenter Management Data Platform MVP who has worked in IT for over 20 years. She is the creator of the popular SQL PowerShell module dbatools, holds a master's degree in Systems Engineering and is coauthor of Learn dbatools in a Month of Lunches.</p>",
+    "links": [
+      { "platform": "github", "url": "https://github.com/potatoqualitee" }
+    ],
+    "sponsorLink": ""
+  },
+  "project": {
+    "name": "dbatools",
+    "description": "<p>dbatools is an automation toolkit for Microsoft SQL Server that is known for being powerful, fun and easy-to-use. The project introduced a number of people within the Data Platform community to both open source and GitHub.</p>",
+    "badge": "logo_dbatools.png",
+    "url": "https://github.com/sqlcollaborative/dbatools",
+    "links": [
+      {
+        "platform": "github",
+        "url": "https://github.com/sqlcollaborative/dbatools"
+      }
+    ],
+    "sponsorLink": ""
+  },
+  "talkTitle": "Maintaining: The People Part"
+}

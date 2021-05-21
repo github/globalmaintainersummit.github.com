@@ -38,13 +38,7 @@ export default {
   }
 
   ::v-deep a {
-    display: inline;
-    color: var(--fc-primary);
-    transition: color 0.3s linear;
-
-    &:hover {
-      color: var(--fc-accent);
-    }
+    @include linksWithinText();
   }
 
   ::v-deep h4 {
