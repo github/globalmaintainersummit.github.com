@@ -28,7 +28,7 @@
     "core-js": "^3.12.1",
     "focus-trap": "^6.4.0",
     "focus-trap-vue": "^1.1.1",
-    "nuxt": "^2.15.5",
+    "nuxt": "^2.15.6",
     "vue-jest": "^3.0.7"
   },
   "devDependencies": {
