@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="schedule">
     <ScheduleDay
       v-for="day in schedule"
       :key="day.slug"
@@ -27,6 +27,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.schedule {
+  @include section();
+}
+
 .day {
   margin: 40px;
   &:last-child {
