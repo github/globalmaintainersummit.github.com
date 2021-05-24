@@ -36,6 +36,6 @@ describe('Home', () => {
 
   it('displays the full brand info for desktop', () => {
     cy.findByText('Global Maintainer Summit')
-    cy.findByText('Hosted by GitHub')
+    cy.findByText('hosted by GitHub')
   })
 })

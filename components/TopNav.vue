@@ -5,7 +5,7 @@
         <nuxt-link to="/" class="nav__home">
           <div class="nav__home-gh--desktop">
             <span>Global Maintainer Summit</span>
-            <span class="nav__home-hosted">Hosted by GitHub</span>
+            <span class="nav__home-hosted">hosted by GitHub</span>
           </div>
           <span class="nav__home-gh--mobile">GMS</span>
         </nuxt-link>
