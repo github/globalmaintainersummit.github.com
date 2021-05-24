@@ -67,7 +67,7 @@ export default {
       grid-template-areas:
         'time title talks'
         '. wave wave';
-      grid-template-columns: 240px 300px 1fr;
+      grid-template-columns: 240px 350px 1fr;
     }
   }
 

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="schedule">
     <ScheduleDay
       v-for="day in schedule"
       :key="day.slug"
@@ -15,7 +15,9 @@ import socialMetadata from '~/mixins/social-metadata'
 export default {
   mixins: [socialMetadata],
   async asyncData({ $content }) {
-    const schedule = await $content('2021/pages/schedule').fetch()
+    const schedule = await $content('2021/pages/schedule')
+      .sortBy('slug')
+      .fetch()
 
     return {
       schedule,
@@ -25,6 +27,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.schedule {
+  @include section();
+}
+
 .day {
   margin: 40px;
   &:last-child {

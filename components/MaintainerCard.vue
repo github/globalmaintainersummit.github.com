@@ -105,17 +105,21 @@ export default {
 
   cursor: pointer;
   &__content {
+    --t-font-color: color 0.3s ease-in;
+
     margin-top: 40px;
     h3 {
       margin: 0;
       padding: 0;
       color: var(--fc-default);
+      transition: var(--t-font-color);
     }
     p {
       margin: 16px 0 0 0;
       padding: 0;
       color: var(--fc-primary);
       font-size: var(--fs-small);
+      transition: var(--t-font-color);
     }
   }
   &:hover,
@@ -128,6 +132,14 @@ export default {
         top: 21px;
         left: 21px;
         background-color: var(--bg-accent);
+      }
+    }
+    .maintainer__content {
+      h3 {
+        color: var(--fc-primary);
+      }
+      p {
+        color: var(--fc-default);
       }
     }
     @media (prefers-reduced-motion: reduce) {

@@ -1,0 +1,32 @@
+{
+    "handler": "balloob",
+    "featured": false,
+    "profile": {
+      "name": "Paulus Schoutsen",
+      "bio": "<p>Paulus Schoutsen is the founder of Home Assistant. He founded the company Nabu Casa, which employs him and 12 others to work full-time on open-source projects like Home Assistant and ESPHome to make privacy focused home automation accessible to everyone.</p>",
+      "links": [
+        {
+          "platform": "github",
+          "url": "https://github.com/balloob"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/balloob"
+        }
+      ],
+      "sponsorLink": ""
+    },
+    "project": {
+      "name": "Home Assistant",
+      "description": "<p>Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.</p>",
+      "url": "https://www.home-assistant.io/",
+      "links": [
+        {
+          "platform": "github",
+          "url": "https://github.com/home-assistant/core"
+        }
+      ],
+      "sponsorLink": ""
+    },
+    "talkTitle": "Staying afloat running a big open source project"
+  }

@@ -73,8 +73,8 @@ export default {
   &__copy {
     margin: 0 32px 24px 0;
     padding: 0;
-    color: var(--fc-dimmed);
-    font-weight: var(--fw-bold);
+    color: var(--pale-sky);
+    font-weight: var(--fw-regular);
     font-size: var(--fs-small);
   }
 }

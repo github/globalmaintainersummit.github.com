@@ -40,6 +40,7 @@ export default {
     @include mobileToDesktopFontSize(var(--fs-small), var(--fs-medium));
 
     margin: 0;
+    font-family: var(--ff-secondary);
   }
   &__speaker {
     @include mobileToDesktopFontSize(var(--fs-small), var(--fs-default));

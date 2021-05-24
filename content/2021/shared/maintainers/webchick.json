@@ -1,0 +1,32 @@
+{
+    "handler": "webchick",
+    "featured": false,
+    "profile": {
+      "name": "Angie Byron",
+      "bio": "<p>Angie Byron is a core committer and product manager for the Drupal project. She got her start as a Google Summer of Code student in 2005, and since then has completely immersed herself in contributing to open source, and empowering others to do so as well. Her work includes strategic initiative coordination, user experience improvements, patch review, quality assurance efforts, and general community cat herding.</p>",
+      "links": [
+        {
+          "platform": "github",
+          "url": "https://github.com/webchick"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/webchick"
+        }
+      ],
+      "sponsorLink": ""
+    },
+    "project": {
+      "name": "Drupal",
+      "description": "<p>Drupal is a free and open source content management framework which powers over 13% of the top 10,000 websites worldwide. It sports features such as a modular architecture, first-class accessibility, a sophisticated API for developers, but also sports a robust user interface to perform detailed configuration which requires no programming knowledge. Its community consists of over 1.39 million members, over 120,000 of those actively contributing.</p>",
+      "url": "https://www.drupal.org/",
+      "links": [
+        {
+          "platform": "github",
+          "url": "https://github.com/drupal/drupal"
+        }
+      ],
+      "sponsorLink": ""
+    },
+    "talkTitle": "Collaboration Needs of Massive Open Source Communities"
+  }
