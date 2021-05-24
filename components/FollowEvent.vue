@@ -75,13 +75,15 @@ export default {
     margin: 8px 0 40px;
     font-weight: var(--fw-extra-bold);
     font-size: var(--fs-small);
-    @media screen and (min-width: $screen-sm) {
+    font-family: var(--ff-title);
+    word-break: break-word;
+    @media screen and (min-width: $screen-tablet) {
       font-size: var(--fs-large);
     }
-    @media screen and (min-width: $screen-tablet) {
+    @media screen and (min-width: $screen-xl) {
       font-size: var(--fs-giant);
     }
-    @media screen and (min-width: $screen-xl) {
+    @media screen and (min-width: $screen-max) {
       font-size: var(--fs-colossal);
     }
   }
@@ -89,6 +91,7 @@ export default {
   &__lead {
     padding: 0 24px;
     font-size: var(--fs-small);
+    line-height: 30px;
     @media screen and (min-width: $screen-sm) {
       padding: 0 112px;
     }
@@ -115,6 +118,7 @@ export default {
   &__description {
     max-width: 588px;
     padding: 0 24px;
+    line-height: 1.4rem;
     text-align: center;
   }
 }

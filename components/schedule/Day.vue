@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <section>
     <h3>{{ content.date }}</h3>
     <div v-for="slot in content.slots" :key="slot.label">
       <ScheduleSlot :content="slot" />
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

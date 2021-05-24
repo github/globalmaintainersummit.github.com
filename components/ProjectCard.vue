@@ -72,17 +72,21 @@ export default {
     }
   }
   &__content {
+    --t-font-color: color 0.3s ease-in;
+
     margin-top: 32px;
     h4 {
       margin: 0;
       padding: 0;
       color: var(--fc-default);
+      transition: var(--t-font-color);
     }
     p {
       margin: 16px 0 0 0;
       padding: 0;
       color: var(--fc-primary);
       font-size: var(--fs-small);
+      transition: var(--t-font-color);
     }
   }
   &:hover,
@@ -92,6 +96,14 @@ export default {
         top: 7px;
         left: 7px;
         background-color: var(--bg-accent);
+      }
+    }
+    .project__content {
+      h4 {
+        color: var(--fc-primary);
+      }
+      p {
+        color: var(--fc-default);
       }
     }
   }

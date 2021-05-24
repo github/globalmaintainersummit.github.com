@@ -14,7 +14,7 @@ export default {
   mixins: [socialMetadata],
   async asyncData({ $content }) {
     const { intro, codeOfConduct, reportingIncident, credit } = await $content(
-      '2021/pages/code-of-conduct'
+      '2021/pages/codeOfConduct/index'
     ).fetch()
     return {
       intro,
