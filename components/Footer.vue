@@ -1,7 +1,12 @@
 <template>
   <footer v-if="footer" class="footer">
     <div class="footer__left">
-      <p class="footer__copy">{{ footer.github }}</p>
+      <p class="footer__copy">
+        <span>{{ footer.madeWith }}</span>
+        <HeartIcon class="footer__copy-heart" />
+        <span>{{ footer.github }}</span>
+      </p>
+
       <CommonLink
         v-for="link in footer.links"
         :key="link.label"
@@ -21,8 +26,10 @@
 </template>
 
 <script>
+import HeartIcon from '~/assets/svg/icons/heart_footer.svg?inline'
+
 export default {
-  components: {},
+  components: { HeartIcon },
   data() {
     return { footer: null }
   },
@@ -71,11 +78,19 @@ export default {
     }
   }
   &__copy {
+    display: flex;
+    gap: 0.3rem;
+    align-items: baseline;
     margin: 0 32px 24px 0;
     padding: 0;
-    color: var(--pale-sky);
+    color: var(--fc-dimmed--darker);
     font-weight: var(--fw-regular);
     font-size: var(--fs-small);
+    &-heart {
+      width: 14px;
+      height: 13px;
+      stroke: var(--fc-dimmed--darker);
+    }
   }
 }
 </style>
