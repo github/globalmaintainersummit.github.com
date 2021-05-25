@@ -84,7 +84,7 @@
 <script>
 import { google, outlook, office365, yahoo, ics } from 'calendar-link'
 import { FocusTrap } from 'focus-trap-vue'
-import CloseIcon from '~/assets/img/icons/close.svg?inline'
+import CloseIcon from '~/assets/svg/icons/close.svg?inline'
 
 const KEY_CALENDAR_APPLE = 'apple'
 const KEY_CALENDAR_GOOGLE = 'google'
