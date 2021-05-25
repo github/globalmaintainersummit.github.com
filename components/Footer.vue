@@ -101,7 +101,6 @@ export default {
   }
   &__copy {
     display: flex;
-    gap: 0.3rem;
     align-items: baseline;
     margin: 0;
     padding: 0;
@@ -114,6 +113,7 @@ export default {
     &-heart {
       width: 14px;
       height: 13px;
+      margin: 0 0.3rem;
       stroke: var(--fc-dimmed--darker);
     }
   }
