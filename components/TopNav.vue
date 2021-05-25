@@ -73,8 +73,10 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 80px;
   padding: 36px 40px 12px;
   @media (min-width: $screen-sm) {
+    height: 112px;
     padding-bottom: 33px;
   }
   &__brand {
