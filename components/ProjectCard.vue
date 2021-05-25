@@ -1,15 +1,12 @@
 <template>
-  <a :href="mantainer.project.url" target="_blank" class="project">
-    <div class="project__image">
-      <img
-        v-if="mantainer.project.badge"
-        :src="require(`~/assets/img/badges/${mantainer.project.badge}`)"
-        :alt="mantainer.project.name"
-      />
-    </div>
+  <a :href="maintainer.project.url" target="_blank" class="project">
+    <CommonProjectBadge
+      :badge="maintainer.project.badge"
+      :alt="maintainer.project.name"
+    />
     <div class="project__content">
-      <h4>{{ mantainer.project.name }}</h4>
-      <p>{{ mantainer.profile.name }}</p>
+      <h4>{{ maintainer.project.name }}</h4>
+      <p>{{ maintainer.profile.name }}</p>
     </div>
   </a>
 </template>
@@ -17,7 +14,7 @@
 <script>
 export default {
   props: {
-    mantainer: {
+    maintainer: {
       type: Object,
       required: true,
     },
@@ -25,12 +22,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .project {
-  --project-width: 85px;
-  --project-height: 85px;
-  --project-border: 3px;
-
   /*
   Optional display table to avoid the
   focus ring to include the "shadow" shape
@@ -38,39 +31,6 @@ export default {
   display: table;
   color: var(--fc-default);
   cursor: pointer;
-  &__image {
-    position: relative;
-    width: calc(var(--project-width) + var(--project-border));
-    height: calc(var(--project-height) + var(--project-border));
-    img {
-      position: relative;
-      top: 0;
-      left: 0;
-      width: calc(var(--project-width) + var(--project-border));
-      height: calc(var(--project-height) + var(--project-border));
-      object-position: center;
-      overflow: hidden;
-      border: var(--project-border) white solid;
-      border-radius: 44px;
-      transition: top 0.25s ease, left 0.25s ease;
-    }
-    &::after {
-      position: absolute;
-      top: 6px;
-      left: 6px;
-      z-index: -1;
-      display: block;
-      width: var(--project-width);
-      height: var(--project-height);
-      overflow: hidden;
-      background-color: var(--bg-dimmed);
-      border-radius: 44px;
-      transition: background-color 0.25s ease, top 0.25s ease, left 0.25s ease;
-      content: '';
-      -webkit-mask-image: url('~/assets/svg/pattern_shadow.svg');
-      mask-image: url('~/assets/svg/pattern_shadow.svg');
-    }
-  }
   &__content {
     --t-font-color: color 0.3s ease-in;
 

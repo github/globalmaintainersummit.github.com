@@ -2,7 +2,7 @@
   <div class="container">
     <ul class="grid" :class="{ 'grid--three-cols': threeCols }">
       <li v-for="item in maintainers || projects" :key="item.name">
-        <ProjectCard v-if="projects" :mantainer="item" />
+        <ProjectCard v-if="projects" :maintainer="item" />
         <MaintainerCard v-else :maintainer="item" :oversize="threeCols" />
       </li>
     </ul>
