@@ -39,7 +39,6 @@ export default {
     display: flex;
     align-items: center;
     width: 100%;
-    border-radius: 50%;
   }
   &__name {
     margin: 40px 0;
