@@ -46,11 +46,15 @@ export default {
 
   position: relative;
   display: flex;
+  flex-direction: column-reverse;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 80px;
   margin-bottom: 32px;
   font-size: var(--fs-small);
+  @media screen and (min-width: 1060px) {
+    flex-direction: row;
+  }
   @media screen and (min-width: $screen-tablet) {
     margin-top: 160px;
     margin-bottom: 64px;
@@ -58,15 +62,25 @@ export default {
   &__right,
   &__left {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
+    align-content: center;
+    text-align: center;
     vertical-align: middle;
+    @media screen and (min-width: $screen-tablet) {
+      flex-direction: row;
+    }
 
     a {
-      margin: 0 32px 24px 0;
+      margin-bottom: 24px;
       color: var(--fc-default);
-      &:last-child {
-        margin: 0 0 24px 0;
+      @media screen and (min-width: $screen-tablet) {
+        margin: 0 32px 24px 0;
+        &:last-child {
+          margin: 0 0 24px 0;
+        }
       }
+
       svg {
         width: 18px;
         height: 18px;
@@ -77,15 +91,26 @@ export default {
       }
     }
   }
+  &__left {
+    flex-direction: column-reverse;
+    margin-top: 48px;
+    @media screen and (min-width: $screen-tablet) {
+      flex-direction: row;
+      margin-top: 0;
+    }
+  }
   &__copy {
     display: flex;
     gap: 0.3rem;
     align-items: baseline;
-    margin: 0 32px 24px 0;
+    margin: 0;
     padding: 0;
     color: var(--fc-dimmed--darker);
     font-weight: var(--fw-regular);
     font-size: var(--fs-small);
+    @media screen and (min-width: $screen-tablet) {
+      margin: 0 32px 24px 0;
+    }
     &-heart {
       width: 14px;
       height: 13px;
