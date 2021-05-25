@@ -27,15 +27,15 @@
                 class="nav__list-item--calendar"
               />
             </li>
-            <li class="nav__list-item">
+            <li class="nav__list-item" @click="toggleNav">
               <CommonLink to="/maintainers">Maintainers</CommonLink>
             </li>
-            <li class="nav__list-item">
+            <li class="nav__list-item" @click="toggleNav">
               <CommonLink to="/schedule">Schedule</CommonLink>
             </li>
           </ul>
           <ul class="nav__only-mobile">
-            <li class="nav__only-mobile-item">
+            <li class="nav__only-mobile-item" @click="toggleNav">
               <CommonLink to="/">opensource@github.com </CommonLink>
             </li>
           </ul>
