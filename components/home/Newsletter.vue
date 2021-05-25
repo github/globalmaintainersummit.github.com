@@ -108,7 +108,7 @@ export default {
     }
 
     &--feedback {
-      padding-bottom: 120px;
+      padding-bottom: 132px;
 
       @media only screen and (min-width: 680px) {
         padding-bottom: 148px;
@@ -131,10 +131,12 @@ export default {
     position: relative;
     display: flex;
     flex-flow: column;
+    gap: 32px;
     align-items: flex-end;
     margin-top: 32px;
-    @media only screen and (min-width: 680px) {
+    @media only screen and (min-width: $screen-sm) {
       flex-flow: row;
+      gap: 24px;
       align-items: flex-start;
     }
     input {

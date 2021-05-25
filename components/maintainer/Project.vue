@@ -1,12 +1,7 @@
 <template>
   <section class="project">
     <div class="project__decoration">
-      <img
-        v-if="project.badge"
-        :src="require(`~/assets/img/badges/${project.badge}`)"
-        alt=""
-        role="presentation"
-      />
+      <CommonProjectBadge :badge="project.badge" :animated-hover="false" />
       <CommonWave />
     </div>
     <h2 class="project__name">{{ project.name }}</h2>

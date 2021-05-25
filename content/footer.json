@@ -1,6 +1,7 @@
 {
   "footer": {
-    "github": "Made with ❤️ by GitHub",
+    "madeWith": "Made with",
+    "github": "by GitHub",
     "links": [
       {
         "label": "Terms",
