@@ -1,11 +1,7 @@
 <template>
   <div class="container">
     <ul class="grid" :class="{ 'grid--three-cols': threeCols }">
-      <li
-        v-for="item in maintainers || projects"
-        :key="item.name"
-        class="grid_item item"
-      >
+      <li v-for="item in maintainers || projects" :key="item.name">
         <ProjectCard v-if="projects" :mantainer="item" />
         <MaintainerCard v-else :maintainer="item" :oversize="threeCols" />
       </li>
@@ -46,6 +42,7 @@ export default {
 .grid {
   --column-width: 256px;
 
+  scroll-snap-type: y mandatory;
   display: grid;
   grid-gap: 3rem;
   grid-template-columns: repeat(1, var(--column-width));
@@ -55,6 +52,7 @@ export default {
   margin: 0;
   padding: 0;
   @media only screen and (min-width: 680px) {
+    scroll-snap-type: none;
     grid-template-columns: repeat(2, var(--column-width));
   }
   @media only screen and (min-width: 1024px) {
@@ -67,6 +65,7 @@ export default {
   li {
     --gradient-position: top left;
 
+    scroll-snap-align: start;
     display: flex;
     text-transform: capitalize;
     transform: translateY(0);
