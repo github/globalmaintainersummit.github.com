@@ -1,5 +1,5 @@
 <template>
-  <div class="burguer" :class="{ 'burguer--active': active }">
+  <div class="burger" :class="{ 'burger--active': active }">
     <span />
     <span />
     <span />
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.burguer {
+.burger {
   span {
     position: relative;
     top: 0;
@@ -26,7 +26,7 @@ export default {
     width: 28px;
     height: 3px;
     margin: 3px 0;
-    background: var(--bg-hamburguer);
+    background: var(--bg-hamburger);
     border-radius: 3px;
     cursor: pointer;
     transition: transform 0.2s linear, top 0.15s ease-in-out 0.3s,
@@ -40,7 +40,7 @@ export default {
   }
   &--active {
     span {
-      background: var(--bg-hamburguer--open);
+      background: var(--bg-hamburger--open);
       &:nth-child(1) {
         top: 6px;
         transform: rotate(45deg);

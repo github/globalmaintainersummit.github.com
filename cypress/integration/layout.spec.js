@@ -12,7 +12,7 @@ describe('Default Layout', () => {
         cy.findByText('GMS').should('be.visible')
       })
     })
-    it('is displaying the hamburguer icon', () => {
+    it('is displaying the hamburger icon', () => {
       cy.get('[data-cy=navigation]').within(() => {
         cy.findByLabelText('Open navigation').should('be.visible')
       })
