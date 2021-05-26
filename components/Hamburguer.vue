@@ -27,6 +27,7 @@ export default {
     height: 3px;
     margin: 3px 0;
     background: var(--bg-hamburguer);
+    border-radius: 3px;
     cursor: pointer;
     transition: transform 0.2s linear, top 0.15s ease-in-out 0.3s,
       color 0.25s ease 0.2s, width 0.25s ease 0.2s;
