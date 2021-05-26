@@ -39,8 +39,12 @@ export default {
   --maintainer-border: 5px;
 
   &--oversize {
-    --maintainer-width: 376px;
-    --maintainer-height: 420px;
+    --maintainer-width: 256px;
+    --maintainer-height: 284px;
+    @media screen and (min-width: $screen-sm) {
+      --maintainer-width: 376px;
+      --maintainer-height: 420px;
+    }
   }
 
   /*
@@ -48,6 +52,7 @@ export default {
   focus ring to include the "shadow" shape
   */
   display: table;
+  max-width: var(--maintainer-width);
   color: var(--fc-default);
   &__image {
     position: relative;
@@ -109,6 +114,8 @@ export default {
 
     margin-top: 40px;
     h3 {
+      @include mobileToDesktopFontSize(var(--fs-small), var(--fs-large));
+
       margin: 0;
       padding: 0;
       color: var(--fc-default);
