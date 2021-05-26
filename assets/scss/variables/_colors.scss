@@ -18,6 +18,7 @@
   --firefly: hsla(186, 53.6%, 11%, 1); //#0D282B
   --pale-sky: hsla(211.6, 8.2%, 45.3%, 1); //#6A737D
   --white-lilac: hsla(220, 42.9%, 98.6%, 1); //#FAFBFD
+  --stratos: hsla(210, 33%, 9%, 0.2); //#000033
 
   // Gradients
   --grad-transparent-gray: linear-gradient(
@@ -54,6 +55,9 @@
   --fc-dimmed--darker: var(--pale-sky);
   --fc-feedback--success: var(--firefly);
   --fc-feedback--warning: var(--seaweed);
+
+  // Box shadow
+  --bs-header: var(--stratos);
 
   // Others
   --underline-color: var(--salmon);
