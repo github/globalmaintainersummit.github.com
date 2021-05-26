@@ -28,7 +28,11 @@ export default {
   position: relative;
   z-index: var(--z-index-content);
   width: 100%;
+  margin-top: 80px;
   overflow: hidden;
+  @media (min-width: $screen-sm) {
+    margin-top: 112px;
+  }
 }
 .open-nav {
   @media screen and (max-width: $screen-sm) {
