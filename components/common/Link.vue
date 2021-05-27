@@ -52,7 +52,7 @@ export default {
 
 <style lang="scss" scoped>
 .link {
-  @include wave($bottom: -22px);
+  @include wave($bottom: -22px, $height: 20px, $bg-size-height: 18px);
 
   display: inline-block;
   font-weight: var(--fw-semi-bold);
@@ -62,8 +62,8 @@ export default {
   &::after {
     cursor: pointer;
     transition: 0.5s ease, mask-position 0s 0.5s;
-    mask: linear-gradient(#fff 0 0) top / 100% calc(100% - 24px),
-      linear-gradient(#fff 0 0) var(--p, 0) 100% / var(--d, 0) 24px;
+    mask: linear-gradient(#fff 0 0) top / 100% calc(100% - 20px),
+      linear-gradient(#fff 0 0) var(--p, 0) 100% / var(--d, 0) 20px;
     mask-repeat: no-repeat;
   }
   &:hover {

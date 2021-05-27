@@ -47,6 +47,7 @@ export default {
     margin: 0 auto;
     h2 {
       max-width: 786px;
+      word-wrap: break-word;
     }
     div {
       max-width: 671px;

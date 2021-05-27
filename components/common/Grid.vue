@@ -1,12 +1,8 @@
 <template>
   <div class="container">
     <ul class="grid" :class="{ 'grid--three-cols': threeCols }">
-      <li
-        v-for="item in maintainers || projects"
-        :key="item.name"
-        class="grid_item item"
-      >
-        <ProjectCard v-if="projects" :mantainer="item" />
+      <li v-for="item in maintainers || projects" :key="item.name">
+        <ProjectCard v-if="projects" :maintainer="item" />
         <MaintainerCard v-else :maintainer="item" :oversize="threeCols" />
       </li>
     </ul>
@@ -44,25 +40,22 @@ export default {
 }
 
 .grid {
-  --column-width: 256px;
-
   display: grid;
   grid-gap: 3rem;
-  grid-template-columns: repeat(1, var(--column-width));
+  grid-template-columns: repeat(1, 1fr);
   justify-content: center;
   box-sizing: border-box;
-  min-width: var(--column-width);
   margin: 0;
   padding: 0;
   @media only screen and (min-width: 680px) {
-    grid-template-columns: repeat(2, var(--column-width));
+    grid-template-columns: repeat(2, 1fr);
   }
   @media only screen and (min-width: 1024px) {
     grid-gap: 5rem;
-    grid-template-columns: repeat(3, var(--column-width));
+    grid-template-columns: repeat(3, 1fr);
   }
   @media only screen and (min-width: 1440px) {
-    grid-template-columns: repeat(4, var(--column-width));
+    grid-template-columns: repeat(4, 1fr);
   }
   li {
     --gradient-position: top left;
@@ -70,6 +63,7 @@ export default {
     display: flex;
     text-transform: capitalize;
     transform: translateY(0);
+    place-self: center;
     @media only screen and (min-width: 680px) {
       &:nth-child(even) {
         transform: translateY(80px);
@@ -102,19 +96,16 @@ export default {
   }
 
   &--three-cols {
-    --column-width: 376px;
     --item-height: 420px;
     --gradient-position: top left;
 
-    grid-template-columns: repeat(1, var(--column-width));
-    min-width: var(--column-width);
-
+    grid-template-columns: repeat(1, 1fr);
     @media only screen and (min-width: 920px) {
       grid-gap: 5rem;
-      grid-template-columns: repeat(2, var(--column-width));
+      grid-template-columns: repeat(2, 1fr);
     }
     @media only screen and (min-width: 1440px) {
-      grid-template-columns: repeat(3, var(--column-width));
+      grid-template-columns: repeat(3, 1fr);
     }
     li {
       @media only screen and (min-width: 920px) {

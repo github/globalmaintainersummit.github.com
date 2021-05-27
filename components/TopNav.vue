@@ -1,52 +1,69 @@
 <template>
   <focus-trap :active="active">
-    <nav class="nav" :class="{ 'nav--active': active }" data-cy="navigation">
-      <div class="nav__brand">
-        <nuxt-link to="/" class="nav__home">
-          <div class="nav__home-gh--desktop">
-            <span>Global Maintainer Summit</span>
-            <span class="nav__home-hosted">hosted by GitHub</span>
-          </div>
-          <span class="nav__home-gh--mobile">GMS</span>
-        </nuxt-link>
-        <span class="nav__home-date">2021</span>
-      </div>
-      <button
-        class="nav__hamburguer"
-        :aria-label="`${active ? 'Close' : 'Open'} navigation`"
-        @click="toggleNav"
+    <header
+      class="header"
+      :class="{
+        'header--hidden': !displayNavBar,
+        'header--shadowed': isScrolled && displayNavBar && !isMenuVisible,
+      }"
+    >
+      <nav
+        ref="navbar"
+        class="nav"
+        :class="{
+          'nav--active': active,
+        }"
+        data-cy="navigation"
       >
-        <Hamburguer :active="active" />
-      </button>
-      <div class="nav__container">
-        <div class="nav__wrapper">
-          <ul class="nav__list">
-            <li class="nav__list-item">
-              <CommonCalendarDropdown
-                type="nav"
-                class="nav__list-item--calendar"
-              />
-            </li>
-            <li class="nav__list-item">
-              <CommonLink to="/maintainers">Maintainers</CommonLink>
-            </li>
-            <li class="nav__list-item">
-              <CommonLink to="/schedule">Schedule</CommonLink>
-            </li>
-          </ul>
-          <ul class="nav__only-mobile">
-            <li class="nav__only-mobile-item">
-              <CommonLink to="/">opensource@github.com </CommonLink>
-            </li>
-          </ul>
+        <div class="nav__brand">
+          <nuxt-link to="/" class="nav__home">
+            <div class="nav__home-gh--desktop">
+              <span>Global Maintainer Summit</span>
+              <span class="nav__home-hosted">hosted by GitHub</span>
+            </div>
+            <span class="nav__home-gh--mobile">GMS</span>
+          </nuxt-link>
+          <span class="nav__home-date">2021</span>
         </div>
-      </div>
-    </nav>
+        <button
+          class="nav__hamburger"
+          :aria-label="`${active ? 'Close' : 'Open'} navigation`"
+          @click="toggleNav"
+        >
+          <Hamburger :active="active" />
+        </button>
+        <div class="nav__container">
+          <div class="nav__wrapper">
+            <ul class="nav__list">
+              <li class="nav__list-item">
+                <CommonCalendarDropdown
+                  type="nav"
+                  class="nav__list-item--calendar"
+                />
+              </li>
+              <li class="nav__list-item" @click="toggleNav">
+                <CommonLink to="/maintainers">Maintainers</CommonLink>
+              </li>
+              <li class="nav__list-item" @click="toggleNav">
+                <CommonLink to="/schedule">Schedule</CommonLink>
+              </li>
+            </ul>
+            <ul class="nav__only-mobile">
+              <li class="nav__only-mobile-item" @click="toggleNav">
+                <CommonLink to="/">opensource@github.com </CommonLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
   </focus-trap>
 </template>
 
 <script>
 import { FocusTrap } from 'focus-trap-vue'
+
+const OFFSET = 20
 
 export default {
   components: {
@@ -58,7 +75,57 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      isMenuVisible: false,
+      isNavFocused: false,
+      isScrolled: false,
+      displayNavBar: true,
+      lastScrollPosition: 0,
+    }
+  },
+  mounted() {
+    this.setIsScrolled()
+
+    this.lastScrollPosition = window.pageYOffset
+
+    window.addEventListener('scroll', this.setIsScrolled)
+    this.$refs.navbar.addEventListener('focusin', this.focusInNav)
+    this.$refs.navbar.addEventListener('focusout', this.focusOutNav)
+
+    if (window.pageYOffset > 0) {
+      this.isScrolled = true
+    }
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.setIsScrolled)
+  },
   methods: {
+    focusInNav() {
+      this.isNavFocused = true
+      this.displayNavBar = true
+    },
+    focusOutNav() {
+      this.isNavFocused = false
+      if (window.pageYOffset > OFFSET) {
+        this.displayNavBar = false
+      }
+    },
+    setIsScrolled() {
+      if (window.pageYOffset <= 0) {
+        this.isScrolled = false
+        this.displayNavBar = true
+        return
+      }
+
+      if (Math.abs(window.pageYOffset - this.lastScrollPosition) < OFFSET) {
+        return
+      }
+
+      this.isScrolled = true
+      this.displayNavBar = window.pageYOffset < this.lastScrollPosition
+      this.lastScrollPosition = window.pageYOffset
+    },
     toggleNav() {
       this.$emit('toggle')
     },
@@ -67,19 +134,30 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.nav {
-  position: relative;
+.header {
+  position: fixed;
+  top: 0;
   z-index: var(--z-index-topbar);
+  width: 100%;
+  transform: translate3d(0, 0, 0);
+  transition: visibility 0.35s step-start, transform 0.35s ease,
+    background-color 0.35s ease, box-shadow 0.35s ease, height 0.2s ease;
+  &--hidden {
+    transform: translate3d(0, -100%, 0);
+  }
+  &--shadowed {
+    background-color: var(--bg-body);
+    box-shadow: 0 0 2rem 0 var(--bs-header);
+  }
+}
+.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 36px 40px 12px;
-  @media (min-width: $screen-sm) {
-    padding-bottom: 33px;
-  }
+  padding: 36px 40px 24px;
   &__brand {
     position: relative;
-    z-index: var(--z-index-hamburguer);
+    z-index: var(--z-index-hamburger);
     display: flex;
     flex-wrap: nowrap;
     align-items: baseline;
@@ -187,13 +265,14 @@ export default {
   &__container {
     z-index: var(--z-index-navigation-mobile);
     display: flex;
+    height: 100%;
 
     @media (max-width: $screen-sm) {
       position: fixed;
       top: 0;
       right: 0;
       width: 100%;
-      height: 100%;
+      height: 100vh;
       margin: 0;
       padding: 120px 0 0 0;
       background: var(--grad-navigation-mobile);
@@ -221,9 +300,9 @@ export default {
     }
   }
 
-  &__hamburguer {
+  &__hamburger {
     position: relative;
-    z-index: var(--z-index-hamburguer);
+    z-index: var(--z-index-hamburger);
     display: none;
     width: 30px;
     height: 30px;
