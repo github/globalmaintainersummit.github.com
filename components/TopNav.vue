@@ -154,7 +154,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 36px 40px 18px;
+  padding: 36px 40px 24px;
   &__brand {
     position: relative;
     z-index: var(--z-index-hamburger);
