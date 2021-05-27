@@ -1,13 +1,11 @@
 <template>
   <div class="profile-image">
-    <picture aria-hidden="true" role="presentation">
-      <source
-        media="(min-width: 1024px)"
-        :srcset="require(`~/assets/img/maintainers/${handler}_wide.jpg`)"
-        alt=""
-      />
-      <img :src="require(`~/assets/img/maintainers/${handler}.jpg`)" alt="" />
-    </picture>
+    <img
+      :src="require(`~/assets/img/maintainers/${handler}.jpg`)"
+      aria-hidden="true"
+      role="presentation"
+      alt=""
+    />
   </div>
 </template>
 
@@ -27,10 +25,6 @@ export default {
   --maintainer-width: 256px;
   --maintainer-height: 284px;
   --maintainer-border: 5px;
-
-  @media screen and (min-width: $screen-xl) {
-    --maintainer-width: 876px;
-  }
 
   position: relative;
   width: calc(var(--maintainer-width) + var(--maintainer-border));

@@ -32,12 +32,9 @@ All the json properties to fill up in the template are explained below:
 
 ### Step 2 - 📸 Profile image
 
-For the **profile pictures** of the maintainer, go to `assets/img/maintainers` and add **two** images using the `.jpg` format following these patterns:
+For the **profile pictures** of the maintainer, go to `assets/img/maintainers` and add a `.jpg` image. The file must be named with the github handler all in lower case again, just like it was done for the `.json` file. **The resolution MUST be 376x420.**
 
-1.  **_Squared picture for the cards._** The file must be named with the github handler all in lower case again, just like it was done for the `.json` file. **The resolution MUST be 376x420.**
-2.  **_Wider picture for the maintainer details page._** The file name follows the exact same rule as above, except for this time you need to add `_wide` suffix. **The resolution MUST be 876x376.**
-
-Taking the same example for VerteDinde it would be adding `vertedinde.jpg` and `vertedinde_wide.jpg` pictures to the folder.
+Taking the same example for VerteDinde it would be adding `vertedinde.jpg` picture to the folder.
 
 ### Step 3 - 🖼️ Project badge
 
