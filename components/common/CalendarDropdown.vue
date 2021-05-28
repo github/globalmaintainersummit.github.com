@@ -1,16 +1,7 @@
 <template>
   <div>
     <focus-trap :active="showDropdown">
-      <CommonCustomButton
-        v-if="type == 'button' && !showDropdown"
-        icon="calendar"
-        icon-suffix
-        @click="toggleDropdown"
-      >
-        Save the Date
-      </CommonCustomButton>
       <div
-        v-else
         class="dropdown-wrapper"
         :class="[
           `dropdown-wrapper--${type}`,
@@ -100,9 +91,9 @@ export default {
   props: {
     type: {
       type: String,
-      default: null,
+      default: 'dark',
       validator: (type) => {
-        return ['nav', 'button'].includes(type)
+        return ['light', 'dark', 'transparent'].includes(type)
       },
     },
   },
@@ -163,15 +154,15 @@ export default {
   --dropdown-width: var(--dropdown-width-default);
   --wrapper-width: var(--wrapper-width-default);
 
-  @media (max-width: $screen-sm) {
-    &--nav {
-      --dropdown-width: 100%;
-      --wrapper-width: 100%;
-    }
-    &--open {
-      transform: translateX(35%);
-    }
-  }
+  // @media (max-width: $screen-sm) {
+  //   &--nav {
+  //     --dropdown-width: 100%;
+  //     --wrapper-width: 100%;
+  //   }
+  //   &--open {
+  //     transform: translateX(35%);
+  //   }
+  // }
 
   position: relative;
   display: inline-block;
@@ -199,11 +190,11 @@ export default {
     box-shadow: 0 16px 24px 0 rgba(13, 9, 16, 0.08),
       0 8px 16px 0 rgba(13, 9, 16, 0.12);
 
-    .dropdown__title--nav {
-      @media (max-width: $screen-sm) {
-        color: var(--fc-primary);
-      }
-    }
+    // .dropdown__title--nav {
+    //   @media (max-width: $screen-sm) {
+    //     color: var(--fc-primary);
+    //   }
+    // }
   }
 
   &__options {
@@ -228,18 +219,18 @@ export default {
     border: none;
     cursor: pointer;
 
-    &--nav {
-      @media (max-width: $screen-sm) {
-        color: var(--fc-light);
-        font-size: var(--fs-large);
-        font-family: var(--ff-title);
-        &-open {
-          font-weight: var(--fw-bold);
-          font-size: var(--fs-small);
-          font-family: var(--ff-secondary);
-        }
-      }
-    }
+    // &--nav {
+    //   @media (max-width: $screen-sm) {
+    //     color: var(--fc-light);
+    //     font-size: var(--fs-large);
+    //     font-family: var(--ff-title);
+    //     &-open {
+    //       font-weight: var(--fw-bold);
+    //       font-size: var(--fs-small);
+    //       font-family: var(--ff-secondary);
+    //     }
+    //   }
+    // }
   }
 
   &__close {

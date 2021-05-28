@@ -37,7 +37,7 @@
             <ul class="nav__list">
               <li class="nav__list-item">
                 <CommonCalendarDropdown
-                  type="nav"
+                  :type="isMobile ? 'light' : 'transparent'"
                   class="nav__list-item--calendar"
                 />
               </li>
@@ -82,7 +82,13 @@ export default {
       isScrolled: false,
       displayNavBar: true,
       lastScrollPosition: 0,
+      windowWidth: null,
     }
+  },
+  computed: {
+    isMobile() {
+      return this.windowWidth <= 680
+    },
   },
   mounted() {
     this.setIsScrolled()
@@ -95,6 +101,10 @@ export default {
 
     if (window.pageYOffset > 0) {
       this.isScrolled = true
+    }
+
+    window.onresize = () => {
+      this.windowWidth = window.innerWidth
     }
   },
   beforeDestroy() {
@@ -126,6 +136,9 @@ export default {
       this.displayNavBar = window.pageYOffset < this.lastScrollPosition
       this.lastScrollPosition = window.pageYOffset
     },
+    // onResize() {
+    //   this.windowHeight = window.innerHeight
+    // },
     toggleNav() {
       this.$emit('toggle')
     },
