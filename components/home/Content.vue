@@ -13,7 +13,7 @@
       </ul>
       <div v-html="highlightedBlock.description" />
       <div class="save">
-        <CommonCalendarDropdown class="save-button" />
+        <CommonCalendarDropdown class="save-button" type="dark" />
         <CommonWave class="save-decoration" />
       </div>
     </div>

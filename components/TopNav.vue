@@ -37,7 +37,7 @@
             <ul class="nav__list">
               <li class="nav__list-item">
                 <CommonCalendarDropdown
-                  :type="isMobile ? 'light' : 'transparent'"
+                  :type="isMobile && 'light'"
                   class="nav__list-item--calendar"
                 />
               </li>
@@ -103,6 +103,7 @@ export default {
       this.isScrolled = true
     }
 
+    this.windowWidth = window.innerWidth
     window.onresize = () => {
       this.windowWidth = window.innerWidth
     }
