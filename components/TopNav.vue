@@ -103,7 +103,9 @@ export default {
       this.isScrolled = true
     }
 
-    this.windowWidth = window.innerWidth
+    this.$nextTick(() => {
+      this.windowWidth = window.innerWidth
+    })
     window.onresize = () => {
       this.windowWidth = window.innerWidth
     }
@@ -137,9 +139,6 @@ export default {
       this.displayNavBar = window.pageYOffset < this.lastScrollPosition
       this.lastScrollPosition = window.pageYOffset
     },
-    // onResize() {
-    //   this.windowHeight = window.innerHeight
-    // },
     toggleNav() {
       this.$emit('toggle')
     },
@@ -258,9 +257,9 @@ export default {
     &-item {
       padding: 0 40px 0 0;
       &--calendar {
-        margin-top: -23px;
+        margin-right: 12px;
         @media (max-width: $screen-sm) {
-          margin-left: 27px;
+          margin-right: 40px;
         }
       }
       &:last-child {

@@ -48,6 +48,7 @@
               <a
                 :href="showDropdown ? calendarUrl(option.key) : null"
                 class="option"
+                :class="`option--${type}`"
                 target="_blank"
                 :aria-label="`Save the date in your ${option.name} calendar`"
               >
@@ -149,12 +150,10 @@ export default {
 
 <style lang="scss" scoped>
 .dropdown-wrapper {
-  --height-closed: 66px;
-
   position: relative;
   display: inline-block;
-  width: 142px;
-  height: var(--height-closed);
+  width: 182px;
+  height: 58px;
 }
 
 .dropdown {
@@ -165,17 +164,24 @@ export default {
   display: flex;
   flex-direction: column;
   width: 216px;
-  height: var(--height-closed);
-  padding: 0 32px;
+  height: 66px;
+  padding: 20px 12px 0 18px;
   background-color: var(--bg-button--light);
   border-color: var(--bc-button--light);
+  border-width: 3px;
   border-radius: 32px;
   box-shadow: 6px 8px 0 0 var(--bs-color);
   cursor: pointer;
-  transition: height 0.26s ease;
+  transition: all 0.26s ease;
+  &--open {
+    --bs-color: var(--bs-button--light);
+
+    height: 280px;
+    border-style: solid;
+  }
   &--dark,
   &--light {
-    border: 3px solid;
+    border-style: solid;
   }
   &--dark {
     --bs-color: var(--bs-button--dark);
@@ -188,9 +194,6 @@ export default {
 
     border-color: var(--bc-button--light);
     border-radius: 32px;
-  }
-  &--open {
-    height: 280px;
   }
 
   &__options {
@@ -209,7 +212,7 @@ export default {
   &__title {
     display: flex;
     justify-content: space-evenly;
-    padding: 18px 0 0;
+    padding: 0;
     color: var(--fc-primary);
     font-weight: var(--fw-bold);
     font-size: var(--fs-small);
@@ -237,6 +240,9 @@ export default {
   font-weight: var(--fw-regular);
   font-size: var(--fs-smaller);
   transition: color 0.3s ease-in;
+  &--dark {
+    color: var(--fc-light);
+  }
   &:hover,
   &:focus {
     color: var(--fc-primary);
