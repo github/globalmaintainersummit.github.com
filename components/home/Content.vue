@@ -38,6 +38,7 @@ export default {
 <style lang="scss" scoped>
 .content {
   position: relative;
+  z-index: var(--z-index-dropdown);
   margin-top: 64px;
   @media screen and (min-width: $screen-sm) {
     margin-top: 120px;
@@ -62,7 +63,7 @@ export default {
     max-width: 902px;
     margin: 0 auto;
     margin-top: 56px;
-    padding: 20px 32px;
+    padding: 20px 32px 0;
     @media screen and (min-width: $screen-sm) {
       margin-top: 200px;
       padding: 40px 60px;
@@ -103,7 +104,7 @@ export default {
   display: flex;
   align-items: center;
   max-width: 786px;
-  margin: 80px auto 0;
+  margin: 80px 0;
   &-button {
     min-width: 300px;
   }
