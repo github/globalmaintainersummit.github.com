@@ -12,13 +12,13 @@
       "break": "short",
       "talks": [
         {
+          "speakerHandler": "brandonroberts"
+        },
+        {
+          "speakerHandler": "rnjudge"
+        },
+        {
           "speakerHandler": "bwplotka"
-        },
-        {
-          "speakerHandler": "helen"
-        },
-        {
-          "speakerHandler": "potatoqualitee"
         }
       ]
     },
@@ -29,13 +29,13 @@
       "break": "long",
       "talks": [
         {
-          "speakerHandler": "mylesborins"
-        },
-        {
           "speakerHandler": "balloob"
         },
         {
-          "speakerHandler": ""
+          "speakerHandler": "mylesborins"
+        },
+        {
+          "speakerHandler": "webchick"
         }
       ]
     },
@@ -52,7 +52,7 @@
           "speakerHandler": "lorenanicole"
         },
         {
-          "speakerHandler": "webchick"
+          "speakerHandler": "ashleygwilliams"
         }
       ]
     },
@@ -65,7 +65,7 @@
           "speakerHandler": "ifiokjr"
         },
         {
-          "speakerHandler": ""
+          "speakerHandler": "zkoppert"
         },
         {
           "speakerHandler": ""
