@@ -28,6 +28,10 @@ export default {
       type: Object,
       required: true,
     },
+    date: {
+      type: String,
+      required: true,
+    },
   },
   computed: {
     isTopic() {
@@ -41,7 +45,7 @@ export default {
         return this.content.time
       } else {
         return formatTime(
-          pdtToLocaleDate(this.content.time, this.selectedTimeZone)
+          pdtToLocaleDate(this.date, this.content.time, this.selectedTimeZone)
         )
       }
     },

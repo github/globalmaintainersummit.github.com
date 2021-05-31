@@ -1,5 +1,4 @@
 {
-  "date": "Wednesday ⌁ June 9, 2021",
   "slots": [
     {
       "time": "9:00 am",
@@ -7,62 +6,62 @@
       "break": "short"
     },
     {
-      "title": "Contributor Relations (more!)",
+      "title": "Contributor Relations",
       "hasDiscussions": true,
       "break": "short",
       "talks": [
         {
-          "speakerHandler": "potatoqualitee"
+          "speakerHandler": "brandonroberts"
         },
         {
-          "speakerHandler": "hpdang"
+          "speakerHandler": "rnjudge"
         },
         {
-          "speakerHandler": "eileencodes"
+          "speakerHandler": "bwplotka"
         }
       ]
     },
     {
-      "title": "Organiza-tional Auto-mation",
+      "title": "Maintainer Health",
       "time": "11:00 am",
       "hasDiscussions": false,
       "break": "long",
       "talks": [
         {
-          "speakerHandler": "mariatta"
+          "speakerHandler": "balloob"
         },
         {
-          "speakerHandler": "vertedinde"
+          "speakerHandler": "mylesborins"
         },
         {
-          "speakerHandler": "mikemcquaid"
+          "speakerHandler": "webchick"
         }
       ]
     },
     {
-      "title": "Into the Unknown",
+      "title": "Project Health",
       "time": "12:15 pm",
       "hasDiscussions": true,
       "break": "short",
       "talks": [
         {
-          "speakerHandler": ""
+          "speakerHandler": "helen"
         },
         {
-          "speakerHandler": ""
+          "speakerHandler": "lorenanicole"
         },
         {
-          "speakerHandler": ""
+          "speakerHandler": "ashleygwilliams"
         }
       ]
     },
     {
-      "title": "Talking Money",
+      "title": "Measuring Success",
       "time": "1:30 pm",
       "hasDiscussions": false,
       "talks": [
         {
-          "speakerHandler": ""
+          "speakerHandler": "ifiokjr"
         },
         {
           "speakerHandler": ""
