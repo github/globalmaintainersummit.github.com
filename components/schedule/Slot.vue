@@ -1,8 +1,8 @@
 <template>
   <div class="slot" :class="isTopic && 'slot--topic'">
     <p v-if="content.time" class="slot__time">
-      <span>{{ content.time }}</span>
-      <span class="slot__time--timezone">PDT</span>
+      <span>{{ time }}</span>
+      <span class="slot__time--timezone">{{ selectedTimeZone }}</span>
     </p>
     <p class="slot__title" :class="isTopic && 'slot__title--topic'">
       {{ content.title }}
@@ -30,6 +30,12 @@ export default {
   computed: {
     isTopic() {
       return this.content.talks?.length > 1
+    },
+    selectedTimeZone() {
+      return this.$store.state.selectedTimeZone
+    },
+    time() {
+      return this.content.time
     },
   },
 }

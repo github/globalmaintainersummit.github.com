@@ -15,17 +15,17 @@ export default {
         {
           label: 'PDT',
         },
-        {
-          label: 'CEST',
-        },
       ],
       selectedOption: 'PDT',
     }
   },
+  mounted() {
+    this.options.push({ label: this.$store.state.userTimeZone })
+  },
   methods: {
     changeTimeZone(option) {
-      console.log({ option })
       this.selectedOption = option
+      this.$store.commit('updateSelectedTimeZone', option)
     },
   },
 }
