@@ -258,6 +258,7 @@ export default {
       &--calendar {
         z-index: var(--z-index-dropdown);
         margin-right: 12px;
+        font-family: var(--ff-default);
       }
       &:last-child {
         padding: 0;
