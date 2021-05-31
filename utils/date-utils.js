@@ -14,6 +14,10 @@ export function formatDateShort(startDateString, endDateString) {
   const startDate = new Date(startDateString)
   const endDate = new Date(endDateString)
 
+  if (!isValidDate(startDate) || !isValidDate(endDate)) {
+    return ''
+  }
+
   const startDay = getDay(startDate)
   const startMonth = getMonth(startDate)
   const endDay = getDay(endDate)
@@ -34,6 +38,10 @@ export function formatDateShort(startDateString, endDateString) {
  */
 export function formatDateLong(dateString) {
   const date = new Date(dateString)
+
+  if (!isValidDate(date)) {
+    return ''
+  }
 
   const weekday = getWeekday(date)
   const day = getDay(date)
@@ -70,6 +78,16 @@ export function pdtToLocaleDate(date, time, timezone) {
   return datePDT.toLocaleString('en-US', {
     timeZone: timezone,
   })
+}
+
+/**
+ * Check if the given date is valid
+ *
+ * @param {Date} date
+ * @returns {Boolean}
+ */
+function isValidDate(date) {
+  return date instanceof Date && !isNaN(date)
 }
 
 /** Returns the day of a given date
