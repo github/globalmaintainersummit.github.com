@@ -1,9 +1,32 @@
 <template>
   <div class="switch">
-    <nuxt-link class="switch-button" to="/maintainers">Maintainers</nuxt-link>
-    <nuxt-link class="switch-button" to="/projects">Projects</nuxt-link>
+    <Component
+      :is="type"
+      v-for="option in options"
+      :key="option.label"
+      class="switch-button"
+      :to="option.to ? option.to : null"
+    >
+      {{ option.label }}
+    </Component>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    options: {
+      type: Array,
+      required: true,
+    },
+  },
+  computed: {
+    type() {
+      return this.options[0].to ? 'nuxt-link' : 'button'
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 .switch {
