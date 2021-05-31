@@ -13,10 +13,10 @@ export default {
     return {
       options: [
         {
-          label: 'PDT',
+          label: this.$store.state.defaultTimeZone,
         },
       ],
-      selectedOption: 'PDT',
+      selectedOption: this.$store.state.defaultTimeZone,
     }
   },
   mounted() {

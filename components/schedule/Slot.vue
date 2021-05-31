@@ -35,7 +35,31 @@ export default {
       return this.$store.state.selectedTimeZone
     },
     time() {
-      return this.content.time
+      if (this.selectedTimeZone === this.$store.state.defaultTimeZone) {
+        return this.content.time
+      } else {
+        return this.localTime()
+      }
+    },
+  },
+  methods: {
+    localTime() {
+      const datePDT = new Date(`2021-06-08 ${this.content.time} PDT`)
+      const dateLocale = datePDT.toLocaleString('en-US', {
+        timeZone: this.selectedTimeZone,
+      })
+
+      return this.formatTime(dateLocale)
+    },
+    /** Formats a full date to just the time in short format, e.g:
+     * "6/8/2021, 6:00:00 PM" --> "6:00 pm"
+     */
+    formatTime(time) {
+      const timeSplit = time.split(' ')
+      const hourFull = timeSplit[1] // 6:00:00
+      const hourShort = hourFull.substring(0, hourFull.length - 3) // 6:00
+      const period = timeSplit[2].toLowerCase() // pm
+      return hourShort.concat(' ').concat(period) // 6:00 pm
     },
   },
 }
