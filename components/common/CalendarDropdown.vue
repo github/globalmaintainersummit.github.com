@@ -1,12 +1,7 @@
 <template>
   <div>
     <focus-trap :active="showDropdown">
-      <div
-        class="dropdown-wrapper"
-        :class="{
-          'dropdown-wrapper--open': showDropdown,
-        }"
-      >
+      <div class="dropdown-wrapper">
         <div
           class="dropdown"
           :class="[
@@ -18,7 +13,12 @@
         >
           <button
             class="dropdown__title"
-            :class="`dropdown__title--${type}`"
+            :class="[
+              `dropdown__title--${type}`,
+              {
+                'dropdown__title--open': showDropdown,
+              },
+            ]"
             :aria-label="label"
             aria-haspopup="true"
             :aria-expanded="showDropdown"
@@ -48,7 +48,6 @@
               <a
                 :href="showDropdown ? calendarUrl(option.key) : null"
                 class="option"
-                :class="`option--${type}`"
                 target="_blank"
                 :aria-label="`Save the date in your ${option.name} calendar`"
               >
@@ -183,17 +182,18 @@ export default {
   &--light {
     border-style: solid;
   }
+  &--light {
+    --bs-color: var(--bs-button--light);
+  }
   &--dark {
     --bs-color: var(--bs-button--dark);
 
     background-color: var(--bg-button--dark);
     border-color: var(--bc-button--dark);
   }
-  &--light {
-    --bs-color: var(--bs-button--light);
-
+  &--dark#{&}--open {
+    background-color: var(--bg-button--light);
     border-color: var(--bc-button--light);
-    border-radius: 32px;
   }
 
   &__options {
@@ -220,8 +220,12 @@ export default {
     background: transparent;
     border: none;
     cursor: pointer;
+    transition: color 0.3s ease-in;
     &--dark {
       color: var(--fc-light);
+    }
+    &--dark#{&}--open {
+      color: var(--fc-primary);
     }
   }
 
@@ -240,9 +244,6 @@ export default {
   font-weight: var(--fw-regular);
   font-size: var(--fs-smaller);
   transition: color 0.3s ease-in;
-  &--dark {
-    color: var(--fc-light);
-  }
   &:hover,
   &:focus {
     color: var(--fc-primary);
