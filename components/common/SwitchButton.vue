@@ -5,7 +5,10 @@
       v-for="option in options"
       :key="option.label"
       class="switch-button"
+      :class="{ 'switch-button--selected': selectedOption === option.label }"
       :to="option.to ? option.to : null"
+      :aria-label="`Change the ${id} to ${option.label}`"
+      @click="$emit('click', option.label)"
     >
       {{ option.label }}
     </Component>
@@ -15,8 +18,16 @@
 <script>
 export default {
   props: {
+    id: {
+      type: String,
+      required: true,
+    },
     options: {
       type: Array,
+      required: true,
+    },
+    selectedOption: {
+      type: String,
       required: true,
     },
   },
@@ -28,7 +39,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .switch {
   display: flex;
   justify-content: center;
@@ -46,12 +57,17 @@ export default {
     padding: 40px 40px 0;
   }
 
+  button {
+    border: none;
+  }
+
   &-button {
     z-index: var(--z-index-switch-off);
     padding: 11px 32px 9px;
     color: var(--fc-default);
     background: var(--white-lilac);
     border-radius: 32px;
+    cursor: pointer;
     transition: color 0.4s ease, background 0.4s ease, opacity 0.4s ease;
     @media only screen and (min-width: $screen-xs) {
       padding: 11px 48px 9px;
@@ -74,7 +90,8 @@ export default {
     &:focus {
       color: var(--fc-primary);
     }
-    &.nuxt-link-exact-active {
+    &.nuxt-link-exact-active,
+    &--selected {
       z-index: var(--z-index-switch-on);
       color: var(--fc-light);
       background-image: linear-gradient(135deg, #c562f5 0%, #f68084 100%);

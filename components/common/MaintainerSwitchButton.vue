@@ -1,5 +1,5 @@
 <template>
-  <CommonSwitchButton :options="options" />
+  <CommonSwitchButton id="list" :options="options" />
 </template>
 
 <script>
