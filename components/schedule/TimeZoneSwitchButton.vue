@@ -3,6 +3,7 @@
     id="timezone"
     :options="options"
     :selected-option="selectedOption"
+    data-cy="timezoneSwitch"
     @click="changeTimeZone"
   />
 </template>

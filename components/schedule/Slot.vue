@@ -1,6 +1,6 @@
 <template>
-  <div class="slot" :class="isTopic && 'slot--topic'">
-    <p v-if="content.time" class="slot__time">
+  <div data-cy="slot" class="slot" :class="isTopic && 'slot--topic'">
+    <p v-if="content.time" class="slot__time" data-cy="slotTime">
       <span>{{ time }}</span>
       <span class="slot__time--timezone">{{ selectedTimeZone }}</span>
     </p>
