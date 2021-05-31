@@ -4,17 +4,30 @@
       <h1>
         {{ content.lead }}
       </h1>
-      <p>{{ content.date }}</p>
+      <p>{{ eventDates }}</p>
     </div>
   </section>
 </template>
 
 <script>
+import { formatDateShort } from '~/utils/date-utils'
+
 export default {
   props: {
     content: {
       type: Object,
       required: true,
+    },
+    dates: {
+      type: Object,
+      required: true,
+    },
+  },
+  computed: {
+    eventDates() {
+      const startDate = new Date(this.dates.startDate)
+      const endDate = new Date(this.dates.endDate)
+      return formatDateShort(startDate, endDate)
     },
   },
 }

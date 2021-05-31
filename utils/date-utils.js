@@ -8,14 +8,14 @@
  *
  * @param {Date} startDate
  * @param {Date} endDate
- * @param {String} locale
  * @returns {String}
  */
-export function formatDate(startDate, endDate, locale) {
+export function formatDateShort(startDate, endDate) {
   if (!isValidDate(startDate) || !isValidDate(endDate)) {
     return ''
   }
 
+  const locale = 'en-US'
   const startDay = startDate.getUTCDate()
   const startMonth = startDate.toLocaleDateString(locale, {
     month: 'long',
@@ -29,6 +29,10 @@ export function formatDate(startDate, endDate, locale) {
   return startMonth === endMonth
     ? `${startMonth} ${startDay}-${endDay}, ${year}`
     : `${startMonth} ${startDay} - ${endMonth} ${endDay}, ${year}`
+}
+
+export function formatDateLong() {
+  // TODO
 }
 
 /**
