@@ -6,57 +6,41 @@
  * For dates that belong to different months:
  * June 8 - July 9, 2021
  *
- * @param {Date} startDate
- * @param {Date} endDate
+ * @param {String} startDateString
+ * @param {String} endDateString
  * @returns {String}
  */
-export function formatDateShort(startDate, endDate) {
-  if (!isValidDate(startDate) || !isValidDate(endDate)) {
-    return ''
-  }
+export function formatDateShort(startDateString, endDateString) {
+  const startDate = new Date(startDateString)
+  const endDate = new Date(endDateString)
 
-  const locale = 'en-US'
-  const startDay = startDate.getUTCDate()
-  const startMonth = startDate.toLocaleDateString(locale, {
-    month: 'long',
-  })
-  const endDay = endDate.getUTCDate()
-  const endMonth = endDate.toLocaleDateString(locale, {
-    month: 'long',
-  })
-  const year = startDate.getUTCFullYear()
+  const startDay = getDay(startDate)
+  const startMonth = getMonth(startDate)
+  const endDay = getDay(endDate)
+  const endMonth = getMonth(endDate)
+  const year = getYear(startDate)
 
   return startMonth === endMonth
     ? `${startMonth} ${startDay}-${endDay}, ${year}`
     : `${startMonth} ${startDay} - ${endMonth} ${endDay}, ${year}`
 }
 
-export function formatDateLong() {
-  // TODO
-}
-
 /**
- * Check if the given date is valid
+ *Formats a single date with the following format:
+  "2021-06-08" --> Tuesday ⌁ June 8, 2021
  *
  * @param {Date} date
- * @returns {Boolean}
- */
-function isValidDate(date) {
-  return date instanceof Date && !isNaN(date)
-}
-
-/**
- *Converts the given date from PDT timezone to the given timezone.
- *
- * @param {String} date
- * @param {String} timezone
  * @returns {String}
  */
-export function pdtToLocaleDate(date, timezone) {
-  const datePDT = new Date(`2021-06-08 ${date} PDT`)
-  return datePDT.toLocaleString('en-US', {
-    timeZone: timezone,
-  })
+export function formatDateLong(dateString) {
+  const date = new Date(dateString)
+
+  const weekday = getWeekday(date)
+  const day = getDay(date)
+  const month = getMonth(date)
+  const year = getYear(date)
+
+  return `${weekday} ⌁ ${month} ${day}, ${year}`
 }
 
 /** Formats a full date to just the time in short format, e.g:
@@ -71,4 +55,59 @@ export function formatTime(time) {
   const hourShort = hourFull.substring(0, hourFull.length - 3) // 6:00
   const period = timeSplit[2].toLowerCase() // pm
   return hourShort.concat(' ').concat(period) // 6:00 pm
+}
+
+/**
+ *Converts the given date from PDT timezone to the given timezone.
+ *
+ * @param {String} date
+ * @param {String} time
+ * @param {String} timezone
+ * @returns {String}
+ */
+export function pdtToLocaleDate(date, time, timezone) {
+  const datePDT = new Date(`${date} ${time} PDT`)
+  return datePDT.toLocaleString('en-US', {
+    timeZone: timezone,
+  })
+}
+
+/** Returns the day of a given date
+ *
+ * @param {String} date
+ * @returns {String}
+ */
+function getDay(date) {
+  return date.getUTCDate()
+}
+
+/** Returns the weekday of a given date, long version, e.g: Tuesday
+ *
+ * @param {String} date
+ * @returns {String}
+ */
+function getWeekday(date) {
+  return date.toLocaleDateString('en-US', {
+    weekday: 'long',
+  })
+}
+
+/** Returns the month of a given date, long version, e.g: June
+ *
+ * @param {String} date
+ * @returns {String}
+ */
+function getMonth(date) {
+  return date.toLocaleDateString('en-US', {
+    month: 'long',
+  })
+}
+
+/** Returns the year of a given date
+ *
+ * @param {String} date
+ * @returns {String}
+ */
+function getYear(date) {
+  return date.getUTCFullYear()
 }
