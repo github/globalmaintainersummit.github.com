@@ -25,9 +25,6 @@ export default {
       schedule,
     }
   },
-  mounted() {
-    this.$store.commit('updateUserTimeZone', this.$timezone())
-  },
 }
 </script>
 

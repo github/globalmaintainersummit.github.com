@@ -15,6 +15,10 @@ export default {
       navActive: false,
     }
   },
+  mounted() {
+    console.log('mounted', this.$timezone())
+    this.$store.commit('updateUserTimeZone', this.$timezone())
+  },
   methods: {
     toggleNav() {
       this.navActive = !this.navActive
