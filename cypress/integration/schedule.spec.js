@@ -27,6 +27,6 @@ describe('Schedule', () => {
   // })
 
   it('does not display the timezone switch when the user timezone is PDT', () => {
-    cy.get('[data-cy=timezoneSwitch]').should('not.exist');
+    cy.get('[data-cy=timezoneSwitch]').should('not.exist')
   })
 })
