@@ -9,19 +9,20 @@ describe('Schedule', () => {
   })
 
   it('changes the timezone when the user has a different timezone than PDT', () => {
-    cy.get('[data-cy=timezoneSwitch]').should('exist')
-    cy.get('[data-cy=slot] > [data-cy=slotTime]').then(($times) => {
-      const pdtTimeFirstSlot = $times[0].firstElementChild.innerText
-
-      cy.get('[data-cy=timezoneSwitch]').within(() => {
-        cy.get('[data-cy=option2]').click()
-      })
-
+    if (cy.get('[data-cy=timezoneSwitch]')) {
       cy.get('[data-cy=slot] > [data-cy=slotTime]').then(($times) => {
-        const localTimeFirstSlot = $times[0].firstElementChild.innerText
+        const pdtTimeFirstSlot = $times[0].firstElementChild.innerText
 
-        expect(pdtTimeFirstSlot).to.not.equal(localTimeFirstSlot)
+        cy.get('[data-cy=timezoneSwitch]').within(() => {
+          cy.get('[data-cy=option2]').click()
+        })
+
+        cy.get('[data-cy=slot] > [data-cy=slotTime]').then(($times) => {
+          const localTimeFirstSlot = $times[0].firstElementChild.innerText
+
+          expect(pdtTimeFirstSlot).to.not.equal(localTimeFirstSlot)
+        })
       })
-    })
+    }
   })
 })
