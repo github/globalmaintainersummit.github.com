@@ -8,7 +8,7 @@ describe('Schedule', () => {
     cy.contains('Wednesday ⌁ June 9, 2021')
   })
 
-  it.only('changes the timezone', () => {
+  it('changes the timezone', () => {
    cy.get('[data-cy=slot] > [data-cy=slotTime]').then(($times) => {
      const pdtTimeFirstSlot = $times[0].firstElementChild.innerText
 
