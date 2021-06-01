@@ -92,9 +92,9 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'transparent',
+      required: true,
       validator: (type) => {
-        return ['light', 'dark', 'transparent'].includes(type)
+        return ['light', 'dark'].includes(type)
       },
     },
   },
@@ -156,7 +156,9 @@ export default {
 }
 
 .dropdown {
-  --bs-color: transparent;
+  --bs-color: var(--bs-button--light);
+  --border-color: var(--bc-button--light);
+  --bg-color: var(--bg-button--light);
 
   position: absolute;
   top: 0;
@@ -165,35 +167,33 @@ export default {
   width: 216px;
   height: 66px;
   padding: 20px 12px 0 18px;
-  background-color: var(--bg-button--light);
-  border-color: var(--bc-button--light);
-  border-width: 3px;
+  background-color: var(--bg-color);
+  border: 3px solid var(--border-color);
   border-radius: 32px;
   box-shadow: 6px 8px 0 0 var(--bs-color);
   cursor: pointer;
   transition: all 0.26s ease;
   &--open {
-    --bs-color: var(--bs-button--light);
-
     height: 280px;
-    border-style: solid;
-  }
-  &--dark,
-  &--light {
-    border-style: solid;
   }
   &--light {
+    @media screen and (min-width: $screen-sm) {
+      --bs-color: transparent;
+      --border-color: transparent;
+    }
+  }
+  &--light#{&}--open {
     --bs-color: var(--bs-button--light);
+    --border-color: var(--bc-button--light);
   }
   &--dark {
     --bs-color: var(--bs-button--dark);
-
-    background-color: var(--bg-button--dark);
-    border-color: var(--bc-button--dark);
+    --border-color: var(--bc-button--dark);
+    --bg-color: var(--bg-button--dark);
   }
   &--dark#{&}--open {
-    background-color: var(--bg-button--light);
-    border-color: var(--bc-button--light);
+    --border-color: var(--bc-button--light);
+    --bg-color: var(--bg-button--light);
   }
 
   &__options {

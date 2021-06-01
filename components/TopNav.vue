@@ -36,7 +36,7 @@
           <div class="nav__wrapper">
             <ul class="nav__list">
               <li class="nav__list-item nav__list-item--calendar">
-                <CommonCalendarDropdown :type="isMobile && 'light'" />
+                <CommonCalendarDropdown type="light" />
               </li>
               <li class="nav__list-item" @click="toggleNav">
                 <CommonLink to="/maintainers">Maintainers</CommonLink>
@@ -79,13 +79,7 @@ export default {
       isScrolled: false,
       displayNavBar: true,
       lastScrollPosition: 0,
-      windowWidth: null,
     }
-  },
-  computed: {
-    isMobile() {
-      return this.windowWidth <= 680
-    },
   },
   mounted() {
     this.setIsScrolled()
@@ -98,13 +92,6 @@ export default {
 
     if (window.pageYOffset > 0) {
       this.isScrolled = true
-    }
-
-    this.$nextTick(() => {
-      this.windowWidth = window.innerWidth
-    })
-    window.onresize = () => {
-      this.windowWidth = window.innerWidth
     }
   },
   beforeDestroy() {
@@ -257,6 +244,7 @@ export default {
       padding: 0 40px 0 0;
       &--calendar {
         z-index: var(--z-index-dropdown);
+        margin-top: -8px;
         margin-right: 12px;
         font-family: var(--ff-default);
       }
