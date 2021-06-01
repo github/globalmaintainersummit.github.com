@@ -37,7 +37,8 @@ export function formatDateShort(startDateString, endDateString) {
  * @returns {String}
  */
 export function formatDateLong(dateString) {
-  const date = new Date(dateString)
+  // Creates a date from the given String adding the time so the date it's not a midnight and it doesn't change the actual weekday.
+  const date = new Date(dateString.concat(' 9:00 AM'))
 
   if (!isValidDate(date)) {
     return ''
@@ -57,11 +58,11 @@ export function formatDateLong(dateString) {
  * @param {String} date
  * @returns {String}
  */
-export function formatTime(time) {
-  const timeSplit = time.split(' ')
-  const hourFull = timeSplit[1] // 6:00:00
+export function formatTime(date) {
+  const dateSplit = date.split(' ')
+  const hourFull = dateSplit[1] // 6:00:00
   const hourShort = hourFull.substring(0, hourFull.length - 3) // 6:00
-  const period = timeSplit[2].toLowerCase() // pm
+  const period = dateSplit[2].toLowerCase() // pm
   return hourShort.concat(' ').concat(period) // 6:00 pm
 }
 
