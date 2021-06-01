@@ -17,6 +17,6 @@ export const mutations = {
 
 export const actions = {
   setUserTimezone({ commit }) {
-    commit('updateUserTimeZone', this.$timezone)
+    commit('updateUserTimeZone', this.$timezone())
   },
 }
