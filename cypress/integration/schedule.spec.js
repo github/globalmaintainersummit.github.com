@@ -8,19 +8,25 @@ describe('Schedule', () => {
     cy.contains('Wednesday ⌁ June 9, 2021')
   })
 
-  it('changes the timezone', () => {
-    cy.get('[data-cy=slot] > [data-cy=slotTime]').then(($times) => {
-      const pdtTimeFirstSlot = $times[0].firstElementChild.innerText
+  // it('changes the timezone when the user has a different timezone than PDT', () => {
+  //   // FIXME need to setup a different timezone for this test
+  //   cy.get('[data-cy=timezoneSwitch]').should('exist');
+  //   cy.get('[data-cy=slot] > [data-cy=slotTime]').then(($times) => {
+  //     const pdtTimeFirstSlot = $times[0].firstElementChild.innerText
 
-      cy.get('[data-cy=timezoneSwitch]').within(() => {
-        cy.get('[data-cy=option2]').click()
-      })
+  //     cy.get('[data-cy=timezoneSwitch]').within(() => {
+  //       cy.get('[data-cy=option2]').click()
+  //     })
 
-      cy.get('[data-cy=slot] > [data-cy=slotTime]').then(($times) => {
-        const localTimeFirstSlot = $times[0].firstElementChild.innerText
+  //     cy.get('[data-cy=slot] > [data-cy=slotTime]').then(($times) => {
+  //       const localTimeFirstSlot = $times[0].firstElementChild.innerText
 
-        expect(pdtTimeFirstSlot).to.not.equal(localTimeFirstSlot)
-      })
-    })
+  //       expect(pdtTimeFirstSlot).to.not.equal(localTimeFirstSlot)
+  //     })
+  //   })
+  // })
+
+  it('does not display the timezone switch when the user timezone is PDT', () => {
+    cy.get('[data-cy=timezoneSwitch]').should('not.exist');
   })
 })

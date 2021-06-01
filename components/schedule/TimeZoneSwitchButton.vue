@@ -1,5 +1,6 @@
 <template>
   <CommonSwitchButton
+    v-if="hasDifferentTimeZones"
     id="timezone"
     :options="options"
     :selected-option="selectedOption"
@@ -19,6 +20,13 @@ export default {
       ],
       selectedOption: this.$store.state.defaultTimeZone,
     }
+  },
+  computed: {
+    hasDifferentTimeZones() {
+      return (
+        this.$store.state.defaultTimeZone !== this.$store.state.userTimeZone
+      )
+    },
   },
   mounted() {
     this.options.push({ label: this.$store.state.userTimeZone })
