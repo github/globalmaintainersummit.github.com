@@ -25,6 +25,9 @@ export default {
       schedule,
     }
   },
+  mounted() {
+    this.$store.dispatch('setUserTimezone')
+  },
 }
 </script>
 

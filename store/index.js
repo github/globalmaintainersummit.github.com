@@ -1,7 +1,7 @@
 const defaultTimeZone = 'PDT'
 
 export const state = () => ({
-  userTimeZone: defaultTimeZone,
+  userTimeZone: null,
   defaultTimeZone,
   selectedTimeZone: defaultTimeZone,
 })

@@ -15,9 +15,6 @@ export default {
       navActive: false,
     }
   },
-  mounted() {
-    this.$store.dispatch('setUserTimezone')
-  },
   methods: {
     toggleNav() {
       this.navActive = !this.navActive
