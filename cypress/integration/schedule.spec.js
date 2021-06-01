@@ -16,7 +16,7 @@ describe('Schedule', () => {
         cy.get('[data-cy=option2]').click()
       })
 
-      cy.get('[data-cy=slot] > [data-cy=slotTime]').then((_, $time) => {
+      cy.get('[data-cy=slot] > [data-cy=slotTime]').then(($times) => {
         const localTimeFirstSlot = $times[0].firstElementChild.innerText
 
         expect(pdtTimeFirstSlot).to.not.equal(localTimeFirstSlot)
