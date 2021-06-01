@@ -29,7 +29,7 @@ export default {
     },
     selectedOption: {
       type: String,
-      required: true,
+      default: null,
     },
   },
   computed: {
