@@ -26,6 +26,8 @@ export default {
 
 <style lang="scss" scoped>
 .maintainers {
+  @include section();
+
   display: flex;
   flex-direction: column;
   align-items: center;
