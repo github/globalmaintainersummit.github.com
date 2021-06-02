@@ -14,9 +14,3 @@ export const mutations = {
     state.selectedTimeZone = newTimeZone
   },
 }
-
-// export const actions = {
-//   setUserTimezone({ commit }) {
-//     commit('updateUserTimeZone', this.$timezone())
-//   },
-// }
