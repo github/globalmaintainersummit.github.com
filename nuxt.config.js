@@ -74,12 +74,4 @@ export default {
       scss: { sourceMap: false },
     },
   },
-
-  vue: {
-    // TODO REMOVE THIS
-    config: {
-      productionTip: true,
-      devtools: false,
-    },
-  },
 }
