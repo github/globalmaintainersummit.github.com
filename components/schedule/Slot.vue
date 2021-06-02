@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import { formatTime, pdtToLocaleDate } from '~/utils/date-utils'
 
 export default {
@@ -34,14 +35,12 @@ export default {
     },
   },
   computed: {
+    ...mapState(['defaultTimeZone', 'selectedTimeZone']),
     isTopic() {
       return this.content.talks?.length > 1
     },
-    selectedTimeZone() {
-      return this.$store.state.selectedTimeZone
-    },
     time() {
-      if (this.selectedTimeZone === this.$store.state.defaultTimeZone) {
+      if (this.selectedTimeZone === this.defaultTimeZone) {
         return this.content.time
       } else {
         return formatTime(

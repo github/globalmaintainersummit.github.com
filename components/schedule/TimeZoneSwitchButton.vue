@@ -1,6 +1,6 @@
 <template>
   <CommonSwitchButton
-    v-if="hasDifferentTimeZones"
+    v-if="defaultTimeZone !== userTimeZone"
     id="timezone"
     :options="options"
     :selected-option="selectedTimeZone"
@@ -20,11 +20,6 @@ export default {
   },
   computed: {
     ...mapState(['defaultTimeZone', 'userTimeZone', 'selectedTimeZone']),
-    hasDifferentTimeZones() {
-      return (
-        this.$store.state.defaultTimeZone !== this.$store.state.userTimeZone
-      )
-    },
     options() {
       return [
         {
