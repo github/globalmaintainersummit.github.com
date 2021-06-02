@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { format } from 'date-fns-tz'
 import { mapMutations, mapState } from 'vuex'
 
 export default {
@@ -20,13 +21,16 @@ export default {
   },
   computed: {
     ...mapState(['defaultTimeZone', 'userTimeZone', 'selectedTimeZone']),
+    userTimeZoneFormated() {
+      return format(new Date(), 'zzz', { timeZone: this.userTimeZone })
+    },
     options() {
       return [
         {
           label: this.defaultTimeZone,
         },
         {
-          label: this.userTimeZone,
+          label: this.userTimeZoneFormated,
         },
       ]
     },
