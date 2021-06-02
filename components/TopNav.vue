@@ -35,11 +35,8 @@
         <div class="nav__container">
           <div class="nav__wrapper">
             <ul class="nav__list">
-              <li class="nav__list-item">
-                <CommonCalendarDropdown
-                  type="nav"
-                  class="nav__list-item--calendar"
-                />
+              <li class="nav__list-item nav__list-item--calendar">
+                <CommonCalendarDropdown type="light" />
               </li>
               <li class="nav__list-item" @click="toggleNav">
                 <CommonLink to="/maintainers">Maintainers</CommonLink>
@@ -232,6 +229,7 @@ export default {
   }
 
   .nav__list {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -242,12 +240,13 @@ export default {
     line-height: 1;
     list-style: none;
     &-item {
+      z-index: var(--z-index-content);
       padding: 0 40px 0 0;
       &--calendar {
-        margin-top: -23px;
-        @media (max-width: $screen-sm) {
-          margin-left: 27px;
-        }
+        z-index: var(--z-index-dropdown);
+        margin-top: -8px;
+        margin-right: 12px;
+        font-family: var(--ff-default);
       }
       &:last-child {
         padding: 0;
@@ -285,6 +284,9 @@ export default {
           margin: 32px 0;
           padding: 0 0 0 0;
           text-align: center;
+          &--calendar {
+            margin-right: 40px;
+          }
           a {
             color: var(--fc-light);
             font-size: var(--fs-large);

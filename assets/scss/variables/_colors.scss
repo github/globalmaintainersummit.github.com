@@ -45,6 +45,12 @@
   --bg-hamburger--open: var(--white);
   --bg-feedback--success: var(--pastel-green);
   --bg-feedback--warning: var(--anakiwa);
+  --bg-button--light: var(--white);
+  --bg-button--dark: var(--navy);
+
+  // Border Colors
+  --bc-button--light: var(--purple);
+  --bc-button--dark: var(--white);
 
   // Font Colors
   --fc-default: var(--navy);
@@ -58,6 +64,8 @@
 
   // Box shadow
   --bs-header: var(--stratos);
+  --bs-button--light: var(--deep-purple);
+  --bs-button--dark: var(--purple);
 
   // Others
   --underline-color: var(--salmon);

@@ -1,31 +1,22 @@
 <template>
   <div>
     <focus-trap :active="showDropdown">
-      <CommonCustomButton
-        v-if="type == 'button' && !showDropdown"
-        icon="calendar"
-        icon-suffix
-        @click="toggleDropdown"
-      >
-        Save the Date
-      </CommonCustomButton>
-      <div
-        v-else
-        class="dropdown-wrapper"
-        :class="[
-          `dropdown-wrapper--${type}`,
-          {
-            'dropdown-wrapper--open': showDropdown,
-          },
-        ]"
-      >
-        <div class="dropdown" :class="showDropdown && 'dropdown--open'">
+      <div class="dropdown-wrapper">
+        <div
+          class="dropdown"
+          :class="[
+            `dropdown--${type}`,
+            {
+              'dropdown--open': showDropdown,
+            },
+          ]"
+        >
           <button
             class="dropdown__title"
             :class="[
               `dropdown__title--${type}`,
               {
-                'dropdown__title--nav-open': showDropdown,
+                'dropdown__title--open': showDropdown,
               },
             ]"
             :aria-label="label"
@@ -37,11 +28,10 @@
             @keyup.esc="showDropdown = false"
           >
             {{ title }}
-            <CloseIcon
-              class="dropdown__close"
-              :class="showDropdown && 'dropdown__close--visible'"
-              aria-hidden="true"
-            />
+            <div class="dropwdown__icon">
+              <CloseIcon v-if="showDropdown" aria-hidden="true" />
+              <DropArrow v-else aria-hidden="true" />
+            </div>
           </button>
 
           <ul
@@ -85,6 +75,7 @@
 import { google, outlook, office365, yahoo, ics } from 'calendar-link'
 import { FocusTrap } from 'focus-trap-vue'
 import CloseIcon from '~/assets/svg/icons/close.svg?inline'
+import DropArrow from '~/assets/svg/icons/drop_arrow.svg?inline'
 
 const KEY_CALENDAR_APPLE = 'apple'
 const KEY_CALENDAR_GOOGLE = 'google'
@@ -96,13 +87,14 @@ export default {
   components: {
     FocusTrap,
     CloseIcon,
+    DropArrow,
   },
   props: {
     type: {
       type: String,
-      default: null,
+      required: true,
       validator: (type) => {
-        return ['nav', 'button'].includes(type)
+        return ['light', 'dark'].includes(type)
       },
     },
   },
@@ -157,56 +149,55 @@ export default {
 
 <style lang="scss" scoped>
 .dropdown-wrapper {
-  --dropdown-height: 280px;
-  --dropdown-width-default: 196px;
-  --wrapper-width-default: 142px;
-  --dropdown-width: var(--dropdown-width-default);
-  --wrapper-width: var(--wrapper-width-default);
-
-  @media (max-width: $screen-sm) {
-    &--nav {
-      --dropdown-width: 100%;
-      --wrapper-width: 100%;
-    }
-    &--open {
-      transform: translateX(35%);
-    }
-  }
-
   position: relative;
   display: inline-block;
-  width: var(--wrapper-width);
+  width: 182px;
+  height: 58px;
 }
 
 .dropdown {
+  --bs-color: var(--bs-button--light);
+  --border-color: var(--bc-button--light);
+  --bg-color: var(--bg-button--light);
+
   position: absolute;
   top: 0;
-  display: block;
-  width: var(--dropdown-width);
-  height: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 216px;
+  height: 66px;
+  padding: 20px 12px 0 18px;
+  background-color: var(--bg-color);
+  border: 3px solid var(--border-color);
+  border-radius: 32px;
+  box-shadow: 6px 8px 0 0 var(--bs-color);
   cursor: pointer;
-  transition: height 0.26s ease;
+  transition: all 0.26s ease;
   &--open {
-    --dropdown-width: var(--dropdown-width-default);
-    --wrapper-width: var(--wrapper-width-default);
-
-    width: var(--dropdown-width);
-    height: var(--dropdown-height);
-    margin: -24px;
-    padding: 24px 12px 24px 24px;
-    background-color: var(--bg-body);
-    border-radius: 24px;
-    box-shadow: 0 16px 24px 0 rgba(13, 9, 16, 0.08),
-      0 8px 16px 0 rgba(13, 9, 16, 0.12);
-
-    .dropdown__title--nav {
-      @media (max-width: $screen-sm) {
-        color: var(--fc-primary);
-      }
+    height: 280px;
+  }
+  &--light {
+    @media screen and (min-width: $screen-sm) {
+      --bs-color: transparent;
+      --border-color: transparent;
     }
+  }
+  &--light#{&}--open {
+    --bs-color: var(--bs-button--light);
+    --border-color: var(--bc-button--light);
+  }
+  &--dark {
+    --bs-color: var(--bs-button--dark);
+    --border-color: var(--bc-button--dark);
+    --bg-color: var(--bg-button--dark);
+  }
+  &--dark#{&}--open {
+    --border-color: var(--bc-button--light);
+    --bg-color: var(--bg-button--light);
   }
 
   &__options {
+    padding-top: 12px;
     list-style-type: none;
     transform: scaleY(0);
     transform-origin: top;
@@ -219,39 +210,29 @@ export default {
   }
 
   &__title {
-    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-evenly;
     padding: 0;
     color: var(--fc-primary);
     font-weight: var(--fw-bold);
     font-size: var(--fs-small);
+    font-family: var(--ff-secondary);
     background: transparent;
     border: none;
     cursor: pointer;
-
-    &--nav {
-      @media (max-width: $screen-sm) {
-        color: var(--fc-light);
-        font-size: var(--fs-large);
-        font-family: var(--ff-title);
-        &-open {
-          font-weight: var(--fw-bold);
-          font-size: var(--fs-small);
-          font-family: var(--ff-secondary);
-        }
-      }
+    transition: color 0.3s ease-in;
+    &--dark {
+      color: var(--fc-light);
+    }
+    &--dark#{&}--open {
+      color: var(--fc-primary);
     }
   }
 
-  &__close {
+  &__icon {
     margin-left: 8px;
     color: var(--bg-close-icon);
-    font-size: smaller;
-    visibility: hidden;
     cursor: pointer;
-
-    &--visible {
-      visibility: visible;
-    }
   }
 }
 
