@@ -15,11 +15,6 @@
 export default {
   data() {
     return {
-      options: [
-        {
-          label: this.$store.state.defaultTimeZone,
-        },
-      ],
       selectedOption: this.$store.state.defaultTimeZone,
     }
   },
@@ -29,9 +24,16 @@ export default {
         this.$store.state.defaultTimeZone !== this.$store.state.userTimeZone
       )
     },
-  },
-  mounted() {
-    this.options.push({ label: this.$store.state.userTimeZone })
+    options() {
+      return [
+        {
+          label: this.$store.state.defaultTimeZone,
+        },
+        {
+          label: this.$store.state.userTimeZone,
+        },
+      ]
+    },
   },
   methods: {
     changeTimeZone(option) {
