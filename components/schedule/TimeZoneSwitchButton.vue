@@ -3,20 +3,23 @@
     v-if="hasDifferentTimeZones"
     id="timezone"
     :options="options"
-    :selected-option="selectedOption"
+    :selected-option="selectedTimeZone"
     data-cy="timezoneSwitch"
-    @click="changeTimeZone"
+    @click="updateSelectedTimeZone"
   />
 </template>
 
 <script>
+import { mapMutations, mapState } from 'vuex'
+
 export default {
   data() {
     return {
-      selectedOption: this.$store.state.defaultTimeZone,
+      selectedOption: this.defaultTimeZone,
     }
   },
   computed: {
+    ...mapState(['defaultTimeZone', 'userTimeZone', 'selectedTimeZone']),
     hasDifferentTimeZones() {
       return (
         this.$store.state.defaultTimeZone !== this.$store.state.userTimeZone
@@ -25,19 +28,16 @@ export default {
     options() {
       return [
         {
-          label: this.$store.state.defaultTimeZone,
+          label: this.defaultTimeZone,
         },
         {
-          label: this.$store.state.userTimeZone,
+          label: this.userTimeZone,
         },
       ]
     },
   },
   methods: {
-    changeTimeZone(option) {
-      this.selectedOption = option
-      this.$store.commit('updateSelectedTimeZone', option)
-    },
+    ...mapMutations(['updateSelectedTimeZone']),
   },
 }
 </script>
