@@ -26,6 +26,7 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "calendar-link": "^2.1.1",
     "core-js": "^3.13.1",
+    "date-fns": "^1.30.1",
     "focus-trap": "^6.4.0",
     "focus-trap-vue": "^1.1.1",
     "nuxt": "^2.15.6",
