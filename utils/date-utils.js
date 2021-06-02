@@ -38,7 +38,7 @@ export function formatDateShort(startDateString, endDateString) {
  */
 export function formatDateLong(dateString) {
   // Creates a date from the given String adding the time so the date it's not a midnight and it doesn't change the actual weekday.
-  const date = new Date(dateString.concat(' 9:00 AM'))
+  const date = new Date(dateString.concat(' 9:00 AM')) // TODO use the time of the first slot instead of hardcoded
 
   if (!isValidDate(date)) {
     return ''
