@@ -1,12 +1,14 @@
 <template>
-  <CommonSwitchButton
-    v-if="hasDifferentTimeZones"
-    id="timezone"
-    :options="options"
-    :selected-option="selectedOption"
-    data-cy="timezoneSwitch"
-    @click="changeTimeZone"
-  />
+  <client-only>
+    <CommonSwitchButton
+      v-if="hasDifferentTimeZones"
+      id="timezone"
+      :options="options"
+      :selected-option="selectedOption"
+      data-cy="timezoneSwitch"
+      @click="changeTimeZone"
+    />
+  </client-only>
 </template>
 
 <script>
