@@ -39,7 +39,7 @@ describe('Home', () => {
     cy.findByText('hosted by GitHub')
   })
 
-  it.only('expands and collapses the save the date button in the top nav', () => {
+  it('expands and collapses the save the date button in the top nav', () => {
     cy.get('[data-cy=navigation]').within(() => {
       cy.findByText('Save the Date').click()
       cy.findByText('Apple').should('be.visible')
