@@ -62,13 +62,10 @@
       "hasDiscussions": false,
       "talks": [
         {
-          "speakerHandler": "ifiokjr"
+          "speakerHandler": "vertedinde"
         },
         {
-          "speakerHandler": ""
-        },
-        {
-          "speakerHandler": ""
+          "speakerHandler": "zkoppert"
         }
       ]
     },
