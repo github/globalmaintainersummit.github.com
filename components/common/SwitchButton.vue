@@ -5,7 +5,9 @@
       v-for="(option, index) in options"
       :key="option.label"
       class="switch-button"
-      :class="{ 'switch-button--selected': selectedOption === option.label }"
+      :class="{
+        'switch-button--selected': selectedOption === option.label,
+      }"
       :to="option.to ? option.to : null"
       :data-cy="`option${index + 1}`"
       :aria-label="`Change the ${id} to ${option.label}`"
