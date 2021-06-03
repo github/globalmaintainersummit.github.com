@@ -1,0 +1,31 @@
+{
+    "handler": "zkoppert",
+    "featured": false,
+    "profile": {
+      "name": "Zack Koppert",
+      "bio": "<p>Zack is a Senior DevOps Engineer on the Professional Services Team at GitHub and helps customers adopt GitHub and guide them through DevSecOps transformations. He's a maintainer on Super Linter and Rally. Before GitHub, he founded and led the Open Source Office at Tektronix focusing on both Open Source and creating an InnerSource culture. Zack lives in Oregon with his wife, son, and 2 cats and enjoys dirt bike racing and guitars.</p>",
+      "links": [
+        {
+          "platform": "github",
+          "url": "https://github.com/zkoppert"
+        },
+        {
+          "platform": "twitter",
+          "url": "https://twitter.com/ZacheryK89"
+        }
+      ],
+      "sponsorLink": ""
+    },
+    "project": {
+      "name": "Super-Linter",
+      "description": "<p>Combination of multiple linters to install as a GitHub Action.</p>",
+      "links": [
+        {
+          "platform": "github",
+          "url": "https://github.com/github/super-linter"
+        }
+      ],
+      "sponsorLink": ""
+    },
+    "talkTitle": "Quick start to OSS health metrics"
+  }
