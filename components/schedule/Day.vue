@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import { formatDateLong } from '~/utils/date-utils'
 
 export default {
@@ -22,8 +23,10 @@ export default {
     },
   },
   computed: {
+    ...mapState(['selectedTimeZone']),
     eventDate() {
-      return formatDateLong(this.date)
+      const timeFirstSlot = this.content.slots[0].time
+      return formatDateLong(this.date, timeFirstSlot, this.selectedTimeZone)
     },
   },
 }
