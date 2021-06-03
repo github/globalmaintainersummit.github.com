@@ -8,8 +8,9 @@ describe('Schedule', () => {
     cy.contains('Wednesday ⌁ June 9, 2021')
   })
 
-  it('changes the timezone when the user has a different timezone than PDT', () => {
-    if (cy.get('[data-cy=timezoneSwitch]')) {
+  it('changes the timezone when the user has a different timezone than America/Los_Angeles', () => {
+    cy.window().then((window) => {
+      window.updateUserTimeZone('Europe/Madrid')
       cy.get('[data-cy=slot] > [data-cy=slotTime]').then(($times) => {
         const pdtTimeFirstSlot = $times[0].firstElementChild.innerText
 
@@ -21,8 +22,10 @@ describe('Schedule', () => {
           const localTimeFirstSlot = $times[0].firstElementChild.innerText
 
           expect(pdtTimeFirstSlot).to.not.equal(localTimeFirstSlot)
+          expect(pdtTimeFirstSlot).to.equal('9:00 am')
+          expect(localTimeFirstSlot).to.equal('6:00 pm')
         })
       })
-    }
+    })
   })
 })
