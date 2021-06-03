@@ -3,9 +3,20 @@ describe('Schedule', () => {
     cy.visit('/schedule')
   })
 
-  it('displays the correct dates', () => {
+  it('displays the correct dates for America/Los_Angeles time zone', () => {
     cy.contains('Tuesday ⌁ June 8, 2021')
     cy.contains('Wednesday ⌁ June 9, 2021')
+  })
+
+  it('displays the correct dates for Asia/Magadan time zone', () => {
+    cy.window().then((window) => {
+      window.updateUserTimeZone('Asia/Magadan')
+      cy.get('[data-cy=timezoneSwitch]').within(() => {
+        cy.get('[data-cy=option2]').click()
+      })
+      cy.contains('Wednesday ⌁ June 9, 2021')
+      cy.contains('Thursday ⌁ June 10, 2021')
+    })
   })
 
   it('changes the timezone when the user has a different timezone than America/Los_Angeles', () => {
