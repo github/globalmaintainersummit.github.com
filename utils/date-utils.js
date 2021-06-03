@@ -57,16 +57,6 @@ export function formatDateLong(dateString) {
   return `${weekday} ⌁ ${month} ${day}, ${year}`
 }
 
-/** Formats a full date to just the time in short format, e.g:
- * "6:00 pm"
- *
- * @param {String} date
- * @returns {String}
- */
-export function formatTime(date) {
-  return format(date, TIME_FORMAT)
-}
-
 /**
  *Converts the given date from PDT timezone to the given timezone.
  *
