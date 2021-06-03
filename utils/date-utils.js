@@ -58,18 +58,24 @@ export function formatDateLong(dateString, timeString, timeZone) {
 }
 
 /**
- *Converts the given date from PDT timezone to the given timezone.
+ *Converts the given date from PDT timezone to the given timezone time.
  *
  * @param {String} date
  * @param {String} timezone
  * @returns {String}
  */
 export function getLocalTime(date, timeZone) {
-  // const utcDate = zonedTimeToUtc(date, IANA_PDT_TIMEZONE)
   const zonedDate = getLocalDate(date, timeZone)
   return format(zonedDate, TIME_FORMAT)
 }
 
+/**
+ *Converts the given date from PDT timezone to the given timezone date.
+ *
+ * @param {String} date
+ * @param {String} timezone
+ * @returns {String}
+ */
 function getLocalDate(date, timeZone) {
   const utcDate = zonedTimeToUtc(date, IANA_PDT_TIMEZONE)
   const zonedDate = utcToZonedTime(utcDate, timeZone)
