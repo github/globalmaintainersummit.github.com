@@ -21,7 +21,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { formatTime, pdtToLocaleDate } from '~/utils/date-utils'
+import { getLocalTime } from '~/utils/date-utils'
 
 export default {
   props: {
@@ -35,18 +35,15 @@ export default {
     },
   },
   computed: {
-    ...mapState(['defaultTimeZone', 'selectedTimeZone']),
+    ...mapState(['selectedTimeZone', 'defaultTimeZone']),
     isTopic() {
       return this.content.talks?.length > 1
     },
     time() {
-      if (this.selectedTimeZone === this.defaultTimeZone) {
-        return this.content.time
-      } else {
-        return formatTime(
-          pdtToLocaleDate(this.date, this.content.time, this.selectedTimeZone)
-        )
-      }
+      return getLocalTime(
+        `${this.date} ${this.content.time}:00`,
+        this.selectedTimeZone
+      )
     },
   },
 }

@@ -1,14 +1,15 @@
-const defaultTimeZone = 'PDT'
+import { IANA_PDT_TIMEZONE, PDT_TIMEZONE } from '~/utils/date-utils'
 
 export const state = () => ({
-  userTimeZone: null,
-  defaultTimeZone,
-  selectedTimeZone: defaultTimeZone,
+  userTimeZoneIANA: null,
+  defaultTimeZone: PDT_TIMEZONE,
+  defaultTimeZoneIANA: IANA_PDT_TIMEZONE,
+  selectedTimeZone: IANA_PDT_TIMEZONE,
 })
 
 export const mutations = {
   updateUserTimeZone(state, newTimeZone) {
-    state.userTimeZone = newTimeZone
+    state.userTimeZoneIANA = newTimeZone
   },
   updateSelectedTimeZone(state, newTimeZone) {
     state.selectedTimeZone = newTimeZone

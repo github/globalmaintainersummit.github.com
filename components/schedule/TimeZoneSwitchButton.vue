@@ -1,6 +1,6 @@
 <template>
   <CommonSwitchButton
-    v-if="defaultTimeZone !== userTimeZone"
+    v-if="defaultTimeZoneIANA !== userTimeZoneIANA"
     id="timezone"
     :options="options"
     :selected-option="selectedTimeZone"
@@ -10,27 +10,23 @@
 </template>
 
 <script>
-import { format } from 'date-fns-tz'
 import { mapMutations, mapState } from 'vuex'
 
 export default {
-  data() {
-    return {
-      selectedOption: this.defaultTimeZone,
-    }
-  },
   computed: {
-    ...mapState(['defaultTimeZone', 'userTimeZone', 'selectedTimeZone']),
-    userTimeZoneFormated() {
-      return format(new Date(), 'zzz', { timeZone: this.userTimeZone })
-    },
+    ...mapState([
+      'defaultTimeZone',
+      'defaultTimeZoneIANA',
+      'userTimeZoneIANA',
+      'selectedTimeZone',
+    ]),
     options() {
       return [
         {
-          label: this.defaultTimeZone,
+          label: this.defaultTimeZoneIANA,
         },
         {
-          label: this.userTimeZoneFormated,
+          label: this.userTimeZoneIANA,
         },
       ]
     },

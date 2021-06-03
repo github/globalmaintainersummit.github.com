@@ -1,3 +1,9 @@
+import { zonedTimeToUtc, utcToZonedTime, format } from 'date-fns-tz'
+
+const TIME_FORMAT = 'h:mm aaa'
+export const PDT_TIMEZONE = 'PDT'
+export const IANA_PDT_TIMEZONE = 'America/Los_Angeles' // This is one of the timezones that belong to PDT timing in IANA timezones
+
 /**
  * Formats two given dates with the following patterns:
  * For dates within the same month:
@@ -53,32 +59,26 @@ export function formatDateLong(dateString) {
 }
 
 /** Formats a full date to just the time in short format, e.g:
- * "6/8/2021, 6:00:00 PM" --> "6:00 pm"
+ * "6:00 pm"
  *
  * @param {String} date
  * @returns {String}
  */
 export function formatTime(date) {
-  const dateSplit = date.split(' ')
-  const hourFull = dateSplit[1] // 6:00:00
-  const hourShort = hourFull.substring(0, hourFull.length - 3) // 6:00
-  const period = dateSplit[2].toLowerCase() // pm
-  return hourShort.concat(' ').concat(period) // 6:00 pm
+  return format(date, TIME_FORMAT)
 }
 
 /**
  *Converts the given date from PDT timezone to the given timezone.
  *
  * @param {String} date
- * @param {String} time
  * @param {String} timezone
  * @returns {String}
  */
-export function pdtToLocaleDate(date, time, timezone) {
-  const datePDT = new Date(`${date} ${time} PDT`)
-  return datePDT.toLocaleString('en-US', {
-    timeZone: timezone,
-  })
+export function getLocalTime(date, timeZone) {
+  const utcDate = zonedTimeToUtc(date, IANA_PDT_TIMEZONE)
+  const zonedDate = utcToZonedTime(utcDate, timeZone)
+  return format(zonedDate, TIME_FORMAT, { timeZone })
 }
 
 /**

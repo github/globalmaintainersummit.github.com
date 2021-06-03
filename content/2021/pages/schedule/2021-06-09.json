@@ -1,7 +1,7 @@
 {
   "slots": [
     {
-      "time": "9:00 am",
+      "time": "09:00",
       "title": "Kickoff and Keynote",
       "break": "short"
     },
@@ -23,7 +23,7 @@
     },
     {
       "title": "Organiza-tional Auto-mation",
-      "time": "11:00 am",
+      "time": "11:00",
       "hasDiscussions": false,
       "break": "long",
       "talks": [
@@ -40,7 +40,7 @@
     },
     {
       "title": "Into the Unknown",
-      "time": "12:15 pm",
+      "time": "12:15",
       "hasDiscussions": true,
       "break": "short",
       "talks": [
@@ -57,7 +57,7 @@
     },
     {
       "title": "Talking Money",
-      "time": "1:30 pm",
+      "time": "13:30",
       "hasDiscussions": false,
       "talks": [
         {
@@ -72,7 +72,7 @@
       ]
     },
     {
-      "time": "2:00 pm",
+      "time": "14:00",
       "title": "Closing"
     },
     {
