@@ -1,8 +1,7 @@
 import {
   formatDateShort,
   formatDateLong,
-  formatTime,
-  pdtToLocaleDate,
+  getLocalTime,
 } from '~/utils/date-utils.js'
 
 describe('Date utils', () => {
@@ -44,41 +43,20 @@ describe('Date utils', () => {
     })
   })
 
-  describe('Format Time', () => {
-    it('returns just the time in a short format with am/pm', () => {
-      const actualTime = formatTime('6/8/2021, 6:00:00 PM')
-      const expectedTime = '6:00 pm'
+  describe('Converts America/Los_Angeles (PDT) Time', () => {
+    const cases = [
+      ['2021-06-08 09:00:00', 'Europe/Madrid', '6:00 pm'],
+      ['2021-06-09 09:00:00', 'Europe/London', '5:00 pm'],
+      ['2021-06-09 09:00:00', 'America/Los_Angeles', '9:00 am'],
+    ]
+    test.each(cases)(
+      'Converts %p to %p time zone',
+      (time, timeZone, expectedTime) => {
+        const actualTime = getLocalTime(time, timeZone)
 
-      expect(actualTime).not.toBeUndefined()
-      expect(actualTime).toEqual(expectedTime)
-    })
-  })
-
-  describe('Converts PDT Time', () => {
-    it('converts PDT date and time to Europe/Madrid timezone', () => {
-      const actualTime = pdtToLocaleDate('6/8/2021', '9:00 am', 'Europe/Madrid')
-      const expectedTime = '6/8/2021, 6:00:00 PM'
-
-      expect(actualTime).not.toBeUndefined()
-      expect(actualTime).toEqual(expectedTime)
-    })
-    it('converts PDT date and time to Europe/London timezone', () => {
-      const actualTime = pdtToLocaleDate('6/8/2021', '9:00 am', 'Europe/London')
-      const expectedTime = '6/8/2021, 5:00:00 PM'
-
-      expect(actualTime).not.toBeUndefined()
-      expect(actualTime).toEqual(expectedTime)
-    })
-    it('converts PDT date and time to America/Los_Angeles timezone', () => {
-      const actualTime = pdtToLocaleDate(
-        '6/8/2021',
-        '9:00 am',
-        'America/Los_Angeles'
-      )
-      const expectedTime = '6/8/2021, 9:00:00 AM'
-
-      expect(actualTime).not.toBeUndefined()
-      expect(actualTime).toEqual(expectedTime)
-    })
+        expect(actualTime).not.toBeUndefined()
+        expect(actualTime).toEqual(expectedTime)
+      }
+    )
   })
 })
