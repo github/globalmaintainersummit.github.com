@@ -1,7 +1,6 @@
 import { zonedTimeToUtc, utcToZonedTime, format } from 'date-fns-tz'
 
 const TIME_FORMAT = 'h:mm aaa'
-export const PDT_TIMEZONE = 'PDT'
 export const IANA_PDT_TIMEZONE = 'America/Los_Angeles' // This is one of the timezones that belong to PDT timing in IANA timezones
 
 /**
@@ -78,7 +77,7 @@ export function formatTime(date) {
 export function getLocalTime(date, timeZone) {
   const utcDate = zonedTimeToUtc(date, IANA_PDT_TIMEZONE)
   const zonedDate = utcToZonedTime(utcDate, timeZone)
-  return format(zonedDate, TIME_FORMAT, { timeZone })
+  return format(zonedDate, TIME_FORMAT)
 }
 
 /**

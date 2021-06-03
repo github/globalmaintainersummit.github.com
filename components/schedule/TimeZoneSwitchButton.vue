@@ -15,7 +15,6 @@ import { mapMutations, mapState } from 'vuex'
 export default {
   computed: {
     ...mapState([
-      'defaultTimeZone',
       'defaultTimeZoneIANA',
       'userTimeZoneIANA',
       'selectedTimeZone',
