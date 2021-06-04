@@ -97,3 +97,4 @@ sw.*
 
 # Ignore cypress artifacts
 cypress/videos
+cypress/screenshots
