@@ -1,9 +1,9 @@
 <template>
-  <div class="newsletter">
+  <div v-if="newsletter" class="newsletter">
     <div id="newsletter-wrapper" class="newsletter__wrapper">
       <div class="newsletter__copy">
-        <h3>{{ content.lead }}</h3>
-        <p>{{ content.body }}</p>
+        <h3>{{ newsletter.lead }}</h3>
+        <p>{{ newsletter.body }}</p>
       </div>
       <form
         id="mc-embedded-subscribe-form"
@@ -19,14 +19,14 @@
           class="sr-only"
           aria-hidden="true"
         >
-          {{ content.label }}
+          {{ newsletter.label }}
         </label>
         <input
           id="newsletter"
           ref="input"
           type="text"
           name="EMAIL"
-          :placeholder="content.placeholder"
+          :placeholder="newsletter.placeholder"
           required
           aria-labelledby="label-newsletter"
         />
@@ -43,7 +43,7 @@
           theme="light"
           @click="handleClick"
         >
-          {{ content.cta }}
+          {{ newsletter.cta }}
         </CommonCustomButton>
       </form>
       <div id="mce-responses" class="clear newsletter__feedback">
@@ -74,11 +74,16 @@
 
 <script>
 export default {
-  props: {
-    content: {
-      type: Object,
-      required: true,
-    },
+  data() {
+    return {
+      newsletter: null,
+    }
+  },
+  async fetch() {
+    const { newsletter } = await this.$content('2021/pages/home/index')
+      .only(['newsletter'])
+      .fetch()
+    this.newsletter = newsletter
   },
   methods: {
     handleClick() {
