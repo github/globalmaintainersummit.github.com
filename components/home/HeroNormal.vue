@@ -27,7 +27,7 @@ export default {
   max-width: 1440px;
   margin: 0 auto;
   padding: 50px 0 40px;
-  @media only screen and (min-width: 680px) {
+  @media only screen and (min-width: $screen-sm) {
     padding: 100px 0 80px;
   }
 
