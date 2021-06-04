@@ -1,7 +1,13 @@
 {
   "hero": {
-    "lead": "A virtual gathering for the maintainers who make open source possible.",
-    "date": "June 8-9, 2021"
+    "normal": {
+      "title": "A virtual gathering for the maintainers who make open source possible.",
+      "date": "June 8-9, 2021"
+    },
+    "live": {
+      "title": "Welcome to the Global Maintainer Summit. Stay awhile!",
+      "lead": "Mingle with maintainers in the interactive Gathertown hallway track."
+    }
   },
   "newsletter": {
     "lead": "Stay in the know",
