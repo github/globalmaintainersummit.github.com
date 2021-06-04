@@ -13,10 +13,10 @@ export default {
       required: true,
     },
   },
-  computed: {
-    eventIsLive() {
-      return true // TODO add logic
-    },
+  data() {
+    return {
+      eventIsLive: true,
+    }
   },
 }
 </script>
