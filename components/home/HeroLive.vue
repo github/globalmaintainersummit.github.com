@@ -1,6 +1,10 @@
 <template>
   <div class="hero">
-    <div class="hero__video">video</div>
+    <div class="hero__video">
+      <client-only placeholder="Loading...">
+        <youtube video-id="wHn1_QVoXGM"></youtube>
+      </client-only>
+    </div>
     <h1>
       {{ content.title }}
     </h1>

@@ -29,7 +29,8 @@
     "focus-trap": "^6.4.0",
     "focus-trap-vue": "^1.1.1",
     "nuxt": "^2.15.6",
-    "vue-jest": "^3.0.7"
+    "vue-jest": "^3.0.7",
+    "vue-youtube-embed": "^2.2.2"
   },
   "devDependencies": {
     "@cypress/vue": "^2.2.3",
