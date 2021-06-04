@@ -14,8 +14,12 @@
     </h1>
     <div class="hero__lead">
       <p>{{ content.lead }}</p>
-      <CommonCustomButton href="#" icon="arrow-right" icon-suffix>
-        Join us at Gather
+      <CommonCustomButton
+        :href="gatherTown.link"
+        icon="arrow-right"
+        icon-suffix
+      >
+        {{ gatherTown.joinUs }}
       </CommonCustomButton>
     </div>
   </div>
@@ -32,7 +36,14 @@ export default {
   data() {
     return {
       videoId: '5qap5aO4i9A',
+      gatherTown: null,
     }
+  },
+  async fetch() {
+    const { gatherTown } = await this.$content('2021/pages/home/index')
+      .only(['gatherTown'])
+      .fetch()
+    this.gatherTown = gatherTown
   },
 }
 </script>
@@ -82,6 +93,7 @@ export default {
   }
   &__lead {
     display: flex;
+    align-items: center;
 
     p {
       @include mobileToDesktopFontSize(var(--fs-small), var(--fs-default));
