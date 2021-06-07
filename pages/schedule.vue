@@ -1,9 +1,11 @@
 <template>
   <div class="schedule">
+    <ScheduleTimeZoneSwitchButton />
     <ScheduleDay
       v-for="day in schedule"
       :key="day.slug"
       :content="day"
+      :date="day.slug"
       class="day"
     />
   </div>

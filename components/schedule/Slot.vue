@@ -1,8 +1,8 @@
 <template>
-  <div class="slot" :class="isTopic && 'slot--topic'">
-    <p v-if="content.time" class="slot__time">
-      <span>{{ content.time }}</span>
-      <span class="slot__time--timezone">PDT</span>
+  <div data-cy="slot" class="slot" :class="isTopic && 'slot--topic'">
+    <p v-if="content.time" class="slot__time" data-cy="slotTime">
+      <span>{{ time }}</span>
+      <span class="slot__time--timezone">{{ selectedTimeZone }}</span>
     </p>
     <p class="slot__title" :class="isTopic && 'slot__title--topic'">
       {{ content.title }}
@@ -20,16 +20,30 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import { getLocalTime } from '~/utils/date-utils'
+
 export default {
   props: {
     content: {
       type: Object,
       required: true,
     },
+    date: {
+      type: String,
+      required: true,
+    },
   },
   computed: {
+    ...mapState(['selectedTimeZone', 'defaultTimeZone']),
     isTopic() {
       return this.content.talks?.length > 1
+    },
+    time() {
+      return getLocalTime(
+        `${this.date} ${this.content.time}:00`,
+        this.selectedTimeZone
+      )
     },
   },
 }

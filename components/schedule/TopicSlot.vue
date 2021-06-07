@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="talk in talks" :key="talk.speakerHandler">
+    <div v-for="(talk, index) in talks" :key="index">
       <ScheduleTalk :speaker-handler="talk.speakerHandler" />
     </div>
     <ScheduleDiscussion v-if="hasDiscussions" />
