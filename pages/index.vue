@@ -4,7 +4,6 @@
       <img src="~/assets/svg/bg_pills/graphic_hero.svg" alt="" />
     </div>
     <HomeHero :content="hero" :dates="dates" />
-    <HomeNewsletter :content="newsletter" />
     <HomeContent
       :normal-block="content.normalBlock"
       :highlighted-block="content.highlightedBlock"
@@ -23,7 +22,6 @@ export default {
       maintainers: maintainersContent,
       content,
       hero,
-      newsletter,
       dates,
     } = await $content('2021/pages/home/index').fetch()
     const maintainers = await $content('2021/shared/maintainers')
@@ -33,7 +31,6 @@ export default {
     return {
       content,
       hero,
-      newsletter,
       maintainersContent,
       maintainers,
       dates,
