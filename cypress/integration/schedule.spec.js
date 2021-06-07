@@ -11,31 +11,22 @@ describe('Schedule', () => {
   it('displays the correct dates for Asia/Magadan time zone', () => {
     cy.window().then((window) => {
       window.updateUserTimeZone('Asia/Magadan')
-      cy.get('[data-cy=timezoneSwitch]').within(() => {
-        cy.get('[data-cy=option2]').click({ force: true })
-      })
-      cy.contains('Wednesday ⌁ June 9, 2021')
-      cy.contains('Thursday ⌁ June 10, 2021')
+      cy.findByText('Asia/Magadan').click()
+      cy.findByText('Wednesday ⌁ June 9, 2021').should('be.visible')
+      cy.findByText('Thursday ⌁ June 10, 2021').should('be.visible')
     })
   })
 
-  it('changes the timezone when the user has a different timezone than America/Los_Angeles', () => {
+  it('changes the timezone when the user is in Europe/Madrid timezone instead of America/Los_Angeles', () => {
     cy.window().then((window) => {
       window.updateUserTimeZone('Europe/Madrid')
-      cy.get('[data-cy=slot] > [data-cy=slotTime]').then(($times) => {
-        const pdtTimeFirstSlot = $times[0].firstElementChild.innerText
-
-        cy.get('[data-cy=timezoneSwitch]').within(() => {
-          cy.get('[data-cy=option2]').click({ force: true })
-        })
-
-        cy.get('[data-cy=slot] > [data-cy=slotTime]').then(($times) => {
-          const localTimeFirstSlot = $times[0].firstElementChild.innerText
-
-          expect(pdtTimeFirstSlot).to.not.equal(localTimeFirstSlot)
-          expect(pdtTimeFirstSlot).to.equal('9:00 am')
-          expect(localTimeFirstSlot).to.equal('6:00 pm')
-        })
+      cy.get('[data-cy=slot] > [data-cy=slotTime]').first().as('firstSlot')
+      cy.get('@firstSlot').within(() => {
+        cy.findByText('9:00 am')
+      })
+      cy.findByText('Europe/Madrid').click()
+      cy.get('@firstSlot').within(() => {
+        cy.findByText('6:00 pm')
       })
     })
   })
