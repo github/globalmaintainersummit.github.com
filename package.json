@@ -12,9 +12,9 @@
     "lint": "npm run lint:js && npm run lint:style",
     "test": "jest",
     "e2e": "TZ=America/New_York cypress open --browser chrome",
-    "e2e:ci": "TZ=America/New_York cypress run",
+    "e2e:ci": "TZ=America/New_York cypress run --browser chrome --headless",
     "component": "TZ=America/New_York cypress open-ct --browser chrome",
-    "component:ci": "TZ=America/New_York cypress run-ct",
+    "component:ci": "TZ=America/New_York cypress run-ct --browser chrome --headless",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -26,6 +26,7 @@
     "@nuxtjs/style-resources": "^1.1.0",
     "calendar-link": "^2.1.1",
     "core-js": "^3.14.0",
+    "date-fns-tz": "^1.1.4",
     "focus-trap": "^6.4.0",
     "focus-trap-vue": "^1.1.1",
     "nuxt": "^2.15.6",

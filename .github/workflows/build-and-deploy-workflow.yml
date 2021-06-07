@@ -48,6 +48,8 @@ jobs:
       - name: Generate ⚙️
         run: npm run generate
 
+      - uses: nanasess/setup-chromedriver@master
+
       - name: Run E2E Tests 🧪
         run: |
           npx serve dist &

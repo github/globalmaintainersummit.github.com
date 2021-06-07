@@ -8,14 +8,21 @@
     <Footer />
   </div>
 </template>
+
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   data() {
     return {
       navActive: false,
     }
   },
+  mounted() {
+    this.updateUserTimeZone(this.$timezone())
+  },
   methods: {
+    ...mapMutations(['updateUserTimeZone']),
     toggleNav() {
       this.navActive = !this.navActive
     },

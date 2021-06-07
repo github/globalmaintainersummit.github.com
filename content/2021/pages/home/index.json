@@ -9,6 +9,10 @@
       "lead": "Mingle with maintainers in the interactive Gathertown hallway track."
     }
   },
+  "dates": {
+    "startDate": "2021-06-08",
+    "endDate": "2021-06-09"
+  },
   "newsletter": {
     "lead": "Stay in the know",
     "body": "Be the first to know about Global Maintainers Summit news!",
@@ -47,8 +51,6 @@
     "link": "https://gather.town/app/vo3JY7JsISpTYeY5/GlobalMaintainerSummit"
   },
   "calendarEvent": {
-    "startDate": "2021-06-08",
-    "endDate": "2021-06-09",
     "title": "Global Maintainer Summit",
     "description": "<p>A virtual gathering for the maintainers that make open source possible</p><a href=\"https://globalmaintainersummit.github.com/\">https://globalmaintainersummit.github.com/</a>"
   }

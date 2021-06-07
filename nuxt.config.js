@@ -37,7 +37,10 @@ export default {
   css: ['@/assets/scss/index.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/vue-youtube-embed.js'],
+  plugins: [
+    '~/plugins/vue-youtube-embed.js',
+    { src: '~/plugins/user-timezone.js', mode: 'client' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

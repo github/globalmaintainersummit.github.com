@@ -114,12 +114,14 @@ export default {
     }
   },
   async fetch() {
-    const { calendarEvent } = await this.$content('2021/pages/home/index')
-      .only(['calendarEvent'])
+    const { calendarEvent, dates } = await this.$content(
+      '2021/pages/home/index'
+    )
+      .only(['calendarEvent', 'dates'])
       .fetch()
     this.calendarEvent = {
-      start: calendarEvent.startDate,
-      end: calendarEvent.endDate,
+      start: dates.startDate,
+      end: dates.endDate,
       duration: [1, 'day'],
       title: calendarEvent.title,
       description: calendarEvent.description,

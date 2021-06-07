@@ -3,7 +3,7 @@
     <div class="home__decoration" aria-hidden="true">
       <img src="~/assets/svg/bg_pills/graphic_hero.svg" alt="" />
     </div>
-    <HomeHero :content="hero" />
+    <HomeHero :content="hero" :dates="dates" />
     <HomeContent
       :normal-block="content.normalBlock"
       :highlighted-block="content.highlightedBlock"
@@ -22,6 +22,7 @@ export default {
       maintainers: maintainersContent,
       content,
       hero,
+      dates,
     } = await $content('2021/pages/home/index').fetch()
     const maintainers = await $content('2021/shared/maintainers')
       .where({ featured: true })
@@ -32,6 +33,7 @@ export default {
       hero,
       maintainersContent,
       maintainers,
+      dates,
     }
   },
 }
