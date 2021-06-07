@@ -1,7 +1,7 @@
 <template>
   <section>
-    <!-- <HomeHeroLive :content="content.live" /> -->
-    <HomeHeroNormal :title="content.title" :dates="dates" />
+    <HomeHeroLive v-if="eventIsLive" :content="content.live" />
+    <HomeHeroNormal v-else :title="content.title" :dates="dates" />
   </section>
 </template>
 
@@ -16,6 +16,11 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  data() {
+    return {
+      eventIsLive: false, // Change this attribute to toggle between the Hero and the Hero Live
+    }
   },
 }
 </script>
