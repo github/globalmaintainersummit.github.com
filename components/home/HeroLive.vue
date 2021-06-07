@@ -7,6 +7,7 @@
     <div class="hero__lead">
       <p>{{ content.lead }}</p>
       <CommonCustomButton
+        v-if="gatherTown"
         :href="gatherTown.link"
         icon="arrow-right"
         icon-suffix
