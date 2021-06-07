@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
-    "@nuxtjs/style-resources": "^1.0.0",
+    "@nuxtjs/style-resources": "^1.1.0",
     "calendar-link": "^2.1.1",
     "core-js": "^3.14.0",
     "focus-trap": "^6.4.0",
