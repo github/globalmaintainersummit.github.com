@@ -12,9 +12,9 @@
     "lint": "npm run lint:js && npm run lint:style",
     "test": "jest",
     "e2e": "TZ=America/New_York cypress open --browser chrome",
-    "e2e:ci": "TZ=America/New_York cypress run",
+    "e2e:ci": "TZ=America/New_York cypress run --browser chrome --headless",
     "component": "TZ=America/New_York cypress open-ct --browser chrome",
-    "component:ci": "TZ=America/New_York cypress run-ct",
+    "component:ci": "TZ=America/New_York cypress run-ct --browser chrome --headless",
     "prepare": "husky install"
   },
   "lint-staged": {
