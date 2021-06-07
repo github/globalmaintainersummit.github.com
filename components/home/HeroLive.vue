@@ -29,7 +29,7 @@ export default {
   },
   data() {
     return {
-      videoId: '5qap5aO4i9A',
+      videoId: '5qap5aO4i9A', // TODO use the actual video id when publishing this component
       gatherTown: null,
     }
   },
