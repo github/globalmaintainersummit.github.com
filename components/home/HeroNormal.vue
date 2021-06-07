@@ -2,20 +2,33 @@
   <div class="hero">
     <div class="hero__message">
       <h1>
-        {{ content.title }}
+        {{ title }}
       </h1>
-      <p>{{ content.date }}</p>
+      <p>{{ eventDates }}</p>
     </div>
     <HomeNewsletter />
   </div>
 </template>
 
 <script>
+import { formatDateShort } from '~/utils/date-utils'
+
 export default {
   props: {
-    content: {
+    title: {
+      type: String,
+      required: true,
+    },
+    dates: {
       type: Object,
       required: true,
+    },
+  },
+  computed: {
+    eventDates() {
+      const startDate = new Date(this.dates.startDate)
+      const endDate = new Date(this.dates.endDate)
+      return formatDateShort(startDate, endDate)
     },
   },
 }
