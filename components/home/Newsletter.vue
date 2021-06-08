@@ -1,75 +1,77 @@
 <template>
-  <div v-if="newsletter" class="newsletter">
-    <div id="newsletter-wrapper" class="newsletter__wrapper">
-      <div class="newsletter__copy">
-        <h3>{{ newsletter.lead }}</h3>
-        <p>{{ newsletter.body }}</p>
-      </div>
-      <form
-        id="mc-embedded-subscribe-form"
-        action="https://github.us11.list-manage.com/subscribe/post?u=9d7ced8c4bbd6c2f238673f0f&amp;id=e21329ec0b"
-        method="post"
-        class="newsletter__form validate subscribe-form"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <label
-          id="label-newsletter"
-          for="newsletter"
-          class="sr-only"
-          aria-hidden="true"
+  <section v-if="newsletter" class="newsletter">
+    <client-only>
+      <div id="newsletter-wrapper" class="newsletter__wrapper">
+        <div class="newsletter__copy">
+          <h3>{{ newsletter.lead }}</h3>
+          <p>{{ newsletter.body }}</p>
+        </div>
+        <form
+          id="mc-embedded-subscribe-form"
+          action="https://github.us11.list-manage.com/subscribe/post?u=9d7ced8c4bbd6c2f238673f0f&amp;id=e21329ec0b"
+          method="post"
+          class="newsletter__form validate subscribe-form"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          {{ newsletter.label }}
-        </label>
-        <input
-          id="newsletter"
-          ref="input"
-          type="text"
-          name="EMAIL"
-          :placeholder="newsletter.placeholder"
-          required
-          aria-labelledby="label-newsletter"
-        />
-        <input
-          type="hidden"
-          name="b_9d7ced8c4bbd6c2f238673f0f_e21329ec0b"
-          tabindex="-1"
-          value=""
-        />
-        <CommonCustomButton
-          type="submit"
-          icon="arrow-right"
-          icon-suffix
-          theme="light"
-          @click="handleClick"
-        >
-          {{ newsletter.cta }}
-        </CommonCustomButton>
-      </form>
-      <div id="mce-responses" class="clear newsletter__feedback">
-        <p
-          id="mce-error-response"
-          class="response newsletter__feedback--warning"
-          style="display: none"
-        ></p>
-        <p
-          id="mce-success-response"
-          class="response newsletter__feedback--success"
-          style="display: none"
-        ></p>
+          <label
+            id="label-newsletter"
+            for="newsletter"
+            class="sr-only"
+            aria-hidden="true"
+          >
+            {{ newsletter.label }}
+          </label>
+          <input
+            id="newsletter"
+            ref="input"
+            type="text"
+            name="EMAIL"
+            :placeholder="newsletter.placeholder"
+            required
+            aria-labelledby="label-newsletter"
+          />
+          <input
+            type="hidden"
+            name="b_9d7ced8c4bbd6c2f238673f0f_e21329ec0b"
+            tabindex="-1"
+            value=""
+          />
+          <CommonCustomButton
+            type="submit"
+            icon="arrow-right"
+            icon-suffix
+            theme="light"
+            @click="handleClick"
+          >
+            {{ newsletter.cta }}
+          </CommonCustomButton>
+        </form>
+        <div id="mce-responses" class="clear newsletter__feedback">
+          <p
+            id="mce-error-response"
+            class="response newsletter__feedback--warning"
+            style="display: none"
+          ></p>
+          <p
+            id="mce-success-response"
+            class="response newsletter__feedback--success"
+            style="display: none"
+          ></p>
+        </div>
+        <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+        <script>
+          ;(function ($) {
+            window.fnames = new Array()
+            window.ftypes = new Array()
+            fnames[0] = 'EMAIL'
+            ftypes[0] = 'email'
+          })(jQuery)
+          var $mcj = jQuery.noConflict(true)
+        </script>
       </div>
-      <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-      <script>
-        ;(function ($) {
-          window.fnames = new Array()
-          window.ftypes = new Array()
-          fnames[0] = 'EMAIL'
-          ftypes[0] = 'email'
-        })(jQuery)
-        var $mcj = jQuery.noConflict(true)
-      </script>
-    </div>
-  </div>
+    </client-only>
+  </section>
 </template>
 
 <script>
