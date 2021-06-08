@@ -1,6 +1,6 @@
 <template>
   <section class="projects">
-    <CommonSwitchButton />
+    <CommonMaintainerSwitchButton />
     <CommonGrid :projects="maintainers" data-cy="projects" />
   </section>
 </template>

@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html {{ HTML_ATTRS }}>
-    <head {{ HEAD_ATTRS }}>
-        {{ HEAD }}
-        {% if (ENV["fathomToken"] !== null) { %}
-        <script src="https://cdn.usefathom.com/script.js" data-site="{{ ENV['fathomToken'] }}" data-spa="auto" defer></script>
-        {% } %}
-    </head>
-    <body {{ BODY_ATTRS }}>
-
-        {{ APP }}
-    </body>
+  <head {{ HEAD_ATTRS }}>
+    {{ HEAD }}
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    {% if (ENV["fathomToken"] !== null) { %}
+    <script
+      src="https://cdn.usefathom.com/script.js"
+      data-site="{{ ENV['fathomToken'] }}"
+      data-spa="auto"
+      defer
+    ></script>
+    {% } %}
+  </head>
+  <body {{ BODY_ATTRS }}>
+    {{ APP }}
+  </body>
 </html>

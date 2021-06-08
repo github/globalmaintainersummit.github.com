@@ -52,7 +52,7 @@ All the json properties to modify the schedule json are explained below:
 
 - **`date`**: [_Compulsory_] The date of that day with the following format "Day ⌁ Month Day, Year"
 - **`slots`**: [_Compulsory_] An array with all the slots for that day
-  - **`time`**: [_Optional_] If you want the time to be displayed on the left, then add this attribute. If you don't want it to be displayed then don't add it.
+  - **`time`**: [_Optional_] If you want the time to be displayed on the left, then add this attribute. If you don't want it to be displayed then don't add it. **It MUST be 24h format, i.e.: for 1:30 pm it has to be 13:30**.
   - **`title`**: [_Compulsory_] This is the label that will be rendered in the slot, so it can be either the topic title (if there are talks) or just the name of the slot, e.g. Kickoff, Close, etc.
   - **`hasDiscussions`**: [_Optional_] If present it will render a Discussions row after the talks with a wavy line above the Discussions word. **It can only be present if the talks property is present as well** (as it doesn't make any sense to have a discussions block without a topic slot).
   - **`break`**: [_Optional_] If present it will render the wave with the "Break"word at the beginning. **It can take just two values: `"short"` or `"long"`.** If not present it will render a single wave after the slot.

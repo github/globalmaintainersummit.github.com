@@ -1,8 +1,7 @@
 {
-  "date": "Wednesday ⌁ June 9, 2021",
   "slots": [
     {
-      "time": "9:00 am",
+      "time": "09:00",
       "title": "Kickoff and Keynote",
       "break": "short"
     },
@@ -24,7 +23,7 @@
     },
     {
       "title": "Organiza-tional Auto-mation",
-      "time": "11:00 am",
+      "time": "11:00",
       "hasDiscussions": false,
       "break": "long",
       "talks": [
@@ -41,17 +40,17 @@
     },
     {
       "title": "Open Spaces in Gathertown: Funding and Sustainability",
-      "time": "12:15 pm",
+      "time": "12:15",
       "hasDiscussions": true,
       "break": "short"
     },
     {
       "title": "Open Spaces in Gathertown",
-      "time": "1:30 pm",
+      "time": "13:30",
       "hasDiscussions": true
     },
     {
-      "time": "2:00 pm",
+      "time": "14:00",
       "title": "Closing"
     }
   ]

@@ -1,6 +1,6 @@
 <template>
   <section class="maintainers">
-    <CommonSwitchButton />
+    <CommonMaintainerSwitchButton />
     <CommonGrid :maintainers="maintainersList" data-cy="maintainers" />
   </section>
 </template>
@@ -26,6 +26,8 @@ export default {
 
 <style lang="scss" scoped>
 .maintainers {
+  @include section();
+
   display: flex;
   flex-direction: column;
   align-items: center;
