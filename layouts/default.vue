@@ -2,7 +2,9 @@
   <div :class="{ 'open-nav': navActive }">
     <TopNav :active="navActive" @toggle="toggleNav" />
     <main class="main">
-      <Nuxt />
+      <transition name="fade" mode="out-in">
+        <Nuxt />
+      </transition>
     </main>
     <FollowEvent />
     <Footer />

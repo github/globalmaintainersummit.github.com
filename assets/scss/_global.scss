@@ -28,3 +28,15 @@ body {
   -webkit-clip-path: inset(50%) !important;
   clip-path: inset(50%) !important; /* 2 */
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-timing-function: ease;
+  transition-duration: 0.3s;
+  transition-property: opacity;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
