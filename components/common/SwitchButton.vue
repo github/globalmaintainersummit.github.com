@@ -12,12 +12,14 @@
       :aria-label="`Change the ${id} to ${option.label}`"
       @click="$emit('click', option.label)"
     >
-      {{ option.label }}
+      {{ formatLabel(option.label) }}
     </Component>
   </div>
 </template>
 
 <script>
+import { formatIANATimeZone } from '~/utils/date-utils'
+
 export default {
   props: {
     id: {
@@ -36,6 +38,11 @@ export default {
   computed: {
     type() {
       return this.options[0].to ? 'nuxt-link' : 'button'
+    },
+  },
+  methods: {
+    formatLabel(option) {
+      return this.type === 'button' ? formatIANATimeZone(option) : option
     },
   },
 }
@@ -93,9 +100,10 @@ export default {
       color: var(--fc-primary);
     }
     &.nuxt-link-exact-active,
+    &:active,
     &--selected {
       z-index: var(--z-index-switch-on);
-      color: var(--fc-light);
+      color: var(--fc-light) !important;
       background-image: linear-gradient(135deg, #c562f5 0%, #f68084 100%);
     }
   }
