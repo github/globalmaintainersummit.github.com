@@ -10,12 +10,23 @@
  * Released under the MIT License.
  */
 
+/*!
+ * vuex v3.6.2
+ * (c) 2021 Evan You
+ * @license MIT
+ */
+
 
 /*!
   * focus-trap-vue v1.1.1
   * (c) 2021 Eduardo San Martin Morote
   * @license MIT
   */
+
+/*!
+ * Vue YouTube Embed version 2.2.2
+ * under MIT License copyright 2019 kaorun343
+ */
 
 /*!
  * vue-client-only v2.0.0
