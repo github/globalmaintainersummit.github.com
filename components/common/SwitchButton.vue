@@ -42,11 +42,7 @@ export default {
   },
   methods: {
     formatLabel(option) {
-      if (this.type === 'button') {
-        return formatIANATimeZone(option)
-      } else {
-        return option
-      }
+      return this.type === 'button' ? formatIANATimeZone(option) : option
     },
   },
 }
