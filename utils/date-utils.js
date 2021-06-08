@@ -131,3 +131,16 @@ function getMonth(date) {
 function getYear(date) {
   return date.getUTCFullYear()
 }
+
+/**
+ * Formats IANA time zones to display just the city, e.g:
+ * America/Los_Angeles --> Los Angeles
+ *
+ * @param {String} timeZone
+ */
+export function formatIANATimeZone(timeZone) {
+  if (timeZone) {
+    const timeZoneSplit = timeZone.split('/')
+    return timeZoneSplit[1].replace('_', ' ')
+  }
+}

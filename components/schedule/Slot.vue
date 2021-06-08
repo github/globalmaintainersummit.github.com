@@ -2,7 +2,7 @@
   <div data-cy="slot" class="slot" :class="isTopic && 'slot--topic'">
     <p v-if="content.time" class="slot__time" data-cy="slotTime">
       <span>{{ time }}</span>
-      <span class="slot__time--timezone">{{ selectedTimeZone }}</span>
+      <span class="slot__time--timezone">{{ timeZoneFormated }}</span>
     </p>
     <p class="slot__title" :class="isTopic && 'slot__title--topic'">
       {{ content.title }}
@@ -21,7 +21,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { getLocalTime } from '~/utils/date-utils'
+import { getLocalTime, formatIANATimeZone } from '~/utils/date-utils'
 
 export default {
   props: {
@@ -44,6 +44,9 @@ export default {
         `${this.date} ${this.content.time}:00`,
         this.selectedTimeZone
       )
+    },
+    timeZoneFormated() {
+      return formatIANATimeZone(this.selectedTimeZone)
     },
   },
 }
