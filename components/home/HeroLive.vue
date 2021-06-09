@@ -29,7 +29,7 @@ export default {
   },
   data() {
     return {
-      videoId: 'xUms2fxciI0',
+      videoId: 'EJnmfB4tu24',
       gatherTown: null,
     }
   },
