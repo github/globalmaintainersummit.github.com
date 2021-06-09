@@ -2,11 +2,11 @@
   "slots": [
     {
       "time": "09:00",
-      "title": "Kickoff and Keynote",
+      "title": "Kickoff and Keynote by Kubernetes co-founder Brendan Burns",
       "break": "short"
     },
     {
-      "title": "Contributor Relations (more!)",
+      "title": "Contributor Relations (Part II)",
       "hasDiscussions": true,
       "break": "short",
       "talks": [
@@ -46,7 +46,7 @@
     },
     {
       "title": "Open Spaces in Gathertown",
-      "time": "13:30",
+      "time": "13:15",
       "hasDiscussions": true
     },
     {
