@@ -19,7 +19,7 @@ export default {
   },
   data() {
     return {
-      eventIsLive: true, // Change this attribute to toggle between the Hero and the Hero Live
+      eventIsLive: false, // Change this attribute to toggle between the Hero and the Hero Live
     }
   },
 }
