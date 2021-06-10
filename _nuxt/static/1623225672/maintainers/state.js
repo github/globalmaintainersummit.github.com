@@ -1,1 +1,0 @@
-window.__NUXT__=(function(a,b){return {staticAssetsBase:"\u002F_nuxt\u002Fstatic\u002F1623225672",layout:"default",error:a,state:{userTimeZoneIANA:a,defaultTimeZoneIANA:b,selectedTimeZone:b},serverRendered:true,routePath:"\u002Fmaintainers",config:{_app:{basePath:"\u002F",assetsPath:"\u002F_nuxt\u002F",cdnURL:a},content:{dbHash:"775c89b6"}}}}(null,"America\u002FLos_Angeles"));
