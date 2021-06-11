@@ -2,11 +2,15 @@
   <div class="hero">
     <div class="hero__message">
       <h1>
-        {{ title }}
+        {{ content.title }}
       </h1>
-      <p>{{ eventDates }}</p>
+      <p class="hero__lead">
+        <span v-if="content.lead">{{ content.lead }}</span>
+        <span v-else>{{ eventDates }}</span>
+      </p>
     </div>
-    <HomeNewsletter />
+    <!-- Newsletter hidden after event has passed -->
+    <!-- <HomeNewsletter /> -->
   </div>
 </template>
 
@@ -15,13 +19,13 @@ import { formatDateShort } from '~/utils/date-utils'
 
 export default {
   props: {
-    title: {
-      type: String,
+    content: {
+      type: Object,
       required: true,
     },
     dates: {
       type: Object,
-      required: true,
+      default: null,
     },
   },
   computed: {
@@ -47,20 +51,18 @@ export default {
   &__message {
     max-width: 900px;
   }
-  h1,
-  p {
+  h1 {
     margin: 0;
     padding: 0;
-  }
-  h1 {
     line-height: 1;
   }
-  p {
+  &__lead {
     @include mobileToDesktopFontSize(var(--fs-medium), var(--fs-large));
     @include wave($bottom: -16px);
 
     display: inline-block;
-    margin-top: 64px;
+    margin: 64px 0 0;
+    font-weight: var(--fw-regular);
     font-family: var(--ff-title);
   }
 }
