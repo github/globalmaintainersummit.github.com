@@ -1,7 +1,7 @@
 <template>
   <section>
     <HomeHeroLive v-if="eventIsLive" :content="content.live" />
-    <HomeHeroNormal v-else :title="content.title" :dates="dates" />
+    <HomeHeroNormal v-else :content="content" :dates="dates" />
   </section>
 </template>
 
