@@ -47,7 +47,7 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "^27.0.2",
     "cypress": "^7.6.0",
-    "eslint": "^7.28.0",
+    "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-nuxt": "^2.0.0",
