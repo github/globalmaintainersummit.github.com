@@ -27,7 +27,7 @@
     "calendar-link": "^2.1.1",
     "core-js": "^3.14.0",
     "date-fns-tz": "^1.1.4",
-    "focus-trap": "^6.5.1",
+    "focus-trap": "^6.7.1",
     "focus-trap-vue": "^1.1.1",
     "nuxt": "^2.15.7",
     "vue-jest": "^3.0.7",
