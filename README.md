@@ -1,4 +1,6 @@
-# Global Maintainers Summit
+# Global Maintainers Summit 2021
+
+Note: Archiving this repo Dec 2023. - @karasowles
 
 ## 🗣️ Add new speakers
 
