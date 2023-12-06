@@ -22,7 +22,7 @@
     "*.{css,vue}": "stylelint"
   },
   "dependencies": {
-    "@nuxt/content": "^1.14.0",
+    "@nuxt/content": "^2.5.2",
     "@nuxtjs/style-resources": "^1.1.0",
     "calendar-link": "^2.1.1",
     "core-js": "^3.14.0",
