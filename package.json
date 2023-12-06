@@ -65,7 +65,7 @@
     "stylelint-prettier": "^1.2.0",
     "stylelint-scss": "^3.19.0",
     "webpack": "^4.46.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.3"
   },
   "engines": {
     "node": ">= 15.8.0 <16",
